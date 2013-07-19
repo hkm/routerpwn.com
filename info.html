@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Routerpwn 1.11.161</title>
+		<link rel="apple-touch-icon" HREF="favicon.png" />
+		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta charset="UTF-8" />
+	<style>
+	a,a:visited,a:active,a:link {
+		color:white;
+		text-decoration:none;
+	}
+
+	a:hover {
+		color:white;
+		text-decoration:none;
+		text-shadow:#FFF 2px 2px 20px;
+	}
+
+	body {
+		font-family: "Arial";
+		background: #111111;
+		background-image: url("bg.jpg");
+		background-repeat: repeat-x;
+		background-attachment: fixed;
+	}
+
+	#contenedor {
+		display: block;
+		background: #000;
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		color: #FFF;
+	}
+
+	#exploits {
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#install {
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#home {
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#screen {
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#screen img:hover{
+		box-shadow:#FFF 2px 2px 20px;
+	}
+
+	footer {
+		display: block;
+		background: #000;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		border-color: #FFF;
+		border-width: 1px 1px 1px 1px;
+		border-style: solid;
+		color: #FFF;
+		width: 70%;
+		padding: 2em;
+	}
+
+	footer img {
+		padding: 1em;
+	}
+
+	h2 {
+		font-size: 3em;
+		padding: 0.5em;
+		text-align: justify;
+		display: inline;
+	}
+
+	#logo {
+		background: url("logo.gif") no-repeat center, black;
+		background-size: 400px 400px;
+		height: 350px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#menu {
+		display: inline-block;
+		background: #222222;
+		padding: 0px;
+		background-image: url("bg.jpg");
+		border-color: #FFF;
+		border-width: 1px 1px 1px 1px;
+	border-style: solid;
+padding: 0.5em;
+	}
+
+	section { 
+		padding: 2em;
+	}
+	</style>
+	<link rel=stylesheet href="mobile.css" type="text/css">
+	</head>
+	<body>
+	<section id="contenedor">
+		<a href="index.html"><div id="logo"></div></a>
+		<section id="menu">
+			<h2><a href="#home">ROUTERPWN</a></h2>
+			<h2><a href="#screen">Screenshots</a></h2>
+			<h2><a href="#exploits">Exploits</a></h2>
+			<h2><a href="http://www.youtube.com/WEBSECmx" target="_blank">Videos</a></h2>
+			<h2><a href="#install">Install</a></h2>
+			<h2><a href="contact.html">Contact</a></h2>
+		</section>
+<section id="home">
+<h3>== ROUTERPWN.com ==</h3>
+<b>Routerpwn.com</b> is a web application that helps you in the exploitation of vulnerabilities in residential routers.<br/><br/>
+
+It is a <b>compilation of ready to run local and remote web exploits</b>.<br/>
+Programmed in Javascript and HTML in order to <b>run in all "smart phones" and mobile internet devices</b>.<br/>
+It is only one page, so you can <b>store it offline for local exploitation</b> without internet connection.<br/>
+You can <b>change the destination IP</b> by clicking on the [IP] link next to the exploit.
+To view more info on the exploit like the <b>complete advisory and author</b> you can click the [+] link.<br/><br/>
+
+</i><b>Routerpwn.com</b> es una aplicación web que facilita la explotación de vulnerabilidades en ruteadores caseros.<br/>
+
+Compilación de <b>exploits locales y remotos en formato listo para correr</b>.<br/>
+Programado en Javascript y HTML <b>optimizado para dispositivos móviles</b>.<br/>
+Un solo archivo para poder <b>descargarlo y acceder sin conexión a internet</b>.<br/>
+Puedes <b>cambiar la IP a la cual se atacará</b> dando click en el link que dice [IP] a un lado del exploit.
+Para ver más información del exploit como el <b>advisory completo y el autor</b> puedes dar click en el link [+]<br/></i>
+<div style="float: right"><a href="#">^ Top</a></div>
+</section>
+
+<section id="screen">
+<h3>== Screenshots ==</h3>
+Routerpwn - iPhone:<br/>
+<a href="img.jpg"><img src="img.jpg" height="240" width="160"></a>
+<a href="img2.jpg"><img src="img2.jpg" height="240" width="160"></a>
+<a href="img3.jpg"><img src="img3.jpg" height="240" width="160" ></a>
+
+<br/><br/>Routerpwn - BlackBerry Curve 8900:<br/>
+<a href="bb.jpg"><img src="bb.jpg" height="180" width="240"></a>
+<a href="bb2.jpg"><img src="bb2.jpg" height="180" width="240"></a>
+<a href="bb3.jpg"><img src="bb3.jpg" height="180" width="240"></a>
+
+<br/><br/>Routerpwn - BlackBerry Curve 8520:<br/>
+<a href="bb8520-0.jpg"><img src="bb8520-0.jpg" height="166" width="221"></a>
+<a href="bb8520-2.jpg"><img src="bb8520-2.jpg" height="166" width="221"></a>
+<a href="bb8520-1.jpg"><img src="bb8520-1.jpg" height="166" width="221"></a>
+
+<br/><div style="float: right"><a href="#">^ Top</a></div>
+</section>
+
+
+<section id="exploits">
+<h3>== Exploits ==</h3>
+<b># 154 Total (11 Modules) 08/09/2012 #</b>
+<br/>Sagem Fast Telnet Root Password Generator
+<br/>A1/Telekom PRG EAV4202N Default WPA Key Generator
+<br/>Discus DRG A225 WiFi router Default WPA2-PSK Key Generator
+<br/>Thomson BBox BBKeys TG787 Default Wireless Key Generator
+<br/>EasyBox Standard WPA2 Key Generator
+<br/>ZynOS (Huawei) Configuration Decompressor
+<br/>Thomson SpeedTouch STKeys Default Wireless Key Generator
+<br/>Huawei HG5XX Mac2wepkey Default Wireless Key Generator
+<br/>Backdoor password in Accton-based switches (3com, Dell, SMC, Foundry and EdgeCore)
+<br/>Arris Password of The Day Generator
+<br/>
+<br/>20x 27x authentication bypass (xss + info disclosure) 
+<br/>17x 18x 20x 27x CRLF denial of service remote MDC 
+<br/>17x 18x 20x 27x CRLF denial of service 
+<br/>17x 18x 20x 27x password_required.html authentication bypass 
+<br/>17x 18x 20x 27x CD35_SETUP_01 authentication bypass 
+<br/>17x 18x 20x 27x CD35_SETUP_01 password reset 
+<br/>17x 18x 20x 27x DSL denial of service 
+<br/>17x 18x 20x 27x mgmt_data configuration disclosure 
+<br/>17x 18x 20x 27x H04 authentication bypass 
+<br/>17x 18x 20x 27x 38x Add domain to hosts table CSRF 
+<br/>Backdoor password in Accton-based switches (3com, Dell, SMC, Foundry and EdgeCore) 
+<br/>iMC Intelligent Management Center configuration disclosure 
+<br/>iMC Intelligent Management Center traversal 
+<br/>OfficeConnect command execution 
+<br/>AP 8760 auhentication bypass 
+<br/>OfficeConnect configuration disclosure 
+<br/>OfficeConnect 3CRWE454G72 configuration disclosure 
+<br/>3cradsl72 configuration disclosure 
+<br/>3cradsl72 information disclosure & authenication bypass 
+<br/>812 denial of service 
+<br/>812 denial of service 2 
+<br/>Arris Password of The Day (list.txt) 
+<br/>Arris password of the day web interface 
+<br/>AR-804gu command execution 
+<br/>AR-804gu file disclosure 
+<br/>AR-804gu directory listing 
+<br/>F5D7234-4 v5 admin password md5 
+<br/>F5D8233-4 v3 configuration disclosure 
+<br/>F5D8233-4 v3 router reboot 
+<br/>F5D7230-4 factory reset 
+<br/>F5D7230-4 change dns servers 
+<br/>MIMO F5D9230xx4 configuration disclosure 
+<br/>WAG120N Change admin password 
+<br/>WAG120N Add admin user 
+<br/>WAP54Gv3 debug interface (Gemtek:gemtekswd) 
+<br/>WRT54G enable remote interface 
+<br/>WRT54G config disclosure 
+<br/>WRT54G restore factory defaults 
+<br/>WRT54G last password in plain text 
+<br/>WRT54G disable wifi encription 
+<br/>WRT54G change admin password 
+<br/>D-Link WBR-1310 Authentication Bypass set new password 
+<br/>D-Link DIR-615, DIR-320, DIR-300 Authentication Bypass 
+<br/>D-Link DAP-1160 Authentication Bypass 
+<br/>D-Link DIR-615 change password & enable remote admin 
+<br/>DSL-G604T change DNS servers 
+<br/>D-Link DIR-615 configuration disclosure 
+<br/>704P denial of service 
+<br/>DSL-G624T DSL-G604T directory traversal 
+<br/>DWL-7x00AP configuration disclosure 
+<br/>G604T DSL Routers "firmwarecfg" Authentication Bypass 
+<br/>HG5XX mac2wepkey default wireless key generator 
+<br/>HG520 rpADSLMode_1 denial of service 
+<br/>HG520 HTTP auth denial of service 
+<br/>HG520 rpEthernet_1 denial of service 
+<br/>HG520c HG530 enable remote management CSRF 
+<br/>HG520c HG530 Listadeparametros.html information disclosure 
+<br/>HG520c HG530 AutoRestart.html denial of service & factory reset 
+<br/>HG520 LocalDevicejump.html denial of service 
+<br/>HG510 rebootinfo.cgi denial of service 
+<br/>SmartAX MT880 default password 
+<br/>SmartAX MT880 add administrator account 
+<br/>SmartAX MT880 disable firewall/anti-dos w/default pass 
+<br/>ZyNOS configuration disclosure 
+<br/>SBG900 change admin password 
+<br/>SBG900 turn off firewall 
+<br/>SBG900 enable remote access 
+<br/>SBG900 disable DHCP & add custom DNS server 
+<br/>WNAP210 authentication bypass 
+<br/>WNDAP350, WNAP210 BackupConfig.php config disclosure 
+<br/>CG3100D privilege escalation 
+<br/>RP614v4 config disclosure 
+<br/>WNR2000 information disclosure 
+<br/>WNR2000 information disclosure 
+<br/>WNR2000 config disclosure 
+<br/>DG632 auth bypass (config disclosure) 
+<br/>DG632 auth bypass 
+<br/>DG632 'firmwarecfg' denial of service 
+<br/>WGR614v9 denial of service 
+<br/>SSL312 VPN denial of service 
+<br/>FVS318 content filtering bypass 
+<br/>FVS318 log file arbitrary content injection 
+<br/>DG834G enable telnet root shell 
+<br/>WG602 undocumented admin account (superman) 
+<br/>WG602 undocumented admin account (super) 
+<br/>FlexiISN auth bypass AAA Configuration 
+<br/>FlexiISN auth bypass Aggregation Class Configuration 
+<br/>FlexiISN auth bypass GGSN general Configuration 
+<br/>FlexiISN auth bypass Network Access & services 
+<br/>5200 Default administrator account 
+<br/>5200 Host authentication bypass 
+<br/>5200 Configuration disclosure /.cfg 
+<br/>SE461 denial of service 
+<br/>ST585, TG585n user.ini arbitrary download vulnerability 
+<br/>ST585 Redirect domain CSRF 
+<br/>ST585 Add administrator account CSRF 
+<br/>bthomehub call number (voice-jacking) auth bypass 
+<br/>bthomehub authentication bypass 
+<br/>bthomehub enable remote access and change tech password 
+<br/>bthomehub disable wifi 
+<br/>TEW-633GR A-to-C authentication bypass 
+<br/>TEW-633GR unauthorized factory reset 
+<br/>ZyWALL USG client side authorization config disclosure 
+<br/>G-570S configuration disclosure 
+<br/>Prestige configuration disclosure 
+<br/>Prestige privilege escalation 
+<br/>Prestige default password 
+<br/>ZyNOS configuration disclosure 
+<br/>Zywall2 Persistent Cross Site Scripting 
+<br/>Prestige unauthorized reset 
+<br/>DNA-A-211, UT300R2U information disclosure
+<br/>Fibrehome HG-110 Local File Include and Directory/Path Traversal
+<br/>Fibrehome HG-110 Cross site scripting
+<br/>Zyxel O2 Classic persistent cross site scripting
+<br/>Thomson ST585 Cross site scripting
+<br/>CT-5367 Change ALL passwords
+<br/>CT-5367 Information Disclosure
+<br/>CT-507IT Cross site scripting
+<br/>CT-536 HG-536+ Information Disclosure
+<br/>CT-536 HG-536+ Configuration Disclosure
+<br/>DSL-500T CSRF reset password
+<br/>DSL-500T Directory Traversal (post auth)
+<br/>DSL-500T old "firmwarecfg" Authentication Bypass
+<br/>2701HGV-E 2700HGV-2 2700HG singtel default mdc password DoS
+<br/>CT-5624 Info disclosure / Change passwords
+<br/>X7968 cross site scripting
+<br/>X7968 persistent cross site scripting
+<br/>X7968 open port for ip CSRF
+<br/>X7968 denial of service
+<br/>CT-53XX CT-5071 CT-56XX Put a local IP in DMZ
+<br/>CT-53XX CT-5071 CT-56XX Enable remote admin
+<br/>DD-WRT information disclosure
+<br/>DD-WRT command execution
+<br/>2200 Sprint Verizon configuration disclosure
+<br/>2352 Vodafone configuration disclosure
+<br/>AirOS v3.6.1 v4.0 v5.x command execution
+<br/>AirOS Remote Command Execution
+<br/>HG5xx remote ppp password disclosure
+<br/>DAP-1150 save configuration CSRF
+<br/>DAP-1150 denial of service
+<br/>DNS-320 DNS-325 command execution
+<br/>DNS-320 DNS-325 information disclosure
+<br/>DNS-320 DNS-325 information disclosure
+<br/>TV-IP Cameras authentication bypass
+<br/>2Wire remote administration password disclosure
+<br/>D-Link DSL-2640B CSRF
+<br/>Netgear remote information disclosure
+<br/>Sagem F@ST 2604 CSRF Change Admin Password
+<br/>HG866 Authentication Bypass
+<br/>HG866 Denial of service
+<br/>Shell oculta para depuración
+<br/>F9K1002 Authentication Bypass
+<br/>F9K1002 Web Management Password Exposure
+<br/>BlackArmor NAS Password Reset
+<br/><div style="float: right"><a href="#">^ Top</a></div>
+</section>
+
+<section id="install">
+<h3>== Install ==</h3>
+<a href="https://market.android.com/details?id=websec.routerpwn" target=_blank><img src=routerpwnandroid.png border=0></a><br/>
+<b>Android</b>: Disponible en el <a href="https://market.android.com/details?id=websec.routerpwn" target=_blank>Android Market.<br/>
+<b>Android</b>: Available in the <a href="https://market.android.com/details?id=websec.routerpwn" target=_blank>Android Market</a>.
+<br/><br/>
+<b>iPhone/iTouch</b> (JailBreak not needed):<br/>
+Using Safari, browser the main url:<br/>
+http://routerpwn.com<br/>
+Select in Safari's main menu: [+]<br/>
+Choose: "<b>Add to home screen</b>",<br/>
+Enter a name or accept the default: "<b>Routerpwn</b>"<br/>
+Click "<b>Save</b>".<br/>
+  <a href="http://routerpwn.com"><img src=routerpwn.jpg border=0></a><br/><br/>
+
+Desde <b>iPhone/iTouch</b> (No se necesita JailBreak):<br/>
+Utilizando Safari, entra a la siguiente liga:<br/>
+http://routerpwn.com<br/>
+Selecciona en el menú inferior de Safari: [+]<br/>
+Selecciona: "<b>Añadir a pantalla de inicio</b>",<br/>
+Ingresa un nombre para la aplicación: "<b>Routerpwn</b>"<br/>
+y da click en "<b>Guardar</b>".<br/>
+  <a href="http://routerpwn.com"><img src=routerpwn.jpg border=0></a><br/><br/>
+
+<br/>From another mobile device:<br/>
+Add <a href="http://routerpwn.com">http://routerpwn.com</a> to your bookmars.<br/><br/>
+
+<br/>Desde otro celular o dispositivo m&oacute;vil:<br/>
+Agrega <a href="http://routerpwn.com">http://routerpwn.com</a> a los favoritos de tu navegador.<br/>
+<div style="float: right"><a href="#">^ Top</a></div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</section>
+	<footer>
+		<a href="thanks.html">Routerpwn contributors</a><br/><br/>
+		<a href="contact.html">submisions and contact form</a><br/><br/>
+		<a href="http://www.websec.mx"><img src="websec.png" border="0"></a>
+		<a href="http://www.hakim.ws"><img src="hakimws1.gif" border="0"></a>
+		<a href="https://www.underground.org.mx"><img src="logo_cum.gif" border="0"></a><br/><br/>
+		<a href="#">^ Top</a>
+	</footer>
+	</body>
+</html>

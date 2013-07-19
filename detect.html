@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" charset="utf-8" src="phonegap-1.1.0.js"></script>
+		<title>Routerpwn Detect BETA 2.18</title>
+		<link rel="apple-touch-icon" HREF="favicon.png" />
+		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta charset="UTF-8" />
+	<style>
+	a,a:visited,a:active,a:link {
+		color:white;
+		text-decoration:none;
+	}
+
+	a:hover {
+		color:white;
+		text-decoration:none;
+		text-shadow:#FFF 2px 2px 20px;
+	}
+
+	body {
+		font-family: "Arial";
+		background: #111111;
+		background-image: url("http://www.routerpwn.com/bg.jpg");
+		background-repeat: repeat-x;
+		background-attachment: fixed;
+	}
+
+	#contenedor {
+		background: #000;
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		border-color: #FFF;
+		border-width: 1px 1px 1px 1px;
+		border-style: solid;
+		color: #FFF;
+	}
+
+	h2 {
+		font-size: 3em;
+		display: inline;
+	}
+
+	#logo {
+		background: url("http://www.routerpwn.com/logo.gif") no-repeat center, black;
+		width: 300px;
+		height: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	section { 
+		padding: 2em;
+	}
+
+	#market {
+		z-index:2;
+		float: right;
+		text-align:right;
+		display:block;
+	}
+
+	#imagenes {
+		z-index:2;
+		float: right;
+		display:inline;
+		border-color: #222;
+		border-width: 1px 1px 1px 1px;
+		border-style: solid;
+		padding: 0.5em;
+		border-style:dashed;
+	}
+	#gform {
+		display:none;
+	}
+
+	</style>
+
+	<link rel=stylesheet href="mobile.css" type="text/css">
+
+	<!--  added by preth00nker =)  -->
+	<script>
+	function timeout(){
+	if (document.getElementById("detect").innerHTML=="Detecting..."){
+		document.getElementById("detect").innerHTML="Unable to identify device";
+		document.getElementById("gform").style.display = 'inline';
+		window.stop();
+		}
+  	}
+
+	function decide(model){
+   switch(model){
+      case 'ST585':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#thomson>Thomson</a><br><b>Model:</b> SpeedTouch ST585<br><b>IP: </b><a href=http://192.168.1.254>192.168.1.254</a>";
+	window.stop();break;
+      case 'SBG900':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#motorola>Motorola</a><br><b>Model:</b> SBG900<br><b>IP: </b><a href=http://192.168.0.1>192.168.0.1</a>";
+	window.stop();break;
+      case '2wire_5.x':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/#wire>2wire</a><br><b>Model:</b> 5.x 2071HG 2700HG 2701HG <br><b>IP: </b><a href=http://192.168.1.254>192.168.1.254</a>";
+	window.stop();break;
+      case '2wire_4.x':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/#wire>2wire</a><br><b>Model:</b> 4.x 1701HG 1800HW <br><b>IP: </b><a href=http://192.168.1.254>192.168.1.254</a>";
+	window.stop();break;
+      case 'HG520c':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/#huawei>Huwei</a><br><b>Model:</b> HG520<br><b>IP: </b><a href=http://192.168.1.254>192.168.1.254</a>";
+	window.stop();break;
+      case 'dlink':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#DLink>D-link</a><br><b>Model:</b>DIR-600<br><b>IP: </b><a href=http://192.168.0.1>192.168.0.1</a>";
+	window.stop();break;
+      case 'surfboard':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#motorola>Motorola</a><br><b>Model:</b>Surfboard<br><b>IP: </b><a href=http://192.168.100.1>192.168.100.1</a>";
+	window.stop();break;
+      case 'wag120n':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#cisco>Cisco</a><br><b>Model:</b>Linksys WAG120N, E3200<br><b>IP: </b><a href=http://192.168.1.1>192.168.1.1</a>";
+	window.stop();break;
+      case 'WTM552':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#arris>Arris</a><br><b>Model:</b> WTM552<br><b>IP: </b><a href=http://192.168.2.1>192.168.2.1</a>";
+	window.stop();break;
+      case 'U10C019':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#>Ambit</a><br><b>Model:</b> U10C019<br><b>IP: </b><a href=http://192.168.0.1>192.168.0.1</a>";
+	window.stop();break;
+      case '35750':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#motorola>Motorola</a><br><b>Model:</b> Wimax CPEi 35750<br><b>IP: </b><a href=http://192.168.15.1>192.168.15.1</a>";
+	window.stop();break;
+      case 'Fritz!Box7270':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> Fritzbox<br><b>Model:</b> Fritz!Box7270<br><b>IP: </b><a href=http://192.168.178.1>192.168.178.1</a>";
+	window.stop();break;
+      case 'SMCD3G':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> SMC<br><b>Model:</b> SMCD3G<br><b>IP: </b><a href=http://10.1.10.1>10.1.10.1</a>";
+	window.stop();break;
+      case '3800HGV-B':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> <a href=http://www.routerpwn.com/index.html#2wire>2Wire</a><br><b>Model:</b> 3800HGV-B<br><b>IP: </b><a href=http://192.168.0.1>192.168.0.1</a>";
+	window.stop();break;
+      case 'BiPAC7404VGPX':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> Billion<br><b>Model:</b> BiPAC 7404VGPX<br><b>IP: </b><a href=http://192.168.1.254>192.168.1.254</a>";
+	window.stop();break;
+      case 'ASL-26555':
+        document.getElementById("detect").innerHTML="<b>Manufacturer:</b> Amper<br><b>Model:</b> ASL-26555<br><b>IP: </b><a href=http://192.168.1.1>192.168.1.1</a>";
+	window.stop();break;
+  	 }
+	}
+	if (/Opera/.test (navigator.userAgent)) alert("Sorry, no Opera support yet.");
+	</script>
+	</head>
+<body alink="#FFFFFF" bgcolor="#000000" link="#CCCCCC" text="#FFFFFF" vlink="#CCCCCC">
+<a href="https://market.android.com/details?id=websec.routerpwn"><DIV id="market"><img src="market.png"/></a><br/></DIV>
+	<a href="https://twitter.com/Routerpwn"><DIV id="market"><img src="twit.png"/></a></DIV></a>
+
+	<section id="contenedor">
+		<a href="http://www.routerpwn.com/info.html"><div id="logo"></div></a>
+<section id="imagenes">
+<img src="http://192.168.1.254/images/stxx__xl.gif" onLoad='decide("ST585");'  />
+<img src="http://192.168.0.1/images/products/SBG900/sbgproduct_transparent.gif" onLoad='decide("SBG900");' />
+<img src="http://192.168.1.254/es/images/nav_sl_system_2701XX_02.gif" onLoad='decide("2wire_5.x");' />
+<img src="http://192.168.1.254/icons/icon_med_setup_3800.gif" onLoad='decide("2wire_4.x");' />
+<img src="http://192.168.1.254/Images/edit.gif" onLoad='decide("HG520c");' />
+<img src="http://192.168.0.1/pic/model.gif" onLoad='decide("dlink");' />
+<img src="http://192.168.100.1/copyright.gif" onLoad='decide("surfboard");' />
+<img src="http://192.168.1.1/UI_Linksys.gif" onLoad='decide("wag120n");' />
+<img src="http://192.168.2.1/logo_t.gif" onLoad='decide("WTM552");' />
+<img src="http://192.168.0.1/public/Ambit.jpg" onLoad='decide("U10C019");' />
+<img src="http://192.168.15.1/html/defs/style5/images/welcome.jpg" onLoad='decide("35750");' />
+<img src="http://192.168.178.1/html/de/images/leer.gif" onLoad='decide("Fritz!Box7270");' />
+<img src="http://10.1.10.1/images/headsignout-off.gif" onLoad='decide("SMCD3G");' />
+<img src="http://192.168.0.1/icons/3xxx.jpg" onLoad='decide("3800HGV-B");' />
+<img src="http://192.168.1.254/customized/setup2.gif" onLoad='decide("BiPAC7404VGPX");' />
+<img src="http://192.168.1.1/graphic/head_04.gif" onLoad='decide("ASL-26555");' />
+</section>
+		<h2><div id=detect>Detecting...</div><div id=gform><iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGZLRXZVNU9CV2Z0SnZ5OXFYVF83X0E6MQ" width="760" height="700" frameborder="0" marginheight="0" marginwidth="0"></iframe></div></h2>
+	</section><br/><br/>
+	<section id="contenedor"><center><a href='javascript:void(document.getElementById("gform").style.display="inline");'>Contribute to Routerpwn detection by sending me your router's image paths!</center></section>
+<script>setTimeout("timeout()",6000);</script>
+</body>
+</html>
