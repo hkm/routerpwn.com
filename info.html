@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.11.161</title>
+		<title>Routerpwn 1.13.189</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -29,7 +29,6 @@
 	#contenedor {
 		display: block;
 		background: #000;
-		width: 70%;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
@@ -40,24 +39,28 @@
 		text-align: left;
 		margin-left: auto;
 		margin-right: auto;
+		font-size: 16pt;
 	}
 
 	#install {
 		text-align: left;
 		margin-left: auto;
 		margin-right: auto;
+		font-size: 16pt;
 	}
 
 	#home {
 		text-align: left;
 		margin-left: auto;
 		margin-right: auto;
+		font-size: 16pt;
 	}
 
 	#screen {
 		text-align: left;
 		margin-left: auto;
 		margin-right: auto;
+		font-size: 16pt;
 	}
 
 	#screen img:hover{
@@ -75,7 +78,7 @@
 		border-style: solid;
 		color: #FFF;
 		width: 70%;
-		padding: 2em;
+		padding: 1em;
 	}
 
 	footer img {
@@ -91,8 +94,8 @@
 
 	#logo {
 		background: url("logo.gif") no-repeat center, black;
-		background-size: 400px 400px;
-		height: 350px;
+		background-size: 200px 200px;
+		height: 180px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -168,7 +171,7 @@ Routerpwn - iPhone:<br/>
 
 <section id="exploits">
 <h3>== Exploits ==</h3>
-<b># 154 Total (11 Modules) 08/09/2012 #</b>
+<b># 166 Total (12 Modules) 25/11/2013 #</b>
 <br/>Sagem Fast Telnet Root Password Generator
 <br/>A1/Telekom PRG EAV4202N Default WPA Key Generator
 <br/>Discus DRG A225 WiFi router Default WPA2-PSK Key Generator
@@ -179,6 +182,7 @@ Routerpwn - iPhone:<br/>
 <br/>Huawei HG5XX Mac2wepkey Default Wireless Key Generator
 <br/>Backdoor password in Accton-based switches (3com, Dell, SMC, Foundry and EdgeCore)
 <br/>Arris Password of The Day Generator
+<br/>Sagemcom f@st 3184 default wireless password (Cabovisão)
 <br/>
 <br/>20x 27x authentication bypass (xss + info disclosure) 
 <br/>17x 18x 20x 27x CRLF denial of service remote MDC 
@@ -334,15 +338,48 @@ Routerpwn - iPhone:<br/>
 <br/>F9K1002 Authentication Bypass
 <br/>F9K1002 Web Management Password Exposure
 <br/>BlackArmor NAS Password Reset
+<br/>TD-8817 Blank admin password CSRF
+<br/>Linksys EA2700 XSS Vulnerability apply.cgi
+<br/>Linksys EA2700 File Path Traversal Vulnerability
+<br/>Linksys EA2700 Password Change Insufficient Authentication and CSRF Vulnerability
+<br/>Linksys Router Source Code Disclosure
+<br/>Asus RT-N66U command execution
+<br/>Asus RT-N56U RT-AC66U command execution
+<br/>Asus RT-N56U RT-AC66U reset admin password enable remote http csrf
+<br/>TRENDnet TEW 812DRU CSRF Change Admin Credentials
+<br/>TRENDnet TEW 812DRU CSRF Enable Remote Management
+<br/>TRENDnet TEW 812DRU CSRF Enable Remote Telnet
+<br/>TRENDnet TEW 812DRU TEW-692GR TEW-691GR Enable Telnet Backdoor 
+<br/>Alcatel Lucent I-240W-Q Authentication Bypass 
+<br/>TP LINK WR1043ND Enable remote FTP CSRF
+<br/>TP LINK WR1043ND denial of service
+<br/>Netgear WNDR4700 Authentication bypass
+<br/>Netgear WNDR4700 Unauthenticated information disclosure
+<br/>Linksys WRT310Nv2 Cross site scripting
+<br/>Dlink DIR 865L PHP file inclusion
+<br/>Belkin N900 Change admin creds & enable remote MGMT CSRF
+<br/>N900 ssid stored cross site scripting
+<br/>N900 psk stored cross site scripting
+<br/>Belkin N300 remove admin password & enable remote MGMT CSRF
+<br/>Belkin F5D8236 4 v2 CSRF Enable Remote MGMT
+<br/>D-Link DSL-2640U PPoE Data Disclosure (ADSL Router)
+<br/>Sagem F@st 1500WG  PPPoE Data Disclosure (ADSL Router)
+<br/>2wire 4011G y 5012NV directory traversal
+<br/>SMC SMCWBR14-G2 PPPoE Data Disclosure (ADSL Router)
+<br/>Arris DG860A WPS PIN Generator
+
+
 <br/><div style="float: right"><a href="#">^ Top</a></div>
 </section>
 
 <section id="install">
 <h3>== Install ==</h3>
+<!--
 <a href="https://market.android.com/details?id=websec.routerpwn" target=_blank><img src=routerpwnandroid.png border=0></a><br/>
 <b>Android</b>: Disponible en el <a href="https://market.android.com/details?id=websec.routerpwn" target=_blank>Android Market.<br/>
 <b>Android</b>: Available in the <a href="https://market.android.com/details?id=websec.routerpwn" target=_blank>Android Market</a>.
 <br/><br/>
+-->
 <b>iPhone/iTouch</b> (JailBreak not needed):<br/>
 Using Safari, browser the main url:<br/>
 http://routerpwn.com<br/>
@@ -380,11 +417,12 @@ pageTracker._trackPageview();
 
 </section>
 	<footer>
+<h2>
 		<a href="thanks.html">Routerpwn contributors</a><br/><br/>
 		<a href="contact.html">submisions and contact form</a><br/><br/>
 		<a href="http://www.websec.mx"><img src="websec.png" border="0"></a>
 		<a href="http://www.hakim.ws"><img src="hakimws1.gif" border="0"></a>
-		<a href="https://www.underground.org.mx"><img src="logo_cum.gif" border="0"></a><br/><br/>
+		<a href="https://www.underground.org.mx"><img src="logo_cum.gif" border="0"></a><br/><br/></h2>
 		<a href="#">^ Top</a>
 	</footer>
 	</body>
