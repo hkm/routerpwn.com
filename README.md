@@ -11,7 +11,8 @@ RouterPWN is a web application that aids in the exploitation of vulnerabilities 
 
 ## Usage
 * As simple as choosing a exploit and clicking on it!
-* If you want to change the IP address for the vulnerable device to attack click on "[+]" in the exploit you want to use
+* More information about the exploit is available clicking on "[+]"
+* If you want to change the IP address for the vulnerable device to attack click on "[SET IP]" in the exploit you want to use
 
 
 ## Demos
