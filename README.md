@@ -1,6 +1,6 @@
 # RouterPWN
 
-RouterPWN is a web application that aids in the exploitation of vulnerabilities in residential/SOHO edge devices such as routers, access points and switches
+RouterPWN is a web application that aids in the exploitation of vulnerabilities in residential/SOHO edge devices such as routers, access points and switches.
 
 ## Features
 
