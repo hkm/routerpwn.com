@@ -1,30 +1,26 @@
-routerpwn.com
+# RouterPWN
 =============
 
-a web page that acts as an exploitation framework for web vulnerabilities
+RouterPWN is a web application that aids in the exploitation of vulnerabilities in residential/SOHO edge devices such as routers, access point and switches.
 
-From http://routerpwn.com/info.html :
+## Features
 
-Routerpwn.com is a web application that helps you in the exploitation of vulnerabilities in residential routers.
+* RouterPWN is ready to run local and remote web exploits.
+* Self-contained in one page, allows for "local offline exploitation"
+* Made with HTML/Javascript, runs in mobile devices with a browser
+* Each exploit contains a link to the complete advisory 
 
-It is a compilation of ready to run local and remote web exploits.
-Programmed in Javascript and HTML in order to run in all "smart phones" and mobile internet devices.
-It is only one page, so you can store it offline for local exploitation without internet connection.
-You can change the destination IP by clicking on the [IP] link next to the exploit. 
-To view more info on the exploit like the complete advisory and author you can click the [+] link.
-
-
-Lots of videos:
+## Demos:
 
 https://www.youtube.com/results?search_query=routerpwn
 
 
-Contact form / submissions:
+## Contact Form / Submissions:
 
 http://routerpwn.com/contact.html
 
 
-Contributors:
+## Contributors:
 
 http://routerpwn.com/thanks.html
 
