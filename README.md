@@ -9,6 +9,11 @@ RouterPWN is a web application that aids in the exploitation of vulnerabilities 
 * Made with HTML/Javascript, runs in mobile devices with a browser
 * Each exploit contains a link to the complete advisory 
 
+## Usage
+* As simple as choosing a exploit and clicking on it!
+* If you want to change the IP address for the vulnerable device click on "[+]"
+
+
 ## Demos
 
 https://www.youtube.com/results?search_query=routerpwn
