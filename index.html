@@ -263,7 +263,7 @@ function wrt160nv2_command(ip)
 	form += '<input	type="hidden"	name="ping_times"	value="5"/>';
 	form += '<input	type="hidden"	name="traceroute_ip"	value=""/>';
 	form += '</form>';
-	post('http://' + ip + '/apply.cgi', form);
+	post('http://admin:admin@' + ip + '/apply.cgi', form);
 }
 
 function freeboxdosr() {
