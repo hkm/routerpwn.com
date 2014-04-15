@@ -89,7 +89,7 @@ column-count:4;
 		border-style: solid;
 	}
 
-	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte {
+	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte, #EE, #DD-WRT {
 		background-image: url("bg.jpg");
 	}
 
@@ -150,6 +150,9 @@ column-count:4;
 		text-align:right;
 		display:block;
 	}
+
+	img { border: 0; }
+
 	</style>
 
 <link rel=stylesheet href="mobile.css" type="text/css">
@@ -3887,12 +3890,14 @@ a=a+1
 </form>
 <iframe name="a" style="display:none"></iframe>
 </section><br><br><section id="trendnet">
+
 <form name="trendCSRF" action="http://192.168.10.1/setSysAdm.cgi" method="post"/>
 <input type="hidden" name="page" value="/adm/management.asp"/>
 <input type="hidden" name="admuser" value="admin"/>
-<inputtype="hidden" name="admpass" value="password"/>
+<input type="hidden" name="admpass" value="password"/>
 <input type="hidden" name="AuthTimeout" value="600"/>
 </form>
+
 <form name="trendCSRF2" action="http://192.168.10.1/uapply.cgi" method="post"/>
 <input type="hidden" name="page" value="/adm/management.asp"/>
 <input type="hidden" name="remote_en" value="1"/>
@@ -3900,6 +3905,7 @@ a=a+1
 <input type="hidden" name="action" value="Apply"/>
 <input type="hidden" name="apply_do" value="setRemoteManagement"/>
 </form>
+
 <h2>TRENDnet</h2>
 <h3><a href="javascript:img('TEW-691GR')">TEW-691GR</a>, <a href="javascript:img('TEW-692GR')">TEW-692GR</a>, <a href="javascript:img('TEW-633GR')">TEW-633GR</a>, <a href="javascript:img('TEW-812DRU')">TEW-812DRU</a>, <a href="javascript:img('Trendnet TV-IP')">TV-IP</a></h3>
 
@@ -4190,10 +4196,10 @@ a=a+1
 	<footer>
 		<h2><a href="thanks.html">Routerpwn contributors</a></h2><br><br>
 		<h2><a href="contact.html">Submisions and Contact Form</a></h2><br>
-		<a href="http://www.websec.mx"><img src="websec.png" border="0"></a>
-		<a href="http://www.hakim.ws"><img src="hkm.jpg" border="0"></a>
-		<a href="https://www.underground.org.mx"><img src="logo_cum.gif" border="0"></a><br/><br/>
-		<a href=http://www.websec.mx/?routerpwn.com target=_blank><img src=http://www.websec.mx/img/banners/A728x90px.jpg  border=0></a><br/><br/>
+		<a href="http://www.websec.mx"><img src="websec.png" alt="Websec"></a>
+		<a href="http://www.hakim.ws"><img src="hkm.jpg" alt="hkm"></a>
+		<a href="https://www.underground.org.mx"><img src="logo_cum.gif" alt="cum"></a><br/><br/>
+		<a href=http://www.websec.mx/?routerpwn.com target=_blank><img src="http://www.websec.mx/img/banners/A728x90px.jpg" alt="websec banner"></a><br/><br/>
 		<a href="#">^ Top</a>
 	</footer>
 <script type="text/javascript">
