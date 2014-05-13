@@ -162,18 +162,7 @@ column-count:4;
 <script>
 
 /*
- Default WPA key generator for Sitecom WLR-4000/4004 routers
- ===========================================================
- Javascript version ported by: 
-   Luis Colunga        (@sinnet3000)
- Original Authors: 
-   Roberto Paleari     (@rpaleari)
-   Alessandro Di Pinto (@adipinto)
-
- Advisory URL:
-   http://blog.emaze.net/2014/04/sitecom-firmware-and-wifi.html
-
- Long.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
+Long.js (c) 2013 Daniel Wirtz <dcode@dcode.io>
  Released under the Apache License, Version 2.0
  see: https://github.com/dcodeIO/Long.js for details
 
@@ -200,15 +189,32 @@ this.unsigned)};b.prototype.and=function(a){return b.fromBits(this.low&a.low,thi
 63;if(0==a)return this;var c=this.high;return 32>a?b.fromBits(this.low>>>a|c<<32-a,c>>a,this.unsigned):b.fromBits(c>>a-32,0<=c?0:-1,this.unsigned)};b.prototype.shiftRightUnsigned=function(a){a&=63;if(0==a)return this;var c=this.high;return 32>a?b.fromBits(this.low>>>a|c<<32-a,c>>>a,this.unsigned):32==a?b.fromBits(c,0,this.unsigned):b.fromBits(c>>>a-32,0,this.unsigned)};b.prototype.toSigned=function(){var a=this.clone();a.unsigned=p;return a};b.prototype.toUnsigned=function(){var a=this.clone();a.unsigned=
 !0;return a};b.prototype.clone=function(){return new b(this.low,this.high,this.unsigned)};"undefined"!=typeof module&&module.exports?module.exports=b:"undefined"!=typeof define&&define.amd?define("Math/Long",[],function(){return b}):(r.dcodeIO||(r.dcodeIO={}),r.dcodeIO.Long=b)})(this);
 
+/*
+ Default WPA key generator for Sitecom WLR-4000/4004 routers
+ ===========================================================
+ Javascript version ported by: 
+   Luis Colunga        (@sinnet3000)
+ Original Authors: 
+   Roberto Paleari     (@rpaleari)
+   Alessandro Di Pinto (@adipinto)
 
-// Charsets used for the generation of WPA key by different Sitecom models
-var CHARSETS = {
-    4000: [ "23456789ABCDEFGHJKLMNPQRSTUVWXYZ38BZ", "WXCDYNJU8VZABKL46PQ7RS9T2E5H3MFGPWR2" ],
-    4004: [ "JKLMNPQRST23456789ABCDEFGHUVWXYZ38BK", "E5MFJUWXCDKL46PQHAB3YNJ8VZ7RS9TR2GPW" ]
-};
+ Advisory URL:
+   http://blog.emaze.net/2014/04/sitecom-firmware-and-wifi.html
+
+   Javascript port depends on Long.js
+
+ */
+
 
 function sitecom400xwpa(keylength) {
     "use strict";
+
+    // Charsets used for the generation of WPA key by different Sitecom models
+	var CHARSETS = {
+    4000: [ "23456789ABCDEFGHJKLMNPQRSTUVWXYZ38BZ", "WXCDYNJU8VZABKL46PQ7RS9T2E5H3MFGPWR2" ],
+    4004: [ "JKLMNPQRST23456789ABCDEFGHUVWXYZ38BK", "E5MFJUWXCDKL46PQHAB3YNJ8VZ7RS9TR2GPW" ]
+	};
+
 
     var  model = prompt("Model (4004, or 4000): ");
     var mac = prompt("Mac Address (XX:XX:XX:XX:XX:XX): ");
