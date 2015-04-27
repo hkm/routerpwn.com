@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - Alcatel-Lucent - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="alcatellucent">
+       <h1>
+        Alcatel-Lucent
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+ <tbody>
+ <tr>
+    <td>19/12/13</td>
+    <td>One click</td>
+    <td><a href="http://www.websec.mx/advisories/view/Ejecuci%C3%B3n-de-comandos-en-Alcatel-Lucent-I-240W-Q">Websec</a></td>
+    <td><a href="javascript:i240w_command()">Alcatel Lucent I-240W-Q - Command Execution</a>
+    <a href="javascript:i240w_command(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></td>
+    <td>hkm</td>
+</tr>
+
+<tr>
+    <td>12/02/13</td>
+    <td>One click</td>
+    <td><a href="http://www.hakim.ws/2012/12/puerta-trasera-en-fibra-optica-alcatel-lucent-de-infinitum/">Websec</a></td>
+    <td><a href="javascript:i230w_auth()">I-240W-Q Authentication Bypass</a>
+    <a href="javascript:i230w_auth(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></td>
+    <td>hkm</td>
+</tr>
+
+<tr>
+    <td>31/01/08</td>
+    <td>One click</td>
+    <td><a href="http://www.exploit-db.com/exploits/5662/">Exploit-DB</a></td>
+    <td><a href="javascript:omnipcx_commandexec(ip)">Alcatel OmniPCX Office 210/061.1 - Remote Command Execution</a>
+    <a href="javascript:omnipcx_commandexec(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></td>
+    <td>DSecRG</td>
+</tr>
+
+<tr>
+    <td>09/09/07</td>
+    <td>One click</td>
+    <td><a href="http://www.exploit-db.com/exploits/16857/">Exploit-DB</a></td>
+    <td><a href="javascript:omnipcx_mastercgicommandexec(ip)">Alcatel-Lucent OmniPCX Enterprise - masterCGI Arbitrary Command Execution</a>
+    <a href="javascript:omnipcx_mastercgicommandexec(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></td>
+    <td>metasploit</td>
+</tr>
+
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

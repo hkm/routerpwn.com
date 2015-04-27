@@ -1,0 +1,136 @@
+/*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+.menu-container {
+  margin: -17px auto;
+  text-align: center;
+}
+
+.nav {
+  width: inherit;
+  height: 46px;
+  background: #333333;
+  margin: 11px 0px 16px 0px;
+}
+
+
+.nav > li, .nav:active > .active {
+  float: left;
+  position: relative;
+  margin: 0 0 4px;
+  height: 40px;
+  color: #ccc;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid #232428;
+  border-bottom-color: #1f2326;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+  -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2px #262a2e, 0 3px #1f2326, 0 4px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2px #262a2e, 0 3px #1f2326, 0 4px 3px rgba(0, 0, 0, 0.2);
+  background: #333333;
+  list-style-type:none !important;
+}
+.nav > li:hover {
+  color: #7a80dd;
+  text-shadow: 0 1px black, 0 0 20px rgba(255, 255, 255, 0.5);
+}
+.nav > li.active,
+.nav > .active:active,
+.nav > li:active {
+  z-index: 2;
+  height: 40px;
+  color: #aaa;
+  text-shadow: 0 1px black;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: #212425;
+  border-width: 1px 0;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 1px 0 rgba(0, 0, 0, 0.05), -1px 0 rgba(0, 0, 0, 0.05), 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 1px 0 rgba(0, 0, 0, 0.05), -1px 0 rgba(0, 0, 0, 0.05), 0 1px rgba(255, 255, 255, 0.05);
+  background: #333333;
+}
+.nav > li:active {
+  z-index: 3;
+}
+.nav > li:first-child {
+  border-left-width: 1px !important;
+  border-left-color: #212425;
+  border-radius: 5px 0 0 5px;
+}
+.nav > li:last-child {
+  border-right-width: 1px !important;
+  border-right-color: #212425;
+  border-radius: 0 5px 5px 0;
+}
+.nav > li + li, .nav:active > .active + li, .nav:active > li + .active {
+  border-left-width: 0;
+}
+.nav > .active + li,
+.nav > .active:active + li,
+.nav > li:active + li,
+.nav > li:active + .active {
+  border-left-width: 1px;
+}
+.nav > li > a {
+  display: block;
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+  outline: 0;
+}
+#marcas {
+-moz-column-count:6; /* Firefox */
+-webkit-column-count:6; /* Safari and Chrome */
+column-count:6;
+display: block;
+font-size: 20px;
+  text-align: center;
+  background: #222;
+  padding-top: 6px;
+}
+
+#marcas > div > a {
+    text-decoration:none;
+}
+#marcas > div > a:hover {
+  color: #7a80dd;
+}
+
+#marcas > div {
+  z-index: 2;
+  color: #aaa;
+  text-shadow: 0 1px black;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: #212425;
+  border-width: 1px 0;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 1px 0 rgba(0, 0, 0, 0.05), -1px 0 rgba(0, 0, 0, 0.05), 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 1px rgba(0, 0, 0, 0.15), 1px 0 rgba(0, 0, 0, 0.05), -1px 0 rgba(0, 0, 0, 0.05), 0 1px rgba(255, 255, 255, 0.05);
+  background: #333333;
+}
+
+#marcas > div:hover {
+  background: #444;
+  background-image: -webkit-linear-gradient(top, #444, #222);
+  background-image: -moz-linear-gradient(top, #444, #222);
+  background-image: -ms-linear-gradient(top, #444, #222);
+  background-image: -o-linear-gradient(top, #444, #222);
+  background-image: linear-gradient(to bottom, #444, #222);
+  text-decoration: none;
+}

