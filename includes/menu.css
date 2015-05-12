@@ -5,7 +5,7 @@
  * Licensed under the MIT License:
  * http://www.opensource.org/licenses/mit-license.php
  */
-.menu-container {
+.container {
   margin: -17px auto;
   text-align: center;
 }
@@ -14,10 +14,8 @@
   width: inherit;
   height: 46px;
   background: #333333;
-  margin: 11px 0px 16px 0px;
+  margin: 11px 0px 16px auto;
 }
-
-
 .nav > li, .nav:active > .active {
   float: left;
   position: relative;
