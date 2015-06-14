@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../includes/jquery.dataTables.css"/>
 <link rel="stylesheet" href="../includes/menu.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="includes/mobile.js"></script>
 </head>
 <body>
 <table width="925" align="center" cellspacing="0" style="background-image:url(../includes/images/headerbeta.jpg); background-position:center 0px; background-repeat:no-repeat; ">
