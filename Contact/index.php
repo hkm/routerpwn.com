@@ -17,7 +17,7 @@
 <tr><td>
   <section class="container">
     <nav>
-      <ul class="nav">
+       <ul class="nav" id="menuList">
       <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
         <li><a href="/" title="Latest updates by brand">Home</a></li>
         <li><a href="/Generators" title="Online key generators and algorithms">Generators</a></li>
