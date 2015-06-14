@@ -51,5 +51,5 @@ try {
 var pageTracker = _gat._getTracker("UA-16172640-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-	</body>
+	<script src="/includes/scripts.js"></script></body>
 </html>
