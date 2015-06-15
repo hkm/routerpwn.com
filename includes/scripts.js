@@ -2364,3 +2364,4 @@ function belkinwpspin()
     alert(parseInt(mac, 16) + accum.toString());
 
 }
+
