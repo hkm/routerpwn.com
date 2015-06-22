@@ -1388,7 +1388,7 @@ function acctongen(){
   q=prompt("MAC:");
   var mac = q.split(':');
 
-  for (counter=0;counter<6;counter++) {
+  for (counter=0;counter<5;counter++) {
 	mac[counter]=parseInt(mac[counter],16);
   }
 
