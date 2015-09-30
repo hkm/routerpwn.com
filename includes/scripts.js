@@ -127,7 +127,7 @@ function sitecom400xwpa(keylength) {
     var magic3f, magic1f;
 
     for (var j = 0; j < keylength-1; j++) {
-	    magic3f = offsets[i];
+	    magic3f = offsets[j];
         magic1f = offsets[j+1];
 
         if (magic3f !== magic1f) {
