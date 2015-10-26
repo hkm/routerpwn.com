@@ -1888,9 +1888,9 @@ function changeDNS(server, ip) {
 /* end pdp */
 
 // D-Link DSL-G604T change DNS servers
-function dlidns() {
+function dlidns(ip) {
 	dns=prompt("DNS server:");
-	changeDNS(dns);
+	changeDNS(dns, ip);
 }
 
 // DD-WRT remote comand execution
