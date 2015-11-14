@@ -35,6 +35,10 @@
   </td></tr>
 <tr><td>
 
+<span>Scan target:</span>
+<input type="text" id="Target" name="Target" value="/24">
+<button type="button" id="start" onclick="start()">Start scanning</button>
+
 <!-- Results go here -->
 <table cellspacing="0" class="display" id="tabla" width="100%"></table>
 
@@ -43,6 +47,12 @@
 <script>
     // Load the fingerprints
     sonar.load_fingerprints(fingerprints);
+
+    // Start scanning
+    function start(){
+        var target = document.getElementById("Target").value;
+        sonar.start(undefined , 2000, target);
+    }
 
     // Add results
     function addRes(name, ip, vendor, search){
@@ -63,9 +73,6 @@ $(document).ready(function() {
             { data: "IP", title: "IP" },
         ]
     } );
-
-    // Start scanning
-    sonar.start(undefined , 2000);
 } );
 </script>
 <script type="text/javascript">
